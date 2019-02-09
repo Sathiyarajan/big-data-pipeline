@@ -1,0 +1,79 @@
+#--------------------------------------------------
+# There are 1 DAGs in the session
+#--------------------------------------------------
+#--------------------------------------------------
+# TEZ DAG plan: pig-0_scope-0
+#--------------------------------------------------
+Tez vertex scope-37	->	Tez vertex scope-39,
+Tez vertex scope-38	->	Tez vertex scope-39,
+Tez vertex scope-39	->	Tez vertex scope-44,
+Tez vertex scope-43	->	Tez vertex scope-44,
+Tez vertex scope-44	->	Tez vertex scope-53,
+Tez vertex scope-53
+
+Tez vertex scope-37
+# Plan on vertex
+POValueOutputTez - scope-41	->	 [scope-39]
+|
+|---a: New For Each(false,false)[bag] - scope-7
+    |   |
+    |   Cast[int] - scope-2
+    |   |
+    |   |---Project[bytearray][0] - scope-1
+    |   |
+    |   Cast[chararray] - scope-5
+    |   |
+    |   |---Project[bytearray][1] - scope-4
+    |
+    |---a: Load(file:///tmp/input:org.apache.pig.builtin.PigStorage) - scope-0
+Tez vertex scope-38
+# Plan on vertex
+POValueOutputTez - scope-42	->	 [scope-39]
+|
+|---c: New For Each(false,false)[bag] - scope-15
+    |   |
+    |   Cast[int] - scope-10
+    |   |
+    |   |---Project[bytearray][1] - scope-9
+    |   |
+    |   Cast[chararray] - scope-13
+    |   |
+    |   |---Project[bytearray][0] - scope-12
+    |
+    |---b: Load(file:///tmp/input:org.apache.pig.builtin.PigStorage) - scope-8
+Tez vertex scope-39
+# Plan on vertex
+POValueOutputTez - scope-46	->	 [scope-44]
+|
+|---POShuffledValueInputTez - scope-40	<-	 [scope-37, scope-38]
+Tez vertex scope-43
+# Plan on vertex
+POValueOutputTez - scope-47	->	 [scope-44]
+|
+|---d: New For Each(false,false)[bag] - scope-24
+    |   |
+    |   Cast[int] - scope-19
+    |   |
+    |   |---Project[bytearray][0] - scope-18
+    |   |
+    |   Cast[chararray] - scope-22
+    |   |
+    |   |---Project[bytearray][1] - scope-21
+    |
+    |---d: Load(file:///tmp/input1:org.apache.pig.builtin.PigStorage) - scope-17
+Tez vertex scope-44
+# Plan on vertex
+e: Split - scope-54
+|   |
+|   e: Store(file:///tmp/pigoutput1:org.apache.pig.builtin.PigStorage) - scope-29
+|   |
+|   f: Local Rearrange[tuple]{int}(false) - scope-34	->	 scope-53
+|   |   |
+|   |   Project[int][0] - scope-35
+|
+|---POShuffledValueInputTez - scope-45	<-	 [scope-39, scope-43]
+Tez vertex scope-53
+# Plan on vertex
+f: Store(file:///tmp/pigoutput2:org.apache.pig.builtin.PigStorage) - scope-36
+|
+|---f: Package(Packager)[tuple]{int} - scope-33
