@@ -1,0 +1,143 @@
+NO DOC BLOCK: org.apache.pig.CounterBasedErrorHandler Class
+NO DOC BLOCK: org.apache.pig.tools.DownloadResolver Class
+MISSING @SINCE TAG: org.apache.pig.ErrorHandler Interface
+MISSING @SINCE TAG: org.apache.pig.ErrorHandling Interface
+MISSING @SINCE TAG: org.apache.pig.backend.hadoop.HKerberos Class
+NO DOC BLOCK: org.apache.pig.builtin.OrcStorage.NonEmptyOrcFileFilter Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.tez.runtime.PigInputFormatTez Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigWritableComparators Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigWritableComparators.PigBigDecimalRawBytesComparator Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigWritableComparators.PigBigDecimalRawBytesPartitionComparator Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigWritableComparators.PigBigDecimalRawPartitionComparator Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigWritableComparators.PigBigIntegerRawBytesComparator Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigWritableComparators.PigBigIntegerRawBytesPartitionComparator Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigWritableComparators.PigBigIntegerRawPartitionComparator Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigWritableComparators.PigBooleanRawBytesComparator Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigWritableComparators.PigBooleanRawBytesPartitionComparator Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigWritableComparators.PigBooleanRawPartitionComparator Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigWritableComparators.PigBytesRawBytesComparator Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigWritableComparators.PigBytesRawBytesPartitionComparator Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigWritableComparators.PigBytesRawPartitionComparator Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigWritableComparators.PigDateTimeRawBytesComparator Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigWritableComparators.PigDateTimeRawBytesPartitionComparator Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigWritableComparators.PigDateTimeRawPartitionComparator Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigWritableComparators.PigDoubleRawBytesComparator Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigWritableComparators.PigDoubleRawBytesPartitionComparator Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigWritableComparators.PigDoubleRawPartitionComparator Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigWritableComparators.PigFloatRawBytesComparator Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigWritableComparators.PigFloatRawBytesPartitionComparator Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigWritableComparators.PigFloatRawPartitionComparator Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigWritableComparators.PigIntRawBytesComparator Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigWritableComparators.PigIntRawBytesPartitionComparator Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigWritableComparators.PigIntRawPartitionComparator Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigWritableComparators.PigLongRawBytesComparator Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigWritableComparators.PigLongRawBytesPartitionComparator Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigWritableComparators.PigLongRawPartitionComparator Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigWritableComparators.PigTextRawBytesComparator Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigWritableComparators.PigTextRawBytesPartitionComparator Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigWritableComparators.PigTextRawPartitionComparator Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigWritableComparators.PigTupleSortBytesComparator Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigWritableComparators.PigTupleSortBytesPartitionComparator Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigWritableComparators.PigTupleSortPartitionComparator Class
+NO DOC BLOCK: org.apache.pig.parser.RegisterResolver Class
+MISSING @SINCE TAG: org.apache.pig.backend.hadoop.executionengine.physicalLayer.relationalOperators.StoreFuncDecorator Class
+MISSING @SINCE TAG: org.apache.pig.backend.hadoop.executionengine.tez.plan.TezPrinter.TezDAGGraphPrinter Class
+MISSING @SINCE TAG: org.apache.pig.backend.hadoop.executionengine.tez.plan.TezPrinter.TezVertexGraphPrinter Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.tez.util.TezUDFContextSeparator Class
+NO DOC BLOCK: org.apache.pig.impl.util.UDFContextSeparator Class
+NO DOC BLOCK: org.apache.pig.impl.util.UDFContextSeparator.UDFType Class
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.physicalLayer.relationalOperators.POPartialAgg Constructor (org.apache.pig.impl.plan.OperatorKey, boolean)
+NO DOC BLOCK: org.apache.pig.builtin.TOP Method accumulate(org.apache.pig.data.Tuple)
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.tez.util.TezCompilerUtil Method bagDataTypeInCombinePlan(org.apache.pig.backend.hadoop.executionengine.physicalLayer.plans.PhysicalPlan)
+NO DOC BLOCK: org.apache.pig.builtin.TOP Method cleanup()
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.physicalLayer.expressionOperators.UnaryComparisonOperator Method cloneHelper(org.apache.pig.backend.hadoop.executionengine.physicalLayer.expressionOperators.UnaryComparisonOperator)
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.physicalLayer.PhysicalOperator Method clonePlans(java.util.List)
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigSecondaryKeyComparator Method compare(org.apache.hadoop.io.WritableComparable, org.apache.hadoop.io.WritableComparable)
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.tez.util.TezCompilerUtil Method connectTezOpToNewPredecessor(org.apache.pig.backend.hadoop.executionengine.tez.plan.TezOperPlan, org.apache.pig.backend.hadoop.executionengine.tez.plan.TezOperator, org.apache.pig.backend.hadoop.executionengine.tez.plan.TezOperator, org.apache.pig.backend.hadoop.executionengine.tez.plan.TezEdgeDescriptor, java.lang.String)
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.tez.util.TezCompilerUtil Method connectTezOpToNewSuccesor(org.apache.pig.backend.hadoop.executionengine.tez.plan.TezOperPlan, org.apache.pig.backend.hadoop.executionengine.tez.plan.TezOperator, org.apache.pig.backend.hadoop.executionengine.tez.plan.TezOperator, org.apache.pig.backend.hadoop.executionengine.tez.plan.TezEdgeDescriptor, java.lang.String)
+MISSING @SINCE TAG: org.apache.pig.backend.hadoop.executionengine.tez.TezResourceManager Method dropInstance()
+NO DOC BLOCK: org.apache.pig.backend.hadoop.HDataType Method findTypeFromClassName(java.lang.String)
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler Method getCacheStagingDir(org.apache.hadoop.conf.Configuration)
+NO DOC BLOCK: org.apache.pig.builtin.RoundRobinPartitioner Method getConf()
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler Method getFromCache(org.apache.pig.impl.PigContext, org.apache.hadoop.conf.Configuration, java.net.URL)
+NO DOC BLOCK: org.apache.pig.backend.hadoop.HDataType Method getNewWritableComparable(byte)
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.physicalLayer.expressionOperators.POUserFunc Method getOriginalReturnType()
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.tez.TezResourceManager Method getResourcesDir()
+NO DOC BLOCK: org.apache.pig.tools.pigstats.ScriptState Method getSerializedScript()
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.physicalLayer.expressionOperators.POUserFunc Method getSignature()
+MISSING @SINCE TAG: org.apache.pig.backend.hadoop.executionengine.physicalLayer.relationalOperators.POStore Method getStoreFuncDecorator()
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.InputSizeReducerEstimator Method getTotalInputFileSize(org.apache.hadoop.conf.Configuration, java.util.List, org.apache.hadoop.mapreduce.Job)
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.tez.plan.TezOperator Method getTotalInputFilesSize()
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.physicalLayer.relationalOperators.Packager Method getUseSecondaryKey()
+NO DOC BLOCK: org.apache.pig.builtin.TOP Method getValue()
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.tez.plan.operator.POSimpleTezLoad Method initialize(org.apache.tez.runtime.api.ProcessorContext)
+NO DOC BLOCK: org.apache.pig.data.SchemaTupleBackend Method initialize(org.apache.hadoop.conf.Configuration)
+NO DOC BLOCK: org.apache.pig.data.SchemaTupleBackend Method initialize(org.apache.hadoop.conf.Configuration, boolean)
+NO DOC BLOCK: org.apache.pig.impl.util.Utils Method is64bitJVM()
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.tez.plan.TezOperator Method isDistinct()
+NO DOC BLOCK: org.apache.pig.newplan.logical.relational.LogicalSchema Method isEqualUnlessUnknown(org.apache.pig.newplan.logical.relational.LogicalSchema, org.apache.pig.newplan.logical.relational.LogicalSchema)
+NO DOC BLOCK: org.apache.pig.newplan.logical.relational.LogicalSchema.LogicalFieldSchema Method isEqualUnlessUnknown(org.apache.pig.newplan.logical.relational.LogicalSchema.LogicalFieldSchema, org.apache.pig.newplan.logical.relational.LogicalSchema.LogicalFieldSchema)
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.tez.plan.TezOperator Method isIntermediateReducer()
+NO DOC BLOCK: org.apache.pig.impl.util.Utils Method isLocal(org.apache.hadoop.conf.Configuration)
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.tez.util.TezCompilerUtil Method isNonPackageInput(java.lang.String, org.apache.pig.backend.hadoop.executionengine.tez.plan.TezOperator)
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.tez.plan.optimizer.UnionOptimizer Method isOptimizableStoreFunc(org.apache.pig.backend.hadoop.executionengine.tez.plan.TezOperator, java.util.List, java.util.List)
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.tez.plan.TezOperator Method isRankCounter()
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.tez.plan.operator.POValueOutputTez Method isScalarOutput()
+MISSING @SINCE TAG: org.apache.pig.builtin.mock.Storage Method map(java.lang.Object[])
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.tez.plan.TezOperator Method markDistinct()
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.tez.plan.TezOperator Method markRankCounter()
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.tez.plan.TezEdgeDescriptor Method needsDistinctCombiner()
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.tez.plan.TezOperator Method removeVertexGroupStore(org.apache.pig.impl.plan.OperatorKey)
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.tez.util.TezCompilerUtil Method replaceInput(org.apache.pig.backend.hadoop.executionengine.tez.plan.TezOperator, java.lang.String, java.lang.String)
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.tez.util.TezCompilerUtil Method replaceOutput(org.apache.pig.backend.hadoop.executionengine.tez.plan.TezOperator, java.lang.String, java.lang.String)
+NO DOC BLOCK: org.apache.pig.builtin.RANDOM Method resetSeedUniquifier()
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.tez.runtime.PigOutputFormatTez Method resetUDFContextForThreadReuse()
+NO DOC BLOCK: org.apache.pig.builtin.RoundRobinPartitioner Method setConf(org.apache.hadoop.conf.Configuration)
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.tez.plan.TezOperator Method setIntermediateReducer(java.lang.Boolean)
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.tez.plan.TezEdgeDescriptor Method setNeedsDistinctCombiner(boolean)
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.tez.plan.operator.POValueOutputTez Method setScalarOutput(boolean)
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.tez.plan.TezOperator Method setTotalInputFilesSize(long)
+MISSING @SINCE TAG: org.apache.pig.backend.hadoop.executionengine.tez.util.MRToTezHelper Method setVertexConfig(org.apache.tez.dag.api.Vertex, boolean, org.apache.hadoop.conf.Configuration)
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.DistinctCombiner.Combine Method staticDataCleanup()
+NO DOC BLOCK: org.apache.pig.impl.util.SpillableMemoryManager Method staticDataCleanup()
+NO DOC BLOCK: org.apache.pig.impl.util.UDFContext Method staticDataCleanup()
+MISSING @SINCE TAG: org.apache.pig.StoreFunc Method supportsParallelWriteToStoreLocation()
+MISSING @SINCE TAG: org.apache.pig.PigConfiguration Field CALLER_ID
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.tez.plan.TezOperator.OPER_FEATURE Field DISTINCT
+MISSING @SINCE TAG: org.apache.pig.PigConfiguration Field ENABLE_ATS
+NO DOC BLOCK: org.apache.pig.tools.pigstats.PigStatsUtil Field FILE_BYTES_READ
+NO DOC BLOCK: org.apache.pig.tools.pigstats.PigStatsUtil Field FILE_BYTES_WRITTEN
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.physicalLayer.expressionOperators.POProject Field isProjectToEnd
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceOper Field mapKeyTypeOfSplittees
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigLongRawComparator Field mAsc
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.physicalLayer.PhysicalOperator Field mBagFactory
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigLongRawComparator Field mLog
+NO DOC BLOCK: org.apache.pig.builtin.TextLoader Field mLog
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.physicalLayer.PhysicalOperator Field mTupleFactory
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigLongRawComparator Field mWrappedComp
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.physicalLayer.expressionOperators.POProject Field overloaded
+MISSING @SINCE TAG: org.apache.pig.PigConfiguration Field PIG_ARTIFACTS_DOWNLOAD_LOCATION
+MISSING @SINCE TAG: org.apache.pig.impl.PigImplConstants Field PIG_AUDIT_ID
+MISSING @SINCE TAG: org.apache.pig.PigConfiguration Field PIG_BZIP_USE_HADOOP_INPUTFORMAT
+MISSING @SINCE TAG: org.apache.pig.impl.PigImplConstants Field PIG_CONTEXT
+MISSING @SINCE TAG: org.apache.pig.PigConfiguration Field PIG_ERROR_HANDLING_ENABLED
+MISSING @SINCE TAG: org.apache.pig.PigConfiguration Field PIG_ERROR_HANDLING_MIN_ERROR_RECORDS
+MISSING @SINCE TAG: org.apache.pig.PigConfiguration Field PIG_ERROR_HANDLING_THRESHOLD_PERCENT
+MISSING @SINCE TAG: org.apache.pig.PigConfiguration Field PIG_EXEC_NO_COMBINER_REDUCER
+MISSING @SINCE TAG: org.apache.pig.impl.PigImplConstants Field PIG_EXECTYPE_MODE_LOCAL
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigInputFormat Field PIG_INPUT_LIMITS
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigInputFormat Field PIG_INPUT_SIGNATURES
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigInputFormat Field PIG_INPUT_TARGETS
+MISSING @SINCE TAG: org.apache.pig.impl.PigImplConstants Field PIG_LOG4J_PROPERTIES
+MISSING @SINCE TAG: org.apache.pig.builtin.RoundRobinPartitioner Field PIG_ROUND_ROBIN_PARTITIONER_BATCH_SIZE
+MISSING @SINCE TAG: org.apache.pig.PigConfiguration Field PIG_SORT_READONCE_LOADFUNCS
+MISSING @SINCE TAG: org.apache.pig.PigConfiguration Field PIG_SPILL_COLLECTION_THRESHOLD_FRACTION
+MISSING @SINCE TAG: org.apache.pig.PigConfiguration Field PIG_SPILL_MEMORY_USAGE_THRESHOLD_FRACTION
+MISSING @SINCE TAG: org.apache.pig.PigConfiguration Field PIG_SPILL_UNUSED_MEMORY_THRESHOLD_SIZE
+MISSING @SINCE TAG: org.apache.pig.PigConfiguration Field PIG_TEZ_OPT_UNION_SUPPORTED_STOREFUNCS
+NO DOC BLOCK: org.apache.pig.PigConfiguration Field PIG_TEZ_OPT_UNION_UNSUPPORTED_STOREFUNCS
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.tez.plan.TezOperator.OPER_FEATURE Field RANK_COUNTER
+NO DOC BLOCK: org.apache.pig.tools.pigstats.ScriptState Field serializedScript
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.physicalLayer.expressionOperators.POProject Field startCol
+NO DOC BLOCK: org.apache.pig.backend.hadoop.executionengine.physicalLayer.relationalOperators.POForEach Field tIn
+NO DOC BLOCK: org.apache.pig.tools.pigstats.ScriptState Field truncatedScript

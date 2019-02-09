@@ -1,0 +1,50 @@
+2019-02-03 12:11:45,819 INFO [main] org.apache.hadoop.mapreduce.v2.app.MRAppMaster: Created MRAppMaster for application appattempt_1549167607896_0001_000001
+2019-02-03 12:11:46,234 INFO [main] org.apache.hadoop.mapreduce.v2.app.MRAppMaster: Executing with tokens:
+2019-02-03 12:11:46,234 INFO [main] org.apache.hadoop.mapreduce.v2.app.MRAppMaster: Kind: YARN_AM_RM_TOKEN, Service: , Ident: (appAttemptId { application_id { id: 1 cluster_timestamp: 1549167607896 } attemptId: 1 } keyId: -1399266755)
+2019-02-03 12:11:46,498 INFO [main] org.apache.hadoop.mapreduce.v2.app.MRAppMaster: OutputCommitter set in config org.apache.hadoop.hive.ql.io.HiveFileFormatUtils$NullOutputCommitter
+2019-02-03 12:11:46,501 INFO [main] org.apache.hadoop.mapreduce.v2.app.MRAppMaster: OutputCommitter is org.apache.hadoop.hive.ql.io.HiveFileFormatUtils$NullOutputCommitter
+2019-02-03 12:11:47,191 INFO [main] org.apache.hadoop.yarn.event.AsyncDispatcher: Registering class org.apache.hadoop.mapreduce.jobhistory.EventType for class org.apache.hadoop.mapreduce.jobhistory.JobHistoryEventHandler
+2019-02-03 12:11:47,192 INFO [main] org.apache.hadoop.yarn.event.AsyncDispatcher: Registering class org.apache.hadoop.mapreduce.v2.app.job.event.JobEventType for class org.apache.hadoop.mapreduce.v2.app.MRAppMaster$JobEventDispatcher
+2019-02-03 12:11:47,193 INFO [main] org.apache.hadoop.yarn.event.AsyncDispatcher: Registering class org.apache.hadoop.mapreduce.v2.app.job.event.TaskEventType for class org.apache.hadoop.mapreduce.v2.app.MRAppMaster$TaskEventDispatcher
+2019-02-03 12:11:47,194 INFO [main] org.apache.hadoop.yarn.event.AsyncDispatcher: Registering class org.apache.hadoop.mapreduce.v2.app.job.event.TaskAttemptEventType for class org.apache.hadoop.mapreduce.v2.app.MRAppMaster$TaskAttemptEventDispatcher
+2019-02-03 12:11:47,194 INFO [main] org.apache.hadoop.yarn.event.AsyncDispatcher: Registering class org.apache.hadoop.mapreduce.v2.app.commit.CommitterEventType for class org.apache.hadoop.mapreduce.v2.app.commit.CommitterEventHandler
+2019-02-03 12:11:47,210 INFO [main] org.apache.hadoop.yarn.event.AsyncDispatcher: Registering class org.apache.hadoop.mapreduce.v2.app.speculate.Speculator$EventType for class org.apache.hadoop.mapreduce.v2.app.MRAppMaster$SpeculatorEventDispatcher
+2019-02-03 12:11:47,211 INFO [main] org.apache.hadoop.yarn.event.AsyncDispatcher: Registering class org.apache.hadoop.mapreduce.v2.app.rm.ContainerAllocator$EventType for class org.apache.hadoop.mapreduce.v2.app.MRAppMaster$ContainerAllocatorRouter
+2019-02-03 12:11:47,211 INFO [main] org.apache.hadoop.yarn.event.AsyncDispatcher: Registering class org.apache.hadoop.mapreduce.v2.app.launcher.ContainerLauncher$EventType for class org.apache.hadoop.mapreduce.v2.app.MRAppMaster$ContainerLauncherRouter
+2019-02-03 12:11:47,254 INFO [main] org.apache.hadoop.mapreduce.v2.jobhistory.JobHistoryUtils: Default file system [hdfs://localhost:9000]
+2019-02-03 12:11:47,284 INFO [main] org.apache.hadoop.mapreduce.v2.jobhistory.JobHistoryUtils: Default file system [hdfs://localhost:9000]
+2019-02-03 12:11:47,312 INFO [main] org.apache.hadoop.mapreduce.v2.jobhistory.JobHistoryUtils: Default file system [hdfs://localhost:9000]
+2019-02-03 12:11:47,321 INFO [main] org.apache.hadoop.mapreduce.jobhistory.JobHistoryEventHandler: Creating intermediate history logDir: [hdfs://localhost:9000/tmp/hadoop-yarn/staging/history/done_intermediate] + based on conf. Should ideally be created by the JobHistoryServer: yarn.app.mapreduce.am.create-intermediate-jh-base-dir
+2019-02-03 12:11:47,349 INFO [main] org.apache.hadoop.mapreduce.jobhistory.JobHistoryEventHandler: Perms after creating 493, Expected: 1023
+2019-02-03 12:11:47,350 INFO [main] org.apache.hadoop.mapreduce.jobhistory.JobHistoryEventHandler: Explicitly setting permissions to : 1023, rwxrwxrwt
+2019-02-03 12:11:47,369 INFO [main] org.apache.hadoop.mapreduce.jobhistory.JobHistoryEventHandler: Perms after creating 488, Expected: 504
+2019-02-03 12:11:47,369 INFO [main] org.apache.hadoop.mapreduce.jobhistory.JobHistoryEventHandler: Explicitly setting permissions to : 504, rwxrwx---
+2019-02-03 12:11:47,379 INFO [main] org.apache.hadoop.mapreduce.jobhistory.JobHistoryEventHandler: Emitting job history data to the timeline server is not enabled
+2019-02-03 12:11:47,422 INFO [main] org.apache.hadoop.yarn.event.AsyncDispatcher: Registering class org.apache.hadoop.mapreduce.v2.app.job.event.JobFinishEvent$Type for class org.apache.hadoop.mapreduce.v2.app.MRAppMaster$JobFinishEventHandler
+2019-02-03 12:11:47,544 INFO [main] org.apache.hadoop.metrics2.impl.MetricsConfig: loaded properties from hadoop-metrics2.properties
+2019-02-03 12:11:47,600 INFO [main] org.apache.hadoop.metrics2.impl.MetricsSystemImpl: Scheduled snapshot period at 10 second(s).
+2019-02-03 12:11:47,600 INFO [main] org.apache.hadoop.metrics2.impl.MetricsSystemImpl: MRAppMaster metrics system started
+2019-02-03 12:11:47,619 INFO [main] org.apache.hadoop.mapreduce.v2.app.job.impl.JobImpl: Adding job token for job_1549167607896_0001 to jobTokenSecretManager
+2019-02-03 12:11:47,724 INFO [main] org.apache.hadoop.mapreduce.v2.app.job.impl.JobImpl: Not uberizing job_1549167607896_0001 because: not enabled;
+2019-02-03 12:11:47,744 INFO [main] org.apache.hadoop.mapreduce.v2.app.job.impl.JobImpl: Input size for job job_1549167607896_0001 = 317543. Number of splits = 1
+2019-02-03 12:11:47,745 INFO [main] org.apache.hadoop.mapreduce.v2.app.job.impl.JobImpl: Number of reduces for job job_1549167607896_0001 = 1
+2019-02-03 12:11:47,745 INFO [main] org.apache.hadoop.mapreduce.v2.app.job.impl.JobImpl: job_1549167607896_0001Job Transitioned from NEW to INITED
+2019-02-03 12:11:47,747 INFO [main] org.apache.hadoop.mapreduce.v2.app.MRAppMaster: MRAppMaster launching normal, non-uberized, multi-container job job_1549167607896_0001.
+2019-02-03 12:11:47,779 INFO [main] org.apache.hadoop.ipc.CallQueueManager: Using callQueue class java.util.concurrent.LinkedBlockingQueue
+2019-02-03 12:11:47,788 INFO [Socket Reader #1 for port 44011] org.apache.hadoop.ipc.Server: Starting Socket Reader #1 for port 44011
+2019-02-03 12:11:47,808 INFO [main] org.apache.hadoop.yarn.factories.impl.pb.RpcServerFactoryPBImpl: Adding protocol org.apache.hadoop.mapreduce.v2.api.MRClientProtocolPB to the server
+2019-02-03 12:11:47,809 INFO [IPC Server Responder] org.apache.hadoop.ipc.Server: IPC Server Responder: starting
+2019-02-03 12:11:47,809 INFO [IPC Server listener on 44011] org.apache.hadoop.ipc.Server: IPC Server listener on 44011: starting
+2019-02-03 12:11:47,810 INFO [main] org.apache.hadoop.mapreduce.v2.app.client.MRClientService: Instantiated MRClientService at ubuntu-HP-Pavilion-dv6-NoteBook-PC/127.0.1.1:44011
+2019-02-03 12:11:47,881 INFO [main] org.mortbay.log: Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+2019-02-03 12:11:47,889 INFO [main] org.apache.hadoop.security.authentication.server.AuthenticationFilter: Unable to initialize FileSignerSecretProvider, falling back to use random secrets.
+2019-02-03 12:11:47,894 INFO [main] org.apache.hadoop.http.HttpRequestLog: Http request log for http.requests.mapreduce is not defined
+2019-02-03 12:11:47,899 INFO [main] org.apache.hadoop.http.HttpServer2: Added global filter 'safety' (class=org.apache.hadoop.http.HttpServer2$QuotingInputFilter)
+2019-02-03 12:11:47,904 INFO [main] org.apache.hadoop.http.HttpServer2: Added filter AM_PROXY_FILTER (class=org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter) to context mapreduce
+2019-02-03 12:11:47,904 INFO [main] org.apache.hadoop.http.HttpServer2: Added filter AM_PROXY_FILTER (class=org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter) to context static
+2019-02-03 12:11:47,908 INFO [main] org.apache.hadoop.http.HttpServer2: adding path spec: /mapreduce/*
+2019-02-03 12:11:47,908 INFO [main] org.apache.hadoop.http.HttpServer2: adding path spec: /ws/*
+2019-02-03 12:11:48,238 INFO [main] org.apache.hadoop.yarn.webapp.WebApps: Registered webapp guice modules
+2019-02-03 12:11:48,240 INFO [main] org.apache.hadoop.http.HttpServer2: Jetty bound to port 38575
+2019-02-03 12:11:48,240 INFO [main] org.mortbay.log: jetty-6.1.26
+2019-02-03 12:11:48,267 INFO [main] org.mortbay.log: Extract jar:file:/opt/hadoop/hadoop-2.7.3/share/hadoop/yarn/hadoop-yarn-common-2.7.3.jar!/webapps/mapreduce to /home/ubuntu/hdata/nm-local-dir/usercache/root/appcache/application_1549167607896_0001/container_1549167607896_0001_01_000001/tmp/Jetty_0_0_0_0_38575_mapreduce____.lnmxud/webapp
