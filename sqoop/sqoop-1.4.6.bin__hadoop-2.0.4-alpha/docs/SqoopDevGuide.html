@@ -1,0 +1,276 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Sqoop Developer&#8217;s Guide v1.4.6</title><link rel="stylesheet" href="docbook.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"></head><body><div style="clear:both; margin-bottom: 4px"></div><div align="center"><a href="index.html"><img src="images/home.png" alt="Documentation Home"></a></div><span class="breadcrumbs"><div class="breadcrumbs"><span class="breadcrumb-node">Sqoop Developer&#8217;s Guide v1.4.6</span></div></span><div lang="en" class="article" title="Sqoop Developer&#8217;s Guide v1.4.6"><div class="titlepage"><div><div><h2 class="title"><a name="idp3373896"></a>Sqoop Developer&#8217;s Guide v1.4.6</h2></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="#_introduction">1. Introduction</a></span></dt><dt><span class="section"><a href="#_supported_releases">2. Supported Releases</a></span></dt><dt><span class="section"><a href="#_sqoop_releases">3. Sqoop Releases</a></span></dt><dt><span class="section"><a href="#_prerequisites">4. Prerequisites</a></span></dt><dt><span class="section"><a href="#_compiling_sqoop_from_source">5. Compiling Sqoop from Source</a></span></dt><dt><span class="section"><a href="#_developer_api_reference">6. Developer API Reference</a></span></dt><dd><dl><dt><span class="section"><a href="#_the_external_api">6.1. The External API</a></span></dt><dt><span class="section"><a href="#_the_extension_api">6.2. The Extension API</a></span></dt><dd><dl><dt><span class="section"><a href="#_hbase_serialization_extensions">6.2.1. HBase Serialization Extensions</a></span></dt></dl></dd><dt><span class="section"><a href="#_sqoop_internals">6.3. Sqoop Internals</a></span></dt><dd><dl><dt><span class="section"><a href="#_general_program_flow">6.3.1. General program flow</a></span></dt><dt><span class="section"><a href="#_subpackages">6.3.2. Subpackages</a></span></dt><dt><span class="section"><a href="#_interfacing_with_mapreduce">6.3.3. Interfacing with MapReduce</a></span></dt></dl></dd></dl></dd></dl></div><pre class="screen">  Licensed to the Apache Software Foundation (ASF) under one
+  or more contributor license agreements.  See the NOTICE file
+  distributed with this work for additional information
+  regarding copyright ownership.  The ASF licenses this file
+  to you under the Apache License, Version 2.0 (the
+  "License"); you may not use this file except in compliance
+  with the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.</pre><div class="section" title="1. Introduction"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="_introduction"></a>1. Introduction</h2></div></div></div><p>If you are a developer or an application programmer who intends to
+modify Sqoop or build an extension using one of Sqoop&#8217;s internal APIs,
+you should read this document. The following sections describe the
+purpose of each API, where internal APIs are used, and which APIs are
+necessary for implementing support for additional databases.</p></div><div class="section" title="2. Supported Releases"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="_supported_releases"></a>2. Supported Releases</h2></div></div></div><p>This documentation applies to Sqoop v1.4.6.</p></div><div class="section" title="3. Sqoop Releases"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="_sqoop_releases"></a>3. Sqoop Releases</h2></div></div></div><p>Apache Sqoop is an open source software product of The Apache Software Foundation.
+Development for Sqoop occurs at <a class="ulink" href="http://sqoop.apache.org" target="_top">http://sqoop.apache.org</a>.  At
+that site, you can obtain:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+New releases of Sqoop as well as its most recent source code
+</li><li class="listitem">
+An issue tracker
+</li><li class="listitem">
+A wiki that contains Sqoop documentation
+</li></ul></div></div><div class="section" title="4. Prerequisites"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="_prerequisites"></a>4. Prerequisites</h2></div></div></div><p>The following prerequisite knowledge is required for Sqoop:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Software development in Java
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Familiarity with JDBC
+</li><li class="listitem">
+Familiarity with Hadoop&#8217;s APIs (including the "new" MapReduce API of
+  0.20+)
+</li></ul></div></li><li class="listitem">
+Relational database management systems and SQL
+</li></ul></div><p>This document assumes you are using a Linux or Linux-like environment.
+If you are using Windows, you may be able to use cygwin to accomplish
+most of the following tasks. If you are using Mac OS X, you should see
+few (if any) compatibility errors. Sqoop is predominantly operated and
+tested on Linux.</p></div><div class="section" title="5. Compiling Sqoop from Source"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="_compiling_sqoop_from_source"></a>5. Compiling Sqoop from Source</h2></div></div></div><p>You can obtain the source code for Sqoop using following command:
+git clone <a class="ulink" href="https://git-wip-us.apache.org/repos/asf/sqoop.git" target="_top">https://git-wip-us.apache.org/repos/asf/sqoop.git</a></p><p>Sqoop source code is held in a <code class="literal">git</code> repository. Instructions for
+retrieving source from the repository are provided at:
+TODO provide a page in the web site.</p><p>Compilation instructions are provided in the <code class="literal">COMPILING.txt</code> file in
+the root of the source repository.</p></div><div class="section" title="6. Developer API Reference"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="_developer_api_reference"></a>6. Developer API Reference</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#_the_external_api">6.1. The External API</a></span></dt><dt><span class="section"><a href="#_the_extension_api">6.2. The Extension API</a></span></dt><dd><dl><dt><span class="section"><a href="#_hbase_serialization_extensions">6.2.1. HBase Serialization Extensions</a></span></dt></dl></dd><dt><span class="section"><a href="#_sqoop_internals">6.3. Sqoop Internals</a></span></dt><dd><dl><dt><span class="section"><a href="#_general_program_flow">6.3.1. General program flow</a></span></dt><dt><span class="section"><a href="#_subpackages">6.3.2. Subpackages</a></span></dt><dt><span class="section"><a href="#_interfacing_with_mapreduce">6.3.3. Interfacing with MapReduce</a></span></dt></dl></dd></dl></div><p>This section specifies the APIs available to application writers who
+want to integrate with Sqoop, and those who want to modify Sqoop.</p><p>The next three subsections are written for the following use cases:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Using classes generated by Sqoop and its public library
+</li><li class="listitem">
+Writing Sqoop extensions (that is, additional ConnManager implementations
+  that interact with more databases)
+</li><li class="listitem">
+Modifying Sqoop&#8217;s internals
+</li></ul></div><p>Each section describes the system in successively greater depth.</p><div class="section" title="6.1. The External API"><div class="titlepage"><div><div><h3 class="title"><a name="_the_external_api"></a>6.1. The External API</h3></div></div></div><p>Sqoop automatically generates classes that represent the tables
+imported into the Hadoop Distributed File System (HDFS). The class
+contains member fields for each column of the imported table; an
+instance of the class holds one row of the table. The generated
+classes implement the serialization APIs used in Hadoop, namely the
+<span class="emphasis"><em>Writable</em></span> and <span class="emphasis"><em>DBWritable</em></span> interfaces. They also contain these other
+convenience methods:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+A parse() method that interprets delimited text fields
+</li><li class="listitem">
+A toString() method that preserves the user&#8217;s chosen delimiters
+</li></ul></div><p>The full set of methods guaranteed to exist in an auto-generated class
+is specified in the abstract class
+<code class="literal">com.cloudera.sqoop.lib.SqoopRecord</code>.</p><p>Instances of <code class="literal">SqoopRecord</code> may depend on Sqoop&#8217;s public API. This is all classes
+in the <code class="literal">com.cloudera.sqoop.lib</code> package. These are briefly described below.
+Clients of Sqoop should not need to directly interact with any of these classes,
+although classes generated by Sqoop will depend on them. Therefore, these APIs
+are considered public and care will be taken when forward-evolving them.</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+The <code class="literal">RecordParser</code> class will parse a line of text into a list of fields,
+  using controllable delimiters and quote characters.
+</li><li class="listitem">
+The static <code class="literal">FieldFormatter</code> class provides a method which handles quoting and
+  escaping of characters in a field which will be used in
+  <code class="literal">SqoopRecord.toString()</code> implementations.
+</li><li class="listitem">
+Marshaling data between <span class="emphasis"><em>ResultSet</em></span> and <span class="emphasis"><em>PreparedStatement</em></span> objects and
+  <span class="emphasis"><em>SqoopRecords</em></span> is done via <code class="literal">JdbcWritableBridge</code>.
+</li><li class="listitem">
+<code class="literal">BigDecimalSerializer</code> contains a pair of methods that facilitate
+  serialization of <code class="literal">BigDecimal</code> objects over the <span class="emphasis"><em>Writable</em></span> interface.
+</li></ul></div><p>The full specification of the public API is available on the Sqoop
+Development Wiki as
+<a class="ulink" href="http://wiki.github.com/cloudera/sqoop/sip-4" target="_top">SIP-4</a>.</p></div><div class="section" title="6.2. The Extension API"><div class="titlepage"><div><div><h3 class="title"><a name="_the_extension_api"></a>6.2. The Extension API</h3></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#_hbase_serialization_extensions">6.2.1. HBase Serialization Extensions</a></span></dt></dl></div><p>This section covers the API and primary classes used by extensions for Sqoop
+which allow Sqoop to interface with more database vendors.</p><p>While Sqoop uses JDBC and <code class="literal">DataDrivenDBInputFormat</code> to
+read from databases, differences in the SQL supported by different vendors as
+well as JDBC metadata necessitates vendor-specific codepaths for most databases.
+Sqoop&#8217;s solution to this problem is by introducing the <code class="literal">ConnManager</code> API
+(<code class="literal">com.cloudera.sqoop.manager.ConnMananger</code>).</p><p><code class="literal">ConnManager</code> is an abstract class defining all methods that interact with the
+database itself. Most implementations of <code class="literal">ConnManager</code> will extend the
+<code class="literal">com.cloudera.sqoop.manager.SqlManager</code> abstract class, which uses standard
+SQL to perform most actions. Subclasses are required to implement the
+<code class="literal">getConnection()</code> method which returns the actual JDBC connection to the
+database. Subclasses are free to override all other methods as well. The
+<code class="literal">SqlManager</code> class itself exposes a protected API that allows developers to
+selectively override behavior. For example, the <code class="literal">getColNamesQuery()</code> method
+allows the SQL query used by <code class="literal">getColNames()</code> to be modified without needing to
+rewrite the majority of <code class="literal">getColNames()</code>.</p><p><code class="literal">ConnManager</code> implementations receive a lot of their configuration
+data from a Sqoop-specific class, <code class="literal">SqoopOptions</code>. <code class="literal">SqoopOptions</code> are
+mutable.  <code class="literal">SqoopOptions</code> does not directly store specific per-manager
+options. Instead, it contains a reference to the <code class="literal">Configuration</code>
+returned by <code class="literal">Tool.getConf()</code> after parsing command-line arguments with
+the <code class="literal">GenericOptionsParser</code>. This allows extension arguments via "<code class="literal">-D
+any.specific.param=any.value</code>" without requiring any layering of
+options parsing or modification of <code class="literal">SqoopOptions</code>. This
+<code class="literal">Configuration</code> forms the basis of the <code class="literal">Configuration</code> passed to any
+MapReduce <code class="literal">Job</code> invoked in the workflow, so that users can set on the
+command-line any necessary custom Hadoop state.</p><p>All existing <code class="literal">ConnManager</code> implementations are stateless. Thus, the
+system which instantiates <code class="literal">ConnManagers</code> may implement multiple
+instances of the same <code class="literal">ConnMananger</code> class over Sqoop&#8217;s lifetime. It
+is currently assumed that instantiating a <code class="literal">ConnManager</code> is a
+lightweight operation, and is done reasonably infrequently. Therefore,
+<code class="literal">ConnManagers</code> are not cached between operations, etc.</p><p><code class="literal">ConnManagers</code> are currently created by instances of the abstract
+class <code class="literal">ManagerFactory</code> (See
+<a class="ulink" href="http://issues.apache.org/jira/browse/MAPREDUCE-750" target="_top">http://issues.apache.org/jira/browse/MAPREDUCE-750</a>). One
+<code class="literal">ManagerFactory</code> implementation currently serves all of Sqoop:
+<code class="literal">com.cloudera.sqoop.manager.DefaultManagerFactory</code>.  Extensions
+should not modify <code class="literal">DefaultManagerFactory</code>. Instead, an
+extension-specific <code class="literal">ManagerFactory</code> implementation should be provided
+with the new <code class="literal">ConnManager</code>.  <code class="literal">ManagerFactory</code> has a single method of
+note, named <code class="literal">accept()</code>. This method will determine whether it can
+instantiate a <code class="literal">ConnManager</code> for the user&#8217;s <code class="literal">SqoopOptions</code>. If so, it
+returns the <code class="literal">ConnManager</code> instance. Otherwise, it returns <code class="literal">null</code>.</p><p>The <code class="literal">ManagerFactory</code> implementations used are governed by the
+<code class="literal">sqoop.connection.factories</code> setting in <code class="literal">sqoop-site.xml</code>. Users of extension
+libraries can install the 3rd-party library containing a new <code class="literal">ManagerFactory</code>
+and <code class="literal">ConnManager</code>(s), and configure <code class="literal">sqoop-site.xml</code> to use the new
+<code class="literal">ManagerFactory</code>.  The <code class="literal">DefaultManagerFactory</code> principly discriminates between
+databases by parsing the connect string stored in <code class="literal">SqoopOptions</code>.</p><p>Extension authors may make use of classes in the <code class="literal">com.cloudera.sqoop.io</code>,
+<code class="literal">mapreduce</code>, and <code class="literal">util</code> packages to facilitate their implementations.
+These packages and classes are described in more detail in the following
+section.</p><div class="section" title="6.2.1. HBase Serialization Extensions"><div class="titlepage"><div><div><h4 class="title"><a name="_hbase_serialization_extensions"></a>6.2.1. HBase Serialization Extensions</h4></div></div></div><p>Sqoop supports imports from databases to HBase. When copying data into
+HBase, it must be transformed into a format HBase can accept. Specifically:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Data must be placed into one (or more) tables in HBase.
+</li><li class="listitem">
+Columns of input data must be placed into a column family.
+</li><li class="listitem">
+Values must be serialized to byte arrays to put into cells.
+</li></ul></div><p>All of this is done via <code class="literal">Put</code> statements in the HBase client API.
+Sqoop&#8217;s interaction with HBase is performed in the <code class="literal">com.cloudera.sqoop.hbase</code>
+package. Records are deserialzed from the database and emitted from the mapper.
+The OutputFormat is responsible for inserting the results into HBase. This is
+done through an interface called <code class="literal">PutTransformer</code>. The <code class="literal">PutTransformer</code>
+has a method called <code class="literal">getPutCommand()</code> that
+takes as input a <code class="literal">Map&lt;String, Object&gt;</code> representing the fields of the dataset.
+It returns a <code class="literal">List&lt;Put&gt;</code> describing how to insert the cells into HBase.
+The default <code class="literal">PutTransformer</code> implementation is the <code class="literal">ToStringPutTransformer</code>
+that uses the string-based representation of each field to serialize the
+fields to HBase.</p><p>You can override this implementation by implementing your own <code class="literal">PutTransformer</code>
+and adding it to the classpath for the map tasks (e.g., with the <code class="literal">-libjars</code>
+option). To tell Sqoop to use your implementation, set the
+<code class="literal">sqoop.hbase.insert.put.transformer.class</code> property to identify your class
+with <code class="literal">-D</code>.</p><p>Within your PutTransformer implementation, the specified row key
+column and column family are
+available via the <code class="literal">getRowKeyColumn()</code> and <code class="literal">getColumnFamily()</code> methods.
+You are free to make additional Put operations outside these constraints;
+for example, to inject additional rows representing a secondary index.
+However, Sqoop will execute all <code class="literal">Put</code> operations against the table
+specified with <code class="literal">--hbase-table</code>.</p></div></div><div class="section" title="6.3. Sqoop Internals"><div class="titlepage"><div><div><h3 class="title"><a name="_sqoop_internals"></a>6.3. Sqoop Internals</h3></div></div></div><div class="toc"><dl><dt><span class="section"><a href="#_general_program_flow">6.3.1. General program flow</a></span></dt><dt><span class="section"><a href="#_subpackages">6.3.2. Subpackages</a></span></dt><dt><span class="section"><a href="#_interfacing_with_mapreduce">6.3.3. Interfacing with MapReduce</a></span></dt></dl></div><p>This section describes the internal architecture of Sqoop.</p><p>The Sqoop program is driven by the <code class="literal">com.cloudera.sqoop.Sqoop</code> main class.
+A limited number of additional classes are in the same package; <code class="literal">SqoopOptions</code>
+(described earlier) and <code class="literal">ConnFactory</code> (which manipulates <code class="literal">ManagerFactory</code>
+instances).</p><div class="section" title="6.3.1. General program flow"><div class="titlepage"><div><div><h4 class="title"><a name="_general_program_flow"></a>6.3.1. General program flow</h4></div></div></div><p>The general program flow is as follows:</p><p><code class="literal">com.cloudera.sqoop.Sqoop</code> is the main class and implements <span class="emphasis"><em>Tool</em></span>. A new
+instance is launched with <code class="literal">ToolRunner</code>. The first argument to Sqoop is
+a string identifying the name of a <code class="literal">SqoopTool</code> to run. The <code class="literal">SqoopTool</code>
+itself drives the execution of the user&#8217;s requested operation (e.g.,
+import, export, codegen, etc).</p><p>The <code class="literal">SqoopTool</code> API is specified fully in
+<a class="ulink" href="http://wiki.github.com/cloudera/sqoop/sip-1" target="_top">SIP-1</a>.</p><p>The chosen <code class="literal">SqoopTool</code> will parse the remainder of the arguments,
+setting the appropriate fields in the <code class="literal">SqoopOptions</code> class. It will
+then run its body.</p><p>Then in the SqoopTool&#8217;s <code class="literal">run()</code> method, the import or export or other
+action proper is executed.  Typically, a <code class="literal">ConnManager</code> is then
+instantiated based on the data in the <code class="literal">SqoopOptions</code>.  The
+<code class="literal">ConnFactory</code> is used to get a <code class="literal">ConnManager</code> from a <code class="literal">ManagerFactory</code>;
+the mechanics of this were described in an earlier section. Imports
+and exports and other large data motion tasks typically run a
+MapReduce job to operate on a table in a parallel, reliable fashion.
+An import does not specifically need to be run via a MapReduce job;
+the <code class="literal">ConnManager.importTable()</code> method is left to determine how best
+to run the import. Each main action is actually controlled by the
+<code class="literal">ConnMananger</code>, except for the generating of code, which is done by
+the <code class="literal">CompilationManager</code> and <code class="literal">ClassWriter</code>. (Both in the
+<code class="literal">com.cloudera.sqoop.orm</code> package.) Importing into Hive is also
+taken care of via the <code class="literal">com.cloudera.sqoop.hive.HiveImport</code> class
+after the <code class="literal">importTable()</code> has completed. This is done without concern
+for the <code class="literal">ConnManager</code> implementation used.</p><p>A ConnManager&#8217;s <code class="literal">importTable()</code> method receives a single argument of
+type <code class="literal">ImportJobContext</code> which contains parameters to the method. This
+class may be extended with additional parameters in the future, which
+optionally further direct the import operation. Similarly, the
+<code class="literal">exportTable()</code> method receives an argument of type
+<code class="literal">ExportJobContext</code>. These classes contain the name of the table to
+import/export, a reference to the <code class="literal">SqoopOptions</code> object, and other
+related data.</p></div><div class="section" title="6.3.2. Subpackages"><div class="titlepage"><div><div><h4 class="title"><a name="_subpackages"></a>6.3.2. Subpackages</h4></div></div></div><p>The following subpackages under <code class="literal">com.cloudera.sqoop</code> exist:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<code class="literal">hive</code> - Facilitates importing data to Hive.
+</li><li class="listitem">
+<code class="literal">io</code> - Implementations of <code class="literal">java.io.*</code> interfaces (namely, <span class="emphasis"><em>OutputStream</em></span> and
+  <span class="emphasis"><em>Writer</em></span>).
+</li><li class="listitem">
+<code class="literal">lib</code> - The external public API (described earlier).
+</li><li class="listitem">
+<code class="literal">manager</code> - The <code class="literal">ConnManager</code> and <code class="literal">ManagerFactory</code> interface and their
+  implementations.
+</li><li class="listitem">
+<code class="literal">mapreduce</code> - Classes interfacing with the new (0.20+) MapReduce API.
+</li><li class="listitem">
+<code class="literal">orm</code> - Code auto-generation.
+</li><li class="listitem">
+<code class="literal">tool</code> - Implementations of <code class="literal">SqoopTool</code>.
+</li><li class="listitem">
+<code class="literal">util</code> - Miscellaneous utility classes.
+</li></ul></div><p>The <code class="literal">io</code> package contains <span class="emphasis"><em>OutputStream</em></span> and <span class="emphasis"><em>BufferedWriter</em></span> implementations
+used by direct writers to HDFS. The <code class="literal">SplittableBufferedWriter</code> allows a single
+BufferedWriter to be opened to a client which will, under the hood, write to
+multiple files in series as they reach a target threshold size. This allows
+unsplittable compression libraries (e.g., gzip) to be used in conjunction with
+Sqoop import while still allowing subsequent MapReduce jobs to use multiple
+input splits per dataset. The large object file storage (see
+<a class="ulink" href="http://wiki.github.com/cloudera/sqoop/sip-3" target="_top">SIP-3</a>) system&#8217;s code
+lies in the <code class="literal">io</code> package as well.</p><p>The <code class="literal">mapreduce</code> package contains code that interfaces directly with
+Hadoop MapReduce. This package&#8217;s contents are described in more detail
+in the next section.</p><p>The <code class="literal">orm</code> package contains code used for class generation. It depends on the
+JDK&#8217;s tools.jar which provides the com.sun.tools.javac package.</p><p>The <code class="literal">util</code> package contains various utilities used throughout Sqoop:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<code class="literal">ClassLoaderStack</code> manages a stack of <code class="literal">ClassLoader</code> instances used by the
+  current thread. This is principly used to load auto-generated code into the
+  current thread when running MapReduce in local (standalone) mode.
+</li><li class="listitem">
+<code class="literal">DirectImportUtils</code> contains convenience methods used by direct HDFS
+  importers.
+</li><li class="listitem">
+<code class="literal">Executor</code> launches external processes and connects these to stream handlers
+  generated by an AsyncSink (see more detail below).
+</li><li class="listitem">
+<code class="literal">ExportException</code> is thrown by <code class="literal">ConnManagers</code> when exports fail.
+</li><li class="listitem">
+<code class="literal">ImportException</code> is thrown by <code class="literal">ConnManagers</code> when imports fail.
+</li><li class="listitem">
+<code class="literal">JdbcUrl</code> handles parsing of connect strings, which are URL-like but not
+  specification-conforming. (In particular, JDBC connect strings may have
+  <code class="literal">multi:part:scheme://</code> components.)
+</li><li class="listitem">
+<code class="literal">PerfCounters</code> are used to estimate transfer rates for display to the user.
+</li><li class="listitem">
+<code class="literal">ResultSetPrinter</code> will pretty-print a <span class="emphasis"><em>ResultSet</em></span>.
+</li></ul></div><p>In several places, Sqoop reads the stdout from external processes. The most
+straightforward cases are direct-mode imports as performed by the
+<code class="literal">LocalMySQLManager</code> and <code class="literal">DirectPostgresqlManager</code>. After a process is spawned by
+<code class="literal">Runtime.exec()</code>, its stdout (<code class="literal">Process.getInputStream()</code>) and potentially stderr
+(<code class="literal">Process.getErrorStream()</code>) must be handled. Failure to read enough data from
+both of these streams will cause the external process to block before writing
+more. Consequently, these must both be handled, and preferably asynchronously.</p><p>In Sqoop parlance, an "async sink" is a thread that takes an <code class="literal">InputStream</code> and
+reads it to completion. These are realized by <code class="literal">AsyncSink</code> implementations. The
+<code class="literal">com.cloudera.sqoop.util.AsyncSink</code> abstract class defines the operations
+this factory must perform. <code class="literal">processStream()</code> will spawn another thread to
+immediately begin handling the data read from the <code class="literal">InputStream</code> argument; it
+must read this stream to completion. The <code class="literal">join()</code> method allows external threads
+to wait until this processing is complete.</p><p>Some "stock" <code class="literal">AsyncSink</code> implementations are provided: the <code class="literal">LoggingAsyncSink</code> will
+repeat everything on the <code class="literal">InputStream</code> as log4j INFO statements. The
+<code class="literal">NullAsyncSink</code> consumes all its input and does nothing.</p><p>The various <code class="literal">ConnManagers</code> that make use of external processes have their own
+<code class="literal">AsyncSink</code> implementations as inner classes, which read from the database tools
+and forward the data along to HDFS, possibly performing formatting conversions
+in the meantime.</p></div><div class="section" title="6.3.3. Interfacing with MapReduce"><div class="titlepage"><div><div><h4 class="title"><a name="_interfacing_with_mapreduce"></a>6.3.3. Interfacing with MapReduce</h4></div></div></div><p>Sqoop schedules MapReduce jobs to effect imports and exports.
+Configuration and execution of MapReduce jobs follows a few common
+steps (configuring the <code class="literal">InputFormat</code>; configuring the <code class="literal">OutputFormat</code>;
+setting the <code class="literal">Mapper</code> implementation; etc&#8230;). These steps are
+formalized in the <code class="literal">com.cloudera.sqoop.mapreduce.JobBase</code> class.
+The <code class="literal">JobBase</code> allows a user to specify the <code class="literal">InputFormat</code>,
+<code class="literal">OutputFormat</code>, and <code class="literal">Mapper</code> to use.</p><p><code class="literal">JobBase</code> itself is subclassed by <code class="literal">ImportJobBase</code> and <code class="literal">ExportJobBase</code>
+which offer better support for the particular configuration steps
+common to import or export-related jobs, respectively.
+<code class="literal">ImportJobBase.runImport()</code> will call the configuration steps and run
+a job to import a table to HDFS.</p><p>Subclasses of these base classes exist as well. For example,
+<code class="literal">DataDrivenImportJob</code> uses the <code class="literal">DataDrivenDBInputFormat</code> to run an
+import. This is the most common type of import used by the various
+<code class="literal">ConnManager</code> implementations available. MySQL uses a different class
+(<code class="literal">MySQLDumpImportJob</code>) to run a direct-mode import. Its custom
+<code class="literal">Mapper</code> and <code class="literal">InputFormat</code> implementations reside in this package as
+well.</p></div></div></div></div><div class="footer-text"><span align="center"><a href="index.html"><img src="images/home.png" alt="Documentation Home"></a></span><br>
+  This document was built from Sqoop source available at
+  <a href="https://git-wip-us.apache.org/repos/asf?p=sqoop.git">https://git-wip-us.apache.org/repos/asf?p=sqoop.git</a>.
+  </div></body></html>
