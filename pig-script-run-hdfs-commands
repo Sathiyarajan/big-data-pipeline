@@ -1,0 +1,1000 @@
+ 1089  jps
+ 1090  clear
+ 1091  ls
+ 1092  ./hcat –e "CREATE TABLE IF NOT EXISTS besant.employee ( eid int, name String, 
+ 1093     salary String, destination String) \
+ 1094  COMMENT 'Employee details' \
+ 1095  ROW FORMAT DELIMITED \
+ 1096  FIELDS TERMINATED BY ‘\t’ \
+ 1097  LINES TERMINATED BY ‘\n’ \
+ 1098  STORED AS TEXTFILE;"
+ 1099  ./hcat –e "CREATE TABLE IF NOT EXISTS employee ( eid int, name String, salary String, destination String) \
+ 1100  COMMENT 'Employee details' \
+ 1101  ROW FORMAT DELIMITED \
+ 1102  FIELDS TERMINATED BY ‘\t’ \
+ 1103  LINES TERMINATED BY ‘\n’ \
+ 1104  STORED AS TEXTFILE;"
+ 1105  sqoop
+ 1106  jps
+ 1107  clear
+ 1108  ls
+ 1109  cd /opt/
+ 1110  ls
+ 1111  mkdir zookeeper
+ 1112  cd zookeeper/
+ 1113  ls
+ 1114  wget https://apache.org/dist/zookeeper/zookeeper-3.4.10/zookeeper-3.4.10.tar.gz
+ 1115  cd ..
+ 1116  ls
+ 1117  mkdir accumulo
+ 1118  cd accumulo/
+ 1119  ls
+ 1120  git clone git clone https://github.com/apache/accumulo.git
+ 1121  git clone https://github.com/apache/accumulo.git
+ 1122  ls
+ 1123  cd ../zookeeper/
+ 1124  ls
+ 1125  clear
+ 1126  ls
+ 1127  tar -xvf zookeeper-3.4.10.tar.gz 
+ 1128  ld
+ 1129  ls
+ 1130  cd zookeeper-3.4.10
+ 1131  ls
+ 1132  clear
+ 1133  ls
+ 1134  rm -rf contrib/
+ 1135  ls
+ 1136  rm -rf docs/
+ 1137  ls
+ 1138  clear
+ 1139  ls
+ 1140  cd conf/
+ 1141  ls
+ 1142  cp zoo_sample.cfg zoo.cfg
+ 1143  ls
+ 1144  cat zoo.cfg 
+ 1145  sudo service zookeeper stop
+ 1146  jps
+ 1147  clear
+ 1148  ls
+ 1149  vim zoo.cfg 
+ 1150  cd ..
+ 1151  ls
+ 1152  cd bin/
+ 1153  ;s
+ 1154  clear
+ 1155  ls
+ 1156  ./zkServer.sh start
+ 1157  js
+ 1158  clear
+ 1159  jps
+ 1160  clear
+ 1161  cd /opt/
+ 1162  cd accumulo/
+ 1163  ls
+ 1164  cler
+ 1165  clear
+ 1166  ls
+ 1167  wget 
+ 1168  ls
+ 1169  ls -lstrh
+ 1170  rm -rf accumulo-1.8.0-bin.tar.gz 
+ 1171  clear
+ 1172  ls
+ 1173  wget http://archive.apache.org/dist/accumulo/1.8.0/accumulo-1.8.0-bin.tar.gz
+ 1174  l
+ 1175  ls
+ 1176  clear
+ 1177  ls
+ 1178  tar -xvf accumulo-1.8.0-bin.tar.gz 
+ 1179  ls
+ 1180  cd accumulo-1.8.0
+ 1181  ls
+ 1182  cd bin/
+ 1183  clear
+ 1184  ls
+ 1185  ./bootstrap_config.sh
+ 1186  cd ..
+ 1187  ls
+ 1188  cd conf/
+ 1189  ls
+ 1190  clear
+ 1191  ls
+ 1192  vim accumulo-env.sh 
+ 1193  vim accumulo-site.xml 
+ 1194  cd ..
+ 1195  ls
+ 1196  cd bin/
+ 1197  ls
+ 1198  ./accumulo init
+ 1199  vim ../conf/accumulo-env.sh
+ 1200  vim /root/.bash
+ 1201  vim /root/.bashrc 
+ 1202  source /root/.bashrc 
+ 1203  ./accumulo init
+ 1204  ls
+ 1205  cd ../conf/
+ 1206  ls
+ 1207  vim accumulo-site.xml 
+ 1208  ulimit -n 32768
+ 1209  ifconfig
+ 1210  vim slaves 
+ 1211  clear
+ 1212  vim /etc/hosts
+ 1213  vim slaves 
+ 1214  cd ../bin/
+ 1215  ls
+ 1216  ./start-all.sh 
+ 1217  ls
+ 1218  ./stop-all.sh 
+ 1219  jps
+ 1220  clear
+ 1221  ls
+ 1222  jps
+ 1223  clear
+ 1224  ls
+ 1225  jps
+ 1226  clear
+ 1227  ls
+ 1228  ps
+ 1229  jps
+ 1230  clear
+ 1231  exit
+ 1232  clear
+ 1233  cd /opt/accumulo/
+ 1234  ls
+ 1235  cd accumulo-1.8.0
+ 1236  ls
+ 1237  cd logs/
+ 1238  ls
+ 1239  ls -lstrh
+ 1240  cat 192.168.1.2
+ 1241  cat tserver_tech-vm.debug.log
+ 1242  jps
+ 1243  hdfs dfs -ls /accumulo
+ 1244  hdfs dfs -mkdir /accumulo
+ 1245  cd ..
+ 1246  ls
+ 1247  hdfs dfs -rm -r /accumulo
+ 1248  cd conf/
+ 1249  ls
+ 1250  clear
+ 1251  ls
+ 1252  vim accumulo-c
+ 1253  vim accumulo-site.xml 
+ 1254  vim accumulo-env.sh 
+ 1255  clear
+ 1256  ls
+ 1257  cd ..
+ 1258  ls
+ 1259  cd ../..
+ 1260  cd hbase/
+ 1261  ls
+ 1262  cd hbase-1.2.10
+ 1263  clear
+ 1264  ls
+ 1265  cd bin/
+ 1266  ;s
+ 1267  clear
+ 1268  ls
+ 1269  ./start-hbase.sh 
+ 1270  jps
+ 1271  ./hbase shel
+ 1272  ./hbase shell
+ 1273  clear
+ 1274  cd /opt/sqoop/
+ 1275  ls
+ 1276  cd sqoop-1.4.6.bin__hadoop-2.0.4-alpha
+ 1277  ls
+ 1278  clear
+ 1279  ls
+ 1280  sqoop
+ 1281  clear
+ 1282  ls
+ 1283  sqoop version
+ 1284  clear
+ 1285  ls
+ 1286  cat /root/.bashrc 
+ 1287  exit
+ 1288  clar
+ 1289  clear
+ 1290  ls
+ 1291  cd /opt/
+ 1292  ls
+ 1293  cd hadoop/
+ 1294  ls
+ 1295  clear
+ 1296  cd hadoop-2.7.3
+ 1297  ls
+ 1298  clear
+ 1299  cd sbin/
+ 1300  ls
+ 1301  clear
+ 1302  jps
+ 1303  ./start-all.sh 
+ 1304  clear
+ 1305  ls
+ 1306  jps
+ 1307  hdfs
+ 1308  clear
+ 1309  ls
+ 1310  mysql
+ 1311  mysql -u root -proot
+ 1312  cd /opt/zookeeper
+ 1313  ls
+ 1314  cd zookeeper-3.4.10
+ 1315  pwd
+ 1316  jps
+ 1317  exit
+ 1318  clear
+ 1319  ls
+ 1320  jps
+ 1321  clear
+ 1322  cd /opt/
+ 1323  ls
+ 1324  clear
+ 1325  hisotyr
+ 1326  history
+ 1327  env | grep FLUME
+ 1328  history
+ 1329  history | grep kafka
+ 1330  cd zookeeper
+ 1331  ls
+ 1332  clear
+ 1333  ls
+ 1334  cd zookeeper-3.4.10
+ 1335  ls
+ 1336  cd conf/
+ 1337  ls
+ 1338  vim zoo
+ 1339  vim zoo.cfg 
+ 1340  history | grep flume
+ 1341  cat /root/.bashrc 
+ 1342  flume-ng
+ 1343  flume-ng version
+ 1344  clear
+ 1345  history | grep spark
+ 1346  clear
+ 1347  ls
+ 1348  cd /opt/
+ 1349  ls
+ 1350  rm -rf accumulo/
+ 1351  ls
+ 1352  rm -rf teamviewer/
+ 1353  ls
+ 1354  clear
+ 1355  ls
+ 1356  cd zookeeper
+ 1357  l
+ 1358  cd ..
+ 1359  ls
+ 1360  cd zookeeper-3.4.10/
+ 1361  ls
+ 1362  cd ..
+ 1363  ls
+ 1364  cd zookeeper
+ 1365  ls
+ 1366  cd zookeeper-3.4.10
+ 1367  ls
+ 1368  cd bin/
+ 1369  ls
+ 1370  ./zkServer.sh stop
+ 1371  cd ..
+ 1372  ls
+ 1373  cd conf/
+ 1374  ls
+ 1375  clear
+ 1376  vim zoo.cfg 
+ 1377  cd ..
+ 1378  ls
+ 1379  jps
+ 1380  cd ..
+ 1381  ls
+ 1382  cd ..
+ 1383  l
+ 1384  rm -rf zookeeper-3.4.10/
+ 1385  ls
+ 1386  clear
+ 1387  ls
+ 1388  cd flume/
+ 1389  ls
+ 1390  rm -rf apache-flume-1.9.0-bin.tar.gz 
+ 1391  ls
+ 1392  cd ..
+ 1393  ls
+ 1394  cd hadoop/
+ 1395  ls
+ 1396  rm -rf hadoop-2.7.3.tar.gz 
+ 1397  ls
+ 1398  cd ..
+ 1399  ls
+ 1400  cd hbase/
+ 1401  ls
+ 1402  rm -rf hbase-1.2.10-bin.tar.gz 
+ 1403  ls
+ 1404  cd ..
+ 1405  s
+ 1406  clear
+ 1407  ls
+ 1408  cd hive/
+ 1409  ls
+ 1410  clear
+ 1411  ls
+ 1412  rm -rf apache-hive-1.2.1-bin
+ 1413  tar -xvf apache-hive-1.2.1-bin.tar.gz 
+ 1414  ls
+ 1415  cd ..
+ 1416  ls
+ 1417  cd hive/
+ 1418  ls
+ 1419  rm -rf apache-hive-1.2.1-bin.tar.gz 
+ 1420  ls
+ 1421  cd ll
+ 1422  cd ..
+ 1423  ls
+ 1424  clear
+ 1425  ls
+ 1426  cd kafka/
+ 1427  ls
+ 1428  rm -rf kafka_2.11-2.1.0.tgz 
+ 1429  ls
+ 1430  cd ..
+ 1431  ls
+ 1432  cd pig/
+ 1433  ls
+ 1434  clear
+ 1435  rm -rf pig-0.16.0.tar.gz 
+ 1436  ls
+ 1437  cd ..
+ 1438  ls
+ 1439  cd spark/
+ 1440  ls
+ 1441  rm -rf spark-2.2.1-bin-hadoop2.7.tgz 
+ 1442  ls
+ 1443  cd ..
+ 1444  ls
+ 1445  cd sqoop/
+ 1446  ls
+ 1447  rm -rf sqoop-1.4.6.bin__hadoop-2.0.4-alpha.tar.gz 
+ 1448  ls
+ 1449  cd ..
+ 1450  ls
+ 1451  clear
+ 1452  ls
+ 1453  cd zookeeper/
+ 1454  ls
+ 1455  rm -rf zookeeper-3.4.10.tar.gz 
+ 1456  ls
+ 1457  cd ..
+ 1458  ls
+ 1459  cd hive/
+ 1460  ls
+ 1461  cd apache-hive-1.2.1-bin/
+ 1462  ls
+ 1463  clear
+ 1464  ls
+ 1465  cd bin/
+ 1466  cd ..
+ 1467  ls
+ 1468  cd bin/
+ 1469  ls
+ 1470  clear
+ 1471  /opt/hive/apache-hive-1.2.1-bin/bin/schematool -initSchema -dbType derby
+ 1472  cd ..
+ 1473  ls
+ 1474  cd ..
+ 1475  ls
+ 1476  cd ..
+ 1477  ls
+ 1478  git clone https://github.com/Sathiyarajan/big-data-e2e.git
+ 1479  cd big-data-e2e/
+ 1480  ls
+ 1481  clear
+ 1482  git status
+ 1483  git checkout -b hadoop-installation-setup-full
+ 1484  git status
+ 1485  cp ../hadoop/ .
+ 1486  cp -r ../hadoop/ .
+ 1487  git status
+ 1488  git add .
+ 1489  git status
+ 1490  git commit -m "added the hadoop installation setup"
+ 1491  ls
+ 1492  git status
+ 1493  history | grep git
+ 1494  git status
+ 1495  git push origin hadoop-installation-setup-full
+ 1496  ls
+ 1497  ls ../
+ 1498  cp -r ../flume/ .
+ 1499  git checkout -b flume-installation-setup-full
+ 1500  git status
+ 1501  git add .
+ 1502  git status
+ 1503  git commit -m "added flume installation setup"
+ 1504  git status
+ 1505  git push origin flume-installation-setup-full
+ 1506  git status
+ 1507  ls ../
+ 1508  git checkout -b "added hbase installation setps"
+ 1509  git checkout -b hbase-installation-setup-full
+ 1510  git status
+ 1511  cp -r ../hbase/ .\
+ 1512  cp -r ../hbase/ .
+ 1513  ls
+ 1514  git status
+ 1515  git add .
+ 1516  git status
+ 1517  git commit -m "added hbase installation setup"
+ 1518  git status
+ 1519  clear
+ 1520  git status
+ 1521  git push origin hbase-installation-setup-full
+ 1522  clear
+ 1523  ls
+ 1524  ls ../
+ 1525  ls
+ 1526  cp -r ../hive/ .
+ 1527  ls
+ 1528  git checkout -b hive-installation-setup
+ 1529  git status
+ 1530  git add .
+ 1531  clear
+ 1532  ls
+ 1533  git status
+ 1534  git commit -m "added hive installation setup"
+ 1535  git status
+ 1536  git push origin hive-installation-setup
+ 1537  ls ../
+ 1538  cp ../kafka/
+ 1539  cp -r ../kafka/ .
+ 1540  git checkout -b "kafka-installation-setup"
+ 1541  git status
+ 1542  git commit -m 
+ 1543  git status
+ 1544  git ..
+ 1545  git add .
+ 1546  clear
+ 1547  ls
+ 1548  git commit -m "added kafka installation setup"
+ 1549  git status
+ 1550  git push origin kafka-installation-setup
+ 1551  git status
+ 1552  cleat
+ 1553  cleatr
+ 1554  clear
+ 1555  ls
+ 1556  ls ../
+ 1557  ls
+ 1558  cp -r ../pig/ .
+ 1559  ls
+ 1560  git status
+ 1561  git checkout -b pig-installation-setup
+ 1562  git status
+ 1563  git add .
+ 1564  git status
+ 1565  git commit -m "added pig installation steps"
+ 1566  git status
+ 1567  git push origin pig-installation-setup
+ 1568  git status
+ 1569  ls ../
+ 1570  cp -r ../sqoop/ .
+ 1571  ls
+ 1572  git status
+ 1573  git brach
+ 1574  git branch
+ 1575  git status
+ 1576  git checkout -b sqoop-installation-setup
+ 1577  ls
+ 1578  cd sqoop/
+ 1579  ls
+ 1580  cd ..
+ 1581  lks
+ 1582  clear
+ 1583  ls
+ 1584  git status
+ 1585  git add .
+ 1586  git status
+ 1587  git commit -m "added sqoop installation setup"
+ 1588  git status
+ 1589  git push origin sqoop-installation-setup
+ 1590  ls ../.
+ 1591  ls
+ 1592  git status
+ 1593  ls
+ 1594  cp -r ../zookeeper/ .
+ 1595  history | zookeeper
+ 1596  history | grep zookeeper
+ 1597  git status
+ 1598  git checkout -b zookeeper-install-setup
+ 1599  git status
+ 1600  git add .
+ 1601  git status
+ 1602  git commit -m "added zookeeper installation setup files"
+ 1603  git status
+ 1604  git push origin zookeeper-install-setup
+ 1605  jps
+ 1606  ls
+ 1607  du -h
+ 1608  du -hs
+ 1609  ls
+ 1610  cd ..
+ 1611  ls
+ 1612  pwd
+ 1613  cd big-data-e2e/
+ 1614  ls
+ 1615  mkdir scripts
+ 1616  mkdir data
+ 1617  mkdir java
+ 1618  mkdir scala
+ 1619  mkdir documents-training
+ 1620  ls
+ 1621  clear
+ 1622  ls
+ 1623  git checkout -b initial-commit-docs
+ 1624  git status
+ 1625  git add .
+ 1626  git status
+ 1627  git add documents-training/
+ 1628  git status
+ 1629  cd documents-training/
+ 1630  ls
+ 1631  vim reference
+ 1632  git status
+ 1633  git add .
+ 1634  git status
+ 1635  ls
+ 1636  pwd
+ 1637  cd ..
+ 1638  ls
+ 1639  git status
+ 1640  cd data/
+ 1641  vim new.data
+ 1642  cd ..
+ 1643  ls
+ 1644  git status
+ 1645  git add .
+ 1646  git status
+ 1647  ls
+ 1648  cd java/
+ 1649  ls
+ 1650  cp /home/ubuntu/Downloads/java-training-buchalka-master* .
+ 1651  cp -r /home/ubuntu/Downloads/java-training-buchalka-master* .
+ 1652  ls
+ 1653  rm -rf java-training-buchalka-master22r2
+ 1654  rm -rf java-training-buchalka-master.zip 
+ 1655  ls
+ 1656  clear
+ 1657  cp -r /home/ubuntu/Downloads/java-training-buchalka-master/ .
+ 1658  ls
+ 1659  cd java-training-buchalka-master/
+ 1660  ls
+ 1661  rm -rf .gitignore 
+ 1662  ls
+ 1663  cd ..
+ 1664  ls
+ 1665  cd ..
+ 1666  ls
+ 1667  git status
+ 1668  git add .
+ 1669  git commit -m "java document files and reference initial commit"
+ 1670  git status
+ 1671  git push origin initial-commit-docs
+ 1672  clear
+ 1673  ls
+ 1674  cp /root/.bashrc 
+ 1675  cp /root/.bashrc .
+ 1676  ls
+ 1677  git status
+ 1678  git add .
+ 1679  git checkout -b bashrc-env-file-add
+ 1680  git status
+ 1681  git commit -m "bashrc environment files"
+ 1682  git push origin bashrc-env-file-add
+ 1683  clear
+ 1684  jps
+ 1685  cd ../hadoop/
+ 1686  ls
+ 1687  cd hadoop-2.7.3/
+ 1688  ls
+ 1689  cd sbin/
+ 1690  ls
+ 1691  clear
+ 1692  ./stop-all.sh 
+ 1693  clear
+ 1694  ls
+ 1695  cd /opt/
+ 1696  ls
+ 1697  mkdir scala
+ 1698  cd scala/
+ 1699  ls
+ 1700  git clone https://github.com/nilan3/spark-scala-pipelines.git
+ 1701  cd ..
+ 1702  ls
+ 1703  cd hadoop/
+ 1704  ls
+ 1705  mkdir source 
+ 1706  cd source/
+ 1707  ls
+ 1708  cleat
+ 1709  wget https://archive.apache.org/dist/hadoop/core/hadoop-2.7.3/hadoop-2.7.3-src.tar.gz
+ 1710  tar -xvf hadoop-2.7.3-src.tar.gz 
+ 1711  ls
+ 1712  cd hadoop-2.7.3-src
+ 1713  ls
+ 1714  pwd
+ 1715  cd ..
+ 1716  ls
+ 1717  chmod 777 source/
+ 1718  chmod 777 source/*
+ 1719  ls
+ 1720  cd source/
+ 1721  ls
+ 1722  rm -rf hadoop-2.7.3-src.tar.gz 
+ 1723  ls
+ 1724  cd hadoop-2.7.3-src/
+ 1725  ls
+ 1726  pwd
+ 1727  exit
+ 1728  jps
+ 1729  clear
+ 1730  ls
+ 1731  cd ..
+ 1732  ls
+ 1733  tar -xvf pig-0.16.0-src.tar.gz 
+ 1734  cd pig-0.16.0-src
+ 1735  ls
+ 1736  clear
+ 1737  ls
+ 1738  cd ..
+ 1739  rm -rf pig-0.16.0-src*
+ 1740  tar -xvf apache-parquet-1.9.0.tar.gz 
+ 1741  ls
+ 1742  cd apache-parquet-1.9.0
+ 1743  ls
+ 1744  pwd
+ 1745  mvn clean install -DskipTests
+ 1746  exit
+ 1747  clear
+ 1748  cd /
+ 1749  du -hs
+ 1750  cd /home/ubuntu/
+ 1751  du -hs
+ 1752  crontab -l
+ 1753  cat /home/ubuntu/openebs/k8s/free-up-memory.sh
+ 1754  /home/ubuntu/openebs/k8s/free-up-memory.sh
+ 1755  free -h
+ 1756  clear
+ 1757  ls
+ 1758  ps -e 
+ 1759  ps -ef 
+ 1760  ps -eH 
+ 1761  ps -e --forest
+ 1762  ps -u username
+ 1763  ps -u ubuntu
+ 1764  ps -u root
+ 1765  bg [%num]
+ 1766  bg [%num]useradd
+ 1767  useradd
+ 1768  ethtool
+ 1769  ethtool -h
+ 1770  ifconfig
+ 1771  iproute2
+ 1772  iproute
+ 1773  route
+ 1774  ipmask
+ 1775  iwconfig
+ 1776  ubuntu   14643  2210  0 Feb09 ?        00:00:00 /usr/lib/zeitgeist/zeitgeist/zeitgeist-fts
+ 1777  iwconfig
+ 1778  iwlist
+ 1779  iwlist keys
+ 1780  ifconfig -a
+ 1781  ip addr list
+ 1782  ip addr show
+ 1783  ip a l
+ 1784  route -n
+ 1785  ip route show
+ 1786  ip neigh list
+ 1787  ifcfg-eth0
+ 1788  iwlist wlan0 scan
+ 1789  ar
+ 1790  at
+ 1791  clear
+ 1792  atq
+ 1793  apt-get install at
+ 1794  clear
+ 1795  k
+ 1796  jps
+ 1797  cd /opt/hbase/
+ 1798  cd hbase-1.2.10/
+ 1799  ;s
+ 1800  clear
+ 1801  ls
+ 1802  cd bin/
+ 1803  ls
+ 1804  ./stop-hbase.sh 
+ 1805  jps
+ 1806  clear
+ 1807  jps
+ 1808  kill -9 7442 7317
+ 1809  jps
+ 1810  exit
+ 1811  jps
+ 1812  exot
+ 1813  exit
+ 1814  cd /root/.m2/
+ 1815  ls
+ 1816  du -hs
+ 1817  cd /home/ubuntu/.m2/
+ 1818  ls
+ 1819  du -hs
+ 1820  clear
+ 1821  ls
+ 1822  exit
+ 1823  clear
+ 1824  ls
+ 1825  clear
+ 1826  ls
+ 1827  cd /opt/
+ 1828  ls
+ 1829  clear
+ 1830  ls
+ 1831  jps
+ 1832  cd /home/
+ 1833  ls
+ 1834  cd ubuntu/
+ 1835  ls
+ 1836  cd Downloads/
+ 1837  ls
+ 1838  clear
+ 1839  ls
+ 1840  cd apache-flume-1.8.0-src
+ 1841  ls
+ 1842  ls /opt/flume/apache-flume-1.9.0-bin/lib/
+ 1843  ls /opt/flume/apache-flume-1.9.0-bin/lib/ | grep flume
+ 1844  ls
+ 1845  cd ..
+ 1846  ls
+ 1847  clear
+ 1848  ls
+ 1849  l
+ 1850  clear
+ 1851  ls
+ 1852  clear
+ 1853  ls
+ 1854  cd sqoop-1.99.7
+ 1855  ls
+ 1856  clear
+ 1857  ls
+ 1858  cd ..
+ 1859  ls
+ 1860  clear
+ 1861  l
+ 1862  ls
+ 1863  rm -rf apache-flume-1.4.0-src*
+ 1864  tar -xvf apache-hive-1.2.1-src.tar.gz 
+ 1865  ls
+ 1866  cd apache-hive-1.2.1-src
+ 1867  ls
+ 1868  clear
+ 1869  ls
+ 1870  clear
+ 1871  ls
+ 1872  mvn clean install -DskipTests
+ 1873  crontab -l
+ 1874  free -h
+ 1875  /home/ubuntu/openebs/k8s/free-up-memory.sh
+ 1876  free -h
+ 1877  ping google.com
+ 1878  cat /proc/mdstat
+ 1879  sudo umount /dev/md0
+ 1880  cd /dev/
+ 1881  ls
+ 1882  clear
+ 1883  ls
+ 1884  cd sda
+ 1885  ls sd*
+ 1886  sudo nano /etc/fstab
+ 1887  sudo cat /etc/fstab
+ 1888  vim /etc/fstab
+ 1889  clear
+ 1890  ls
+ 1891  clear
+ 1892  ls
+ 1893  clear
+ 1894  ls
+ 1895  cd /
+ 1896  ls
+ 1897  ls -lstrh
+ 1898  pwd
+ 1899  cd /usr/
+ 1900  ls
+ 1901  cd lib/
+ 1902  ;s
+ 1903  clear
+ 1904  ls
+ 1905  pwd
+ 1906  l
+ 1907  ls
+ 1908  env
+ 1909  env | grep UID
+ 1910  exit
+ 1911  date
+ 1912  exit
+ 1913  ls
+ 1914  cd /root/
+ 1915  ls
+ 1916  clear
+ 1917  ls
+ 1918  ls -a
+ 1919  ;s
+ 1920  ls
+ 1921  clear
+ 1922  ls
+ 1923  ls -a
+ 1924  vim .bashrc
+ 1925  clear
+ 1926  ls
+ 1927  free
+ 1928  free -h
+ 1929  ls
+ 1930  cd /root/
+ 1931  ls
+ 1932  ls -a
+ 1933  ls -a | grep history
+ 1934  whoami
+ 1935  ifconfig
+ 1936  ssh root@192.168.1.28
+ 1937  env
+ 1938  ls
+ 1939  cd /opt/
+ 1940  ls
+ 1941  clear
+ 1942  ls
+ 1943  pwd
+ 1944  du -h
+ 1945  du -hs
+ 1946  pwd
+ 1947  route
+ 1948  ifconfig
+ 1949  ls
+ 1950  ls -lstrh
+ 1951  cd flume/
+ 1952  ls
+ 1953  clear
+ 1954  ls
+ 1955  cd apache-flume-1.9.0-bin/
+ 1956  ls
+ 1957  ls -lstrh
+ 1958  chmod 000 README.md 
+ 1959  ls -lstrh
+ 1960  cat README.md
+ 1961  clear
+ 1962  ls
+ 1963  exit
+ 1964  clear
+ 1965  ls
+ 1966  ls -lstrh
+ 1967  chmod 777 README.md 
+ 1968  exit
+ 1969  ls
+ 1970  su sathya
+ 1971  mysql -u root -proot
+ 1972  jps
+ 1973  kill -9 1212
+ 1974  jps
+ 1975  kill -9 10738 10310 10906 10475 11071
+ 1976  jps
+ 1977  kill -9 11811
+ 1978  jps
+ 1979  sudo service zookeeper status
+ 1980  sudo service zookeeper stop
+ 1981  jps
+ 1982  clear
+ 1983  jps
+ 1984  sudo service zookeeper start
+ 1985  jps
+ 1986  clear
+ 1987  fdisk -l | less
+ 1988  lsblk
+ 1989  df -h
+ 1990  pstree
+ 1991  netstat -tupln | grep 2181
+ 1992  netstat -tupln | grep 900
+ 1993  netstat -tupln | grep 9000
+ 1994  netstat -tupln | grep 900
+ 1995  netstat -tupln | grep 2181
+ 1996  netstat -tupln | grep 9000
+ 1997  clear
+ 1998  ls
+ 1999  exit
+ 2000  clear
+ 2001  hdfs dfs -ls /pig-input
+ 2002  hdfs dfs -ls /
+ 2003  hdfs dfs -ls /pig-output
+ 2004  hdfs dfs -cat /pig-output/part-r-00000
+ 2005  hdfs dfs -copyToLocal /pig-output/part-r-00000 /home/ubuntu/
+ 2006  clear
+ 2007  ls
+ 2008  cd /opt/
+ 2009  ks
+ 2010  clear
+ 2011  ls
+ 2012  cd pig/
+ 2013  ls
+ 2014  cd ..
+ 2015  ls
+ 2016  cd big-data-e2e/
+ 2017  ls
+ 2018  clear
+ 2019  ls
+ 2020  cd pig/
+ 2021  ls
+ 2022  cd examples/
+ 2023  ls
+ 2024  cd Apache-Pig-Fonksiyonlar/
+ 2025  ls
+ 2026  clear
+ 2027  ls
+ 2028  vim MaxDurExam.pig 
+ 2029  pwd
+ 2030  ls
+ 2031  cd ..
+ 2032  ls
+ 2033  cd ..
+ 2034  ls
+ 2035  cd ..
+ 2036  ls
+ 2037  clear
+ 2038  ls
+ 2039  git status
+ 2040  git checkout -b pig-examples-branch-feb
+ 2041  git status
+ 2042  git add .
+ 2043  cd pig/examples/Apache-Pig-Fonksiyonlar
+ 2044  ls
+ 2045  rm -rf .git/
+ 2046  ls
+ 2047  rm -rf README.md 
+ 2048  ls
+ 2049  clear
+ 2050  ls
+ 2051  cd 
+ 2052  clear
+ 2053  cd /opt/
+ 2054  cd big-data-e2e/
+ 2055  ls
+ 2056  clear
+ 2057  ls
+ 2058  cd pig/
+ 2059  ls
+ 2060  cd ..
+ 2061  ls
+ 2062  git status
+ 2063  cd pig/examples/Apache-Pig-Fonksiyonlar
+ 2064  ls
+ 2065  cd ..
+ 2066  ls
+ 2067  rm -rf Hands-On-Hadoop/
+ 2068  ls
+ 2069  cd Apache-Pig-Fonksiyonlar/
+ 2070  ls
+ 2071  cp . ../
+ 2072  ls
+ 2073  cp Apache-Pig-Fonksiyonlar/* .
+ 2074  ls
+ 2075  rm -rf Apache-Pig-Fonksiyonlar/
+ 2076  ls
+ 2077  clear
+ 2078  ls
+ 2079  cd ..
+ 2080  ls
+ 2081  cd ..
+ 2082  ls
+ 2083  git status
+ 2084  git add .
+ 2085  clear
+ 2086  ls
+ 2087  git status
+ 2088  history > pig-script-run-hdfs-commands
