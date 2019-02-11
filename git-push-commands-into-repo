@@ -1,0 +1,12 @@
+
+git clone https://github.com/Sathiyarajan/big-data-e2e.git
+
+git checkout -b branch-<yourname>-<frameworkname>
+
+git add .
+
+git status
+
+git commit -m "valid reason to commit the code into the repo"
+
+git push origin <branch-name above>

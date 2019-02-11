@@ -1,0 +1,34 @@
+
+git clone https://github.com/Sathiyarajan/big-data-e2e.git
+
+git checkout -b branch-<yourname>-<frameworkname>
+
+git add .
+
+git status
+
+git commit -m "valid reason to commit the code into the repo"
+
+git push origin <branch-name above>
+
+example:
+
+1085  git add .
+ 1086  git commit -m "java document files and reference initial commit"
+ 1087  git status
+ 1088  git push origin initial-commit-docs
+ 1094  git status
+ 1095  git add .
+ 1096  git checkout -b bashrc-env-file-add
+ 1097  git status
+ 1098  git commit -m "bashrc environment files"
+ 1099  git push origin bashrc-env-file-add
+ 1117  git clone https://github.com/nilan3/spark-scala-pipelines.git
+ 1453  git clone https://github.com/SLPeoples/Hands-On-Hadoop.git
+ 1459  git clone https://github.com/talhaklc/Apache-Pig-Fonksiyonlar.git
+ 1522  git clone https://github.com/Sathiyarajan/big-data-e2e.git
+ 1565  git status
+ 1566  git checkout -b pig-examples-branch-feb
+ 1567  git status
+ 1568  git add .
+
