@@ -1,0 +1,25 @@
+products:
+   src/test/scala/test/MetricsTest.scala -> target/test-classes/test/MetricsTest$$anonfun$1.class
+   src/test/scala/test/MetricsTest.scala -> target/test-classes/test/MetricsTest$$anonfun$2.class
+   src/test/scala/test/MetricsTest.scala -> target/test-classes/test/MetricsTest$$anonfun$3.class
+   src/test/scala/test/MetricsTest.scala -> target/test-classes/test/MetricsTest$$anonfun$main$1.class
+   src/test/scala/test/MetricsTest.scala -> target/test-classes/test/MetricsTest$$anonfun$main$2.class
+   src/test/scala/test/MetricsTest.scala -> target/test-classes/test/MetricsTest$.class
+   src/test/scala/test/MetricsTest.scala -> target/test-classes/test/MetricsTest.class
+binary dependencies:
+   src/test/scala/test/MetricsTest.scala -> /home/ubuntu/.m2/repository/org/apache/spark/spark-core_2.11/2.1.0/spark-core_2.11-2.1.0.jar
+   src/test/scala/test/MetricsTest.scala -> /home/ubuntu/.m2/repository/org/apache/spark/spark-sql_2.11/2.1.0/spark-sql_2.11-2.1.0.jar
+   src/test/scala/test/MetricsTest.scala -> /home/ubuntu/.m2/repository/org/scala-lang/scala-library/2.11.7/scala-library-2.11.7.jar
+   src/test/scala/test/MetricsTest.scala -> /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar
+source dependencies:
+external dependencies:
+   src/test/scala/test/MetricsTest.scala -> com.datadog.metrics.MetricsCollector
+   src/test/scala/test/MetricsTest.scala -> com.datadog.metrics.MetricsCollectorFactory$
+class names:
+   src/test/scala/test/MetricsTest.scala -> test.MetricsTest
+   src/test/scala/test/MetricsTest.scala -> test.MetricsTest$
+   src/test/scala/test/MetricsTest.scala -> test.MetricsTest$$anonfun$1
+   src/test/scala/test/MetricsTest.scala -> test.MetricsTest$$anonfun$2
+   src/test/scala/test/MetricsTest.scala -> test.MetricsTest$$anonfun$3
+   src/test/scala/test/MetricsTest.scala -> test.MetricsTest$$anonfun$main$1
+   src/test/scala/test/MetricsTest.scala -> test.MetricsTest$$anonfun$main$2
