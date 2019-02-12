@@ -1,0 +1,591 @@
+
+/tmp/scm_prepare_node.XO1RuTNb
+using SSH_CLIENT to get the SCM hostname: 10.211.55.101 38902 22
+opening logging file descriptor
+Starting installation script...
+Acquiring installation lock...
+BEGIN flock 4
+END (0)
+Detecting root privileges...
+effective UID is 0
+Detecting distribution...
+BEGIN grep Tikanga /etc/redhat-release
+END (1)
+BEGIN grep 'CentOS release 5' /etc/redhat-release
+END (1)
+BEGIN grep 'Scientific Linux release 5' /etc/redhat-release
+END (1)
+BEGIN grep Santiago /etc/redhat-release
+END (1)
+BEGIN grep 'CentOS Linux release 6' /etc/redhat-release
+END (1)
+BEGIN grep 'CentOS release 6' /etc/redhat-release
+END (0)
+/etc/redhat-release ==> CentOS 6
+Detecting Cloudera Manager Server...
+CentOS release 6.10 (Final)
+BEGIN host -t PTR 10.211.55.101
+END (127)
+/tmp/scm_prepare_node.XO1RuTNb/scm_prepare_node.sh: line 104: host: command not found
+BEGIN which python
+END (0)
+BEGIN python -c 'import socket; import sys; s = socket.socket(socket.AF_INET); s.settimeout(5.0); s.connect((sys.argv[1], int(sys.argv[2]))); s.close();' 10.211.55.101 7182
+/usr/bin/python
+END (0)
+BEGIN which wget
+END (0)
+/usr/bin/wget
+BEGIN wget -qO- -T 1 -t 1 http://169.254.169.254/latest/meta-data/public-hostname && /bin/echo
+END (4)
+Installing package repositories...
+validating format of repository file /tmp/scm_prepare_node.XO1RuTNb/repos/rhel6/cloudera-manager.repo
+installing repository file /tmp/scm_prepare_node.XO1RuTNb/repos/rhel6/cloudera-manager.repo
+repository file /tmp/scm_prepare_node.XO1RuTNb/repos/rhel6/cloudera-manager.repo installed
+Refreshing package metadata...
+BEGIN yum --disablerepo=* --enablerepo=cloudera* clean all
+Loaded plugins: fastestmirror
+Cleaning repos: cloudera-manager
+Cleaning up Everything
+Cleaning up list of fastest mirrors
+END (0)
+BEGIN rm -Rf /var/cache/yum/x86_64
+END (0)
+BEGIN yum --disablerepo=* --enablerepo=cloudera* makecache
+Loaded plugins: fastestmirror
+Metadata Cache Created
+END (0)
+Installing oracle-j2sdk1.7 package...
+BEGIN yum --disablerepo=* --enablerepo=cloudera* list installed oracle-j2sdk1.7
+Loaded plugins: fastestmirror
+Installed Packages
+oracle-j2sdk1.7.x86_64 1.7.0+update67-1 @cloudera-manager
+END (0)
+BEGIN echo oracle-j2sdk1.7 cloudera-manager-agent cloudera-manager-daemons | grep oracle-j2sdk1.7
+END (0)
+oracle-j2sdk1.7 cloudera-manager-agent cloudera-manager-daemons
+BEGIN yum --disablerepo=* --enablerepo=cloudera* info oracle-j2sdk1.7
+Loaded plugins: fastestmirror
+Determining fastest mirrors
+Installed Packages
+Name : oracle-j2sdk1.7
+Arch : x86_64
+Version : 1.7.0+update67
+Release : 1
+Size : 279 M
+Repo : installed
+From repo : cloudera-manager
+Summary : no description given
+URL : http://example.com/no-uri-given
+License : unknown
+Description : no description given
+
+END (0)
+Release : 1
+BEGIN yum -y install oracle-j2sdk1.7.x86_64
+Loaded plugins: fastestmirror
+Setting up Install Process
+Loading mirror speeds from cached hostfile
+* base: centos.excellmedia.net
+* extras: centos.excellmedia.net
+* updates: centos.excellmedia.net
+Package oracle-j2sdk1.7-1.7.0+update67-1.x86_64 already installed and latest version
+Nothing to do
+END (0)
+remote package oracle-j2sdk1.7 installed
+Installing cloudera-manager-agent package...
+BEGIN yum --disablerepo=* --enablerepo=cloudera* list installed cloudera-manager-agent
+Loaded plugins: fastestmirror
+Error: No matching Packages to list
+END (1)
+BEGIN yum --disablerepo=* --enablerepo=cloudera* info cloudera-manager-agent
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+Available Packages
+Name : cloudera-manager-agent
+Arch : x86_64
+Version : 5.16.1
+Release : 1.cm5161.p0.1.el6
+Size : 9.3 M
+Repo : cloudera-manager
+Summary : The Cloudera Manager Agent
+URL : http://www.cloudera.com
+License : Proprietary
+Description : The Cloudera Manager Agent.
+:
+: The Agent is deployed to machines running services managed by
+: Cloudera Manager.
+
+END (0)
+Version : 5.16.1
+Release : 1.cm5161.p0.1.el6
+BEGIN yum -y install cloudera-manager-agent
+Loaded plugins: fastestmirror
+Setting up Install Process
+Loading mirror speeds from cached hostfile
+* base: centos.excellmedia.net
+* extras: centos.excellmedia.net
+* updates: centos.excellmedia.net
+Resolving Dependencies
+--> Running transaction check
+---> Package cloudera-manager-agent.x86_64 0:5.16.1-1.cm5161.p0.1.el6 will be installed
+--> Processing Dependency: libxslt for package: cloudera-manager-agent-5.16.1-1.cm5161.p0.1.el6.x86_64
+--> Processing Dependency: fuse for package: cloudera-manager-agent-5.16.1-1.cm5161.p0.1.el6.x86_64
+--> Processing Dependency: mod_ssl for package: cloudera-manager-agent-5.16.1-1.cm5161.p0.1.el6.x86_64
+--> Processing Dependency: httpd for package: cloudera-manager-agent-5.16.1-1.cm5161.p0.1.el6.x86_64
+--> Processing Dependency: fuse-libs for package: cloudera-manager-agent-5.16.1-1.cm5161.p0.1.el6.x86_64
+--> Processing Dependency: bind-utils for package: cloudera-manager-agent-5.16.1-1.cm5161.p0.1.el6.x86_64
+--> Processing Dependency: MySQL-python for package: cloudera-manager-agent-5.16.1-1.cm5161.p0.1.el6.x86_64
+--> Processing Dependency: cyrus-sasl-plain for package: cloudera-manager-agent-5.16.1-1.cm5161.p0.1.el6.x86_64
+--> Processing Dependency: cyrus-sasl-gssapi for package: cloudera-manager-agent-5.16.1-1.cm5161.p0.1.el6.x86_64
+--> Processing Dependency: python-psycopg2 for package: cloudera-manager-agent-5.16.1-1.cm5161.p0.1.el6.x86_64
+--> Processing Dependency: openssl-devel for package: cloudera-manager-agent-5.16.1-1.cm5161.p0.1.el6.x86_64
+--> Processing Dependency: /lib/lsb/init-functions for package: cloudera-manager-agent-5.16.1-1.cm5161.p0.1.el6.x86_64
+--> Running transaction check
+---> Package MySQL-python.x86_64 0:1.2.3-0.3.c1.1.el6 will be installed
+---> Package bind-utils.x86_64 32:9.8.2-0.68.rc1.el6_10.1 will be installed
+--> Processing Dependency: bind-libs = 32:9.8.2-0.68.rc1.el6_10.1 for package: 32:bind-utils-9.8.2-0.68.rc1.el6_10.1.x86_64
+--> Processing Dependency: liblwres.so.80()(64bit) for package: 32:bind-utils-9.8.2-0.68.rc1.el6_10.1.x86_64
+--> Processing Dependency: libisccfg.so.82()(64bit) for package: 32:bind-utils-9.8.2-0.68.rc1.el6_10.1.x86_64
+--> Processing Dependency: libisccc.so.80()(64bit) for package: 32:bind-utils-9.8.2-0.68.rc1.el6_10.1.x86_64
+--> Processing Dependency: libisc.so.83()(64bit) for package: 32:bind-utils-9.8.2-0.68.rc1.el6_10.1.x86_64
+--> Processing Dependency: libdns.so.81()(64bit) for package: 32:bind-utils-9.8.2-0.68.rc1.el6_10.1.x86_64
+--> Processing Dependency: libbind9.so.80()(64bit) for package: 32:bind-utils-9.8.2-0.68.rc1.el6_10.1.x86_64
+---> Package cyrus-sasl-gssapi.x86_64 0:2.1.23-15.el6_6.2 will be installed
+---> Package cyrus-sasl-plain.x86_64 0:2.1.23-15.el6_6.2 will be installed
+---> Package fuse.x86_64 0:2.8.3-5.el6 will be installed
+---> Package fuse-libs.x86_64 0:2.8.3-5.el6 will be installed
+---> Package httpd.x86_64 0:2.2.15-69.el6.centos will be installed
+--> Processing Dependency: httpd-tools = 2.2.15-69.el6.centos for package: httpd-2.2.15-69.el6.centos.x86_64
+--> Processing Dependency: apr-util-ldap for package: httpd-2.2.15-69.el6.centos.x86_64
+--> Processing Dependency: /etc/mime.types for package: httpd-2.2.15-69.el6.centos.x86_64
+--> Processing Dependency: libaprutil-1.so.0()(64bit) for package: httpd-2.2.15-69.el6.centos.x86_64
+--> Processing Dependency: libapr-1.so.0()(64bit) for package: httpd-2.2.15-69.el6.centos.x86_64
+---> Package libxslt.x86_64 0:1.1.26-2.el6_3.1 will be installed
+---> Package mod_ssl.x86_64 1:2.2.15-69.el6.centos will be installed
+---> Package openssl-devel.x86_64 0:1.0.1e-57.el6 will be installed
+--> Processing Dependency: zlib-devel for package: openssl-devel-1.0.1e-57.el6.x86_64
+--> Processing Dependency: krb5-devel for package: openssl-devel-1.0.1e-57.el6.x86_64
+---> Package python-psycopg2.x86_64 0:2.0.14-2.el6 will be installed
+--> Processing Dependency: libpq.so.5()(64bit) for package: python-psycopg2-2.0.14-2.el6.x86_64
+---> Package redhat-lsb-core.x86_64 0:4.0-7.el6.centos will be installed
+--> Processing Dependency: perl-Test-Simple for package: redhat-lsb-core-4.0-7.el6.centos.x86_64
+--> Processing Dependency: perl-Test-Harness for package: redhat-lsb-core-4.0-7.el6.centos.x86_64
+--> Processing Dependency: perl-ExtUtils-MakeMaker for package: redhat-lsb-core-4.0-7.el6.centos.x86_64
+--> Processing Dependency: perl-CGI for package: redhat-lsb-core-4.0-7.el6.centos.x86_64
+--> Processing Dependency: /usr/bin/time for package: redhat-lsb-core-4.0-7.el6.centos.x86_64
+--> Processing Dependency: /usr/bin/pax for package: redhat-lsb-core-4.0-7.el6.centos.x86_64
+--> Processing Dependency: /usr/bin/patch for package: redhat-lsb-core-4.0-7.el6.centos.x86_64
+--> Processing Dependency: /usr/bin/msgfmt for package: redhat-lsb-core-4.0-7.el6.centos.x86_64
+--> Processing Dependency: /usr/bin/man for package: redhat-lsb-core-4.0-7.el6.centos.x86_64
+--> Processing Dependency: /usr/bin/batch for package: redhat-lsb-core-4.0-7.el6.centos.x86_64
+--> Processing Dependency: /usr/bin/at for package: redhat-lsb-core-4.0-7.el6.centos.x86_64
+--> Processing Dependency: /bin/mailx for package: redhat-lsb-core-4.0-7.el6.centos.x86_64
+--> Processing Dependency: /bin/gettext for package: redhat-lsb-core-4.0-7.el6.centos.x86_64
+--> Processing Dependency: /bin/ed for package: redhat-lsb-core-4.0-7.el6.centos.x86_64
+--> Running transaction check
+---> Package apr.x86_64 0:1.3.9-5.el6_9.1 will be installed
+---> Package apr-util.x86_64 0:1.3.9-3.el6_0.1 will be installed
+---> Package apr-util-ldap.x86_64 0:1.3.9-3.el6_0.1 will be installed
+---> Package at.x86_64 0:3.1.10-49.el6 will be installed
+---> Package bind-libs.x86_64 32:9.8.2-0.68.rc1.el6_10.1 will be installed
+---> Package ed.x86_64 0:1.1-3.3.el6 will be installed
+---> Package gettext.x86_64 0:0.17-18.el6 will be installed
+--> Processing Dependency: cvs for package: gettext-0.17-18.el6.x86_64
+---> Package httpd-tools.x86_64 0:2.2.15-69.el6.centos will be installed
+---> Package krb5-devel.x86_64 0:1.10.3-65.el6 will be installed
+--> Processing Dependency: libkadm5(x86-64) = 1.10.3-65.el6 for package: krb5-devel-1.10.3-65.el6.x86_64
+--> Processing Dependency: libselinux-devel for package: krb5-devel-1.10.3-65.el6.x86_64
+--> Processing Dependency: libcom_err-devel for package: krb5-devel-1.10.3-65.el6.x86_64
+--> Processing Dependency: keyutils-libs-devel for package: krb5-devel-1.10.3-65.el6.x86_64
+---> Package mailcap.noarch 0:2.1.31-2.el6 will be installed
+---> Package mailx.x86_64 0:12.4-10.el6_10 will be installed
+---> Package man.x86_64 0:1.6f-39.el6 will be installed
+--> Processing Dependency: lzma for package: man-1.6f-39.el6.x86_64
+---> Package patch.x86_64 0:2.6-8.el6_9 will be installed
+---> Package pax.x86_64 0:3.4-10.1.el6 will be installed
+---> Package perl-CGI.x86_64 0:3.51-144.el6 will be installed
+---> Package perl-ExtUtils-MakeMaker.x86_64 0:6.55-144.el6 will be installed
+--> Processing Dependency: perl-devel for package: perl-ExtUtils-MakeMaker-6.55-144.el6.x86_64
+---> Package perl-Test-Harness.x86_64 0:3.17-144.el6 will be installed
+---> Package perl-Test-Simple.x86_64 0:0.92-144.el6 will be installed
+---> Package postgresql-libs.x86_64 0:8.4.20-8.el6_9 will be installed
+---> Package time.x86_64 0:1.7-38.el6 will be installed
+---> Package zlib-devel.x86_64 0:1.2.3-29.el6 will be installed
+--> Running transaction check
+---> Package cvs.x86_64 0:1.11.23-16.el6 will be installed
+---> Package keyutils-libs-devel.x86_64 0:1.4-5.el6 will be installed
+---> Package libcom_err-devel.x86_64 0:1.41.12-24.el6 will be installed
+---> Package libkadm5.x86_64 0:1.10.3-65.el6 will be installed
+---> Package libselinux-devel.x86_64 0:2.0.94-7.el6 will be installed
+--> Processing Dependency: libsepol-devel >= 2.0.32-1 for package: libselinux-devel-2.0.94-7.el6.x86_64
+--> Processing Dependency: pkgconfig(libsepol) for package: libselinux-devel-2.0.94-7.el6.x86_64
+---> Package perl-devel.x86_64 4:5.10.1-144.el6 will be installed
+--> Processing Dependency: perl(ExtUtils::ParseXS) for package: 4:perl-devel-5.10.1-144.el6.x86_64
+--> Processing Dependency: glibc-devel for package: 4:perl-devel-5.10.1-144.el6.x86_64
+--> Processing Dependency: gdbm-devel for package: 4:perl-devel-5.10.1-144.el6.x86_64
+--> Processing Dependency: db4-devel for package: 4:perl-devel-5.10.1-144.el6.x86_64
+---> Package xz-lzma-compat.x86_64 0:4.999.9-0.5.beta.20091007git.el6 will be installed
+--> Processing Dependency: xz = 4.999.9-0.5.beta.20091007git.el6 for package: xz-lzma-compat-4.999.9-0.5.beta.20091007git.el6.x86_64
+--> Running transaction check
+---> Package db4-devel.x86_64 0:4.7.25-22.el6 will be installed
+--> Processing Dependency: db4-cxx = 4.7.25-22.el6 for package: db4-devel-4.7.25-22.el6.x86_64
+--> Processing Dependency: libdb_cxx-4.7.so()(64bit) for package: db4-devel-4.7.25-22.el6.x86_64
+---> Package gdbm-devel.x86_64 0:1.8.0-39.el6 will be installed
+---> Package glibc-devel.x86_64 0:2.12-1.212.el6 will be installed
+--> Processing Dependency: glibc-headers = 2.12-1.212.el6 for package: glibc-devel-2.12-1.212.el6.x86_64
+--> Processing Dependency: glibc-headers for package: glibc-devel-2.12-1.212.el6.x86_64
+---> Package libsepol-devel.x86_64 0:2.0.41-4.el6 will be installed
+---> Package perl-ExtUtils-ParseXS.x86_64 1:2.2003.0-144.el6 will be installed
+---> Package xz.x86_64 0:4.999.9-0.5.beta.20091007git.el6 will be installed
+--> Running transaction check
+---> Package db4-cxx.x86_64 0:4.7.25-22.el6 will be installed
+---> Package glibc-headers.x86_64 0:2.12-1.212.el6 will be installed
+--> Processing Dependency: kernel-headers >= 2.2.1 for package: glibc-headers-2.12-1.212.el6.x86_64
+--> Processing Dependency: kernel-headers for package: glibc-headers-2.12-1.212.el6.x86_64
+--> Running transaction check
+---> Package kernel-headers.x86_64 0:2.6.32-754.10.1.el6 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+Package Arch Version Repository
+Size
+================================================================================
+Installing:
+cloudera-manager-agent x86_64 5.16.1-1.cm5161.p0.1.el6 cloudera-manager
+9.3 M
+Installing for dependencies:
+MySQL-python x86_64 1.2.3-0.3.c1.1.el6 base 86 k
+apr x86_64 1.3.9-5.el6_9.1 base 124 k
+apr-util x86_64 1.3.9-3.el6_0.1 base 87 k
+apr-util-ldap x86_64 1.3.9-3.el6_0.1 base 15 k
+at x86_64 3.1.10-49.el6 base 61 k
+bind-libs x86_64 32:9.8.2-0.68.rc1.el6_10.1 updates 892 k
+bind-utils x86_64 32:9.8.2-0.68.rc1.el6_10.1 updates 189 k
+cvs x86_64 1.11.23-16.el6 base 712 k
+cyrus-sasl-gssapi x86_64 2.1.23-15.el6_6.2 base 34 k
+cyrus-sasl-plain x86_64 2.1.23-15.el6_6.2 base 31 k
+db4-cxx x86_64 4.7.25-22.el6 base 589 k
+db4-devel x86_64 4.7.25-22.el6 base 6.6 M
+ed x86_64 1.1-3.3.el6 base 72 k
+fuse x86_64 2.8.3-5.el6 base 77 k
+fuse-libs x86_64 2.8.3-5.el6 base 74 k
+gdbm-devel x86_64 1.8.0-39.el6 base 26 k
+gettext x86_64 0.17-18.el6 base 1.8 M
+glibc-devel x86_64 2.12-1.212.el6 base 991 k
+glibc-headers x86_64 2.12-1.212.el6 base 620 k
+httpd x86_64 2.2.15-69.el6.centos base 836 k
+httpd-tools x86_64 2.2.15-69.el6.centos base 81 k
+kernel-headers x86_64 2.6.32-754.10.1.el6 updates 4.5 M
+keyutils-libs-devel x86_64 1.4-5.el6 base 29 k
+krb5-devel x86_64 1.10.3-65.el6 base 504 k
+libcom_err-devel x86_64 1.41.12-24.el6 base 33 k
+libkadm5 x86_64 1.10.3-65.el6 base 143 k
+libselinux-devel x86_64 2.0.94-7.el6 base 137 k
+libsepol-devel x86_64 2.0.41-4.el6 base 64 k
+libxslt x86_64 1.1.26-2.el6_3.1 base 452 k
+mailcap noarch 2.1.31-2.el6 base 27 k
+mailx x86_64 12.4-10.el6_10 updates 235 k
+man x86_64 1.6f-39.el6 base 265 k
+mod_ssl x86_64 1:2.2.15-69.el6.centos base 99 k
+openssl-devel x86_64 1.0.1e-57.el6 base 1.2 M
+patch x86_64 2.6-8.el6_9 base 91 k
+pax x86_64 3.4-10.1.el6 base 69 k
+perl-CGI x86_64 3.51-144.el6 base 210 k
+perl-ExtUtils-MakeMaker x86_64 6.55-144.el6 base 294 k
+perl-ExtUtils-ParseXS x86_64 1:2.2003.0-144.el6 base 46 k
+perl-Test-Harness x86_64 3.17-144.el6 base 232 k
+perl-Test-Simple x86_64 0.92-144.el6 base 113 k
+perl-devel x86_64 4:5.10.1-144.el6 base 424 k
+postgresql-libs x86_64 8.4.20-8.el6_9 base 202 k
+python-psycopg2 x86_64 2.0.14-2.el6 base 100 k
+redhat-lsb-core x86_64 4.0-7.el6.centos base 25 k
+time x86_64 1.7-38.el6 base 26 k
+xz x86_64 4.999.9-0.5.beta.20091007git.el6 base 137 k
+xz-lzma-compat x86_64 4.999.9-0.5.beta.20091007git.el6 base 16 k
+zlib-devel x86_64 1.2.3-29.el6 base 44 k
+
+Transaction Summary
+================================================================================
+Install 50 Package(s)
+
+Total download size: 33 M
+Installed size: 131 M
+Downloading Packages:
+--------------------------------------------------------------------------------
+Total 2.2 MB/s | 33 MB 00:15
+Running rpm_check_debug
+Running Transaction Test
+Transaction Test Succeeded
+Running Transaction
+Installing : apr-1.3.9-5.el6_9.1.x86_64 1/50
+Installing : apr-util-1.3.9-3.el6_0.1.x86_64 2/50
+Installing : apr-util-ldap-1.3.9-3.el6_0.1.x86_64 3/50
+Installing : httpd-tools-2.2.15-69.el6.centos.x86_64 4/50
+Installing : mailx-12.4-10.el6_10.x86_64 5/50
+Installing : fuse-libs-2.8.3-5.el6.x86_64 6/50
+Installing : patch-2.6-8.el6_9.x86_64 7/50
+Installing : cvs-1.11.23-16.el6.x86_64 8/50
+Installing : gettext-0.17-18.el6.x86_64 9/50
+Installing : libkadm5-1.10.3-65.el6.x86_64 10/50
+Installing : fuse-2.8.3-5.el6.x86_64 11/50
+Installing : ed-1.1-3.3.el6.x86_64 12/50
+Installing : libsepol-devel-2.0.41-4.el6.x86_64 13/50
+Installing : libselinux-devel-2.0.94-7.el6.x86_64 14/50
+Installing : 32:bind-libs-9.8.2-0.68.rc1.el6_10.1.x86_64 15/50
+Installing : 32:bind-utils-9.8.2-0.68.rc1.el6_10.1.x86_64 16/50
+Installing : mailcap-2.1.31-2.el6.noarch 17/50
+Installing : httpd-2.2.15-69.el6.centos.x86_64 18/50
+Installing : 1:mod_ssl-2.2.15-69.el6.centos.x86_64 19/50
+Installing : libxslt-1.1.26-2.el6_3.1.x86_64 20/50
+Installing : db4-cxx-4.7.25-22.el6.x86_64 21/50
+Installing : db4-devel-4.7.25-22.el6.x86_64 22/50
+Installing : cyrus-sasl-plain-2.1.23-15.el6_6.2.x86_64 23/50
+Installing : gdbm-devel-1.8.0-39.el6.x86_64 24/50
+Installing : at-3.1.10-49.el6.x86_64 25/50
+Installing : zlib-devel-1.2.3-29.el6.x86_64 26/50
+Installing : cyrus-sasl-gssapi-2.1.23-15.el6_6.2.x86_64 27/50
+Installing : MySQL-python-1.2.3-0.3.c1.1.el6.x86_64 28/50
+Installing : postgresql-libs-8.4.20-8.el6_9.x86_64 29/50
+Installing : python-psycopg2-2.0.14-2.el6.x86_64 30/50
+Installing : perl-CGI-3.51-144.el6.x86_64 31/50
+Installing : keyutils-libs-devel-1.4-5.el6.x86_64 32/50
+Installing : libcom_err-devel-1.41.12-24.el6.x86_64 33/50
+Installing : krb5-devel-1.10.3-65.el6.x86_64 34/50
+Installing : openssl-devel-1.0.1e-57.el6.x86_64 35/50
+Installing : kernel-headers-2.6.32-754.10.1.el6.x86_64 36/50
+Installing : glibc-headers-2.12-1.212.el6.x86_64 37/50
+Installing : glibc-devel-2.12-1.212.el6.x86_64 38/50
+Installing : perl-Test-Harness-3.17-144.el6.x86_64 39/50
+Installing : 1:perl-ExtUtils-ParseXS-2.2003.0-144.el6.x86_64 40/50
+Installing : 4:perl-devel-5.10.1-144.el6.x86_64 41/50
+Installing : perl-ExtUtils-MakeMaker-6.55-144.el6.x86_64 42/50
+Installing : perl-Test-Simple-0.92-144.el6.x86_64 43/50
+Installing : xz-4.999.9-0.5.beta.20091007git.el6.x86_64 44/50
+Installing : xz-lzma-compat-4.999.9-0.5.beta.20091007git.el6.x86_64 45/50
+Installing : man-1.6f-39.el6.x86_64 46/50
+Installing : pax-3.4-10.1.el6.x86_64 47/50
+Installing : time-1.7-38.el6.x86_64 48/50
+Installing : redhat-lsb-core-4.0-7.el6.centos.x86_64 49/50
+Installing : cloudera-manager-agent-5.16.1-1.cm5161.p0.1.el6.x86_64 50/50
+Verifying : time-1.7-38.el6.x86_64 1/50
+Verifying : perl-ExtUtils-MakeMaker-6.55-144.el6.x86_64 2/50
+Verifying : redhat-lsb-core-4.0-7.el6.centos.x86_64 3/50
+Verifying : apr-util-ldap-1.3.9-3.el6_0.1.x86_64 4/50
+Verifying : krb5-devel-1.10.3-65.el6.x86_64 5/50
+Verifying : glibc-headers-2.12-1.212.el6.x86_64 6/50
+Verifying : pax-3.4-10.1.el6.x86_64 7/50
+Verifying : perl-Test-Harness-3.17-144.el6.x86_64 8/50
+Verifying : xz-4.999.9-0.5.beta.20091007git.el6.x86_64 9/50
+Verifying : apr-1.3.9-5.el6_9.1.x86_64 10/50
+Verifying : kernel-headers-2.6.32-754.10.1.el6.x86_64 11/50
+Verifying : python-psycopg2-2.0.14-2.el6.x86_64 12/50
+Verifying : libcom_err-devel-1.41.12-24.el6.x86_64 13/50
+Verifying : keyutils-libs-devel-1.4-5.el6.x86_64 14/50
+Verifying : perl-CGI-3.51-144.el6.x86_64 15/50
+Verifying : postgresql-libs-8.4.20-8.el6_9.x86_64 16/50
+Verifying : glibc-devel-2.12-1.212.el6.x86_64 17/50
+Verifying : MySQL-python-1.2.3-0.3.c1.1.el6.x86_64 18/50
+Verifying : gettext-0.17-18.el6.x86_64 19/50
+Verifying : cyrus-sasl-gssapi-2.1.23-15.el6_6.2.x86_64 20/50
+Verifying : zlib-devel-1.2.3-29.el6.x86_64 21/50
+Verifying : apr-util-1.3.9-3.el6_0.1.x86_64 22/50
+Verifying : libselinux-devel-2.0.94-7.el6.x86_64 23/50
+Verifying : at-3.1.10-49.el6.x86_64 24/50
+Verifying : gdbm-devel-1.8.0-39.el6.x86_64 25/50
+Verifying : 1:perl-ExtUtils-ParseXS-2.2003.0-144.el6.x86_64 26/50
+Verifying : openssl-devel-1.0.1e-57.el6.x86_64 27/50
+Verifying : 4:perl-devel-5.10.1-144.el6.x86_64 28/50
+Verifying : xz-lzma-compat-4.999.9-0.5.beta.20091007git.el6.x86_64 29/50
+Verifying : 1:mod_ssl-2.2.15-69.el6.centos.x86_64 30/50
+Verifying : httpd-2.2.15-69.el6.centos.x86_64 31/50
+Verifying : cyrus-sasl-plain-2.1.23-15.el6_6.2.x86_64 32/50
+Verifying : db4-cxx-4.7.25-22.el6.x86_64 33/50
+Verifying : man-1.6f-39.el6.x86_64 34/50
+Verifying : libxslt-1.1.26-2.el6_3.1.x86_64 35/50
+Verifying : db4-devel-4.7.25-22.el6.x86_64 36/50
+Verifying : 32:bind-utils-9.8.2-0.68.rc1.el6_10.1.x86_64 37/50
+Verifying : mailcap-2.1.31-2.el6.noarch 38/50
+Verifying : 32:bind-libs-9.8.2-0.68.rc1.el6_10.1.x86_64 39/50
+Verifying : libsepol-devel-2.0.41-4.el6.x86_64 40/50
+Verifying : httpd-tools-2.2.15-69.el6.centos.x86_64 41/50
+Verifying : ed-1.1-3.3.el6.x86_64 42/50
+Verifying : cloudera-manager-agent-5.16.1-1.cm5161.p0.1.el6.x86_64 43/50
+Verifying : fuse-2.8.3-5.el6.x86_64 44/50
+Verifying : perl-Test-Simple-0.92-144.el6.x86_64 45/50
+Verifying : libkadm5-1.10.3-65.el6.x86_64 46/50
+Verifying : cvs-1.11.23-16.el6.x86_64 47/50
+Verifying : patch-2.6-8.el6_9.x86_64 48/50
+Verifying : fuse-libs-2.8.3-5.el6.x86_64 49/50
+Verifying : mailx-12.4-10.el6_10.x86_64 50/50
+
+Installed:
+cloudera-manager-agent.x86_64 0:5.16.1-1.cm5161.p0.1.el6
+
+Dependency Installed:
+MySQL-python.x86_64 0:1.2.3-0.3.c1.1.el6
+apr.x86_64 0:1.3.9-5.el6_9.1
+apr-util.x86_64 0:1.3.9-3.el6_0.1
+apr-util-ldap.x86_64 0:1.3.9-3.el6_0.1
+at.x86_64 0:3.1.10-49.el6
+bind-libs.x86_64 32:9.8.2-0.68.rc1.el6_10.1
+bind-utils.x86_64 32:9.8.2-0.68.rc1.el6_10.1
+cvs.x86_64 0:1.11.23-16.el6
+cyrus-sasl-gssapi.x86_64 0:2.1.23-15.el6_6.2
+cyrus-sasl-plain.x86_64 0:2.1.23-15.el6_6.2
+db4-cxx.x86_64 0:4.7.25-22.el6
+db4-devel.x86_64 0:4.7.25-22.el6
+ed.x86_64 0:1.1-3.3.el6
+fuse.x86_64 0:2.8.3-5.el6
+fuse-libs.x86_64 0:2.8.3-5.el6
+gdbm-devel.x86_64 0:1.8.0-39.el6
+gettext.x86_64 0:0.17-18.el6
+glibc-devel.x86_64 0:2.12-1.212.el6
+glibc-headers.x86_64 0:2.12-1.212.el6
+httpd.x86_64 0:2.2.15-69.el6.centos
+httpd-tools.x86_64 0:2.2.15-69.el6.centos
+kernel-headers.x86_64 0:2.6.32-754.10.1.el6
+keyutils-libs-devel.x86_64 0:1.4-5.el6
+krb5-devel.x86_64 0:1.10.3-65.el6
+libcom_err-devel.x86_64 0:1.41.12-24.el6
+libkadm5.x86_64 0:1.10.3-65.el6
+libselinux-devel.x86_64 0:2.0.94-7.el6
+libsepol-devel.x86_64 0:2.0.41-4.el6
+libxslt.x86_64 0:1.1.26-2.el6_3.1
+mailcap.noarch 0:2.1.31-2.el6
+mailx.x86_64 0:12.4-10.el6_10
+man.x86_64 0:1.6f-39.el6
+mod_ssl.x86_64 1:2.2.15-69.el6.centos
+openssl-devel.x86_64 0:1.0.1e-57.el6
+patch.x86_64 0:2.6-8.el6_9
+pax.x86_64 0:3.4-10.1.el6
+perl-CGI.x86_64 0:3.51-144.el6
+perl-ExtUtils-MakeMaker.x86_64 0:6.55-144.el6
+perl-ExtUtils-ParseXS.x86_64 1:2.2003.0-144.el6
+perl-Test-Harness.x86_64 0:3.17-144.el6
+perl-Test-Simple.x86_64 0:0.92-144.el6
+perl-devel.x86_64 4:5.10.1-144.el6
+postgresql-libs.x86_64 0:8.4.20-8.el6_9
+python-psycopg2.x86_64 0:2.0.14-2.el6
+redhat-lsb-core.x86_64 0:4.0-7.el6.centos
+time.x86_64 0:1.7-38.el6
+xz.x86_64 0:4.999.9-0.5.beta.20091007git.el6
+xz-lzma-compat.x86_64 0:4.999.9-0.5.beta.20091007git.el6
+zlib-devel.x86_64 0:1.2.3-29.el6
+
+Complete!
+END (0)
+remote package cloudera-manager-agent installed
+Installing cloudera-manager-daemons package...
+BEGIN yum --disablerepo=* --enablerepo=cloudera* list installed cloudera-manager-daemons
+Loaded plugins: fastestmirror
+Installed Packages
+cloudera-manager-daemons.x86_64 5.16.1-1.cm5161.p0.1.el6 @cloudera-manager
+END (0)
+BEGIN echo oracle-j2sdk1.7 cloudera-manager-agent cloudera-manager-daemons | grep cloudera-manager-daemons
+END (0)
+oracle-j2sdk1.7 cloudera-manager-agent cloudera-manager-daemons
+BEGIN yum --disablerepo=* --enablerepo=cloudera* info cloudera-manager-daemons
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+Installed Packages
+Name : cloudera-manager-daemons
+Arch : x86_64
+Version : 5.16.1
+Release : 1.cm5161.p0.1.el6
+Size : 935 M
+Repo : installed
+From repo : cloudera-manager
+Summary : Provides daemons for monitoring Hadoop and related tools.
+URL : http://www.cloudera.com
+License : Proprietary
+Description : This package includes daemons for monitoring and managing Hadoop.
+
+END (0)
+Version : 5.16.1
+Release : 1.cm5161.p0.1.el6
+BEGIN yum -y install cloudera-manager-daemons
+Loaded plugins: fastestmirror
+Setting up Install Process
+Loading mirror speeds from cached hostfile
+* base: centos.excellmedia.net
+* extras: centos.excellmedia.net
+* updates: centos.excellmedia.net
+Package cloudera-manager-daemons-5.16.1-1.cm5161.p0.1.el6.x86_64 already installed and latest version
+Nothing to do
+END (0)
+remote package cloudera-manager-daemons installed
+Installing Unlimited Strength Encryption policy files.
+BEGIN rpm -ql oracle-j2sdk1.7 | grep "/usr/java/jdk1.7" | sort | head -n 1
+/usr/java/jdk1.7.0_67-cloudera
+END (0)
+Java 7 prefix is /usr/java/jdk1.7.0_67-cloudera
+Installing unlimited strength US_export_policy.jar for Java 7
+BEGIN cp /tmp/scm_prepare_node.XO1RuTNb/US_export_policy.jar.7 /usr/java/jdk1.7.0_67-cloudera/jre/lib/security/US_export_policy.jar
+END (0)
+Installing unlimited strength local_policy.jar for Java 7
+BEGIN cp /tmp/scm_prepare_node.XO1RuTNb/local_policy.jar.7 /usr/java/jdk1.7.0_67-cloudera/jre/lib/security/local_policy.jar
+END (0)
+Configuring Cloudera Manager Agent...
+BEGIN grep server_host=10.211.55.101 /etc/cloudera-scm-agent/config.ini
+END (1)
+BEGIN cp /etc/cloudera-scm-agent/config.ini /etc/cloudera-scm-agent/config.ini.orig
+END (0)
+BEGIN sed -e 's/\(server_host=\).*/\110.211.55.101/' -i /etc/cloudera-scm-agent/config.ini
+END (0)
+scm agent configured
+Starting Cloudera Manager Agent...
+BEGIN /sbin/service cloudera-scm-agent status
+cloudera-scm-agent is stopped
+END (3)
+BEGIN /sbin/service cloudera-scm-agent start
+Starting cloudera-scm-agent: [60G[[0;32m OK [0;39m]
+END (0)
+agent logs:
+BEGIN tail -n 50 /var/log/cloudera-scm-agent//cloudera-scm-agent.out | sed 's/^/>>/'
+>>[12/Feb/2019 14:30:46 +0000] 23764 MainThread agent INFO SCM Agent Version: 5.16.1
+>>[12/Feb/2019 14:30:46 +0000] 23764 MainThread agent WARNING Expected mode 0751 for /var/run/cloudera-scm-agent but was 0755
+>>[12/Feb/2019 14:30:46 +0000] 23764 MainThread agent INFO Re-using pre-existing directory: /var/run/cloudera-scm-agent
+END (0)
+BEGIN tail -n 50 /var/log/cloudera-scm-agent//cloudera-scm-agent.log | sed 's/^/>>/'
+>>[12/Feb/2019 14:30:46 +0000] 23764 MainThread agent INFO SCM Agent Version: 5.16.1
+>>[12/Feb/2019 14:30:46 +0000] 23764 MainThread agent WARNING Expected mode 0751 for /var/run/cloudera-scm-agent but was 0755
+>>[12/Feb/2019 14:30:46 +0000] 23764 MainThread agent INFO Re-using pre-existing directory: /var/run/cloudera-scm-agent
+>>[12/Feb/2019 14:30:46 +0000] 23776 MainThread __init__ INFO Generating Agent UUID for the first time: '/var/lib/cloudera-scm-agent/uuid'
+>>[12/Feb/2019 14:30:46 +0000] 23776 MainThread __init__ INFO Agent UUID file was last modified at 2019-02-12 14:30:46.986965
+>>[12/Feb/2019 14:30:46 +0000] 23776 MainThread agent INFO ================================================================================
+>>[12/Feb/2019 14:30:46 +0000] 23776 MainThread agent INFO SCM Agent Version: 5.16.1
+>>[12/Feb/2019 14:30:46 +0000] 23776 MainThread agent INFO Agent Protocol Version: 4
+>>[12/Feb/2019 14:30:46 +0000] 23776 MainThread agent INFO Using Host ID: 009e4fb6-330f-4282-a8e0-559dab5738f0
+>>[12/Feb/2019 14:30:46 +0000] 23776 MainThread agent INFO Using directory: /var/run/cloudera-scm-agent
+>>[12/Feb/2019 14:30:46 +0000] 23776 MainThread agent INFO Using supervisor binary path: /usr/lib64/cmf/agent/build/env/bin/supervisord
+>>[12/Feb/2019 14:30:46 +0000] 23776 MainThread agent INFO Neither verify_cert_file nor verify_cert_dir are configured. Not performing validation of server certificates in HTTPS communication. These options can be configured in this agent's config.ini file to enable certificate validation.
+>>[12/Feb/2019 14:30:46 +0000] 23776 MainThread agent INFO Agent Logging Level: INFO
+>>[12/Feb/2019 14:30:46 +0000] 23776 MainThread agent INFO No command line vars
+>>[12/Feb/2019 14:30:47 +0000] 23776 MainThread agent INFO Found database jar: /usr/share/java/mysql-connector-java.jar
+>>[12/Feb/2019 14:30:47 +0000] 23776 MainThread agent INFO Missing database jar: /usr/share/java/oracle-connector-java.jar (normal, if you're not using this database type)
+>>[12/Feb/2019 14:30:47 +0000] 23776 MainThread agent INFO Found database jar: /usr/share/cmf/lib/postgresql-42.1.4.jre7.jar
+>>[12/Feb/2019 14:30:47 +0000] 23776 MainThread agent INFO Agent starting as pid 23776 user root(0) group root(0).
+END (0)
+end of agent logs.
+scm agent started
+Installation script completed successfully.
+all done
+closing logging file descriptor
+>>[12/Feb/2019 14:30:46 +0000] 23776 MainThread __init__ INFO Generating Agent UUID for the first time: '/var/lib/cloudera-scm-agent/uuid'
+>>[12/Feb/2019 14:30:46 +0000] 23776 MainThread __init__ INFO Agent UUID file was last modified at 2019-02-12 14:30:46.986965
+>>[12/Feb/2019 14:30:46 +0000] 23776 MainThread agent INFO ================================================================================
+>>[12/Feb/2019 14:30:46 +0000] 23776 MainThread agent INFO SCM Agent Version: 5.16.1
+>>[12/Feb/2019 14:30:46 +0000] 23776 MainThread agent INFO Agent Protocol Version: 4
+>>[12/Feb/2019 14:30:46 +0000] 23776 MainThread agent INFO Using Host ID: 009e4fb6-330f-4282-a8e0-559dab5738f0
+>>[12/Feb/2019 14:30:46 +0000] 23776 MainThread agent INFO Using directory: /var/run/cloudera-scm-agent
+>>[12/Feb/2019 14:30:46 +0000] 23776 MainThread agent INFO Using supervisor binary path: /usr/lib64/cmf/agent/build/env/bin/supervisord
+>>[12/Feb/2019 14:30:46 +0000] 23776 MainThread agent INFO Neither verify_cert_file nor verify_cert_dir are configured. Not performing validation of server certificates in HTTPS communication. These options can be configured in this agent's config.ini file to enable certificate validation.
+>>[12/Feb/2019 14:30:46 +0000] 23776 MainThread agent INFO Agent Logging Level: INFO
+>>[12/Feb/2019 14:30:46 +0000] 23776 MainThread agent INFO No command line vars
+>>[12/Feb/2019 14:30:47 +0000] 23776 MainThread agent INFO Found database jar: /usr/share/java/mysql-connector-java.jar
+>>[12/Feb/2019 14:30:47 +0000] 23776 MainThread agent INFO Missing database jar: /usr/share/java/oracle-connector-java.jar (normal, if you're not using this database type)
+>>[12/Feb/2019 14:30:47 +0000] 23776 MainThread agent INFO Found database jar: /usr/share/cmf/lib/postgresql-42.1.4.jre7.jar
+>>[12/Feb/2019 14:30:47 +0000] 23776 MainThread agent INFO Agent starting as pid 23776 user root(0) group root(0).
+
