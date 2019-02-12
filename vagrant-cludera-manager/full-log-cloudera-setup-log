@@ -1,0 +1,3089 @@
+besant@cloudera-besant:~/cloudera-end-to-end/vagrant-cludera-manager$ vagrant up
+Bringing machine 'master' up with 'virtualbox' provider...
+Bringing machine 'node2' up with 'virtualbox' provider...
+Bringing machine 'node3' up with 'virtualbox' provider...
+Bringing machine 'node4' up with 'virtualbox' provider...
+==> master: Importing base box 'bento/centos-6.7'...
+==> master: Matching MAC address for NAT networking...
+==> master: Checking if box 'bento/centos-6.7' version '2.2.7' is up to date...
+==> master: Setting the name of the VM: cloudera-1
+Vagrant is currently configured to create VirtualBox synced folders with
+the `SharedFoldersEnableSymlinksCreate` option enabled. If the Vagrant
+guest is not trusted, you may want to disable this option. For more
+information on this option, please refer to the VirtualBox manual:
+
+  https://www.virtualbox.org/manual/ch04.html#sharedfolders
+
+This option can be disabled globally with an environment variable:
+
+  VAGRANT_DISABLE_VBOXSYMLINKCREATE=1
+
+or on a per folder basis within the Vagrantfile:
+
+  config.vm.synced_folder '/host/path', '/guest/path', SharedFoldersEnableSymlinksCreate: false
+==> master: Vagrant has detected a configuration issue which exposes a
+==> master: vulnerability with the installed version of VirtualBox. The
+==> master: current guest is configured to use an E1000 NIC type for a
+==> master: network adapter which is vulnerable in this version of VirtualBox.
+==> master: Ensure the guest is trusted to use this configuration or update
+==> master: the NIC type using one of the methods below:
+==> master: 
+==> master:   https://www.vagrantup.com/docs/virtualbox/configuration.html#default-nic-type
+==> master:   https://www.vagrantup.com/docs/virtualbox/networking.html#virtualbox-nic-type
+==> master: Clearing any previously set network interfaces...
+==> master: Preparing network interfaces based on configuration...
+    master: Adapter 1: nat
+    master: Adapter 2: hostonly
+==> master: Forwarding ports...
+    master: 22 (guest) => 2222 (host) (adapter 1)
+==> master: Running 'pre-boot' VM customizations...
+==> master: Booting VM...
+==> master: Waiting for machine to boot. This may take a few minutes...
+    master: SSH address: 127.0.0.1:2222
+    master: SSH username: vagrant
+    master: SSH auth method: private key
+    master: Warning: Connection reset. Retrying...
+    master: Warning: Remote connection disconnect. Retrying...
+    master: 
+    master: Vagrant insecure key detected. Vagrant will automatically replace
+    master: this with a newly generated keypair for better security.
+    master: 
+    master: Inserting generated public key within guest...
+    master: Removing insecure key from the guest if it's present...
+    master: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> master: Machine booted and ready!
+==> master: Checking for guest additions in VM...
+    master: The guest additions on this VM do not match the installed version of
+    master: VirtualBox! In most cases this is fine, but in rare cases it can
+    master: prevent things such as shared folders from working properly. If you see
+    master: shared folder errors, please make sure the guest additions within the
+    master: virtual machine match the version of VirtualBox you have installed on
+    master: your host and reload your VM.
+    master: 
+    master: Guest Additions Version: 5.0.20
+    master: VirtualBox Version: 5.1
+==> master: Setting hostname...
+==> master: Configuring and enabling network interfaces...
+==> master: Mounting shared folders...
+    master: /vagrant => /home/besant/cloudera-end-to-end/vagrant-cludera-manager
+==> master: Running provisioner: shell...
+    master: Running: inline script
+    master: Loaded plugins: fastestmirror
+    master: Setting up Install Process
+    master: Determining fastest mirrors
+    master:  * base: centos.excellmedia.net
+    master:  * extras: centos.excellmedia.net
+    master:  * updates: centos.excellmedia.net
+    master: Resolving Dependencies
+    master: --> Running transaction check
+    master: ---> Package ntp.x86_64 0:4.2.6p5-15.el6.centos will be installed
+    master: --> Processing Dependency: ntpdate = 4.2.6p5-15.el6.centos for package: ntp-4.2.6p5-15.el6.centos.x86_64
+    master: --> Running transaction check
+    master: ---> Package ntpdate.x86_64 0:4.2.6p5-15.el6.centos will be installed
+    master: --> Finished Dependency Resolution
+    master: 
+    master: Dependencies Resolved
+    master: 
+    master: ================================================================================
+    master:  Package        Arch          Version                      Repository      Size
+    master: ================================================================================
+    master: Installing:
+    master:  ntp            x86_64        4.2.6p5-15.el6.centos        updates        600 k
+    master: Installing for dependencies:
+    master:  ntpdate        x86_64        4.2.6p5-15.el6.centos        updates         79 k
+    master: 
+    master: Transaction Summary
+    master: ================================================================================
+    master: Install       2 Package(s)
+    master: Total download size: 679 k
+    master: Installed size: 1.8 M
+    master: Downloading Packages:
+    master: --------------------------------------------------------------------------------
+    master: Total                                           3.0 MB/s | 679 kB     00:00     
+    master: warning: 
+    master: rpmts_HdrFromFdno: Header V3 RSA/SHA1 Signature, key ID c105b9de: NOKEY
+    master: Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+    master: Importing GPG key 0xC105B9DE:
+    master:  Userid : CentOS-6 Key (CentOS 6 Official Signing Key) <centos-6-key@centos.org>
+    master:  Package: centos-release-6-7.el6.centos.12.3.x86_64 (@anaconda-CentOS-201508042137.x86_64/6.7)
+    master:  From   : /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+    master: Running rpm_check_debug
+    master: Running Transaction Test
+    master: Transaction Test Succeeded
+    master: Running Transaction
+  Installing : ntpdate-4.2.6p5-15.el6.centos.x86_64                         1/2
+    master:  
+  Installing : ntp-4.2.6p5-15.el6.centos.x86_64                             2/2
+    master:  
+  Verifying  : ntpdate-4.2.6p5-15.el6.centos.x86_64                         1/2
+    master:  
+  Verifying  : ntp-4.2.6p5-15.el6.centos.x86_64                             2/2
+    master:  
+    master: 
+    master: Installed:
+    master:   ntp.x86_64 0:4.2.6p5-15.el6.centos                                            
+    master: 
+    master: Dependency Installed:
+    master:   ntpdate.x86_64 0:4.2.6p5-15.el6.centos                                        
+    master: Complete!
+    master: Starting ntpd: 
+    master: [  OK  ]
+==> master: Running provisioner: shell...
+    master: Running: inline script
+==> master: Running provisioner: hostmanager...
+==> master: Running provisioner: file...
+    master: /home/besant/cloudera-end-to-end/vagrant-cludera-manager/my.cnf => my.cnf
+==> master: Running provisioner: file...
+    master: /home/besant/cloudera-end-to-end/vagrant-cludera-manager/mysqlsec.sh => mysqlsec.sh
+==> master: Running provisioner: shell...
+    master: Running: inline script
+    master: Loaded plugins: fastestmirror
+    master: Setting up Install Process
+    master: Loading mirror speeds from cached hostfile
+    master:  * base: centos.excellmedia.net
+    master:  * extras: centos.excellmedia.net
+    master:  * updates: centos.excellmedia.net
+    master: Resolving Dependencies
+    master: --> Running transaction check
+    master: ---> Package mysql.x86_64 0:5.1.73-8.el6_8 will be installed
+    master: --> Processing Dependency: mysql-libs = 5.1.73-8.el6_8 for package: mysql-5.1.73-8.el6_8.x86_64
+    master: --> Processing Dependency: perl(Sys::Hostname) for package: mysql-5.1.73-8.el6_8.x86_64
+    master: --> Processing Dependency: perl(IPC::Open3) for package: mysql-5.1.73-8.el6_8.x86_64
+    master: --> Processing Dependency: perl(Getopt::Long) for package: mysql-5.1.73-8.el6_8.x86_64
+    master: --> Processing Dependency: perl(File::Temp) for package: mysql-5.1.73-8.el6_8.x86_64
+    master: --> Processing Dependency: perl(Fcntl) for package: mysql-5.1.73-8.el6_8.x86_64
+    master: --> Processing Dependency: perl(Exporter) for package: mysql-5.1.73-8.el6_8.x86_64
+    master: --> Processing Dependency: /usr/bin/perl for package: mysql-5.1.73-8.el6_8.x86_64
+    master: ---> Package mysql-server.x86_64 0:5.1.73-8.el6_8 will be installed
+    master: --> Processing Dependency: perl-DBI for package: mysql-server-5.1.73-8.el6_8.x86_64
+    master: --> Processing Dependency: perl-DBD-MySQL for package: mysql-server-5.1.73-8.el6_8.x86_64
+    master: --> Processing Dependency: perl(DBI) for package: mysql-server-5.1.73-8.el6_8.x86_64
+    master: --> Running transaction check
+    master: ---> Package mysql-libs.x86_64 0:5.1.73-5.el6_6 will be updated
+    master: ---> Package mysql-libs.x86_64 0:5.1.73-8.el6_8 will be an update
+    master: ---> Package perl.x86_64 4:5.10.1-144.el6 will be installed
+    master: --> Processing Dependency: perl-libs = 4:5.10.1-144.el6 for package: 4:perl-5.10.1-144.el6.x86_64
+    master: --> Processing Dependency: perl-libs for package: 4:perl-5.10.1-144.el6.x86_64
+    master: --> Processing Dependency: perl(version) for package: 4:perl-5.10.1-144.el6.x86_64
+    master: --> Processing Dependency: perl(Pod::Simple) for package: 4:perl-5.10.1-144.el6.x86_64
+    master: --> Processing Dependency: perl(Module::Pluggable) for package: 4:perl-5.10.1-144.el6.x86_64
+    master: --> Processing Dependency: libperl.so()(64bit) for package: 4:perl-5.10.1-144.el6.x86_64
+    master: ---> Package perl-DBD-MySQL.x86_64 0:4.013-3.el6 will be installed
+    master: ---> Package perl-DBI.x86_64 0:1.609-4.el6 will be installed
+    master: --> Running transaction check
+    master: ---> Package perl-Module-Pluggable.x86_64 1:3.90-144.el6 will be installed
+    master: ---> Package perl-Pod-Simple.x86_64 1:3.13-144.el6 will be installed
+    master: --> Processing Dependency: perl(Pod::Escapes) >= 1.04 for package: 1:perl-Pod-Simple-3.13-144.el6.x86_64
+    master: ---> Package perl-libs.x86_64 4:5.10.1-144.el6 will be installed
+    master: ---> Package perl-version.x86_64 3:0.77-144.el6 will be installed
+    master: --> Running transaction check
+    master: ---> Package perl-Pod-Escapes.x86_64 1:1.04-144.el6 will be installed
+    master: --> Finished Dependency Resolution
+    master: 
+    master: Dependencies Resolved
+    master: 
+    master: ================================================================================
+    master:  Package                    Arch        Version                 Repository
+    master:                                                                            Size
+    master: ================================================================================
+    master: Installing:
+    master:  mysql                      x86_64      5.1.73-8.el6_8          base      895 k
+    master:  mysql-server               x86_64      5.1.73-8.el6_8          base      8.6 M
+    master: Installing for dependencies:
+    master:  perl                       x86_64      4:5.10.1-144.el6        base       10 M
+    master:  perl-DBD-MySQL             x86_64      4.013-3.el6             base      134 k
+    master:  perl-DBI                   x86_64      1.609-4.el6             base      705 k
+    master:  perl-Module-Pluggable      x86_64      1:3.90-144.el6          base       41 k
+    master:  perl-Pod-Escapes           x86_64      1:1.04-144.el6          base       33 k
+    master:  perl-Pod-Simple            x86_64      1:3.13-144.el6          base      213 k
+    master:  perl-libs                  x86_64      4:5.10.1-144.el6        base      579 k
+    master:  perl-version               x86_64      3:0.77-144.el6          base       52 k
+    master: Updating for dependencies:
+    master:  mysql-libs                 x86_64      5.1.73-8.el6_8          base      1.2 M
+    master: 
+    master: Transaction Summary
+    master: ================================================================================
+    master: Install      10 Package(s)
+    master: Upgrade       1 Package(s)
+    master: Total download size: 23 M
+    master: Downloading Packages:
+    master: --------------------------------------------------------------------------------
+    master: Total                                           4.8 MB/s |  23 MB     00:04     
+    master: Running rpm_check_debug
+    master: Running Transaction Test
+    master: Transaction Test Succeeded
+    master: Running Transaction
+  Updating   : mysql-libs-5.1.73-8.el6_8.x86_64                            1/12
+    master:  
+  Installing : 1:perl-Pod-Escapes-1.04-144.el6.x86_64                      2/12
+    master:  
+  Installing : 4:perl-libs-5.10.1-144.el6.x86_64                           3/12
+    master:  
+  Installing : 1:perl-Module-Pluggable-3.90-144.el6.x86_64                 4/12
+    master:  
+  Installing : 1:perl-Pod-Simple-3.13-144.el6.x86_64                       5/12
+    master:  
+  Installing : 3:perl-version-0.77-144.el6.x86_64                          6/12
+    master:  
+  Installing : 4:perl-5.10.1-144.el6.x86_64                                7/12
+    master:  
+  Installing : perl-DBI-1.609-4.el6.x86_64                                 8/12
+    master:  
+  Installing : perl-DBD-MySQL-4.013-3.el6.x86_64                           9/12
+    master:  
+  Installing : mysql-5.1.73-8.el6_8.x86_64                                10/12
+    master:  
+  Installing : mysql-server-5.1.73-8.el6_8.x86_64                         11/12
+    master:  
+  Cleanup    : mysql-libs-5.1.73-5.el6_6.x86_64                           12/12
+    master:  
+  Verifying  : 3:perl-version-0.77-144.el6.x86_64                          1/12
+    master:  
+  Verifying  : 4:perl-libs-5.10.1-144.el6.x86_64                           2/12
+    master:  
+  Verifying  : 4:perl-5.10.1-144.el6.x86_64                                3/12
+    master:  
+  Verifying  : mysql-server-5.1.73-8.el6_8.x86_64                          4/12
+    master:  
+  Verifying  : perl-DBI-1.609-4.el6.x86_64                                 5/12
+    master:  
+  Verifying  : perl-DBD-MySQL-4.013-3.el6.x86_64                           6/12
+    master:  
+  Verifying  : 1:perl-Module-Pluggable-3.90-144.el6.x86_64                 7/12
+    master:  
+  Verifying  : 1:perl-Pod-Simple-3.13-144.el6.x86_64                       8/12
+    master:  
+  Verifying  : 1:perl-Pod-Escapes-1.04-144.el6.x86_64                      9/12
+    master:  
+  Verifying  : mysql-5.1.73-8.el6_8.x86_64                                10/12
+    master:  
+  Verifying  : mysql-libs-5.1.73-8.el6_8.x86_64                           11/12
+    master:  
+  Verifying  : mysql-libs-5.1.73-5.el6_6.x86_64                           12/12
+    master:  
+    master: 
+    master: Installed:
+    master:   mysql.x86_64 0:5.1.73-8.el6_8       mysql-server.x86_64 0:5.1.73-8.el6_8      
+    master: 
+    master: Dependency Installed:
+    master:   perl.x86_64 4:5.10.1-144.el6                                                  
+    master:   perl-DBD-MySQL.x86_64 0:4.013-3.el6                                           
+    master:   perl-DBI.x86_64 0:1.609-4.el6                                                 
+    master:   perl-Module-Pluggable.x86_64 1:3.90-144.el6                                   
+    master:   perl-Pod-Escapes.x86_64 1:1.04-144.el6                                        
+    master:   perl-Pod-Simple.x86_64 1:3.13-144.el6                                         
+    master:   perl-libs.x86_64 4:5.10.1-144.el6                                             
+    master:   perl-version.x86_64 3:0.77-144.el6                                            
+    master: 
+    master: Dependency Updated:
+    master:   mysql-libs.x86_64 0:5.1.73-8.el6_8                                            
+    master: Complete!
+    master: Initializing MySQL database:  
+    master: Installing MySQL system tables...
+    master: OK
+    master: Filling help tables...
+    master: OK
+    master: 
+    master: To start mysqld at boot time you have to copy
+    master: support-files/mysql.server to the right place for your system
+    master: 
+    master: PLEASE REMEMBER TO SET A PASSWORD FOR THE MySQL root USER !
+    master: To do so, start the server, then issue the following commands:
+    master: 
+    master: /usr/bin/mysqladmin -u root password 'new-password'
+    master: /usr/bin/mysqladmin -u root -h cloudera-1 password 'new-password'
+    master: 
+    master: Alternatively you can run:
+    master: /usr/bin/mysql_secure_installation
+    master: 
+    master: which will also give you the option of removing the test
+    master: databases and anonymous user created by default.  This is
+    master: strongly recommended for production servers.
+    master: 
+    master: See the manual for more instructions.
+    master: 
+    master: You can start the MySQL daemon with:
+    master: cd /usr ; /usr/bin/mysqld_safe &
+    master: 
+    master: You can test the MySQL daemon with mysql-test-run.pl
+    master: cd /usr/mysql-test ; perl mysql-test-run.pl
+    master: 
+    master: Please report any problems with the /usr/bin/mysqlbug script!
+    master: [  OK  ]
+    master: Starting mysqld:  
+    master: [  OK  ]
+    master: Loaded plugins: fastestmirror
+    master: Setting up Install Process
+    master: Loading mirror speeds from cached hostfile
+    master:  * base: centos.excellmedia.net
+    master:  * extras: centos.excellmedia.net
+    master:  * updates: centos.excellmedia.net
+    master: Resolving Dependencies
+    master: --> Running transaction check
+    master: ---> Package expect.x86_64 0:5.44.1.15-5.el6_4 will be installed
+    master: --> Processing Dependency: libtcl8.5.so()(64bit) for package: expect-5.44.1.15-5.el6_4.x86_64
+    master: --> Running transaction check
+    master: ---> Package tcl.x86_64 1:8.5.7-6.el6 will be installed
+    master: --> Finished Dependency Resolution
+    master: 
+    master: Dependencies Resolved
+    master: 
+    master: ================================================================================
+    master:  Package         Arch            Version                    Repository     Size
+    master: ================================================================================
+    master: Installing:
+    master:  expect          x86_64          5.44.1.15-5.el6_4          base          256 k
+    master: Installing for dependencies:
+    master:  tcl             x86_64          1:8.5.7-6.el6              base          1.9 M
+    master: 
+    master: Transaction Summary
+    master: ================================================================================
+    master: Install       2 Package(s)
+    master: Total download size: 2.2 M
+    master: Installed size: 4.9 M
+    master: Downloading Packages:
+    master: --------------------------------------------------------------------------------
+    master: Total                                           2.1 MB/s | 2.2 MB     00:01     
+    master: Running rpm_check_debug
+    master: Running Transaction Test
+    master: Transaction Test Succeeded
+    master: Running Transaction
+  Installing : 1:tcl-8.5.7-6.el6.x86_64                                     1/2
+    master:  
+  Installing : expect-5.44.1.15-5.el6_4.x86_64                              2/2
+    master:  
+  Verifying  : expect-5.44.1.15-5.el6_4.x86_64                              1/2
+    master:  
+  Verifying  : 1:tcl-8.5.7-6.el6.x86_64                                     2/2
+    master:  
+    master: 
+    master: Installed:
+    master:   expect.x86_64 0:5.44.1.15-5.el6_4                                             
+    master: 
+    master: Dependency Installed:
+    master:   tcl.x86_64 1:8.5.7-6.el6                                                      
+    master: Complete!
+    master: spawn mysql_secure_installation
+    master: 
+    master: 
+    master: 
+    master: 
+    master: NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MySQL
+    master:       SERVERS IN PRODUCTION USE!  PLEASE READ EACH STEP CAREFULLY!
+    master: 
+    master: 
+    master: In order to log into MySQL to secure it, we'll need the current
+    master: password for the root user.  If you've just installed MySQL, and
+    master: you haven't set the root password yet, the password will be blank,
+    master: so you should just press enter here.
+    master: 
+    master: Enter current password for root (enter for none): 
+    master: OK, successfully used password, moving on...
+    master: 
+    master: Setting the root password ensures that nobody can log into the MySQL
+    master: root user without the proper authorisation.
+    master: 
+    master: Set root password? [Y/n] n
+    master:  ... skipping.
+    master: 
+    master: By default, a MySQL installation has an anonymous user, allowing anyone
+    master: to log into MySQL without having to have a user account created for
+    master: them.  This is intended only for testing, and to make the installation
+    master: go a bit smoother.  You should remove them before moving into a
+    master: production environment.
+    master: 
+    master: Remove anonymous users? [Y/n] y
+    master:  ... Success!
+    master: 
+    master: Normally, root should only be allowed to connect from 'localhost'.  This
+    master: ensures that someone cannot guess at the root password from the network.
+    master: 
+    master: Disallow root login remotely? [Y/n] n
+    master:  ... skipping.
+    master: 
+    master: By default, MySQL comes with a database named 'test' that anyone can
+    master: access.  This is also intended only for testing, and should be removed
+    master: before moving into a production environment.
+    master: 
+    master: Remove test database and access to it? [Y/n] y
+    master:  - Dropping test database...
+    master:  ... Success!
+    master:  - Removing privileges on test database...
+    master:  ... Success!
+    master: 
+    master: Reloading the privilege tables will ensure that all changes made so far
+    master: will take effect immediately.
+    master: 
+    master: Reload privilege tables now? [Y/n] y
+    master:  ... Success!
+    master: 
+    master: Cleaning up...
+    master: 
+    master: 
+    master: 
+    master: All done!  If you've completed all of the above steps, your MySQL
+    master: installation should now be secure.
+    master: 
+    master: Thanks for using MySQL!
+==> master: Running provisioner: shell...
+    master: Running: inline script
+    master: --2019-02-12 14:04:34--  http://archive.cloudera.com/cm5/redhat/6/x86_64/cm/cloudera-manager.repo
+    master: Resolving archive.cloudera.com... 
+    master: 151.101.8.167
+    master: Connecting to archive.cloudera.com|151.101.8.167|:80... 
+    master: connected.
+    master: HTTP request sent, awaiting response... 
+    master: 200 OK
+    master: Length: 
+    master: 290
+    master:  [binary/octet-stream]
+    master: Saving to: “/etc/yum.repos.d/cloudera-manager.repo”
+    master: 
+    master:      0K
+    master:  
+    master:  
+    master:  
+    master:  
+    master:  
+    master:                                                   100% 29.6M=0s
+    master: 
+    master: 2019-02-12 14:04:39 (29.6 MB/s) - “/etc/yum.repos.d/cloudera-manager.repo” saved [290/290]
+    master: Loaded plugins: fastestmirror
+    master: Setting up Update Process
+    master: Loading mirror speeds from cached hostfile
+    master:  * base: centos.excellmedia.net
+    master:  * extras: centos.excellmedia.net
+    master:  * updates: centos.excellmedia.net
+    master: Resolving Dependencies
+    master: --> Running transaction check
+    master: ---> Package acl.x86_64 0:2.2.49-6.el6 will be updated
+    master: ---> Package acl.x86_64 0:2.2.49-7.el6_9.1 will be an update
+    master: ---> Package audit.x86_64 0:2.3.7-5.el6 will be updated
+    master: ---> Package audit.x86_64 0:2.4.5-6.el6 will be an update
+    master: ---> Package audit-libs.x86_64 0:2.3.7-5.el6 will be updated
+    master: ---> Package audit-libs.x86_64 0:2.4.5-6.el6 will be an update
+    master: ---> Package bash.x86_64 0:4.1.2-33.el6 will be updated
+    master: ---> Package bash.x86_64 0:4.1.2-48.el6 will be an update
+    master: ---> Package binutils.x86_64 0:2.20.51.0.2-5.43.el6 will be updated
+    master: ---> Package binutils.x86_64 0:2.20.51.0.2-5.48.el6 will be an update
+    master: ---> Package ca-certificates.noarch 0:2015.2.4-65.0.1.el6_6 will be updated
+    master: ---> Package ca-certificates.noarch 0:2018.2.22-65.1.el6 will be an update
+    master: ---> Package centos-release.x86_64 0:6-7.el6.centos.12.3 will be updated
+    master: ---> Package centos-release.x86_64 0:6-10.el6.centos.12.3 will be an update
+    master: ---> Package chkconfig.x86_64 0:1.3.49.3-5.el6 will be updated
+    master: ---> Package chkconfig.x86_64 0:1.3.49.5-1.el6 will be an update
+    master: ---> Package coreutils.x86_64 0:8.4-37.el6 will be updated
+    master: ---> Package coreutils.x86_64 0:8.4-47.el6 will be an update
+    master: ---> Package coreutils-libs.x86_64 0:8.4-37.el6 will be updated
+    master: ---> Package coreutils-libs.x86_64 0:8.4-47.el6 will be an update
+    master: ---> Package cpio.x86_64 0:2.10-12.el6_5 will be updated
+    master: ---> Package cpio.x86_64 0:2.10-13.el6 will be an update
+    master: ---> Package cronie.x86_64 0:1.4.4-15.el6 will be updated
+    master: ---> Package cronie.x86_64 0:1.4.4-16.el6_8.2 will be an update
+    master: ---> Package cronie-anacron.x86_64 0:1.4.4-15.el6 will be updated
+    master: ---> Package cronie-anacron.x86_64 0:1.4.4-16.el6_8.2 will be an update
+    master: ---> Package curl.x86_64 0:7.19.7-46.el6 will be updated
+    master: ---> Package curl.x86_64 0:7.19.7-53.el6_9 will be an update
+    master: ---> Package db4.x86_64 0:4.7.25-19.el6_6 will be updated
+    master: ---> Package db4.x86_64 0:4.7.25-22.el6 will be an update
+    master: ---> Package db4-utils.x86_64 0:4.7.25-19.el6_6 will be updated
+    master: ---> Package db4-utils.x86_64 0:4.7.25-22.el6 will be an update
+    master: ---> Package dbus-libs.x86_64 1:1.2.24-8.el6_6 will be updated
+    master: ---> Package dbus-libs.x86_64 1:1.2.24-9.el6 will be an update
+    master: ---> Package device-mapper.x86_64 0:1.02.95-2.el6 will be updated
+    master: ---> Package device-mapper.x86_64 0:1.02.117-12.el6_9.1 will be an update
+    master: ---> Package device-mapper-event.x86_64 0:1.02.95-2.el6 will be updated
+    master: ---> Package device-mapper-event.x86_64 0:1.02.117-12.el6_9.1 will be an update
+    master: ---> Package device-mapper-event-libs.x86_64 0:1.02.95-2.el6 will be updated
+    master: ---> Package device-mapper-event-libs.x86_64 0:1.02.117-12.el6_9.1 will be an update
+    master: ---> Package device-mapper-libs.x86_64 0:1.02.95-2.el6 will be updated
+    master: ---> Package device-mapper-libs.x86_64 0:1.02.117-12.el6_9.1 will be an update
+    master: ---> Package device-mapper-persistent-data.x86_64 0:0.3.2-1.el6 will be updated
+    master: ---> Package device-mapper-persistent-data.x86_64 0:0.6.2-0.2.rc7.el6 will be an update
+    master: --> Processing Dependency: libaio.so.1(LIBAIO_0.4)(64bit) for package: device-mapper-persistent-data-0.6.2-0.2.rc7.el6.x86_64
+    master: --> Processing Dependency: libaio.so.1(LIBAIO_0.1)(64bit) for package: device-mapper-persistent-data-0.6.2-0.2.rc7.el6.x86_64
+    master: --> Processing Dependency: libaio.so.1()(64bit) for package: device-mapper-persistent-data-0.6.2-0.2.rc7.el6.x86_64
+    master: ---> Package dhclient.x86_64 12:4.1.1-49.P1.el6.centos will be updated
+    master: ---> Package dhclient.x86_64 12:4.1.1-63.P1.el6.centos will be an update
+    master: ---> Package dhcp-common.x86_64 12:4.1.1-49.P1.el6.centos will be updated
+    master: ---> Package dhcp-common.x86_64 12:4.1.1-63.P1.el6.centos will be an update
+    master: ---> Package dracut.noarch 0:004-388.el6 will be updated
+    master: ---> Package dracut.noarch 0:004-411.el6 will be an update
+    master: ---> Package dracut-kernel.noarch 0:004-388.el6 will be updated
+    master: ---> Package dracut-kernel.noarch 0:004-411.el6 will be an update
+    master: ---> Package e2fsprogs.x86_64 0:1.41.12-22.el6 will be updated
+    master: ---> Package e2fsprogs.x86_64 0:1.41.12-24.el6 will be an update
+    master: ---> Package e2fsprogs-libs.x86_64 0:1.41.12-22.el6 will be updated
+    master: ---> Package e2fsprogs-libs.x86_64 0:1.41.12-24.el6 will be an update
+    master: ---> Package efibootmgr.x86_64 0:0.5.4-13.el6 will be updated
+    master: ---> Package efibootmgr.x86_64 0:0.5.4-15.el6 will be an update
+    master: ---> Package elfutils-libelf.x86_64 0:0.161-3.el6 will be updated
+    master: ---> Package elfutils-libelf.x86_64 0:0.164-2.el6 will be an update
+    master: ---> Package elfutils-libs.x86_64 0:0.161-3.el6 will be updated
+    master: ---> Package elfutils-libs.x86_64 0:0.164-2.el6 will be an update
+    master: ---> Package expat.x86_64 0:2.0.1-11.el6_2 will be updated
+    master: ---> Package expat.x86_64 0:2.0.1-13.el6_8 will be an update
+    master: ---> Package file.x86_64 0:5.04-21.el6 will be updated
+    master: ---> Package file.x86_64 0:5.04-30.el6 will be an update
+    master: ---> Package file-libs.x86_64 0:5.04-21.el6 will be updated
+    master: ---> Package file-libs.x86_64 0:5.04-30.el6 will be an update
+    master: ---> Package findutils.x86_64 1:4.4.2-6.el6 will be updated
+    master: ---> Package findutils.x86_64 1:4.4.2-9.el6 will be an update
+    master: ---> Package gawk.x86_64 0:3.1.7-10.el6 will be updated
+    master: ---> Package gawk.x86_64 0:3.1.7-10.el6_7.3 will be an update
+    master: ---> Package gdbm.x86_64 0:1.8.0-38.el6 will be updated
+    master: ---> Package gdbm.x86_64 0:1.8.0-39.el6 will be an update
+    master: ---> Package glib2.x86_64 0:2.28.8-4.el6 will be updated
+    master: ---> Package glib2.x86_64 0:2.28.8-10.el6 will be an update
+    master: ---> Package glibc.x86_64 0:2.12-1.166.el6 will be updated
+    master: ---> Package glibc.x86_64 0:2.12-1.212.el6 will be an update
+    master: ---> Package glibc-common.x86_64 0:2.12-1.166.el6 will be updated
+    master: ---> Package glibc-common.x86_64 0:2.12-1.212.el6 will be an update
+    master: ---> Package gmp.x86_64 0:4.3.1-7.el6_2.2 will be updated
+    master: ---> Package gmp.x86_64 0:4.3.1-13.el6 will be an update
+    master: ---> Package gnupg2.x86_64 0:2.0.14-8.el6 will be updated
+    master: ---> Package gnupg2.x86_64 0:2.0.14-9.el6_10 will be an update
+    master: ---> Package grep.x86_64 0:2.20-3.el6 will be updated
+    master: ---> Package grep.x86_64 0:2.20-6.el6 will be an update
+    master: ---> Package grub.x86_64 1:0.97-94.el6 will be updated
+    master: ---> Package grub.x86_64 1:0.97-99.el6 will be an update
+    master: ---> Package gzip.x86_64 0:1.3.12-22.el6 will be updated
+    master: ---> Package gzip.x86_64 0:1.3.12-24.el6 will be an update
+    master: ---> Package hwdata.noarch 0:0.233-14.1.el6 will be updated
+    master: ---> Package hwdata.noarch 0:0.233-20.1.el6 will be an update
+    master: ---> Package initscripts.x86_64 0:9.03.49-1.el6.centos will be updated
+    master: ---> Package initscripts.x86_64 0:9.03.61-1.el6.centos will be an update
+    master: ---> Package iproute.x86_64 0:2.6.32-45.el6 will be updated
+    master: ---> Package iproute.x86_64 0:2.6.32-57.el6 will be an update
+    master: ---> Package iptables.x86_64 0:1.4.7-16.el6 will be updated
+    master: ---> Package iptables.x86_64 0:1.4.7-19.el6 will be an update
+    master: ---> Package iptables-ipv6.x86_64 0:1.4.7-16.el6 will be updated
+    master: ---> Package iptables-ipv6.x86_64 0:1.4.7-19.el6 will be an update
+    master: ---> Package iputils.x86_64 0:20071127-20.el6 will be updated
+    master: ---> Package iputils.x86_64 0:20071127-24.el6 will be an update
+    master: ---> Package kernel.x86_64 0:2.6.32-754.10.1.el6 will be installed
+    master: ---> Package kernel-firmware.noarch 0:2.6.32-573.el6 will be updated
+    master: ---> Package kernel-firmware.noarch 0:2.6.32-754.10.1.el6 will be an update
+    master: ---> Package kexec-tools.x86_64 0:2.0.0-286.el6 will be updated
+    master: ---> Package kexec-tools.x86_64 0:2.0.0-310.el6 will be an update
+    master: ---> Package kpartx.x86_64 0:0.4.9-87.el6 will be updated
+    master: ---> Package kpartx.x86_64 0:0.4.9-106.el6_10.1 will be an update
+    master: ---> Package krb5-libs.x86_64 0:1.10.3-42.el6 will be updated
+    master: ---> Package krb5-libs.x86_64 0:1.10.3-65.el6 will be an update
+    master: ---> Package libacl.x86_64 0:2.2.49-6.el6 will be updated
+    master: ---> Package libacl.x86_64 0:2.2.49-7.el6_9.1 will be an update
+    master: ---> Package libblkid.x86_64 0:2.17.2-12.18.el6 will be updated
+    master: ---> Package libblkid.x86_64 0:2.17.2-12.28.el6_9.2 will be an update
+    master: ---> Package libcom_err.x86_64 0:1.41.12-22.el6 will be updated
+    master: ---> Package libcom_err.x86_64 0:1.41.12-24.el6 will be an update
+    master: ---> Package libcurl.x86_64 0:7.19.7-46.el6 will be updated
+    master: ---> Package libcurl.x86_64 0:7.19.7-53.el6_9 will be an update
+    master: ---> Package libdrm.x86_64 0:2.4.59-2.el6 will be updated
+    master: ---> Package libdrm.x86_64 0:2.4.65-2.el6 will be an update
+    master: ---> Package libgcc.x86_64 0:4.4.7-16.el6 will be updated
+    master: ---> Package libgcc.x86_64 0:4.4.7-23.el6 will be an update
+    master: ---> Package libgcrypt.x86_64 0:1.4.5-11.el6_4 will be updated
+    master: ---> Package libgcrypt.x86_64 0:1.4.5-12.el6_8 will be an update
+    master: ---> Package libgomp.x86_64 0:4.4.7-16.el6 will be updated
+    master: ---> Package libgomp.x86_64 0:4.4.7-23.el6 will be an update
+    master: ---> Package libnih.x86_64 0:1.0.1-7.el6 will be updated
+    master: ---> Package libnih.x86_64 0:1.0.1-8.el6 will be an update
+    master: ---> Package libpciaccess.x86_64 0:0.13.3-0.1.el6 will be updated
+    master: ---> Package libpciaccess.x86_64 0:0.13.4-1.el6 will be an update
+    master: ---> Package libselinux.x86_64 0:2.0.94-5.8.el6 will be updated
+    master: ---> Package libselinux.x86_64 0:2.0.94-7.el6 will be an update
+    master: ---> Package libselinux-utils.x86_64 0:2.0.94-5.8.el6 will be updated
+    master: ---> Package libselinux-utils.x86_64 0:2.0.94-7.el6 will be an update
+    master: ---> Package libss.x86_64 0:1.41.12-22.el6 will be updated
+    master: ---> Package libss.x86_64 0:1.41.12-24.el6 will be an update
+    master: ---> Package libssh2.x86_64 0:1.4.2-1.el6_6.1 will be updated
+    master: ---> Package libssh2.x86_64 0:1.4.2-2.el6_7.1 will be an update
+    master: ---> Package libstdc++.x86_64 0:4.4.7-16.el6 will be updated
+    master: ---> Package libstdc++.x86_64 0:4.4.7-23.el6 will be an update
+    master: ---> Package libtirpc.x86_64 0:0.2.1-10.el6 will be updated
+    master: ---> Package libtirpc.x86_64 0:0.2.1-15.el6 will be an update
+    master: ---> Package libudev.x86_64 0:147-2.63.el6 will be updated
+    master: ---> Package libudev.x86_64 0:147-2.73.el6_8.2 will be an update
+    master: ---> Package libuser.x86_64 0:0.56.13-5.el6 will be updated
+    master: ---> Package libuser.x86_64 0:0.56.13-8.el6_7 will be an update
+    master: ---> Package libuuid.x86_64 0:2.17.2-12.18.el6 will be updated
+    master: ---> Package libuuid.x86_64 0:2.17.2-12.28.el6_9.2 will be an update
+    master: ---> Package libxml2.x86_64 0:2.7.6-20.el6 will be updated
+    master: ---> Package libxml2.x86_64 0:2.7.6-21.el6_8.1 will be an update
+    master: ---> Package logrotate.x86_64 0:3.7.8-23.el6 will be updated
+    master: ---> Package logrotate.x86_64 0:3.7.8-28.el6 will be an update
+    master: ---> Package lvm2.x86_64 0:2.02.118-2.el6 will be updated
+    master: ---> Package lvm2.x86_64 0:2.02.143-12.el6_9.1 will be an update
+    master: ---> Package lvm2-libs.x86_64 0:2.02.118-2.el6 will be updated
+    master: ---> Package lvm2-libs.x86_64 0:2.02.143-12.el6_9.1 will be an update
+    master: ---> Package make.x86_64 1:3.81-20.el6 will be updated
+    master: ---> Package make.x86_64 1:3.81-23.el6 will be an update
+    master: ---> Package mdadm.x86_64 0:3.3.2-5.el6 will be updated
+    master: ---> Package mdadm.x86_64 0:3.3.4-8.el6 will be an update
+    master: ---> Package module-init-tools.x86_64 0:3.9-25.el6 will be updated
+    master: ---> Package module-init-tools.x86_64 0:3.9-26.el6 will be an update
+    master: ---> Package net-tools.x86_64 0:1.60-110.el6_2 will be updated
+    master: ---> Package net-tools.x86_64 0:1.60-114.el6 will be an update
+    master: ---> Package newt.x86_64 0:0.52.11-3.el6 will be updated
+    master: ---> Package newt.x86_64 0:0.52.11-4.el6 will be an update
+    master: ---> Package newt-python.x86_64 0:0.52.11-3.el6 will be updated
+    master: ---> Package newt-python.x86_64 0:0.52.11-4.el6 will be an update
+    master: ---> Package nfs-utils.x86_64 1:1.2.3-64.el6 will be updated
+    master: ---> Package nfs-utils.x86_64 1:1.2.3-78.el6_10.1 will be an update
+    master: ---> Package nfs-utils-lib.x86_64 0:1.1.5-11.el6 will be updated
+    master: ---> Package nfs-utils-lib.x86_64 0:1.1.5-13.el6 will be an update
+    master: ---> Package nspr.x86_64 0:4.10.8-1.el6_6 will be updated
+    master: ---> Package nspr.x86_64 0:4.19.0-1.el6 will be an update
+    master: ---> Package nss.x86_64 0:3.18.0-5.3.el6_6 will be updated
+    master: ---> Package nss.x86_64 0:3.36.0-9.el6_10 will be an update
+    master: ---> Package nss-softokn.x86_64 0:3.14.3-22.el6_6 will be updated
+    master: ---> Package nss-softokn.x86_64 0:3.14.3-23.3.el6_8 will be an update
+    master: ---> Package nss-softokn-freebl.x86_64 0:3.14.3-22.el6_6 will be updated
+    master: ---> Package nss-softokn-freebl.x86_64 0:3.14.3-23.3.el6_8 will be an update
+    master: ---> Package nss-sysinit.x86_64 0:3.18.0-5.3.el6_6 will be updated
+    master: ---> Package nss-sysinit.x86_64 0:3.36.0-9.el6_10 will be an update
+    master: ---> Package nss-tools.x86_64 0:3.18.0-5.3.el6_6 will be updated
+    master: ---> Package nss-tools.x86_64 0:3.36.0-9.el6_10 will be an update
+    master: ---> Package nss-util.x86_64 0:3.18.0-1.el6_6 will be updated
+    master: ---> Package nss-util.x86_64 0:3.36.0-1.el6 will be an update
+    master: ---> Package openldap.x86_64 0:2.4.40-5.el6 will be updated
+    master: ---> Package openldap.x86_64 0:2.4.40-16.el6 will be an update
+    master: ---> Package openssh.x86_64 0:5.3p1-111.el6 will be updated
+    master: ---> Package openssh.x86_64 0:5.3p1-123.el6_9 will be an update
+    master: ---> Package openssh-clients.x86_64 0:5.3p1-111.el6 will be updated
+    master: ---> Package openssh-clients.x86_64 0:5.3p1-123.el6_9 will be an update
+    master: ---> Package openssh-server.x86_64 0:5.3p1-111.el6 will be updated
+    master: ---> Package openssh-server.x86_64 0:5.3p1-123.el6_9 will be an update
+    master: ---> Package openssl.x86_64 0:1.0.1e-42.el6 will be updated
+    master: ---> Package openssl.x86_64 0:1.0.1e-57.el6 will be an update
+    master: ---> Package pam.x86_64 0:1.1.1-20.el6 will be updated
+    master: ---> Package pam.x86_64 0:1.1.1-24.el6 will be an update
+    master: ---> Package passwd.x86_64 0:0.77-4.el6_2.2 will be updated
+    master: ---> Package passwd.x86_64 0:0.77-7.el6 will be an update
+    master: ---> Package plymouth.x86_64 0:0.8.3-27.el6.centos.1 will be updated
+    master: ---> Package plymouth.x86_64 0:0.8.3-29.el6.centos will be an update
+    master: ---> Package plymouth-core-libs.x86_64 0:0.8.3-27.el6.centos.1 will be updated
+    master: ---> Package plymouth-core-libs.x86_64 0:0.8.3-29.el6.centos will be an update
+    master: ---> Package plymouth-scripts.x86_64 0:0.8.3-27.el6.centos.1 will be updated
+    master: ---> Package plymouth-scripts.x86_64 0:0.8.3-29.el6.centos will be an update
+    master: ---> Package policycoreutils.x86_64 0:2.0.83-24.el6 will be updated
+    master: ---> Package policycoreutils.x86_64 0:2.0.83-30.1.el6_8 will be an update
+    master: ---> Package postfix.x86_64 2:2.6.6-6.el6_5 will be updated
+    master: ---> Package postfix.x86_64 2:2.6.6-8.el6 will be an update
+    master: ---> Package procps.x86_64 0:3.2.8-33.el6 will be updated
+    master: ---> Package procps.x86_64 0:3.2.8-45.el6_9.3 will be an update
+    master: ---> Package psmisc.x86_64 0:22.6-19.el6_5 will be updated
+    master: ---> Package psmisc.x86_64 0:22.6-24.el6 will be an update
+    master: ---> Package python.x86_64 0:2.6.6-64.el6 will be updated
+    master: ---> Package python.x86_64 0:2.6.6-66.el6_8 will be an update
+    master: ---> Package python-libs.x86_64 0:2.6.6-64.el6 will be updated
+    master: ---> Package python-libs.x86_64 0:2.6.6-66.el6_8 will be an update
+    master: ---> Package python-pycurl.x86_64 0:7.19.0-8.el6 will be updated
+    master: ---> Package python-pycurl.x86_64 0:7.19.0-9.el6 will be an update
+    master: ---> Package python-urlgrabber.noarch 0:3.9.1-9.el6 will be updated
+    master: ---> Package python-urlgrabber.noarch 0:3.9.1-11.el6 will be an update
+    master: ---> Package rpcbind.x86_64 0:0.2.0-11.el6 will be updated
+    master: ---> Package rpcbind.x86_64 0:0.2.0-16.el6 will be an update
+    master: ---> Package rpm.x86_64 0:4.8.0-47.el6 will be updated
+    master: ---> Package rpm.x86_64 0:4.8.0-59.el6 will be an update
+    master: ---> Package rpm-libs.x86_64 0:4.8.0-47.el6 will be updated
+    master: ---> Package rpm-libs.x86_64 0:4.8.0-59.el6 will be an update
+    master: ---> Package rpm-python.x86_64 0:4.8.0-47.el6 will be updated
+    master: ---> Package rpm-python.x86_64 0:4.8.0-59.el6 will be an update
+    master: ---> Package rsyslog.x86_64 0:5.8.10-10.el6_6 will be updated
+    master: ---> Package rsyslog.x86_64 0:5.8.10-12.el6 will be an update
+    master: ---> Package selinux-policy.noarch 0:3.7.19-279.el6 will be updated
+    master: ---> Package selinux-policy.noarch 0:3.7.19-312.el6 will be an update
+    master: ---> Package selinux-policy-targeted.noarch 0:3.7.19-279.el6 will be updated
+    master: ---> Package selinux-policy-targeted.noarch 0:3.7.19-312.el6 will be an update
+    master: ---> Package setup.noarch 0:2.8.14-20.el6_4.1 will be updated
+    master: ---> Package setup.noarch 0:2.8.14-23.el6 will be an update
+    master: ---> Package shadow-utils.x86_64 2:4.1.4.2-19.el6_6.1 will be updated
+    master: ---> Package shadow-utils.x86_64 2:4.1.5.1-5.el6 will be an update
+    master: ---> Package sqlite.x86_64 0:3.6.20-1.el6 will be updated
+    master: ---> Package sqlite.x86_64 0:3.6.20-1.el6_7.2 will be an update
+    master: ---> Package sudo.x86_64 0:1.8.6p3-19.el6 will be updated
+    master: ---> Package sudo.x86_64 0:1.8.6p3-29.el6_9 will be an update
+    master: ---> Package tar.x86_64 2:1.23-13.el6 will be updated
+    master: ---> Package tar.x86_64 2:1.23-15.el6_8 will be an update
+    master: ---> Package tcp_wrappers-libs.x86_64 0:7.6-57.el6 will be updated
+    master: ---> Package tcp_wrappers-libs.x86_64 0:7.6-58.el6 will be an update
+    master: ---> Package tzdata.noarch 0:2015e-1.el6 will be updated
+    master: ---> Package tzdata.noarch 0:2018i-1.el6 will be an update
+    master: ---> Package udev.x86_64 0:147-2.63.el6 will be updated
+    master: ---> Package udev.x86_64 0:147-2.73.el6_8.2 will be an update
+    master: ---> Package upstart.x86_64 0:0.6.5-13.el6_5.3 will be updated
+    master: ---> Package upstart.x86_64 0:0.6.5-17.el6 will be an update
+    master: ---> Package util-linux-ng.x86_64 0:2.17.2-12.18.el6 will be updated
+    master: ---> Package util-linux-ng.x86_64 0:2.17.2-12.28.el6_9.2 will be an update
+    master: ---> Package vim-minimal.x86_64 2:7.4.629-5.el6 will be updated
+    master: ---> Package vim-minimal.x86_64 2:7.4.629-5.el6_8.1 will be an update
+    master: ---> Package wget.x86_64 0:1.12-5.el6_6.1 will be updated
+    master: ---> Package wget.x86_64 0:1.12-10.el6 will be an update
+    master: ---> Package yum.noarch 0:3.2.29-69.el6.centos will be updated
+    master: ---> Package yum.noarch 0:3.2.29-81.el6.centos.0.1 will be an update
+    master: ---> Package yum-plugin-fastestmirror.noarch 0:1.1.30-30.el6 will be updated
+    master: ---> Package yum-plugin-fastestmirror.noarch 0:1.1.30-42.el6_10 will be an update
+    master: --> Running transaction check
+    master: ---> Package libaio.x86_64 0:0.3.107-10.el6 will be installed
+    master: --> Finished Dependency Resolution
+    master: 
+    master: Dependencies Resolved
+    master: 
+    master: ================================================================================
+    master:  Package                       Arch   Version                     Repository
+    master:                                                                            Size
+    master: ================================================================================
+    master: Installing:
+    master:  kernel                        x86_64 2.6.32-754.10.1.el6         updates  32 M
+    master: Updating:
+    master:  acl                           x86_64 2.2.49-7.el6_9.1            base     76 k
+    master:  audit                         x86_64 2.4.5-6.el6                 base    204 k
+    master:  audit-libs                    x86_64 2.4.5-6.el6                 base     74 k
+    master:  bash                          x86_64 4.1.2-48.el6                base    910 k
+    master:  binutils                      x86_64 2.20.51.0.2-5.48.el6        base    2.8 M
+    master:  ca-certificates               noarch 2018.2.22-65.1.el6          base    930 k
+    master:  centos-release                x86_64 6-10.el6.centos.12.3        base     22 k
+    master:  chkconfig                     x86_64 1.3.49.5-1.el6              base    160 k
+    master:  coreutils                     x86_64 8.4-47.el6                  base    3.0 M
+    master:  coreutils-libs                x86_64 8.4-47.el6                  base     52 k
+    master:  cpio                          x86_64 2.10-13.el6                 base    192 k
+    master:  cronie                        x86_64 1.4.4-16.el6_8.2            base     75 k
+    master:  cronie-anacron                x86_64 1.4.4-16.el6_8.2            base     31 k
+    master:  curl                          x86_64 7.19.7-53.el6_9             base    197 k
+    master:  db4                           x86_64 4.7.25-22.el6               base    564 k
+    master:  db4-utils                     x86_64 4.7.25-22.el6               base    131 k
+    master:  dbus-libs                     x86_64 1:1.2.24-9.el6              base    127 k
+    master:  device-mapper                 x86_64 1.02.117-12.el6_9.1         base    218 k
+    master:  device-mapper-event           x86_64 1.02.117-12.el6_9.1         base    134 k
+    master:  device-mapper-event-libs      x86_64 1.02.117-12.el6_9.1         base    126 k
+    master:  device-mapper-libs            x86_64 1.02.117-12.el6_9.1         base    257 k
+    master:  device-mapper-persistent-data x86_64 0.6.2-0.2.rc7.el6           base    463 k
+    master:  dhclient                      x86_64 12:4.1.1-63.P1.el6.centos   updates 323 k
+    master:  dhcp-common                   x86_64 12:4.1.1-63.P1.el6.centos   updates 145 k
+    master:  dracut                        noarch 004-411.el6                 base    127 k
+    master:  dracut-kernel                 noarch 004-411.el6                 base     28 k
+    master:  e2fsprogs                     x86_64 1.41.12-24.el6              base    554 k
+    master:  e2fsprogs-libs                x86_64 1.41.12-24.el6              base    121 k
+    master:  efibootmgr                    x86_64 0.5.4-15.el6                base     38 k
+    master:  elfutils-libelf               x86_64 0.164-2.el6                 base    197 k
+    master:  elfutils-libs                 x86_64 0.164-2.el6                 base    230 k
+    master:  expat                         x86_64 2.0.1-13.el6_8              base     77 k
+    master:  file                          x86_64 5.04-30.el6                 base     49 k
+    master:  file-libs                     x86_64 5.04-30.el6                 base    317 k
+    master:  findutils                     x86_64 1:4.4.2-9.el6               base    447 k
+    master:  gawk                          x86_64 3.1.7-10.el6_7.3            base    780 k
+    master:  gdbm                          x86_64 1.8.0-39.el6                base     29 k
+    master:  glib2                         x86_64 2.28.8-10.el6               base    1.7 M
+    master:  glibc                         x86_64 2.12-1.212.el6              base    3.8 M
+    master:  glibc-common                  x86_64 2.12-1.212.el6              base     14 M
+    master:  gmp                           x86_64 4.3.1-13.el6                base    207 k
+    master:  gnupg2                        x86_64 2.0.14-9.el6_10             updates 1.6 M
+    master:  grep                          x86_64 2.20-6.el6                  base    345 k
+    master:  grub                          x86_64 1:0.97-99.el6               base    939 k
+    master:  gzip                          x86_64 1.3.12-24.el6               base    116 k
+    master:  hwdata                        noarch 0.233-20.1.el6              base    
+    master: 1.4 M
+    master:  initscripts                   x86_64 9.03.61-1.el6.centos        base    949 k
+    master:  iproute                       x86_64 2.6.32-57.el6               base    386 k
+    master:  iptables                      x86_64 1.4.7-19.el6                base    255 k
+    master:  iptables-ipv6                 x86_64 1.4.7-19.el6                base    103 k
+    master:  iputils                       x86_64 20071127-24.el6             base    121 k
+    master:  kernel-firmware               noarch 2.6.32-754.10.1.el6         updates  29 M
+    master:  kexec-tools                   x86_64 2.0.0-310.el6               base    351 k
+    master:  kpartx                        x86_64 0.4.9-106.el6_10.1          updates  72 k
+    master:  krb5-libs                     x86_64 1.10.3-65.el6               base    675 k
+    master:  libacl                        x86_64 2.2.49-7.el6_9.1            base     24 k
+    master:  libblkid                      x86_64 2.17.2-12.28.el6_9.2        base    119 k
+    master:  libcom_err                    x86_64 1.41.12-24.el6              base     38 k
+    master:  libcurl                       x86_64 7.19.7-53.el6_9             base    169 k
+    master:  libdrm                        x86_64 2.4.65-2.el6                base    136 k
+    master:  libgcc                        x86_64 4.4.7-23.el6                base    104 k
+    master:  libgcrypt                     x86_64 1.4.5-12.el6_8              base    229 k
+    master:  libgomp                       x86_64 4.4.7-23.el6                base    135 k
+    master:  libnih                        x86_64 1.0.1-8.el6                 base    138 k
+    master:  libpciaccess                  x86_64 0.13.4-1.el6                base     24 k
+    master:  libselinux                    x86_64 2.0.94-7.el6                base    109 k
+    master:  libselinux-utils              x86_64 2.0.94-7.el6                base     82 k
+    master:  libss                         x86_64 1.41.12-24.el6              base     42 k
+    master:  libssh2                       x86_64 1.4.2-2.el6_7.1             base    123 k
+    master:  libstdc++                     x86_64 4.4.7-23.el6                base    296 k
+    master:  libtirpc                      x86_64 0.2.1-15.el6                base     82 k
+    master:  libudev                       x86_64 147-2.73.el6_8.2            base     78 k
+    master:  libuser                       x86_64 0.56.13-8.el6_7             base    368 k
+    master:  libuuid                       x86_64 2.17.2-12.28.el6_9.2        base     72 k
+    master:  libxml2                       x86_64 2.7.6-21.el6_8.1            base    805 k
+    master:  logrotate                     x86_64 3.7.8-28.el6                base     59 k
+    master:  lvm2                          x86_64 2.02.143-12.el6_9.1         base    941 k
+    master:  lvm2-libs                     x86_64 2.02.143-12.el6_9.1         base    1.0 M
+    master:  make                          x86_64 1:3.81-23.el6               base    389 k
+    master:  mdadm                         x86_64 3.3.4-8.el6                 base    348 k
+    master:  module-init-tools             x86_64 3.9-26.el6                  base    467 k
+    master:  net-tools                     x86_64 1.60-114.el6                base    269 k
+    master:  newt                          x86_64 0.52.11-4.el6               base     97 k
+    master:  newt-python                   x86_64 0.52.11-4.el6               base     48 k
+    master:  nfs-utils                     x86_64 1:1.2.3-78.el6_10.1         updates 337 k
+    master:  nfs-utils-lib                 x86_64 1.1.5-13.el6                base     71 k
+    master:  nspr                          x86_64 4.19.0-1.el6                base    114 k
+    master:  nss                           x86_64 3.36.0-9.el6_10             updates 865 k
+    master:  nss-softokn                   x86_64 3.14.3-23.3.el6_8           base    262 k
+    master:  nss-softokn-freebl            x86_64 3.14.3-23.3.el6_8           base    168 k
+    master:  nss-sysinit                   x86_64 3.36.0-9.el6_10             updates  53 k
+    master:  nss-tools                     x86_64 3.36.0-9.el6_10             updates 460 k
+    master:  nss-util                      x86_64 3.36.0-1.el6                base     72 k
+    master:  openldap                      x86_64 2.4.40-16.el6               base    285 k
+    master:  openssh                       x86_64 5.3p1-123.el6_9             base    277 k
+    master:  openssh-clients               x86_64 5.3p1-123.el6_9             base    444 k
+    master:  openssh-server                x86_64 5.3p1-123.el6_9             base    329 k
+    master:  openssl  
+    master:                      x86_64 1.0.1e-57.el6               base    1.5 M
+    master:  pam                           x86_64 1.1.1-24.el6                base    659 k
+    master:  passwd                        x86_64 0.77-7.el6                  base     89 k
+    master:  plymouth                      x86_64 0.8.3-29.el6.centos         base     89 k
+    master:  plymouth-core-libs            x86_64 0.8.3-29.el6.centos         base     88 k
+    master:  plymouth-scripts              x86_64 0.8.3-29.el6.centos         base     31 k
+    master:  policycoreutils               x86_64 2.0.83-30.1.el6_8           base    663 k
+    master:  postfix                       x86_64 2:2.6.6-8.el6               base    2.0 M
+    master:  procps                        x86_64 3.2.8-45.el6_9.3            updates 220 k
+    master:  psmisc                        x86_64 22.6-24.el6                 base     82 k
+    master:  python                        x86_64 2.6.6-66.el6_8              base     76 k
+    master:  python-libs                   x86_64 2.6.6-66.el6_8              base    5.3 M
+    master:  python-pycurl                 x86_64 7.19.0-9.el6                base     77 k
+    master:  python-urlgrabber             noarch 3.9.1-11.el6                base     86 k
+    master:  rpcbind                       x86_64 0.2.0-16.el6                base     51 k
+    master:  rpm                           x86_64 4.8.0-59.el6                base    906 k
+    master:  rpm-libs                      x86_64 4.8.0-59.el6                base    318 k
+    master:  rpm-python                    x86_64 4.8.0-59.el6                base     61 k
+    master:  rsyslog                       x86_64 5.8.10-12.el6               base    650 k
+    master:  selinux-policy                noarch 3.7.19-312.el6              base    895 k
+    master:  selinux-policy-targeted       noarch 3.7.19-312.el6              base    3.1 M
+    master:  setup                         noarch 2.8.14-23.el6               base    151 k
+    master:  shadow-utils                  x86_64 2:4.1.5.1-5.el6             base    1.0 M
+    master:  sqlite                        x86_64 3.6.20-1.el6_7.2            base    300 k
+    master:  sudo                          x86_64 1.8.6p3-29.el6_9            base    711 k
+    master:  tar                           x86_64 2:1.23-15.el6_8             base    810 k
+    master:  tcp_wrappers-libs             x86_64 7.6-58.el6                  base     62 k
+    master:  tzdata                        noarch 2018i-1.el6                 updates 504 k
+    master:  udev                          x86_64 147-2.73.el6_8.2            base    358 k
+    master:  upstart                       x86_64 0.6.5-17.el6                base    177 k
+    master:  util-linux-ng                 x86_64 2.17.2-12.28.el6_9.2        base    1.6 M
+    master:  vim-minimal                   x86_64 2:7.4.629-5.el6_8.1         base    422 k
+    master:  wget                          x86_64 1.12-10.el6                 base    484 k
+    master:  yum                           noarch 3.2.29-81.el6.centos.0.1    updates 1.0 M
+    master:  yum-plugin-fastestmirror      noarch 1.1.30-42.el6_10            updates  33 k
+    master: Installing for dependencies:
+    master:  libaio                        x86_64 0.3.107-10.el6              base     21 k
+    master: 
+    master: Transaction Summary
+    master: ================================================================================
+    master: Install       2 Package(s)
+    master: Upgrade     132 Package(s)
+    master: Total download size: 137 M
+    master: Downloading Packages:
+    master: --------------------------------------------------------------------------------
+    master: Total                                           5.4 MB/s | 137 MB     00:25     
+    master: Running rpm_check_debug
+    master: Running Transaction Test
+    master: Transaction Test Succeeded
+    master: Running Transaction
+  Updating   : libgcc-4.4.7-23.el6.x86_64                                 1/266
+    master:  
+  Updating   : setup-2.8.14-23.el6.noarch                                 2/266
+    master:  
+    master: warning: /etc/shadow created as /etc/shadow.rpmnew
+  Updating   : kernel-firmware-2.6.32-754.10.1.el6.noarch                 3/266
+    master:  
+  Updating   : centos-release-6-10.el6.centos.12.3.x86_64                 4/266
+    master:  
+  Updating   : tzdata-2018i-1.el6.noarch                                  5/266
+    master:  
+  Updating   : glibc-common-2.12-1.212.el6.x86_64                         6/266
+    master:  
+  Updating   : glibc-2.12-1.212.el6.x86_64                                7/266
+    master:  
+  Updating   : bash-4.1.2-48.el6.x86_64                                   8/266
+    master:  
+  Updating   : nss-softokn-freebl-3.14.3-23.3.el6_8.x86_64                9/266
+    master:  
+  Updating   : libselinux-2.0.94-7.el6.x86_64                            10/266
+    master:  
+  Updating   : chkconfig-1.3.49.5-1.el6.x86_64                           11/266
+    master:  
+  Updating   : audit-libs-2.4.5-6.el6.x86_64                             12/266
+    master:  
+  Updating   : libcom_err-1.41.12-24.el6.x86_64                          13/266
+    master:  
+  Updating   : nspr-4.19.0-1.el6.x86_64                                  14/266
+    master:  
+  Updating   : libacl-2.2.49-7.el6_9.1.x86_64                            15/266
+    master:  
+  Updating   : db4-4.7.25-22.el6.x86_64                                  16/266
+    master:  
+  Updating   : nss-util-3.36.0-1.el6.x86_64                              17/266
+    master:  
+  Updating   : krb5-libs-1.10.3-65.el6.x86_64                            18/266
+    master:  
+  Updating   : grep-2.20-6.el6.x86_64                                    19/266
+    master:  
+  Updating   : gawk-3.1.7-10.el6_7.3.x86_64                              20/266
+    master:  
+  Updating   : glib2-2.28.8-10.el6.x86_64                                21/266
+    master:  
+  Updating   : elfutils-libelf-0.164-2.el6.x86_64                        22/266
+    master:  
+  Updating   : file-libs-5.04-30.el6.x86_64                              23/266
+    master:  
+  Updating   : tcp_wrappers-libs-7.6-58.el6.x86_64                       24/266
+    master:  
+  Updating   : libudev-147-2.73.el6_8.2.x86_64                           25/266
+    master:  
+  Updating   : libuuid-2.17.2-12.28.el6_9.2.x86_64                       26/266
+    master:  
+  Updating   : libblkid-2.17.2-12.28.el6_9.2.x86_64                      27/266
+    master:  
+  Updating   : 1:dbus-libs-1.2.24-9.el6.x86_64                           28/266
+    master:  
+  Updating   : 1:findutils-4.4.2-9.el6.x86_64                            29/266
+    master:  
+  Updating   : cpio-2.10-13.el6.x86_64                                   30/266
+    master:  
+  Updating   : sqlite-3.6.20-1.el6_7.2.x86_64                            31/266
+    master:  
+  Updating   : nss-softokn-3.14.3-23.3.el6_8.x86_64                      32/266
+    master:  
+  Updating   : expat-2.0.1-13.el6_8.x86_64                               33/266
+    master:  
+  Updating   : libtirpc-0.2.1-15.el6.x86_64                              34/266
+    master:  
+  Updating   : libnih-1.0.1-8.el6.x86_64                                 35/266
+    master:  
+  Updating   : upstart-0.6.5-17.el6.x86_64                               36/266
+    master:  
+  Updating   : file-5.04-30.el6.x86_64                                   37/266
+    master:  
+  Updating   : elfutils-libs-0.164-2.el6.x86_64                          38/266
+    master:  
+  Updating   : db4-utils-4.7.25-22.el6.x86_64                            39/266
+    master:  
+  Updating   : 2:tar-1.23-15.el6_8.x86_64                                40/266
+    master:  
+  Updating   : 2:vim-minimal-7.4.629-5.el6_8.1.x86_64                    41/266
+    master:  
+  Updating   : libss-1.41.12-24.el6.x86_64                               42/266
+    master:  
+  Updating   : e2fsprogs-libs-1.41.12-24.el6.x86_64                      43/266
+    master:  
+  Updating   : procps-3.2.8-45.el6_9.3.x86_64                            44/266
+    master:  
+  Updating   : psmisc-22.6-24.el6.x86_64                                 45/266
+    master:  
+  Updating   : net-tools-1.60-114.el6.x86_64                             46/266
+    master:  
+  Updating   : libselinux-utils-2.0.94-7.el6.x86_64                      47/266
+    master:  
+  Updating   : binutils-2.20.51.0.2-5.48.el6.x86_64                      48/266
+    master:  
+  Updating   : 1:make-3.81-23.el6.x86_64                                 49/266
+    master:  
+  Updating   : newt-0.52.11-4.el6.x86_64                                 50/266
+    master:  
+  Updating   : plymouth-core-libs-0.8.3-29.el6.centos.x86_64             51/266
+    master:  
+  Updating   : libstdc++-4.4.7-23.el6.x86_64                             52/266
+    master:  
+  Updating   : gmp-4.3.1-13.el6.x86_64                                   53/266
+    master:  
+  Updating   : coreutils-libs-8.4-47.el6.x86_64                          54/266
+    master:  
+  Updating   : coreutils-8.4-47.el6.x86_64                               55/266
+    master:  
+  Updating   : pam-1.1.1-24.el6.x86_64                                   56/266
+    master:  
+  Updating   : 2:shadow-utils-4.1.5.1-5.el6.x86_64                       57/266
+    master:  
+  Updating   : module-init-tools-3.9-26.el6.x86_64                       58/266
+    master:  
+  Updating   : hwdata-0.233-20.1.el6.noarch                              59/266
+    master:  
+  Updating   : plymouth-scripts-0.8.3-29.el6.centos.x86_64               60/266
+    master:  
+  Updating   : libpciaccess-0.13.4-1.el6.x86_64                          61/266
+    master:  
+  Updating   : rpcbind-0.2.0-16.el6.x86_64                               62/266
+    master:  
+  Updating   : ca-certificates-2018.2.22-65.1.el6.noarch                 63/266
+    master:  
+  Updating   : openssl-1.0.1e-57.el6.x86_64                              64/266
+    master:  
+  Updating   : libssh2-1.4.2-2.el6_7.1.x86_64                            65/266
+    master:  
+  Updating   : gzip-1.3.12-24.el6.x86_64                                 66/266
+    master:  
+  Updating   : logrotate-3.7.8-28.el6.x86_64                             67/266
+    master:  
+  Updating   : nss-sysinit-3.36.0-9.el6_10.x86_64                        68/266
+    master:  
+  Updating   : nss-3.36.0-9.el6_10.x86_64                                69/266
+    master:  
+  Updating   : nss-tools-3.36.0-9.el6_10.x86_64                          70/266
+    master:  
+  Updating   : libcurl-7.19.7-53.el6_9.x86_64                            71/266
+    master:  
+  Updating   : curl-7.19.7-53.el6_9.x86_64                               72/266
+    master:  
+  Updating   : rpm-libs-4.8.0-59.el6.x86_64                              73/266
+    master:  
+  Updating   : rpm-4.8.0-59.el6.x86_64                                   74/266
+    master:  
+  Updating   : openldap-2.4.40-16.el6.x86_64                             75/266
+    master:  
+  Updating   : libdrm-2.4.65-2.el6.x86_64                                76/266
+    master:  
+  Updating   : iptables-1.4.7-19.el6.x86_64                              77/266
+    master:  
+  Updating   : iproute-2.6.32-57.el6.x86_64                              78/266
+    master:  
+  Updating   : iputils-20071127-24.el6.x86_64                            79/266
+    master:  
+  Updating   : plymouth-0.8.3-29.el6.centos.x86_64                       80/266
+    master:  
+  Updating   : util-linux-ng-2.17.2-12.28.el6_9.2.x86_64                 81/266
+    master:  
+  Updating   : initscripts-9.03.61-1.el6.centos.x86_64                   82/266
+    master:  
+  Updating   : udev-147-2.73.el6_8.2.x86_64                              83/266
+    master:  
+  Updating   : policycoreutils-2.0.83-30.1.el6_8.x86_64                  84/266
+    master:  
+  Updating   : device-mapper-libs-1.02.117-12.el6_9.1.x86_64             85/266
+    master:  
+  Updating   : device-mapper-1.02.117-12.el6_9.1.x86_64                  86/266
+    master:  
+  Updating   : device-mapper-event-libs-1.02.117-12.el6_9.1.x86_64       87/266
+    master:  
+  Updating   : dracut-004-411.el6.noarch                                 88/266
+    master:  
+  Updating   : openssh-5.3p1-123.el6_9.x86_64                            89/266
+    master:  
+  Updating   : dracut-kernel-004-411.el6.noarch                          90/266
+    master:  
+  Updating   : device-mapper-event-1.02.117-12.el6_9.1.x86_64            91/266
+    master:  
+  Updating   : lvm2-libs-2.02.143-12.el6_9.1.x86_64                      92/266
+    master:  
+  Updating   : kpartx-0.4.9-106.el6_10.1.x86_64                          93/266
+    master:  
+  Updating   : selinux-policy-3.7.19-312.el6.noarch                      94/266
+    master:  
+  Updating   : mdadm-3.3.4-8.el6.x86_64                                  95/266
+    master:  
+  Updating   : 2:postfix-2.6.6-8.el6.x86_64                              96/266
+    master:  
+  Updating   : rsyslog-5.8.10-12.el6.x86_64                              97/266
+    master:  
+  Updating   : cronie-anacron-1.4.4-16.el6_8.2.x86_64                    98/266
+    master:  
+  Updating   : cronie-1.4.4-16.el6_8.2.x86_64                            99/266
+    master:  
+  Updating   : libuser-0.56.13-8.el6_7.x86_64                           100/266
+    master:  
+  Updating   : gdbm-1.8.0-39.el6.x86_64                                 101/266
+    master:  
+  Updating   : python-2.6.6-66.el6_8.x86_64                             102/266
+    master:  
+  Updating   : python-libs-2.6.6-66.el6_8.x86_64                        103/266
+    master:  
+  Updating   : python-pycurl-7.19.0-9.el6.x86_64                        104/266
+    master:  
+  Updating   : python-urlgrabber-3.9.1-11.el6.noarch                    105/266
+    master:  
+  Updating   : rpm-python-4.8.0-59.el6.x86_64                           106/266
+    master:  
+  Updating   : yum-plugin-fastestmirror-1.1.30-42.el6_10.noarch         107/266
+    master:  
+  Updating   : yum-3.2.29-81.el6.centos.0.1.noarch                      108/266
+    master:  
+  Updating   : nfs-utils-lib-1.1.5-13.el6.x86_64                        109/266
+    master:  
+  Updating   : 1:nfs-utils-1.2.3-78.el6_10.1.x86_64                     110/266
+    master:  
+  Installing : libaio-0.3.107-10.el6.x86_64                             111/266
+    master:  
+  Updating   : device-mapper-persistent-data-0.6.2-0.2.rc7.el6.x86_64   112/266
+    master:  
+  Updating   : libgcrypt-1.4.5-12.el6_8.x86_64                          113/266
+    master:  
+  Updating   : 12:dhcp-common-4.1.1-63.P1.el6.centos.x86_64             114/266
+    master:  
+  Updating   : 12:dhclient-4.1.1-63.P1.el6.centos.x86_64                115/266
+    master:  
+  Updating   : gnupg2-2.0.14-9.el6_10.x86_64                            116/266
+    master:  
+  Updating   : lvm2-2.02.143-12.el6_9.1.x86_64                          117/266
+    master:  
+  Updating   : 1:grub-0.97-99.el6.x86_64                                118/266
+    master:  
+  Updating   : newt-python-0.52.11-4.el6.x86_64                         119/266
+    master:  
+  Updating   : passwd-0.77-7.el6.x86_64                                 120/266
+    master:  
+  Updating   : kexec-tools-2.0.0-310.el6.x86_64                         121/266
+    master:  
+  Updating   : selinux-policy-targeted-3.7.19-312.el6.noarch            122/266
+    master:  
+  Installing : kernel-2.6.32-754.10.1.el6.x86_64                        123/266
+    master:  
+  Updating   : openssh-clients-5.3p1-123.el6_9.x86_64                   124/266
+    master:  
+  Updating   : openssh-server-5.3p1-123.el6_9.x86_64                    125/266
+    master:  
+  Updating   : iptables-ipv6-1.4.7-19.el6.x86_64                        126/266
+    master:  
+  Updating   : sudo-1.8.6p3-29.el6_9.x86_64                             127/266
+    master:  
+    master: warning: /etc/sudoers created as /etc/sudoers.rpmnew
+  Updating   : wget-1.12-10.el6.x86_64                                  128/266
+    master:  
+  Updating   : audit-2.4.5-6.el6.x86_64                                 129/266
+    master:  
+  Updating   : e2fsprogs-1.41.12-24.el6.x86_64                          130/266
+    master:  
+  Updating   : acl-2.2.49-7.el6_9.1.x86_64                              131/266
+    master:  
+  Updating   : libgomp-4.4.7-23.el6.x86_64                              132/266
+    master:  
+  Updating   : efibootmgr-0.5.4-15.el6.x86_64                           133/266
+    master:  
+  Updating   : libxml2-2.7.6-21.el6_8.1.x86_64                          134/266
+    master:  
+  Cleanup    : openssh-server-5.3p1-111.el6.x86_64                      135/266
+    master:  
+  Cleanup    : openssh-clients-5.3p1-111.el6.x86_64                     136/266
+    master:  
+  Cleanup    : openssh-5.3p1-111.el6.x86_64                             137/266
+    master:  
+  Cleanup    : cronie-anacron-1.4.4-15.el6.x86_64                       138/266
+    master:  
+  Cleanup    : cronie-1.4.4-15.el6.x86_64                               139/266
+    master:  
+  Cleanup    : 2:postfix-2.6.6-6.el6_5.x86_64                           140/266
+    master:  
+  Cleanup    : lvm2-2.02.118-2.el6.x86_64                               141/266
+    master:  
+  Cleanup    : rsyslog-5.8.10-10.el6_6.x86_64                           142/266
+    master:  
+  Cleanup    : kexec-tools-2.0.0-286.el6.x86_64                         143/266
+    master:  
+  Cleanup    : sudo-1.8.6p3-19.el6.x86_64                               144/266
+    master:  
+  Cleanup    : passwd-0.77-4.el6_2.2.x86_64                             145/266
+    master:  
+  Cleanup    : lvm2-libs-2.02.118-2.el6.x86_64                          146/266
+    master:  
+  Cleanup    : device-mapper-event-1.02.95-2.el6.x86_64                 147/266
+    master:  
+  Cleanup    : e2fsprogs-1.41.12-22.el6.x86_64                          148/266
+    master:  
+  Cleanup    : audit-2.3.7-5.el6.x86_64                                 149/266
+    master:  
+  Cleanup    : iptables-ipv6-1.4.7-16.el6.x86_64                        150/266
+    master:  
+  Cleanup    : device-mapper-persistent-data-0.3.2-1.el6.x86_64         151/266
+    master:  
+  Cleanup    : gnupg2-2.0.14-8.el6.x86_64                               152/266
+    master:  
+  Cleanup    : libuser-0.56.13-5.el6.x86_64                             153/266
+    master:  
+  Cleanup    : logrotate-3.7.8-23.el6.x86_64                            154/266
+    master:  
+  Cleanup    : wget-1.12-5.el6_6.1.x86_64                               155/266
+    master:  
+  Cleanup    : 12:dhclient-4.1.1-49.P1.el6.centos.x86_64                156/266
+    master:  
+  Cleanup    : yum-plugin-fastestmirror-1.1.30-30.el6.noarch            157/266
+    master:  
+  Cleanup    : yum-3.2.29-69.el6.centos.noarch                          158/266
+    master:  
+  Cleanup    : selinux-policy-targeted-3.7.19-279.el6.noarch            159/266
+    master:  
+  Cleanup    : selinux-policy-3.7.19-279.el6.noarch                     160/266
+    master:  
+  Cleanup    : 1:grub-0.97-94.el6.x86_64                                161/266
+    master:  
+  Cleanup    : rpm-python-4.8.0-47.el6.x86_64                           162/266
+    master:  
+  Cleanup    : elfutils-libs-0.161-3.el6.x86_64                         163/266
+    master:  
+  Cleanup    : mdadm-3.3.2-5.el6.x86_64                                 164/266
+    master:  
+  Cleanup    : 1:nfs-utils-1.2.3-64.el6.x86_64                          165/266
+    master:  
+  Cleanup    : nfs-utils-lib-1.1.5-11.el6.x86_64                        166/266
+    master:  
+  Cleanup    : rpcbind-0.2.0-11.el6.x86_64                              167/266
+    master:  
+  Cleanup    : 2:vim-minimal-7.4.629-5.el6.x86_64                       168/266
+    master:  
+  Cleanup    : newt-python-0.52.11-3.el6.x86_64                         169/266
+    master:  
+  Cleanup    : e2fsprogs-libs-1.41.12-22.el6.x86_64                     170/266
+    master:  
+  Cleanup    : libss-1.41.12-22.el6.x86_64                              171/266
+    master:  
+  Cleanup    : device-mapper-event-libs-1.02.95-2.el6.x86_64            172/266
+    master:  
+  Cleanup    : kpartx-0.4.9-87.el6.x86_64                               173/266
+    master:  
+  Cleanup    : python-urlgrabber-3.9.1-9.el6.noarch                     174/266
+    master:  
+  Cleanup    : python-pycurl-7.19.0-8.el6.x86_64                        175/266
+    master:  
+  Cleanup    : python-libs-2.6.6-64.el6.x86_64                          176/266
+    master:  
+  Cleanup    : python-2.6.6-64.el6.x86_64                               177/266
+    master:  
+  Cleanup    : device-mapper-1.02.95-2.el6.x86_64                       178/266
+    master:  
+  Cleanup    : device-mapper-libs-1.02.95-2.el6.x86_64                  179/266
+    master:  
+  Cleanup    : acl-2.2.49-6.el6.x86_64                                  180/266
+    master:  
+  Cleanup    : libgomp-4.4.7-16.el6.x86_64                              181/266
+    master:  
+  Cleanup    : dracut-kernel-004-388.el6.noarch                         182/266
+    master:  
+  Cleanup    : dracut-004-388.el6.noarch                                183/266
+    master:  
+  Cleanup    : plymouth-0.8.3-27.el6.centos.1.x86_64                    184/266
+    master:  
+  Cleanup    : 2:tar-1.23-13.el6.x86_64                                 185/266
+    master:  
+  Cleanup    : plymouth-scripts-0.8.3-27.el6.centos.1.x86_64            186/266
+    master:  
+  Cleanup    : libdrm-2.4.59-2.el6.x86_64                               187/266
+    master:  
+  Cleanup    : iproute-2.6.32-45.el6.x86_64                             188/266
+    master:  
+  Cleanup    : iptables-1.4.7-16.el6.x86_64                             189/266
+    master:  
+  Cleanup    : policycoreutils-2.0.83-24.el6.x86_64                     190/266
+    master:  
+  Cleanup    : util-linux-ng-2.17.2-12.18.el6.x86_64                    191/266
+    master:  
+  Cleanup    : iputils-20071127-20.el6.x86_64                           192/266
+    master:  
+  Cleanup    : udev-147-2.63.el6.x86_64                                 193/266
+    master:  
+  Cleanup    : initscripts-9.03.49-1.el6.centos.x86_64                  194/266
+    master:  
+  Cleanup    : libcurl-7.19.7-46.el6.x86_64                             195/266
+    master:  
+  Cleanup    : openldap-2.4.40-5.el6.x86_64                             196/266
+    master:  
+  Cleanup    : curl-7.19.7-46.el6.x86_64                                197/266
+    master:  
+  Cleanup    : rpm-libs-4.8.0-47.el6.x86_64                             198/266
+    master:  
+  Cleanup    : rpm-4.8.0-47.el6.x86_64                                  199/266
+    master:  
+  Cleanup    : nss-tools-3.18.0-5.3.el6_6.x86_64                        200/266
+    master:  
+  Cleanup    : nss-sysinit-3.18.0-5.3.el6_6.x86_64                      201/266
+    master:  
+  Cleanup    : nss-3.18.0-5.3.el6_6.x86_64                              202/266
+    master:  
+  Cleanup    : nss-softokn-3.14.3-22.el6_6.x86_64                       203/266
+    master:  
+  Cleanup    : 2:shadow-utils-4.1.4.2-19.el6_6.1.x86_64                 204/266
+    master:  
+  Cleanup    : upstart-0.6.5-13.el6_5.3.x86_64                          205/266
+    master:  
+  Cleanup    : nss-util-3.18.0-1.el6_6.x86_64                           206/266
+    master:  
+  Cleanup    : libnih-1.0.1-7.el6.x86_64                                207/266
+    master:  
+  Cleanup    : db4-utils-4.7.25-19.el6_6.x86_64                         208/266
+    master:  
+  Cleanup    : 1:findutils-4.4.2-6.el6.x86_64                           209/266
+    master:  
+  Cleanup    : glib2-2.28.8-4.el6.x86_64                                210/266
+    master:  
+  Cleanup    : libblkid-2.17.2-12.18.el6.x86_64                         211/266
+    master:  
+  Cleanup    : file-5.04-21.el6.x86_64                                  212/266
+    master:  
+  Cleanup    : gzip-1.3.12-22.el6.x86_64                                213/266
+    master:  
+  Cleanup    : chkconfig-1.3.49.3-5.el6.x86_64                          214/266
+    master:  
+  Cleanup    : libssh2-1.4.2-1.el6_6.1.x86_64                           215/266
+    master:  
+  Cleanup    : openssl-1.0.1e-42.el6.x86_64                             216/266
+    master:  
+  Cleanup    : krb5-libs-1.10.3-42.el6.x86_64                           217/266
+    master:  
+  Cleanup    : psmisc-22.6-19.el6_5.x86_64                              218/266
+    master:  
+  Cleanup    : procps-3.2.8-33.el6.x86_64                               219/266
+    master:  
+  Cleanup    : net-tools-1.60-110.el6_2.x86_64                          220/266
+    master:  
+  Cleanup    : libselinux-utils-2.0.94-5.8.el6.x86_64                   221/266
+    master:  
+  Cleanup    : libpciaccess-0.13.3-0.1.el6.x86_64                       222/266
+    master:  
+  Cleanup    : ca-certificates-2015.2.4-65.0.1.el6_6.noarch             223/266
+    master:  
+  Cleanup    : 1:make-3.81-20.el6.x86_64                                224/266
+    master:  
+  Cleanup    : gawk-3.1.7-10.el6.x86_64                                 225/266
+    master:  
+  Cleanup    : cpio-2.10-12.el6_5.x86_64                                226/266
+    master:  
+  Cleanup    : hwdata-0.233-14.1.el6.noarch                             227/266
+    master:  
+  Cleanup    : module-init-tools-3.9-25.el6.x86_64                      228/266
+    master:  
+  Cleanup    : coreutils-libs-8.4-37.el6.x86_64                         229/266
+    master:  
+  Cleanup    : pam-1.1.1-20.el6.x86_64                                  230/266
+    master:  
+  Cleanup    : coreutils-8.4-37.el6.x86_64                              231/266
+    master:  
+  Cleanup    : gmp-4.3.1-7.el6_2.2.x86_64                               232/266
+    master:  
+  Cleanup    : libstdc++-4.4.7-16.el6.x86_64                            233/266
+    master:  
+  Cleanup    : grep-2.20-3.el6.x86_64                                   234/266
+    master:  
+  Cleanup    : libselinux-2.0.94-5.8.el6.x86_64                         235/266
+    master:  
+  Cleanup    : binutils-2.20.51.0.2-5.43.el6.x86_64                     236/266
+    master:  
+  Cleanup    : libacl-2.2.49-6.el6.x86_64                               237/266
+    master:  
+  Cleanup    : audit-libs-2.3.7-5.el6.x86_64                            238/266
+    master:  
+  Cleanup    : db4-4.7.25-19.el6_6.x86_64                               239/266
+    master:  
+  Cleanup    : libcom_err-1.41.12-22.el6.x86_64                         240/266
+    master:  
+  Cleanup    : file-libs-5.04-21.el6.x86_64                             241/266
+    master:  
+  Cleanup    : libuuid-2.17.2-12.18.el6.x86_64                          242/266
+    master:  
+  Cleanup    : 1:dbus-libs-1.2.24-8.el6_6.x86_64                        243/266
+    master:  
+  Cleanup    : nspr-4.10.8-1.el6_6.x86_64                               244/266
+    master:  
+  Cleanup    : sqlite-3.6.20-1.el6.x86_64                               245/266
+    master:  
+  Cleanup    : elfutils-libelf-0.161-3.el6.x86_64                       246/266
+    master:  
+  Cleanup    : plymouth-core-libs-0.8.3-27.el6.centos.1.x86_64          247/266
+    master:  
+  Cleanup    : libudev-147-2.63.el6.x86_64                              248/266
+    master:  
+  Cleanup    : expat-2.0.1-11.el6_2.x86_64                              249/266
+    master:  
+  Cleanup    : gdbm-1.8.0-38.el6.x86_64                                 250/266
+    master:  
+  Cleanup    : newt-0.52.11-3.el6.x86_64                                251/266
+    master:  
+  Cleanup    : libtirpc-0.2.1-10.el6.x86_64                             252/266
+    master:  
+  Cleanup    : tcp_wrappers-libs-7.6-57.el6.x86_64                      253/266
+    master:  
+  Cleanup    : libgcrypt-1.4.5-11.el6_4.x86_64                          254/266
+    master:  
+  Cleanup    : libxml2-2.7.6-20.el6.x86_64                              255/266
+    master:  
+  Cleanup    : efibootmgr-0.5.4-13.el6.x86_64                           256/266
+    master:  
+  Cleanup    : setup-2.8.14-20.el6_4.1.noarch                           257/266
+    master:  
+  Cleanup    : centos-release-6-7.el6.centos.12.3.x86_64                258/266
+    master:  
+  Cleanup    : 12:dhcp-common-4.1.1-49.P1.el6.centos.x86_64             259/266
+    master:  
+  Cleanup    : kernel-firmware-2.6.32-573.el6.noarch                    260/266
+    master:  
+  Cleanup    : glibc-common-2.12-1.166.el6.x86_64                       261/266
+    master:  
+  Cleanup    : bash-4.1.2-33.el6.x86_64                                 262/266
+    master:  
+  Cleanup    : nss-softokn-freebl-3.14.3-22.el6_6.x86_64                263/266
+    master:  
+  Cleanup    : glibc-2.12-1.166.el6.x86_64                              264/266
+    master:  
+  Cleanup    : tzdata-2015e-1.el6.noarch                                265/266
+    master:  
+  Cleanup    : libgcc-4.4.7-16.el6.x86_64                               266/266
+    master:  
+  Verifying  : procps-3.2.8-45.el6_9.3.x86_64                             1/266
+    master:  
+  Verifying  : rpm-4.8.0-59.el6.x86_64                                    2/266
+    master:  
+  Verifying  : nss-tools-3.36.0-9.el6_10.x86_64                           3/266
+    master:  
+  Verifying  : 2:tar-1.23-15.el6_8.x86_64                                 4/266
+    master:  
+  Verifying  : openldap-2.4.40-16.el6.x86_64                              5/266
+    master:  
+  Verifying  : libcom_err-1.41.12-24.el6.x86_64                           6/266
+    master:  
+  Verifying  : iptables-ipv6-1.4.7-19.el6.x86_64                          7/266
+    master:  
+  Verifying  : bash-4.1.2-48.el6.x86_64                                   8/266
+    master:  
+  Verifying  : efibootmgr-0.5.4-15.el6.x86_64                             9/266
+    master:  
+  Verifying  : glib2-2.28.8-10.el6.x86_64                                10/266
+    master:  
+  Verifying  : newt-0.52.11-4.el6.x86_64                                 11/266
+    master:  
+  Verifying  : file-libs-5.04-30.el6.x86_64                              12/266
+    master:  
+  Verifying  : 2:postfix-2.6.6-8.el6.x86_64                              13/266
+    master:  
+  Verifying  : udev-147-2.73.el6_8.2.x86_64                              14/266
+    master:  
+  Verifying  : libss-1.41.12-24.el6.x86_64                               15/266
+    master:  
+  Verifying  : sqlite-3.6.20-1.el6_7.2.x86_64                            16/266
+    master:  
+  Verifying  : libssh2-1.4.2-2.el6_7.1.x86_64                            17/266
+    master:  
+  Verifying  : 12:dhclient-4.1.1-63.P1.el6.centos.x86_64                 18/266
+    master:  
+  Verifying  : cronie-1.4.4-16.el6_8.2.x86_64                            19/266
+    master:  
+  Verifying  : kexec-tools-2.0.0-310.el6.x86_64                          20/266
+    master:  
+  Verifying  : nss-util-3.36.0-1.el6.x86_64                              21/266
+    master:  
+  Verifying  : python-urlgrabber-3.9.1-11.el6.noarch                     22/266
+    master:  
+  Verifying  : iputils-20071127-24.el6.x86_64                            23/266
+    master:  
+  Verifying  : ca-certificates-2018.2.22-65.1.el6.noarch                 24/266
+    master:  
+  Verifying  : nspr-4.19.0-1.el6.x86_64                                  25/266
+    master:  
+  Verifying  : pam-1.1.1-24.el6.x86_64                                   26/266
+    master:  
+  Verifying  : 2:shadow-utils-4.1.5.1-5.el6.x86_64                       27/266
+    master:  
+  Verifying  : krb5-libs-1.10.3-65.el6.x86_64                            28/266
+    master:  
+  Verifying  : grep-2.20-6.el6.x86_64                                    29/266
+    master:  
+  Verifying  : initscripts-9.03.61-1.el6.centos.x86_64                   30/266
+    master:  
+  Verifying  : audit-libs-2.4.5-6.el6.x86_64                             31/266
+    master:  
+  Verifying  : passwd-0.77-7.el6.x86_64                                  32/266
+    master:  
+  Verifying  : libgomp-4.4.7-23.el6.x86_64                               33/266
+    master:  
+  Verifying  : python-2.6.6-66.el6_8.x86_64                              34/266
+    master:  
+  Verifying  : selinux-policy-3.7.19-312.el6.noarch                      35/266
+    master:  
+  Verifying  : hwdata-0.233-20.1.el6.noarch                              36/266
+    master:  
+  Verifying  : libblkid-2.17.2-12.28.el6_9.2.x86_64                      37/266
+    master:  
+  Verifying  : python-pycurl-7.19.0-9.el6.x86_64                         38/266
+    master:  
+  Verifying  : psmisc-22.6-24.el6.x86_64                                 39/266
+    master:  
+  Verifying  : nfs-utils-lib-1.1.5-13.el6.x86_64                         40/266
+    master:  
+  Verifying  : lvm2-libs-2.02.143-12.el6_9.1.x86_64                      41/266
+    master:  
+  Verifying  : 1:findutils-4.4.2-9.el6.x86_64                            42/266
+    master:  
+  Verifying  : gzip-1.3.12-24.el6.x86_64                                 43/266
+    master:  
+  Verifying  : iproute-2.6.32-57.el6.x86_64                              44/266
+    master:  
+  Verifying  : plymouth-scripts-0.8.3-29.el6.centos.x86_64               45/266
+    master:  
+  Verifying  : rpm-python-4.8.0-59.el6.x86_64                            46/266
+    master:  
+  Verifying  : coreutils-8.4-47.el6.x86_64                               47/266
+    master:  
+  Verifying  : device-mapper-libs-1.02.117-12.el6_9.1.x86_64             48/266
+    master:  
+  Verifying  : nss-3.36.0-9.el6_10.x86_64                                49/266
+    master:  
+  Verifying  : kernel-2.6.32-754.10.1.el6.x86_64                         50/266
+    master:  
+  Verifying  : 2:vim-minimal-7.4.629-5.el6_8.1.x86_64                    51/266
+    master:  
+  Verifying  : openssl-1.0.1e-57.el6.x86_64                              52/266
+    master:  
+  Verifying  : glibc-2.12-1.212.el6.x86_64                               53/266
+    master:  
+  Verifying  : upstart-0.6.5-17.el6.x86_64                               54/266
+    master:  
+  Verifying  : policycoreutils-2.0.83-30.1.el6_8.x86_64                  55/266
+    master:  
+  Verifying  : device-mapper-1.02.117-12.el6_9.1.x86_64                  56/266
+    master:  
+  Verifying  : libselinux-2.0.94-7.el6.x86_64                            57/266
+    master:  
+  Verifying  : 1:nfs-utils-1.2.3-78.el6_10.1.x86_64                      58/266
+    master:  
+  Verifying  : module-init-tools-3.9-26.el6.x86_64                       59/266
+    master:  
+  Verifying  : net-tools-1.60-114.el6.x86_64                             60/266
+    master:  
+  Verifying  : 1:grub-0.97-99.el6.x86_64                                 61/266
+    master:  
+  Verifying  : libpciaccess-0.13.4-1.el6.x86_64                          62/266
+    master:  
+  Verifying  : expat-2.0.1-13.el6_8.x86_64                               63/266
+    master:  
+  Verifying  : libnih-1.0.1-8.el6.x86_64                                 64/266
+    master:  
+  Verifying  : libcurl-7.19.7-53.el6_9.x86_64                            65/266
+    master:  
+  Verifying  : wget-1.12-10.el6.x86_64                                   66/266
+    master:  
+  Verifying  : lvm2-2.02.143-12.el6_9.1.x86_64                           67/266
+    master:  
+  Verifying  : cronie-anacron-1.4.4-16.el6_8.2.x86_64                    68/266
+    master:  
+  Verifying  : binutils-2.20.51.0.2-5.48.el6.x86_64                      69/266
+    master:  
+  Verifying  : libtirpc-0.2.1-15.el6.x86_64                              70/266
+    master:  
+  Verifying  : device-mapper-event-libs-1.02.117-12.el6_9.1.x86_64       71/266
+    master:  
+  Verifying  : curl-7.19.7-53.el6_9.x86_64                               72/266
+    master:  
+  Verifying  : elfutils-libelf-0.164-2.el6.x86_64                        73/266
+    master:  
+  Verifying  : python-libs-2.6.6-66.el6_8.x86_64                         74/266
+    master:  
+  Verifying  : dracut-004-411.el6.noarch                                 75/266
+    master:  
+  Verifying  : tcp_wrappers-libs-7.6-58.el6.x86_64                       76/266
+    master:  
+  Verifying  : libxml2-2.7.6-21.el6_8.1.x86_64                           77/266
+    master:  
+  Verifying  : plymouth-core-libs-0.8.3-29.el6.centos.x86_64             78/266
+    master:  
+  Verifying  : newt-python-0.52.11-4.el6.x86_64                          79/266
+    master:  
+  Verifying  : util-linux-ng-2.17.2-12.28.el6_9.2.x86_64                 80/266
+    master:  
+  Verifying  : device-mapper-event-1.02.117-12.el6_9.1.x86_64            81/266
+    master:  
+  Verifying  : glibc-common-2.12-1.212.el6.x86_64                        82/266
+    master:  
+  Verifying  : acl-2.2.49-7.el6_9.1.x86_64                               83/266
+    master:  
+  Verifying  : libuser-0.56.13-8.el6_7.x86_64                            84/266
+    master:  
+  Verifying  : audit-2.4.5-6.el6.x86_64                                  85/266
+    master:  
+  Verifying  : libdrm-2.4.65-2.el6.x86_64                                86/266
+    master:  
+  Verifying  : iptables-1.4.7-19.el6.x86_64                              87/266
+    master:  
+  Verifying  : file-5.04-30.el6.x86_64                                   88/266
+    master:  
+  Verifying  : libstdc++-4.4.7-23.el6.x86_64                             89/266
+    master:  
+  Verifying  : yum-3.2.29-81.el6.centos.0.1.noarch                       90/266
+    master:  
+  Verifying  : 12:dhcp-common-4.1.1-63.P1.el6.centos.x86_64              91/266
+    master:  
+  Verifying  : logrotate-3.7.8-28.el6.x86_64                             92/266
+    master:  
+  Verifying  : e2fsprogs-1.41.12-24.el6.x86_64                           93/266
+    master:  
+  Verifying  : e2fsprogs-libs-1.41.12-24.el6.x86_64                      94/266
+    master:  
+  Verifying  : openssh-clients-5.3p1-123.el6_9.x86_64                    95/266
+    master:  
+  Verifying  : libselinux-utils-2.0.94-7.el6.x86_64                      96/266
+    master:  
+  Verifying  : device-mapper-persistent-data-0.6.2-0.2.rc7.el6.x86_64    97/266
+    master:  
+  Verifying  : sudo-1.8.6p3-29.el6_9.x86_64                              98/266
+    master:  
+  Verifying  : gdbm-1.8.0-39.el6.x86_64                                  99/266
+    master:  
+  Verifying  : plymouth-0.8.3-29.el6.centos.x86_64                      100/266
+    master:  
+  Verifying  : libudev-147-2.73.el6_8.2.x86_64                          101/266
+    master:  
+  Verifying  : nss-sysinit-3.36.0-9.el6_10.x86_64                       102/266
+    master:  
+  Verifying  : kpartx-0.4.9-106.el6_10.1.x86_64                         103/266
+    master:  
+  Verifying  : rpcbind-0.2.0-16.el6.x86_64                              104/266
+    master:  
+  Verifying  : gawk-3.1.7-10.el6_7.3.x86_64                             105/266
+    master:  
+  Verifying  : tzdata-2018i-1.el6.noarch                                106/266
+    master:  
+  Verifying  : libuuid-2.17.2-12.28.el6_9.2.x86_64                      107/266
+    master:  
+  Verifying  : nss-softokn-freebl-3.14.3-23.3.el6_8.x86_64              108/266
+    master:  
+  Verifying  : rsyslog-5.8.10-12.el6.x86_64                             109/266
+    master:  
+  Verifying  : libaio-0.3.107-10.el6.x86_64                             110/266
+    master:  
+  Verifying  : libgcrypt-1.4.5-12.el6_8.x86_64                          111/266
+    master:  
+  Verifying  : 1:make-3.81-23.el6.x86_64                                112/266
+    master:  
+  Verifying  : yum-plugin-fastestmirror-1.1.30-42.el6_10.noarch         113/266
+    master:  
+  Verifying  : chkconfig-1.3.49.5-1.el6.x86_64                          114/266
+    master:  
+  Verifying  : cpio-2.10-13.el6.x86_64                                  115/266
+    master:  
+  Verifying  : coreutils-libs-8.4-47.el6.x86_64                         116/266
+    master:  
+  Verifying  : openssh-5.3p1-123.el6_9.x86_64                           117/266
+    master:  
+  Verifying  : gnupg2-2.0.14-9.el6_10.x86_64                            118/266
+    master:  
+  Verifying  : openssh-server-5.3p1-123.el6_9.x86_64                    119/266
+    master:  
+  Verifying  : rpm-libs-4.8.0-59.el6.x86_64                             120/266
+    master:  
+  Verifying  : db4-4.7.25-22.el6.x86_64                                 121/266
+    master:  
+  Verifying  : dracut-kernel-004-411.el6.noarch                         122/266
+    master:  
+  Verifying  : db4-utils-4.7.25-22.el6.x86_64                           123/266
+    master:  
+  Verifying  : libacl-2.2.49-7.el6_9.1.x86_64                           124/266
+    master:  
+  Verifying  : mdadm-3.3.4-8.el6.x86_64                                 125/266
+    master:  
+  Verifying  : centos-release-6-10.el6.centos.12.3.x86_64               126/266
+    master:  
+  Verifying  : selinux-policy-targeted-3.7.19-312.el6.noarch            127/266
+    master:  
+  Verifying  : kernel-firmware-2.6.32-754.10.1.el6.noarch               128/266
+    master:  
+  Verifying  : nss-softokn-3.14.3-23.3.el6_8.x86_64                     129/266
+    master:  
+  Verifying  : setup-2.8.14-23.el6.noarch                               130/266
+    master:  
+  Verifying  : 1:dbus-libs-1.2.24-9.el6.x86_64                          131/266
+    master:  
+  Verifying  : libgcc-4.4.7-23.el6.x86_64                               132/266
+    master:  
+  Verifying  : gmp-4.3.1-13.el6.x86_64                                  133/266
+    master:  
+  Verifying  : elfutils-libs-0.164-2.el6.x86_64                         134/266
+    master:  
+  Verifying  : kpartx-0.4.9-87.el6.x86_64                               135/266
+    master:  
+  Verifying  : acl-2.2.49-6.el6.x86_64                                  136/266
+    master:  
+  Verifying  : bash-4.1.2-33.el6.x86_64                                 137/266
+    master:  
+  Verifying  : glibc-common-2.12-1.166.el6.x86_64                       138/266
+    master:  
+  Verifying  : libxml2-2.7.6-20.el6.x86_64                              139/266
+    master:  
+  Verifying  : procps-3.2.8-33.el6.x86_64                               140/266
+    master:  
+  Verifying  : libpciaccess-0.13.3-0.1.el6.x86_64                       141/266
+    master:  
+  Verifying  : db4-4.7.25-19.el6_6.x86_64                               142/266
+    master:  
+  Verifying  : newt-0.52.11-3.el6.x86_64                                143/266
+    master:  
+  Verifying  : cpio-2.10-12.el6_5.x86_64                                144/266
+    master:  
+  Verifying  : 12:dhcp-common-4.1.1-49.P1.el6.centos.x86_64             145/266
+    master:  
+  Verifying  : libblkid-2.17.2-12.18.el6.x86_64                         146/266
+    master:  
+  Verifying  : elfutils-libs-0.161-3.el6.x86_64                         147/266
+    master:  
+  Verifying  : python-libs-2.6.6-64.el6.x86_64                          148/266
+    master:  
+  Verifying  : kernel-firmware-2.6.32-573.el6.noarch                    149/266
+    master:  
+  Verifying  : python-2.6.6-64.el6.x86_64                               150/266
+    master:  
+  Verifying  : glib2-2.28.8-4.el6.x86_64                                151/266
+    master:  
+  Verifying  : module-init-tools-3.9-25.el6.x86_64                      152/266
+    master:  
+  Verifying  : nss-util-3.18.0-1.el6_6.x86_64                           153/266
+    master:  
+  Verifying  : libnih-1.0.1-7.el6.x86_64                                154/266
+    master:  
+  Verifying  : hwdata-0.233-14.1.el6.noarch                             155/266
+    master:  
+  Verifying  : python-urlgrabber-3.9.1-9.el6.noarch                     156/266
+    master:  
+  Verifying  : dracut-004-388.el6.noarch                                157/266
+    master:  
+  Verifying  : nspr-4.10.8-1.el6_6.x86_64                               158/266
+    master:  
+  Verifying  : glibc-2.12-1.166.el6.x86_64                              159/266
+    master:  
+  Verifying  : udev-147-2.63.el6.x86_64                                 160/266
+    master:  
+  Verifying  : util-linux-ng-2.17.2-12.18.el6.x86_64                    161/266
+    master:  
+  Verifying  : pam-1.1.1-20.el6.x86_64                                  162/266
+    master:  
+  Verifying  : openssh-clients-5.3p1-111.el6.x86_64                     163/266
+    master:  
+  Verifying  : libacl-2.2.49-6.el6.x86_64                               164/266
+    master:  
+  Verifying  : gmp-4.3.1-7.el6_2.2.x86_64                               165/266
+    master:  
+  Verifying  : iptables-1.4.7-16.el6.x86_64                             166/266
+    master:  
+  Verifying  : libtirpc-0.2.1-10.el6.x86_64                             167/266
+    master:  
+  Verifying  : mdadm-3.3.2-5.el6.x86_64                                 168/266
+    master:  
+  Verifying  : python-pycurl-7.19.0-8.el6.x86_64                        169/266
+    master:  
+  Verifying  : plymouth-core-libs-0.8.3-27.el6.centos.1.x86_64          170/266
+    master:  
+  Verifying  : passwd-0.77-4.el6_2.2.x86_64                             171/266
+    master:  
+  Verifying  : rpm-python-4.8.0-47.el6.x86_64                           172/266
+    master:  
+  Verifying  : chkconfig-1.3.49.3-5.el6.x86_64                          173/266
+    master:  
+  Verifying  : upstart-0.6.5-13.el6_5.3.x86_64                          174/266
+    master:  
+  Verifying  : psmisc-22.6-19.el6_5.x86_64                              175/266
+    master:  
+  Verifying  : iputils-20071127-20.el6.x86_64                           176/266
+    master:  
+  Verifying  : sudo-1.8.6p3-19.el6.x86_64                               177/266
+    master:  
+  Verifying  : libgcrypt-1.4.5-11.el6_4.x86_64                          178/266
+    master:  
+  Verifying  : yum-plugin-fastestmirror-1.1.30-30.el6.noarch            179/266
+    master:  
+  Verifying  : lvm2-libs-2.02.118-2.el6.x86_64                          180/266
+    master:  
+  Verifying  : rsyslog-5.8.10-10.el6_6.x86_64                           181/266
+    master:  
+  Verifying  : 12:dhclient-4.1.1-49.P1.el6.centos.x86_64                182/266
+    master:  
+  Verifying  : openldap-2.4.40-5.el6.x86_64                             183/266
+    master:  
+  Verifying  : coreutils-8.4-37.el6.x86_64                              184/266
+    master:  
+  Verifying  : device-mapper-libs-1.02.95-2.el6.x86_64                  185/266
+    master:  
+  Verifying  : nfs-utils-lib-1.1.5-11.el6.x86_64                        186/266
+    master:  
+  Verifying  : nss-softokn-3.14.3-22.el6_6.x86_64                       187/266
+    master:  
+  Verifying  : net-tools-1.60-110.el6_2.x86_64                          188/266
+    master:  
+  Verifying  : openssl-1.0.1e-42.el6.x86_64                             189/266
+    master:  
+  Verifying  : curl-7.19.7-46.el6.x86_64                                190/266
+    master:  
+  Verifying  : dracut-kernel-004-388.el6.noarch                         191/266
+    master:  
+  Verifying  : rpcbind-0.2.0-11.el6.x86_64                              192/266
+    master:  
+  Verifying  : 2:vim-minimal-7.4.629-5.el6.x86_64                       193/266
+    master:  
+  Verifying  : ca-certificates-2015.2.4-65.0.1.el6_6.noarch             194/266
+    master:  
+  Verifying  : device-mapper-persistent-data-0.3.2-1.el6.x86_64         195/266
+    master:  
+  Verifying  : 1:nfs-utils-1.2.3-64.el6.x86_64                          196/266
+    master:  
+  Verifying  : nss-tools-3.18.0-5.3.el6_6.x86_64                        197/266
+    master:  
+  Verifying  : e2fsprogs-1.41.12-22.el6.x86_64                          198/266
+    master:  
+  Verifying  : libss-1.41.12-22.el6.x86_64                              199/266
+    master:  
+  Verifying  : cronie-1.4.4-15.el6.x86_64                               200/266
+    master:  
+  Verifying  : 2:shadow-utils-4.1.4.2-19.el6_6.1.x86_64                 201/266
+    master:  
+  Verifying  : device-mapper-event-libs-1.02.95-2.el6.x86_64            202/266
+    master:  
+  Verifying  : gnupg2-2.0.14-8.el6.x86_64                               203/266
+    master:  
+  Verifying  : libselinux-2.0.94-5.8.el6.x86_64                         204/266
+    master:  
+  Verifying  : libssh2-1.4.2-1.el6_6.1.x86_64                           205/266
+    master:  
+  Verifying  : newt-python-0.52.11-3.el6.x86_64                         206/266
+    master:  
+  Verifying  : grep-2.20-3.el6.x86_64                                   207/266
+    master:  
+  Verifying  : cronie-anacron-1.4.4-15.el6.x86_64                       208/266
+    master:  
+  Verifying  : elfutils-libelf-0.161-3.el6.x86_64                       209/266
+    master:  
+  Verifying  : centos-release-6-7.el6.centos.12.3.x86_64                210/266
+    master:  
+  Verifying  : nss-3.18.0-5.3.el6_6.x86_64                              211/266
+    master:  
+  Verifying  : logrotate-3.7.8-23.el6.x86_64                            212/266
+    master:  
+  Verifying  : libdrm-2.4.59-2.el6.x86_64                               213/266
+    master:  
+  Verifying  : gdbm-1.8.0-38.el6.x86_64                                 214/266
+    master:  
+  Verifying  : setup-2.8.14-20.el6_4.1.noarch                           215/266
+    master:  
+  Verifying  : expat-2.0.1-11.el6_2.x86_64                              216/266
+    master:  
+  Verifying  : libcurl-7.19.7-46.el6.x86_64                             217/266
+    master:  
+  Verifying  : libudev-147-2.63.el6.x86_64                              218/266
+    master:  
+  Verifying  : krb5-libs-1.10.3-42.el6.x86_64                           219/266
+    master:  
+  Verifying  : libuuid-2.17.2-12.18.el6.x86_64                          220/266
+    master:  
+  Verifying  : device-mapper-1.02.95-2.el6.x86_64                       221/266
+    master:  
+  Verifying  : 1:make-3.81-20.el6.x86_64                                222/266
+    master:  
+  Verifying  : libgcc-4.4.7-16.el6.x86_64                               223/266
+    master:  
+  Verifying  : selinux-policy-3.7.19-279.el6.noarch                     224/266
+    master:  
+  Verifying  : openssh-5.3p1-111.el6.x86_64                             225/266
+    master:  
+  Verifying  : wget-1.12-5.el6_6.1.x86_64                               226/266
+    master:  
+  Verifying  : libstdc++-4.4.7-16.el6.x86_64                            227/266
+    master:  
+  Verifying  : 1:dbus-libs-1.2.24-8.el6_6.x86_64                        228/266
+    master:  
+  Verifying  : 1:grub-0.97-94.el6.x86_64                                229/266
+    master:  
+  Verifying  : nss-sysinit-3.18.0-5.3.el6_6.x86_64                      230/266
+    master:  
+  Verifying  : yum-3.2.29-69.el6.centos.noarch                          231/266
+    master:  
+  Verifying  : file-5.04-21.el6.x86_64                                  232/266
+    master:  
+  Verifying  : efibootmgr-0.5.4-13.el6.x86_64                           233/266
+    master:  
+  Verifying  : plymouth-0.8.3-27.el6.centos.1.x86_64                    234/266
+    master:  
+  Verifying  : 2:tar-1.23-13.el6.x86_64                                 235/266
+    master:  
+  Verifying  : libcom_err-1.41.12-22.el6.x86_64                         236/266
+    master:  
+  Verifying  : tzdata-2015e-1.el6.noarch                                237/266
+    master:  
+  Verifying  : 2:postfix-2.6.6-6.el6_5.x86_64                           238/266
+    master:  
+  Verifying  : e2fsprogs-libs-1.41.12-22.el6.x86_64                     239/266
+    master:  
+  Verifying  : sqlite-3.6.20-1.el6.x86_64                               240/266
+    master:  
+  Verifying  : audit-libs-2.3.7-5.el6.x86_64                            241/266
+    master:  
+  Verifying  : policycoreutils-2.0.83-24.el6.x86_64                     242/266
+    master:  
+  Verifying  : openssh-server-5.3p1-111.el6.x86_64                      243/266
+    master:  
+  Verifying  : libuser-0.56.13-5.el6.x86_64                             244/266
+    master:  
+  Verifying  : coreutils-libs-8.4-37.el6.x86_64                         245/266
+    master:  
+  Verifying  : rpm-libs-4.8.0-47.el6.x86_64                             246/266
+    master:  
+  Verifying  : db4-utils-4.7.25-19.el6_6.x86_64                         247/266
+    master:  
+  Verifying  : libgomp-4.4.7-16.el6.x86_64                              248/266
+    master:  
+  Verifying  : iproute-2.6.32-45.el6.x86_64                             249/266
+    master:  
+  Verifying  : libselinux-utils-2.0.94-5.8.el6.x86_64                   250/266
+    master:  
+  Verifying  : binutils-2.20.51.0.2-5.43.el6.x86_64                     251/266
+    master:  
+  Verifying  : nss-softokn-freebl-3.14.3-22.el6_6.x86_64                252/266
+    master:  
+  Verifying  : audit-2.3.7-5.el6.x86_64                                 253/266
+    master:  
+  Verifying  : initscripts-9.03.49-1.el6.centos.x86_64                  254/266
+    master:  
+  Verifying  : kexec-tools-2.0.0-286.el6.x86_64                         255/266
+    master:  
+  Verifying  : rpm-4.8.0-47.el6.x86_64                                  256/266
+    master:  
+  Verifying  : device-mapper-event-1.02.95-2.el6.x86_64                 257/266
+    master:  
+  Verifying  : selinux-policy-targeted-3.7.19-279.el6.noarch            258/266
+    master:  
+  Verifying  : lvm2-2.02.118-2.el6.x86_64                               259/266
+    master:  
+  Verifying  : tcp_wrappers-libs-7.6-57.el6.x86_64                      260/266
+    master:  
+  Verifying  : file-libs-5.04-21.el6.x86_64                             261/266
+    master:  
+  Verifying  : gawk-3.1.7-10.el6.x86_64                                 262/266
+    master:  
+  Verifying  : gzip-1.3.12-22.el6.x86_64                                263/266
+    master:  
+  Verifying  : plymouth-scripts-0.8.3-27.el6.centos.1.x86_64            264/266
+    master:  
+  Verifying  : iptables-ipv6-1.4.7-16.el6.x86_64                        265/266
+    master:  
+  Verifying  : 1:findutils-4.4.2-6.el6.x86_64                           266/266
+    master:  
+    master: 
+    master: Installed:
+    master:   kernel.x86_64 0:2.6.32-754.10.1.el6                                           
+    master: 
+    master: Dependency Installed:
+    master:   libaio.x86_64 0:0.3.107-10.el6                                                
+    master: 
+    master: Updated:
+    master:   acl.x86_64 0:2.2.49-7.el6_9.1                                                 
+    master:   audit.x86_64 0:2.4.5-6.el6                                                    
+    master:   audit-libs.x86_64 0:2.4.5-6.el6                                               
+    master:   bash.x86_64 0:4.1.2-48.el6                                                    
+    master:   binutils.x86_64 0:2.20.51.0.2-5.48.el6                                        
+    master:   ca-certificates.noarch 0:2018.2.22-65.1.el6                                   
+    master:   centos-release.x86_64 0:6-10.el6.centos.12.3                                  
+    master:   chkconfig.x86_64 0:1.3.49.5-1.el6                                             
+    master:   coreutils.x86_64 0:8.4-47.el6                                                 
+    master:   coreutils-libs.x86_64 0:8.4-47.el6                                            
+    master:   cpio.x86_64 0:2.10-13.el6                                                     
+    master:   cronie.x86_64 0:1.4.4-16.el6_8.2                                              
+    master:   cronie-anacron.x86_64 0:1.4.4-16.el6_8.2                                      
+    master:   curl.x86_64 0:7.19.7-53.el6_9                                                 
+    master:   db4.x86_64 0:4.7.25-22.el6                                                    
+    master:   db4-utils.x86_64 0:4.7.25-22.el6                                              
+    master:   dbus-libs.x86_64 1:1.2.24-9.el6                                               
+    master:   device-mapper.x86_64 0:1.02.117-12.el6_9.1                                    
+    master:   device-mapper-event.x86_64 0:1.02.117-12.el6_9.1                              
+    master:   device-mapper-event-libs.x86_64 0:1.02.117-12.el6_9.1                         
+    master:   device-mapper-libs.x86_64 0:1.02.117-12.el6_9.1                               
+    master:   device-mapper-persistent-data.x86_64 0:0.6.2-0.2.rc7.el6                      
+    master:   dhclient.x86_64 12:4.1.1-63.P1.el6.centos                                     
+    master:   dhcp-common.x86_64 12:4.1.1-63.P1.el6.centos                                  
+    master:   dracut.noarch 0:004-411.el6                                                   
+    master:   dracut-kernel.noarch 0:004-411.el6                                            
+    master:   e2fsprogs.x86_64 0:1.41.12-24.el6                                             
+    master:   e2fsprogs-libs.x86_64 0:1.41.12-24.el6                                        
+    master:   efibootmgr.x86_64 0:0.5.4-15.el6                                              
+    master:   elfutils-libelf.x86_64 0:0.164-2.el6                                          
+    master:   elfutils-libs.x86_64 0:0.164-2.el6                                            
+    master:   expat.x86_64 0:2.0.1-13.el6_8                                                 
+    master:   file.x86_64 0:5.04-30.el6                                                     
+    master:   file-libs.x86_64 0:5.04-30.el6                                                
+    master:   findutils.x86_64 1:4.4.2-9.el6                                                
+    master:   gawk.x86_64 0:3.1.7-10.el6_7.3                                                
+    master:   gdbm.x86_64 0:1.8.0-39.el6                                                    
+    master:   glib2.x86_64 0:2.28.8-10.el6                                                  
+    master:   glibc.x86_64 0:2.12-1.212.el6                                                 
+    master:   glibc-common.x86_64 0:2.12-1.212.el6                                          
+    master:   gmp.x86_64 0:4.3.1-13.el6                                                     
+    master:   gnupg2.x86_64 0:2.0.14-9.el6_10                                               
+    master:   grep.x86_64 0:2.20-6.el6                                                      
+    master:   grub.x86_64 1:0.97-99.el6                                                     
+    master:   gzip.x86_64 0:1.3.12-24.el6                                                   
+    master:   hwdata.noarch 0:0.233-20.1.el6                                                
+    master:   initscripts.x86_64 0:9.03.61-1.el6.centos                                     
+    master:   iproute.x86_64 0:2.6.32-57.el6                                                
+    master: 
+    master:   iptables.x86_64 0:1.4.7-19.el6                                                
+    master:   iptables-ipv6.x86_64 0:1.4.7-19.el6                                           
+    master:   iputils.x86_64 0:20071127-24.el6                                              
+    master:   kernel-firmware.noarch 0:2.6.32-754.10.1.el6                                  
+    master:   kexec-tools.x86_64 0:2.0.0-310.el6                                            
+    master:   kpartx.x86_64 0:0.4.9-106.el6_10.1                                            
+    master:   krb5-libs.x86_64 0:1.10.3-65.el6                                              
+    master:   libacl.x86_64 0:2.2.49-7.el6_9.1                                              
+    master:   libblkid.x86_64 0:2.17.2-12.28.el6_9.2                                        
+    master:   libcom_err.x86_64 0:1.41.12-24.el6                                            
+    master:   libcurl.x86_64 0:7.19.7-53.el6_9                                              
+    master:   libdrm.x86_64 0:2.4.65-2.el6                                                  
+    master:   libgcc.x86_64 0:4.4.7-23.el6                                                  
+    master:   libgcrypt.x86_64 0:1.4.5-12.el6_8                                             
+    master:   libgomp.x86_64 0:4.4.7-23.el6                                                 
+    master:   libnih.x86_64 0:1.0.1-8.el6                                                   
+    master:   libpciaccess.x86_64 0:0.13.4-1.el6                                            
+    master:   libselinux.x86_64 0:2.0.94-7.el6                                              
+    master:   libselinux-utils.x86_64 0:2.0.94-7.el6                                        
+    master:   libss.x86_64 0:1.41.12-24.el6                                                 
+    master:   libssh2.x86_64 0:1.4.2-2.el6_7.1                                              
+    master:   libstdc++.x86_64 0:4.4.7-23.el6                                               
+    master:   libtirpc.x86_64 0:0.2.1-15.el6                                                
+    master:   libudev.x86_64 0:147-2.73.el6_8.2                                             
+    master:   libuser.x86_64 0:0.56.13-8.el6_7                                              
+    master:   libuuid.x86_64 0:2.17.2-12.28.el6_9.2                                         
+    master:   libxml2.x86_64 0:2.7.6-21.el6_8.1                                             
+    master:   logrotate.x86_64 0:3.7.8-28.el6                                               
+    master:   lvm2.x86_64 0:2.02.143-12.el6_9.1                                             
+    master:   lvm2-libs.x86_64 0:2.02.143-12.el6_9.1                                        
+    master:   make.x86_64 1:3.81-23.el6                                                     
+    master:   mdadm.x86_64 0:3.3.4-8.el6                                                    
+    master:   module-init-tools.x86_64 0:3.9-26.el6                                         
+    master:   net-tools.x86_64 0:1.60-114.el6                                               
+    master:   newt.x86_64 0:0.52.11-4.el6                                                   
+    master:   newt-python.x86_64 0:0.52.11-4.el6                                            
+    master:   nfs-utils.x86_64 1:1.2.3-78.el6_10.1                                          
+    master:   nfs-utils-lib.x86_64 0:1.1.5-13.el6                                           
+    master:   nspr.x86_64 0:4.19.0-1.el6                                                    
+    master:   nss.x86_64 0:3.36.0-9.el6_10                                                  
+    master:   nss-softokn.x86_64 0:3.14.3-23.3.el6_8                                        
+    master:   nss-softokn-freebl.x86_64 0:3.14.3-23.3.el6_8                                 
+    master:   nss-sysinit.x86_64 0:3.36.0-9.el6_10                                          
+    master:   nss-tools.x86_64 0:3.36.0-9.el6_10                                            
+    master:   nss-util.x86_64 0:3.36.0-1.el6                                                
+    master:   openldap.x86_64 0:2.4.40-16.el6                                               
+    master:   openssh.x86_64 0:5.3p1-123.el6_9                                              
+    master:   openssh-clients.x86_64 0:5.3p1-123.el6_9                                      
+    master:   openssh-server.x86_64 0:5.3p1-123.el6_9                                       
+    master:   openssl.x86_64 0:1.0.1e-57.el6                                                
+    master:   pam.x86_64 0:1.1.1-24.el6                  
+    master:                                    
+    master:   passwd.x86_64 0:0.77-7.el6                                                    
+    master:   plymouth.x86_64 0:0.8.3-29.el6.centos                                         
+    master:   plymouth-core-libs.x86_64 0:0.8.3-29.el6.centos                               
+    master:   plymouth-scripts.x86_64 0:0.8.3-29.el6.centos                                 
+    master:   policycoreutils.x86_64 0:2.0.83-30.1.el6_8                                    
+    master:   postfix.x86_64 2:2.6.6-8.el6                                                  
+    master:   procps.x86_64 0:3.2.8-45.el6_9.3                                              
+    master:   psmisc.x86_64 0:22.6-24.el6                                                   
+    master:   python.x86_64 0:2.6.6-66.el6_8                                                
+    master:   python-libs.x86_64 0:2.6.6-66.el6_8                                           
+    master:   python-pycurl.x86_64 0:7.19.0-9.el6                                           
+    master:   python-urlgrabber.noarch 0:3.9.1-11.el6                                       
+    master:   rpcbind.x86_64 0:0.2.0-16.el6                                                 
+    master:   rpm.x86_64 0:4.8.0-59.el6                                                     
+    master:   rpm-libs.x86_64 0:4.8.0-59.el6                                                
+    master:   rpm-python.x86_64 0:4.8.0-59.el6                                              
+    master:   rsyslog.x86_64 0:5.8.10-12.el6                                                
+    master:   selinux-policy.noarch 0:3.7.19-312.el6                                        
+    master:   selinux-policy-targeted.noarch 0:3.7.19-312.el6                               
+    master:   setup.noarch 0:2.8.14-23.el6                                                  
+    master:   shadow-utils.x86_64 2:4.1.5.1-5.el6                                           
+    master:   sqlite.x86_64 0:3.6.20-1.el6_7.2                                              
+    master:   sudo.x86_64 0:1.8.6p3-29.el6_9                                                
+    master:   tar.x86_64 2:1.23-15.el6_8                                                    
+    master:   tcp_wrappers-libs.x86_64 0:7.6-58.el6                                         
+    master:   tzdata.noarch 0:2018i-1.el6                                                   
+    master:   udev.x86_64 0:147-2.73.el6_8.2                                                
+    master:   upstart.x86_64 0:0.6.5-17.el6                                                 
+    master:   util-linux-ng.x86_64 0:2.17.2-12.28.el6_9.2                                   
+    master:   vim-minimal.x86_64 2:7.4.629-5.el6_8.1                                        
+    master:   wget.x86_64 0:1.12-10.el6                                                     
+    master:   yum.noarch 0:3.2.29-81.el6.centos.0.1                                         
+    master:   yum-plugin-fastestmirror.noarch 0:1.1.30-42.el6_10                            
+    master: Complete!
+    master: Loaded plugins: fastestmirror
+    master: Setting up Install Process
+    master: Loading mirror speeds from cached hostfile
+    master:  * base: centos.excellmedia.net
+    master:  * extras: centos.excellmedia.net
+    master:  * updates: centos.excellmedia.net
+    master: Resolving Dependencies
+    master: --> Running transaction check
+    master: ---> Package cloudera-manager-daemons.x86_64 0:5.16.1-1.cm5161.p0.1.el6 will be installed
+    master: ---> Package cloudera-manager-server.x86_64 0:5.16.1-1.cm5161.p0.1.el6 will be installed
+    master: ---> Package oracle-j2sdk1.7.x86_64 0:1.7.0+update67-1 will be installed
+    master: --> Finished Dependency Resolution
+    master: 
+    master: Dependencies Resolved
+    master: 
+    master: ================================================================================
+    master:  Package                 Arch   Version                  Repository        Size
+    master: ================================================================================
+    master: Installing:
+    master:  cloudera-manager-daemons
+    master:                          x86_64 5.16.1-1.cm5161.p0.1.el6 cloudera-manager 770 M
+    master:  cloudera-manager-server x86_64 5.16.1-1.cm5161.p0.1.el6 cloudera-manager 8.5 k
+    master:  oracle-j2sdk1.7         x86_64 1.7.0+update67-1         cloudera-manager 135 M
+    master: 
+    master: Transaction Summary
+    master: ================================================================================
+    master: Install       3 Package(s)
+    master: Total download size: 906 M
+    master: Installed size: 1.2 G
+    master: Downloading Packages:
+    master: --------------------------------------------------------------------------------
+    master: Total                                            11 MB/s | 906 MB     01:24     
+    master: warning: 
+    master: rpmts_HdrFromFdno: Header V4 DSA/SHA1 Signature, key ID e8f86acd: NOKEY
+    master: Retrieving key from https://archive.cloudera.com/cm5/redhat/6/x86_64/cm/RPM-GPG-KEY-cloudera
+    master: Importing GPG key 0xE8F86ACD:
+    master:  Userid: "Yum Maintainer <webmaster@cloudera.com>"
+    master:  From  : https://archive.cloudera.com/cm5/redhat/6/x86_64/cm/RPM-GPG-KEY-cloudera
+    master: Running rpm_check_debug
+    master: Running Transaction Test
+    master: Transaction Test Succeeded
+    master: Running Transaction
+  Installing : cloudera-manager-daemons-5.16.1-1.cm5161.p0.1.el6.x86_64     1/3
+    master:  
+  Installing : cloudera-manager-server-5.16.1-1.cm5161.p0.1.el6.x86_64      2/3
+    master:  
+  Installing : oracle-j2sdk1.7-1.7.0+update67-1.x86_64                      3/3
+    master:  
+  Verifying  : cloudera-manager-server-5.16.1-1.cm5161.p0.1.el6.x86_64      1/3
+    master:  
+  Verifying  : oracle-j2sdk1.7-1.7.0+update67-1.x86_64                      2/3
+    master:  
+  Verifying  : cloudera-manager-daemons-5.16.1-1.cm5161.p0.1.el6.x86_64     3/3
+    master:  
+    master: 
+    master: Installed:
+    master:   cloudera-manager-daemons.x86_64 0:5.16.1-1.cm5161.p0.1.el6                    
+    master:   cloudera-manager-server.x86_64 0:5.16.1-1.cm5161.p0.1.el6                     
+    master:   oracle-j2sdk1.7.x86_64 0:1.7.0+update67-1                                     
+    master: Complete!
+    master: Loaded plugins: fastestmirror
+    master: Setting up Install Process
+    master: Loading mirror speeds from cached hostfile
+    master:  * base: centos.excellmedia.net
+    master:  * extras: centos.excellmedia.net
+    master:  * updates: centos.excellmedia.net
+    master: Resolving Dependencies
+    master: --> Running transaction check
+    master: ---> Package mysql-connector-java.noarch 1:5.1.17-6.el6 will be installed
+    master: --> Processing Dependency: jta >= 1.0 for package: 1:mysql-connector-java-5.1.17-6.el6.noarch
+    master: --> Processing Dependency: slf4j for package: 1:mysql-connector-java-5.1.17-6.el6.noarch
+    master: --> Processing Dependency: jpackage-utils for package: 1:mysql-connector-java-5.1.17-6.el6.noarch
+    master: --> Processing Dependency: jpackage-utils for package: 1:mysql-connector-java-5.1.17-6.el6.noarch
+    master: --> Running transaction check
+    master: ---> Package geronimo-specs-compat.noarch 0:1.0-3.5.M2.el6 will be installed
+    master: --> Processing Dependency: geronimo-specs = 1.0-3.5.M2.el6 for package: geronimo-specs-compat-1.0-3.5.M2.el6.noarch
+    master: ---> Package jpackage-utils.noarch 0:1.7.5-3.16.el6 will be installed
+    master: ---> Package slf4j.noarch 0:1.5.8-8.el6 will be installed
+    master: --> Running transaction check
+    master: ---> Package geronimo-specs.noarch 0:1.0-3.5.M2.el6 will be installed
+    master: --> Processing Dependency: mx4j >= 2.0.1 for package: geronimo-specs-1.0-3.5.M2.el6.noarch
+    master: --> Processing Dependency: apache-tomcat-apis for package: geronimo-specs-1.0-3.5.M2.el6.noarch
+    master: --> Running transaction check
+    master: ---> Package apache-tomcat-apis.noarch 0:0.1-1.el6 will be installed
+    master: ---> Package mx4j.noarch 1:3.0.1-9.13.el6 will be installed
+    master: --> Processing Dependency: log4j >= 1.2.7 for package: 1:mx4j-3.0.1-9.13.el6.noarch
+    master: --> Processing Dependency: jsse >= 1.0.2-6jpp for package: 1:mx4j-3.0.1-9.13.el6.noarch
+    master: --> Processing Dependency: jce >= 1.2.2 for package: 1:mx4j-3.0.1-9.13.el6.noarch
+    master: --> Processing Dependency: javamail >= 1.2-5jpp for package: 1:mx4j-3.0.1-9.13.el6.noarch
+    master: --> Processing Dependency: jakarta-commons-logging >= 1.0.1 for package: 1:mx4j-3.0.1-9.13.el6.noarch
+    master: --> Processing Dependency: bcel >= 5.0 for package: 1:mx4j-3.0.1-9.13.el6.noarch
+    master: --> Processing Dependency: axis >= 1.1 for package: 1:mx4j-3.0.1-9.13.el6.noarch
+    master: --> Processing Dependency: xml-commons-resolver for package: 1:mx4j-3.0.1-9.13.el6.noarch
+    master: --> Processing Dependency: xml-commons-apis for package: 1:mx4j-3.0.1-9.13.el6.noarch
+    master: --> Processing Dependency: xml-commons for package: 1:mx4j-3.0.1-9.13.el6.noarch
+    master: --> Processing Dependency: jaf for package: 1:mx4j-3.0.1-9.13.el6.noarch
+    master: --> Running transaction check
+    master: ---> Package axis.noarch 0:1.2.1-7.5.el6_5 will be installed
+    master: --> Processing Dependency: wsdl4j for package: axis-1.2.1-7.5.el6_5.noarch
+    master: --> Processing Dependency: jakarta-commons-httpclient for package: axis-1.2.1-7.5.el6_5.noarch
+    master: --> Processing Dependency: jakarta-commons-discovery for package: axis-1.2.1-7.5.el6_5.noarch
+    master: ---> Package bcel.x86_64 0:5.2-7.2.el6 will be installed
+    master: --> Processing Dependency: regexp for package: bcel-5.2-7.2.el6.x86_64
+    master: --> Processing Dependency: java-gcj-compat for package: bcel-5.2-7.2.el6.x86_64
+    master: --> Processing Dependency: java-gcj-compat for package: bcel-5.2-7.2.el6.x86_64
+    master: --> Processing Dependency: libgcj_bc.so.1()(64bit) for package: bcel-5.2-7.2.el6.x86_64
+    master: ---> Package classpathx-jaf.x86_64 0:1.0-15.4.el6 will be installed
+    master: ---> Package classpathx-mail.noarch 0:1.1.1-9.4.el6 will be installed
+    master: ---> Package jakarta-commons-logging.noarch 0:1.0.4-10.el6 will be installed
+    master: ---> Package java-1.8.0-openjdk-headless.x86_64 1:1.8.0.191.b12-0.el6_10 will be installed
+    master: --> Processing Dependency: tzdata-java >= 2014f-1 for package: 1:java-1.8.0-openjdk-headless-1.8.0.191.b12-0.el6_10.x86_64
+    master: --> Processing Dependency: libjpeg.so.62(LIBJPEG_6.2)(64bit) for package: 1:java-1.8.0-openjdk-headless-1.8.0.191.b12-0.el6_10.x86_64
+    master: --> Processing Dependency: libjpeg.so.62()(64bit) for package: 1:java-1.8.0-openjdk-headless-1.8.0.191.b12-0.el6_10.x86_64
+    master: --> Processing Dependency: libfreetype.so.6()(64bit) for package: 1:java-1.8.0-openjdk-headless-1.8.0.191.b12-0.el6_10.x86_64
+    master: ---> Package jdk.x86_64 2000:1.6.0_31-fcs will be installed
+    master: ---> Package log4j.x86_64 0:1.2.14-6.4.el6 will be installed
+    master: ---> Package xml-commons-apis.x86_64 0:1.3.04-3.6.el6 will be installed
+    master: ---> Package xml-commons-resolver.x86_64 0:1.1-4.18.el6 will be installed
+    master: --> Running transaction check
+    master: ---> Package freetype.x86_64 0:2.3.11-17.el6 will be installed
+    master: ---> Package jakarta-commons-discovery.noarch 1:0.4-5.4.el6 will be installed
+    master: ---> Package jakarta-commons-httpclient.x86_64 1:3.1-0.9.el6_5 will be installed
+    master: ---> Package java-1.5.0-gcj.x86_64 0:1.5.0.0-29.1.el6 will be installed
+    master: --> Processing Dependency: sinjdoc for package: java-1.5.0-gcj-1.5.0.0-29.1.el6.x86_64
+    master: ---> Package libgcj.x86_64 0:4.4.7-23.el6 will be installed
+    master: --> Processing Dependency: zip >= 2.1 for package: libgcj-4.4.7-23.el6.x86_64
+    master: --> Processing Dependency: libart_lgpl >= 2.1.0 for package: libgcj-4.4.7-23.el6.x86_64
+    master: --> Processing Dependency: gtk2 >= 2.4.0 for package: libgcj-4.4.7-23.el6.x86_64
+    master: --> Processing Dependency: libasound.so.2(ALSA_0.9)(64bit) for package: libgcj-4.4.7-23.el6.x86_64
+    master: --> Processing Dependency: libpangoft2-1.0.so.0()(64bit) for package: libgcj-4.4.7-23.el6.x86_64
+    master: --> Processing Dependency: libpangocairo-1.0.so.0()(64bit) for package: libgcj-4.4.7-23.el6.x86_64
+    master: --> Processing Dependency: libpango-1.0.so.0()(64bit) for package: libgcj-4.4.7-23.el6.x86_64
+    master: --> Processing Dependency: libgtk-x11-2.0.so.0()(64bit) for package: libgcj-4.4.7-23.el6.x86_64
+    master: --> Processing Dependency: libgdk_pixbuf-2.0.so.0()(64bit) for package: libgcj-4.4.7-23.el6.x86_64
+    master: --> Processing Dependency: libgdk-x11-2.0.so.0()(64bit) for package: libgcj-4.4.7-23.el6.x86_64
+    master: --> Processing Dependency: libfontconfig.so.1()(64bit) for package: libgcj-4.4.7-23.el6.x86_64
+    master: --> Processing Dependency: libcairo.so.2()(64bit) for package: libgcj-4.4.7-23.el6.x86_64
+    master: --> Processing Dependency: libatk-1.0.so.0()(64bit) for package: libgcj-4.4.7-23.el6.x86_64
+    master: --> Processing Dependency: libasound.so.2()(64bit) for package: libgcj-4.4.7-23.el6.x86_64
+    master: --> Processing Dependency: libXtst.so.6()(64bit) for package: libgcj-4.4.7-23.el6.x86_64
+    master: --> Processing Dependency: libXrender.so.1()(64bit) for package: libgcj-4.4.7-23.el6.x86_64
+    master: --> Processing Dependency: libXrandr.so.2()(64bit) for package: libgcj-4.4.7-23.el6.x86_64
+    master: --> Processing Dependency: libSM.so.6()(64bit) for package: libgcj-4.4.7-23.el6.x86_64
+    master: --> Processing Dependency: libICE.so.6()(64bit) for package: libgcj-4.4.7-23.el6.x86_64
+    master: ---> Package libjpeg-turbo.x86_64 0:1.2.1-3.el6_5 will be installed
+    master: ---> Package regexp.x86_64 0:1.5-4.4.el6 will be installed
+    master: ---> Package tzdata-java.noarch 0:2018i-1.el6 will be installed
+    master: ---> Package wsdl4j.noarch 0:1.5.2-7.8.el6 will be installed
+    master: --> Running transaction check
+    master: ---> Package alsa-lib.x86_64 0:1.1.0-4.el6 will be installed
+    master: ---> Package atk.x86_64 0:1.30.0-1.el6 will be installed
+    master: ---> Package cairo.x86_64 0:1.8.8-6.el6_6 will be installed
+    master: --> Processing Dependency: libpng12.so.0(PNG12_0)(64bit) for package: cairo-1.8.8-6.el6_6.x86_64
+    master: --> Processing Dependency: libpng12.so.0()(64bit) for package: cairo-1.8.8-6.el6_6.x86_64
+    master: --> Processing Dependency: libpixman-1.so.0()(64bit) for package: cairo-1.8.8-6.el6_6.x86_64
+    master: --> Processing Dependency: libX11.so.6()(64bit) for package: cairo-1.8.8-6.el6_6.x86_64
+    master: ---> Package fontconfig.x86_64 0:2.8.0-5.el6 will be installed
+    master: ---> Package gdk-pixbuf2.x86_64 0:2.24.1-6.el6_7 will be installed
+    master: --> Processing Dependency: libtiff.so.3()(64bit) for package: gdk-pixbuf2-2.24.1-6.el6_7.x86_64
+    master: --> Processing Dependency: libjasper.so.1()(64bit) for package: gdk-pixbuf2-2.24.1-6.el6_7.x86_64
+    master: ---> Package gtk2.x86_64 0:2.24.23-9.el6 will be installed
+    master: --> Processing Dependency: hicolor-icon-theme for package: gtk2-2.24.23-9.el6.x86_64
+    master: --> Processing Dependency: libcups.so.2()(64bit) for package: gtk2-2.24.23-9.el6.x86_64
+    master: --> Processing Dependency: libXinerama.so.1()(64bit) for package: gtk2-2.24.23-9.el6.x86_64
+    master: --> Processing Dependency: libXi.so.6()(64bit) for package: gtk2-2.24.23-9.el6.x86_64
+    master: --> Processing Dependency: libXfixes.so.3()(64bit) for package: gtk2-2.24.23-9.el6.x86_64
+    master: --> Processing Dependency: libXext.so.6()(64bit) for package: gtk2-2.24.23-9.el6.x86_64
+    master: --> Processing Dependency: libXdamage.so.1()(64bit) for package: gtk2-2.24.23-9.el6.x86_64
+    master: --> Processing Dependency: libXcursor.so.1()(64bit) for package: gtk2-2.24.23-9.el6.x86_64
+    master: --> Processing Dependency: libXcomposite.so.1()(64bit) for package: gtk2-2.24.23-9.el6.x86_64
+    master: ---> Package libICE.x86_64 0:1.0.6-1.el6 will be installed
+    master: ---> Package libSM.x86_64 0:1.2.1-2.el6 will be installed
+    master: ---> Package libXrandr.x86_64 0:1.5.1-1.el6 will be installed
+    master: ---> Package libXrender.x86_64 0:0.9.10-1.el6 will be installed
+    master: ---> Package libXtst.x86_64 0:1.2.3-1.el6 will be installed
+    master: ---> Package libart_lgpl.x86_64 0:2.3.20-5.1.el6 will be installed
+    master: ---> Package pango.x86_64 0:1.28.1-11.el6 will be installed
+    master: --> Processing Dependency: libthai >= 0.1.9 for package: pango-1.28.1-11.el6.x86_64
+    master: --> Processing Dependency: libthai.so.0(LIBTHAI_0.1)(64bit) for package: pango-1.28.1-11.el6.x86_64
+    master: --> Processing Dependency: libthai.so.0()(64bit) for package: pango-1.28.1-11.el6.x86_64
+    master: --> Processing Dependency: libXft.so.2()(64bit) for package: pango-1.28.1-11.el6.x86_64
+    master: ---> Package sinjdoc.x86_64 0:0.5-9.1.el6 will be installed
+    master: --> Processing Dependency: java_cup >= 0.10 for package: sinjdoc-0.5-9.1.el6.x86_64
+    master: ---> Package zip.x86_64 0:3.0-1.el6_7.1 will be installed
+    master: --> Running transaction check
+    master: ---> Package cups-libs.x86_64 1:1.4.2-80.el6_10 will be installed
+    master: --> Processing Dependency: libgnutls.so.26(GNUTLS_1_4)(64bit) for package: 1:cups-libs-1.4.2-80.el6_10.x86_64
+    master: --> Processing Dependency: libgnutls.so.26()(64bit) for package: 1:cups-libs-1.4.2-80.el6_10.x86_64
+    master: --> Processing Dependency: libavahi-common.so.3()(64bit) for package: 1:cups-libs-1.4.2-80.el6_10.x86_64
+    master: --> Processing Dependency: libavahi-client.so.3()(64bit) for package: 1:cups-libs-1.4.2-80.el6_10.x86_64
+    master: ---> Package hicolor-icon-theme.noarch 0:0.11-1.1.el6 will be installed
+    master: ---> Package jasper-libs.x86_64 0:1.900.1-22.el6 will be installed
+    master: ---> Package java_cup.x86_64 1:0.10k-5.el6 will be installed
+    master: ---> Package libX11.x86_64 0:1.6.4-3.el6 will be installed
+    master: --> Processing Dependency: libX11-common = 1.6.4-3.el6 for package: libX11-1.6.4-3.el6.x86_64
+    master: --> Processing Dependency: libxcb.so.1()(64bit) for package: libX11-1.6.4-3.el6.x86_64
+    master: ---> Package libXcomposite.x86_64 0:0.4.3-4.el6 will be installed
+    master: ---> Package libXcursor.x86_64 0:1.1.14-2.1.el6 will be installed
+    master: ---> Package libXdamage.x86_64 0:1.1.3-4.el6 will be installed
+    master: ---> Package libXext.x86_64 0:1.3.3-1.el6 will be installed
+    master: ---> Package libXfixes.x86_64 0:5.0.3-1.el6 will be installed
+    master: ---> Package libXft.x86_64 0:2.3.2-1.el6 will be installed
+    master: ---> Package libXi.x86_64 0:1.7.8-1.el6 will be installed
+    master: ---> Package libXinerama.x86_64 0:1.1.3-2.1.el6 will be installed
+    master: ---> Package libpng.x86_64 2:1.2.49-2.el6_7 will be installed
+    master: ---> Package libthai.x86_64 0:0.1.12-3.el6 will be installed
+    master: ---> Package libtiff.x86_64 0:3.9.4-21.el6_8 will be installed
+    master: ---> Package pixman.x86_64 0:0.32.8-1.el6 will be installed
+    master: --> Running transaction check
+    master: ---> Package avahi-libs.x86_64 0:0.6.25-17.el6 will be installed
+    master: ---> Package gnutls.x86_64 0:2.12.23-22.el6 will be installed
+    master: ---> Package libX11-common.noarch 0:1.6.4-3.el6 will be installed
+    master: ---> Package libxcb.x86_64 0:1.12-4.el6 will be installed
+    master: --> Processing Dependency: libXau.so.6()(64bit) for package: libxcb-1.12-4.el6.x86_64
+    master: --> Running transaction check
+    master: ---> Package libXau.x86_64 0:1.0.6-4.el6 will be installed
+    master: --> Finished Dependency Resolution
+    master: 
+    master: Dependencies Resolved
+    master: 
+    master: ================================================================================
+    master:  Package                     Arch   Version              Repository        Size
+    master: ================================================================================
+    master: Installing:
+    master:  mysql-connector-java        noarch 1:5.1.17-6.el6       base             1.4 M
+    master: Installing for dependencies:
+    master:  alsa-lib                    x86_64 1.1.0-4.el6          base             389 k
+    master:  apache-tomcat-apis          noarch 0.1-1.el6            base             164 k
+    master:  atk                         x86_64 1.30.0-1.el6         base             195 k
+    master:  avahi-libs                  x86_64 0.6.25-17.el6        base              55 k
+    master:  axis                        noarch 1.2.1-7.5.el6_5      base             1.5 M
+    master:  bcel                        x86_64 5.2-7.2.el6          base             1.4 M
+    master:  cairo                       x86_64 1.8.8-6.el6_6        base             309 k
+    master:  classpathx-jaf              x86_64 1.0-15.4.el6         base             100 k
+    master:  classpathx-mail             noarch 1.1.1-9.4.el6        base             479 k
+    master:  cups-libs                   x86_64 1:1.4.2-80.el6_10    updates          323 k
+    master:  fontconfig                  x86_64 2.8.0-5.el6          base             186 k
+    master:  freetype                    x86_64 2.3.11-17.el6        base             361 k
+    master:  gdk-pixbuf2                 x86_64 2.24.1-6.el6_7       base             501 k
+    master:  geronimo-specs              noarch 1.0-3.5.M2.el6       base             111 k
+    master:  geronimo-specs-compat       noarch 1.0-3.5.M2.el6       base             7.1 k
+    master:  gnutls                      x86_64 2.12.23-22.el6       base             389 k
+    master:  gtk2                        x86_64 2.24.23-9.el6        base             3.2 M
+    master:  hicolor-icon-theme          noarch 0.11-1.1.el6         base              40 k
+    master:  jakarta-commons-discovery   noarch 1:0.4-5.4.el6        base              73 k
+    master:  jakarta-commons-httpclient  x86_64 1:3.1-0.9.el6_5      base             593 k
+    master:  jakarta-commons-logging     noarch 1.0.4-10.el6         base              52 k
+    master:  jasper-libs                 x86_64 1.900.1-22.el6       base             139 k
+    master:  java-1.5.0-gcj              x86_64 1.5.0.0-29.1.el6     base             139 k
+    master:  java-1.8.0-openjdk-headless x86_64 1:1.8.0.191.b12-0.el6_10
+    master:                                                          updates           32 M
+    master:  java_cup                    x86_64 1:0.10k-5.el6        base             197 k
+    master:  jdk                         x86_64 2000:1.6.0_31-fcs    cloudera-manager  68 M
+    master:  jpackage-utils              noarch 1.7.5-3.16.el6       base              60 k
+    master:  libICE                      x86_64 1.0.6-1.el6          base              53 k
+    master:  libSM                       x86_64 1.2.1-2.el6          base              37 k
+    master:  libX11                      x86_64 1.6.4-3.el6          base             587 k
+    master:  libX11-common               noarch 1.6.4-3.el6          base             171 k
+    master:  libXau                      x86_64 1.0.6-4.el6          base              24 k
+    master:  libXcomposite               x86_64 0.4.3-4.el6          base              20 k
+    master:  libXcursor                  x86_64 1.1.14-2.1.el6       base              28 k
+    master:  libXdamage                  x86_64 1.1.3-4.el6          base              18 k
+    master:  libXext                     x86_64 1.3.3-1.el6          base              35 k
+    master:  libXfixes                   x86_64 5.0.3-1.el6          base              17 k
+    master:  libXft                      x86_64 2.3.2-1.el6          base              55 k
+    master:  libXi                       x86_64 1.7.8-1.el6          base              38 k
+    master:  libXinerama                 x86_64 1.1.3-2.1.el6        base              13 k
+    master:  libXrandr                   x86_64 1.5.1-1.el6          base              25 k
+    master:  libXrender                  x86_64 0.9.10-1.el6         base              24 k
+    master:  libXtst                     x86_64 1.2.3-1.el6          base              19 k
+    master:  libart_lgpl                 x86_64 2.3.20-5.1.el6       base              65 k
+    master:  libgcj                      x86_64 4.4.7-23.el6         base              19 M
+    master:  libjpeg-turbo               x86_64 1.2.1-3.el6_5        base          
+    master:    174 k
+    master:  libpng                      x86_64 2:1.2.49-2.el6_7     base             182 k
+    master:  libthai                     x86_64 0.1.12-3.el6         base             183 k
+    master:  libtiff                     x86_64 3.9.4-21.el6_8       base             346 k
+    master:  libxcb                      x86_64 1.12-4.el6           base             180 k
+    master:  log4j                       x86_64 1.2.14-6.4.el6       base             679 k
+    master:  mx4j                        noarch 1:3.0.1-9.13.el6     base             1.1 M
+    master:  pango                       x86_64 1.28.1-11.el6        base             351 k
+    master:  pixman                      x86_64 0.32.8-1.el6         base             243 k
+    master:  regexp                      x86_64 1.5-4.4.el6          base             105 k
+    master:  sinjdoc                     x86_64 0.5-9.1.el6          base             705 k
+    master:  slf4j                       noarch 1.5.8-8.el6          base             131 k
+    master:  tzdata-java                 noarch 2018i-1.el6          updates          187 k
+    master:  wsdl4j                      noarch 1.5.2-7.8.el6        base             157 k
+    master:  xml-commons-apis            x86_64 1.3.04-3.6.el6       base             439 k
+    master:  xml-commons-resolver        x86_64 1.1-4.18.el6         base             145 k
+    master:  zip                         x86_64 3.0-1.el6_7.1        base             259 k
+    master: 
+    master: Transaction Summary
+    master: ================================================================================
+    master: Install      63 Package(s)
+    master: Total download size: 138 M
+    master: Installed size: 372 M
+    master: Downloading Packages:
+    master: --------------------------------------------------------------------------------
+    master: Total                                           8.3 MB/s | 138 MB     00:16     
+    master: Running rpm_check_debug
+    master: Running Transaction Test
+    master: Transaction Test Succeeded
+    master: Running Transaction
+  Installing : jpackage-utils-1.7.5-3.16.el6.noarch                        1/63
+    master:  
+  Installing : freetype-2.3.11-17.el6.x86_64                               2/63
+    master:  
+  Installing : fontconfig-2.8.0-5.el6.x86_64                               3/63
+    master:  
+  Installing : libjpeg-turbo-1.2.1-3.el6_5.x86_64                          4/63
+    master:  
+  Installing : jakarta-commons-logging-1.0.4-10.el6.noarch                 5/63
+    master:  
+  Installing : 2000:jdk-1.6.0_31-fcs.x86_64                                6/63
+    master:  
+    master: Unpacking JAR files...
+    master: 	rt.jar...
+    master: 	jsse.jar...
+    master: 	charsets.jar...
+    master: 	tools.jar...
+    master: 	localedata.jar...
+    master: 	plugin.jar...
+    master: 	javaws.jar...
+    master: 	deploy.jar...
+  Installing : 2:libpng-1.2.49-2.el6_7.x86_64                              7/63
+    master:  
+  Installing : libtiff-3.9.4-21.el6_8.x86_64                               8/63
+    master:  
+  Installing : atk-1.30.0-1.el6.x86_64                                     9/63
+    master:  
+  Installing : libICE-1.0.6-1.el6.x86_64                                  10/63
+    master:  
+  Installing : libSM-1.2.1-2.el6.x86_64                                   11/63
+    master:  
+  Installing : 1:jakarta-commons-discovery-0.4-5.4.el6.noarch             12/63
+    master:  
+  Installing : jasper-libs-1.900.1-22.el6.x86_64                          13/63
+    master:  
+  Installing : apache-tomcat-apis-0.1-1.el6.noarch                        14/63
+    master:  
+  Installing : zip-3.0-1.el6_7.1.x86_64                                   15/63
+    master:  
+  Installing : libXau-1.0.6-4.el6.x86_64                                  16/63
+    master:  
+  Installing : libxcb-1.12-4.el6.x86_64                                   17/63
+    master:  
+  Installing : tzdata-java-2018i-1.el6.noarch                             18/63
+    master:  
+  Installing : 1:java-1.8.0-openjdk-headless-1.8.0.191.b12-0.el6_10.x86   19/63
+    master:  
+  Installing : alsa-lib-1.1.0-4.el6.x86_64                                20/63
+    master:  
+  Installing : libX11-common-1.6.4-3.el6.noarch                           21/63
+    master:  
+  Installing : libX11-1.6.4-3.el6.x86_64                                  22/63
+    master:  
+  Installing : libXrender-0.9.10-1.el6.x86_64                             23/63
+    master:  
+  Installing : libXext-1.3.3-1.el6.x86_64                                 24/63
+    master:  
+  Installing : libXfixes-5.0.3-1.el6.x86_64                               25/63
+    master:  
+  Installing : libXrandr-1.5.1-1.el6.x86_64                               26/63
+    master:  
+  Installing : libXi-1.7.8-1.el6.x86_64                                   27/63
+    master:  
+  Installing : gdk-pixbuf2-2.24.1-6.el6_7.x86_64                          28/63
+    master:  
+  Installing : libXtst-1.2.3-1.el6.x86_64                                 29/63
+    master:  
+  Installing : libXdamage-1.1.3-4.el6.x86_64                              30/63
+    master:  
+  Installing : libXcursor-1.1.14-2.1.el6.x86_64                           31/63
+    master:  
+  Installing : libXinerama-1.1.3-2.1.el6.x86_64                           32/63
+    master:  
+  Installing : libXft-2.3.2-1.el6.x86_64                                  33/63
+    master:  
+  Installing : libXcomposite-0.4.3-4.el6.x86_64                           34/63
+    master:  
+  Installing : avahi-libs-0.6.25-17.el6.x86_64                            35/63
+    master:  
+  Installing : hicolor-icon-theme-0.11-1.1.el6.noarch                     36/63
+    master:  
+  Installing : gnutls-2.12.23-22.el6.x86_64                               37/63
+    master:  
+  Installing : 1:cups-libs-1.4.2-80.el6_10.x86_64                         38/63
+    master:  
+  Installing : libart_lgpl-2.3.20-5.1.el6.x86_64                          39/63
+    master:  
+  Installing : pixman-0.32.8-1.el6.x86_64                                 40/63
+    master:  
+  Installing : cairo-1.8.8-6.el6_6.x86_64                                 41/63
+    master:  
+  Installing : libthai-0.1.12-3.el6.x86_64                                42/63
+    master:  
+  Installing : pango-1.28.1-11.el6.x86_64                                 43/63
+    master:  
+  Installing : gtk2-2.24.23-9.el6.x86_64                                  44/63
+    master:  
+  Installing : libgcj-4.4.7-23.el6.x86_64                                 45/63
+    master:  
+  Installing : java-1.5.0-gcj-1.5.0.0-29.1.el6.x86_64                     46/63
+    master:  
+  Installing : 1:java_cup-0.10k-5.el6.x86_64                              47/63
+    master:  
+  Installing : sinjdoc-0.5-9.1.el6.x86_64                                 48/63
+    master:  
+  Installing : classpathx-jaf-1.0-15.4.el6.x86_64                         49/63
+    master:  
+  Installing : xml-commons-apis-1.3.04-3.6.el6.x86_64                     50/63
+    master:  
+  Installing : log4j-1.2.14-6.4.el6.x86_64                                51/63
+    master:  
+  Installing : classpathx-mail-1.1.1-9.4.el6.noarch                       52/63
+    master:  
+  Installing : xml-commons-resolver-1.1-4.18.el6.x86_64                   53/63
+    master:  
+  Installing : 1:jakarta-commons-httpclient-3.1-0.9.el6_5.x86_64          54/63
+    master:  
+  Installing : regexp-1.5-4.4.el6.x86_64                                  55/63
+    master:  
+  Installing : bcel-5.2-7.2.el6.x86_64                                    56/63
+    master:  
+  Installing : wsdl4j-1.5.2-7.8.el6.noarch                                57/63
+    master:  
+  Installing : axis-1.2.1-7.5.el6_5.noarch                                58/63
+    master:  
+  Installing : 1:mx4j-3.0.1-9.13.el6.noarch                               59/63
+    master:  
+  Installing : geronimo-specs-1.0-3.5.M2.el6.noarch                       60/63
+    master:  
+  Installing : geronimo-specs-compat-1.0-3.5.M2.el6.noarch                61/63
+    master:  
+  Installing : slf4j-1.5.8-8.el6.noarch                                   62/63
+    master:  
+  Installing : 1:mysql-connector-java-5.1.17-6.el6.noarch                 63/63
+    master:  
+  Verifying  : geronimo-specs-1.0-3.5.M2.el6.noarch                        1/63
+    master:  
+  Verifying  : axis-1.2.1-7.5.el6_5.noarch                                 2/63
+    master:  
+  Verifying  : classpathx-mail-1.1.1-9.4.el6.noarch                        3/63
+    master:  
+  Verifying  : libthai-0.1.12-3.el6.x86_64                                 4/63
+    master:  
+  Verifying  : libXdamage-1.1.3-4.el6.x86_64                               5/63
+    master:  
+  Verifying  : 1:jakarta-commons-discovery-0.4-5.4.el6.noarch              6/63
+    master:  
+  Verifying  : freetype-2.3.11-17.el6.x86_64                               7/63
+    master:  
+  Verifying  : fontconfig-2.8.0-5.el6.x86_64                               8/63
+    master:  
+  Verifying  : 2000:jdk-1.6.0_31-fcs.x86_64                                9/63
+    master:  
+  Verifying  : pixman-0.32.8-1.el6.x86_64                                 10/63
+    master:  
+  Verifying  : libxcb-1.12-4.el6.x86_64                                   11/63
+    master:  
+  Verifying  : libSM-1.2.1-2.el6.x86_64                                   12/63
+    master:  
+  Verifying  : libart_lgpl-2.3.20-5.1.el6.x86_64                          13/63
+    master:  
+  Verifying  : sinjdoc-0.5-9.1.el6.x86_64                                 14/63
+    master:  
+  Verifying  : cairo-1.8.8-6.el6_6.x86_64                                 15/63
+    master:  
+  Verifying  : bcel-5.2-7.2.el6.x86_64                                    16/63
+    master:  
+  Verifying  : gnutls-2.12.23-22.el6.x86_64                               17/63
+    master:  
+  Verifying  : hicolor-icon-theme-0.11-1.1.el6.noarch                     18/63
+    master:  
+  Verifying  : jpackage-utils-1.7.5-3.16.el6.noarch                       19/63
+    master:  
+  Verifying  : 1:jakarta-commons-httpclient-3.1-0.9.el6_5.x86_64          20/63
+    master:  
+  Verifying  : regexp-1.5-4.4.el6.x86_64                                  21/63
+    master:  
+  Verifying  : libXfixes-5.0.3-1.el6.x86_64                               22/63
+    master:  
+  Verifying  : jakarta-commons-logging-1.0.4-10.el6.noarch                23/63
+    master:  
+  Verifying  : wsdl4j-1.5.2-7.8.el6.noarch                                24/63
+    master:  
+  Verifying  : log4j-1.2.14-6.4.el6.x86_64                                25/63
+    master:  
+  Verifying  : avahi-libs-0.6.25-17.el6.x86_64                            26/63
+    master:  
+  Verifying  : 1:mx4j-3.0.1-9.13.el6.noarch                               27/63
+    master:  
+  Verifying  : libtiff-3.9.4-21.el6_8.x86_64                              28/63
+    master:  
+  Verifying  : 2:libpng-1.2.49-2.el6_7.x86_64                             29/63
+    master:  
+  Verifying  : classpathx-jaf-1.0-15.4.el6.x86_64                         30/63
+    master:  
+  Verifying  : libX11-common-1.6.4-3.el6.noarch                           31/63
+    master:  
+  Verifying  : java-1.5.0-gcj-1.5.0.0-29.1.el6.x86_64                     32/63
+    master:  
+  Verifying  : slf4j-1.5.8-8.el6.noarch                                   33/63
+    master:  
+  Verifying  : 1:java-1.8.0-openjdk-headless-1.8.0.191.b12-0.el6_10.x86   34/63
+    master:  
+  Verifying  : libXrandr-1.5.1-1.el6.x86_64                               35/63
+    master:  
+  Verifying  : libXi-1.7.8-1.el6.x86_64                                   36/63
+    master:  
+  Verifying  : gdk-pixbuf2-2.24.1-6.el6_7.x86_64                          37/63
+    master:  
+  Verifying  : alsa-lib-1.1.0-4.el6.x86_64                                38/63
+    master:  
+  Verifying  : gtk2-2.24.23-9.el6.x86_64                                  39/63
+    master:  
+  Verifying  : libXinerama-1.1.3-2.1.el6.x86_64                           40/63
+    master:  
+  Verifying  : libXrender-0.9.10-1.el6.x86_64                             41/63
+    master:  
+  Verifying  : libX11-1.6.4-3.el6.x86_64                                  42/63
+    master:  
+  Verifying  : pango-1.28.1-11.el6.x86_64                                 43/63
+    master:  
+  Verifying  : libjpeg-turbo-1.2.1-3.el6_5.x86_64                         44/63
+    master:  
+  Verifying  : jasper-libs-1.900.1-22.el6.x86_64                          45/63
+    master:  
+  Verifying  : libXcursor-1.1.14-2.1.el6.x86_64                           46/63
+    master:  
+  Verifying  : tzdata-java-2018i-1.el6.noarch                             47/63
+    master:  
+  Verifying  : xml-commons-apis-1.3.04-3.6.el6.x86_64                     48/63
+    master:  
+  Verifying  : libXft-2.3.2-1.el6.x86_64                                  49/63
+    master:  
+  Verifying  : geronimo-specs-compat-1.0-3.5.M2.el6.noarch                50/63
+    master:  
+  Verifying  : libXau-1.0.6-4.el6.x86_64                                  51/63
+    master:  
+  Verifying  : 1:mysql-connector-java-5.1.17-6.el6.noarch                 52/63
+    master:  
+  Verifying  : 1:cups-libs-1.4.2-80.el6_10.x86_64                         53/63
+    master:  
+  Verifying  : libXtst-1.2.3-1.el6.x86_64                                 54/63
+    master:  
+  Verifying  : libICE-1.0.6-1.el6.x86_64                                  55/63
+    master:  
+  Verifying  : zip-3.0-1.el6_7.1.x86_64                                   56/63
+    master:  
+  Verifying  : atk-1.30.0-1.el6.x86_64                                    57/63
+    master:  
+  Verifying  : libXext-1.3.3-1.el6.x86_64                                 58/63
+    master:  
+  Verifying  : 1:java_cup-0.10k-5.el6.x86_64                              59/63
+    master:  
+  Verifying  : libXcomposite-0.4.3-4.el6.x86_64                           60/63
+    master:  
+  Verifying  : xml-commons-resolver-1.1-4.18.el6.x86_64                   61/63
+    master:  
+  Verifying  : apache-tomcat-apis-0.1-1.el6.noarch                        62/63
+    master:  
+  Verifying  : libgcj-4.4.7-23.el6.x86_64                                 63/63
+    master:  
+    master: 
+    master: Installed:
+    master:   mysql-connector-java.noarch 1:5.1.17-6.el6                                    
+    master: 
+    master: Dependency Installed:
+    master:   alsa-lib.x86_64 0:1.1.0-4.el6                                                 
+    master:   apache-tomcat-apis.noarch 0:0.1-1.el6                                         
+    master:   atk.x86_64 0:1.30.0-1.el6                                                     
+    master:   avahi-libs.x86_64 0:0.6.25-17.el6                                             
+    master:   axis.noarch 0:1.2.1-7.5.el6_5                                                 
+    master:   bcel.x86_64 0:5.2-7.2.el6                                                     
+    master:   cairo.x86_64 0:1.8.8-6.el6_6                                                  
+    master:   classpathx-jaf.x86_64 0:1.0-15.4.el6                                          
+    master:   classpathx-mail.noarch 0:1.1.1-9.4.el6                                        
+    master:   cups-libs.x86_64 1:1.4.2-80.el6_10                                            
+    master:   fontconfig.x86_64 0:2.8.0-5.el6                                               
+    master:   freetype.x86_64 0:2.3.11-17.el6                                               
+    master:   gdk-pixbuf2.x86_64 0:2.24.1-6.el6_7                                           
+    master:   geronimo-specs.noarch 0:1.0-3.5.M2.el6                                        
+    master:   geronimo-specs-compat.noarch 0:1.0-3.5.M2.el6                                 
+    master:   gnutls.x86_64 0:2.12.23-22.el6                                                
+    master:   gtk2.x86_64 0:2.24.23-9.el6                                                   
+    master:   hicolor-icon-theme.noarch 0:0.11-1.1.el6                                      
+    master:   jakarta-commons-discovery.noarch 1:0.4-5.4.el6                                
+    master:   jakarta-commons-httpclient.x86_64 1:3.1-0.9.el6_5                             
+    master:   jakarta-commons-logging.noarch 0:1.0.4-10.el6                                 
+    master:   jasper-libs.x86_64 0:1.900.1-22.el6                                           
+    master:   java-1.5.0-gcj.x86_64 0:1.5.0.0-29.1.el6                                      
+    master:   java-1.8.0-openjdk-headless.x86_64 1:1.8.0.191.b12-0.el6_10                   
+    master:   java_cup.x86_64 1:0.10k-5.el6                                                 
+    master:   jdk.x86_64 2000:1.6.0_31-fcs                                                  
+    master:   jpackage-utils.noarch 0:1.7.5-3.16.el6                                        
+    master:   libICE.x86_64 0:1.0.6-1.el6                                                   
+    master:   libSM.x86_64 0:1.2.1-2.el6                                                    
+    master:   libX11.x86_64 0:1.6.4-3.el6                                                   
+    master:   libX11-common.noarch 0:1.6.4-3.el6                                            
+    master:   libXau.x86_64 0:1.0.6-4.el6                                                   
+    master:   libXcomposite.x86_64 0:0.4.3-4.el6                                            
+    master:   libXcursor.x86_64 0:1.1.14-2.1.el6                                            
+    master:   libXdamage.x86_64 0:1.1.3-4.el6                                               
+    master:   libXext.x86_64 0:1.3.3-1.el6                                                  
+    master:   libXfixes.x86_64 0:5.0.3-1.el6                                                
+    master:   libXft.x86_64 0:2.3.2-1.el6                                                   
+    master:   libXi.x86_64 0:1.7.8-1.el6                                                    
+    master:   libXinerama.x86_64 0:1.1.3-2.1.el6                                            
+    master:   libXrandr.x86_64 0:1.5.1-1.el6                                                
+    master:   libXrender.x86_64 0:0.9.10-1.el6                                              
+    master:   libXtst.x86_64 0:1.2.3-1.el6                                                  
+    master:   libart_lgpl.x86_64 0:2.3.20-5.1.el6                                           
+    master:   libgcj.x86_64 0:4.4.7-23.el6                                                  
+    master:   libjpeg-turbo.x86_64 0:1.2.1-3.el6_5                                          
+    master:   libpng.x86_64 2:1.2.49-2.el6_7                                                
+    master:   libthai.x86_64 0:0.1.12-3.el6                                                 
+    master:   libtiff.x86_64 0:3.9.4-21.el6_8                                               
+    master:   libxcb.
+    master: x86_64 0:1.12-4.el6                                                    
+    master:   log4j.x86_64 0:1.2.14-6.4.el6                                                 
+    master:   mx4j.noarch 1:3.0.1-9.13.el6                                                  
+    master:   pango.x86_64 0:1.28.1-11.el6                                                  
+    master:   pixman.x86_64 0:0.32.8-1.el6                                                  
+    master:   regexp.x86_64 0:1.5-4.4.el6                                                   
+    master:   sinjdoc.x86_64 0:0.5-9.1.el6                                                  
+    master:   slf4j.noarch 0:1.5.8-8.el6                                                    
+    master:   tzdata-java.noarch 0:2018i-1.el6                                              
+    master:   wsdl4j.noarch 0:1.5.2-7.8.el6                                                 
+    master:   xml-commons-apis.x86_64 0:1.3.04-3.6.el6                                      
+    master:   xml-commons-resolver.x86_64 0:1.1-4.18.el6                                    
+    master:   zip.x86_64 0:3.0-1.el6_7.1                                                    
+    master: Complete!
+    master: JAVA_HOME=/usr/java/jdk1.7.0_67-cloudera
+    master: Verifying that we can write to /etc/cloudera-scm-server
+    master: Creating SCM configuration file in /etc/cloudera-scm-server
+    master: Executing:  /usr/java/jdk1.7.0_67-cloudera/bin/java -cp /usr/share/java/mysql-connector-java.jar:/usr/share/java/oracle-connector-java.jar:/usr/share/java/postgresql-connector-java.jar:/usr/share/cmf/schema/../lib/* com.cloudera.enterprise.dbutil.DbCommandExecutor /etc/cloudera-scm-server/db.properties com.cloudera.cmf.db.
+    master: [                          main] DbCommandExecutor              INFO  Successfully connected to database.
+    master: All done, your SCM database is configured correctly!
+    master: Starting cloudera-scm-server: 
+    master: [
+    master:   OK  
+    master: ]
+==> node2: Importing base box 'bento/centos-6.7'...
+==> node2: Matching MAC address for NAT networking...
+==> node2: Checking if box 'bento/centos-6.7' version '2.2.7' is up to date...
+==> node2: Setting the name of the VM: cloudera-2
+==> node2: Fixed port collision for 22 => 2222. Now on port 2200.
+==> node2: Vagrant has detected a configuration issue which exposes a
+==> node2: vulnerability with the installed version of VirtualBox. The
+==> node2: current guest is configured to use an E1000 NIC type for a
+==> node2: network adapter which is vulnerable in this version of VirtualBox.
+==> node2: Ensure the guest is trusted to use this configuration or update
+==> node2: the NIC type using one of the methods below:
+==> node2: 
+==> node2:   https://www.vagrantup.com/docs/virtualbox/configuration.html#default-nic-type
+==> node2:   https://www.vagrantup.com/docs/virtualbox/networking.html#virtualbox-nic-type
+==> node2: Clearing any previously set network interfaces...
+==> node2: Preparing network interfaces based on configuration...
+    node2: Adapter 1: nat
+    node2: Adapter 2: hostonly
+==> node2: Forwarding ports...
+    node2: 22 (guest) => 2200 (host) (adapter 1)
+==> node2: Running 'pre-boot' VM customizations...
+==> node2: Booting VM...
+==> node2: Waiting for machine to boot. This may take a few minutes...
+    node2: SSH address: 127.0.0.1:2200
+    node2: SSH username: vagrant
+    node2: SSH auth method: private key
+    node2: Warning: Connection reset. Retrying...
+    node2: Warning: Remote connection disconnect. Retrying...
+    node2: 
+    node2: Vagrant insecure key detected. Vagrant will automatically replace
+    node2: this with a newly generated keypair for better security.
+    node2: 
+    node2: Inserting generated public key within guest...
+    node2: Removing insecure key from the guest if it's present...
+    node2: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> node2: Machine booted and ready!
+==> node2: Checking for guest additions in VM...
+    node2: The guest additions on this VM do not match the installed version of
+    node2: VirtualBox! In most cases this is fine, but in rare cases it can
+    node2: prevent things such as shared folders from working properly. If you see
+    node2: shared folder errors, please make sure the guest additions within the
+    node2: virtual machine match the version of VirtualBox you have installed on
+    node2: your host and reload your VM.
+    node2: 
+    node2: Guest Additions Version: 5.0.20
+    node2: VirtualBox Version: 5.1
+==> node2: Setting hostname...
+==> node2: Configuring and enabling network interfaces...
+==> node2: Mounting shared folders...
+    node2: /vagrant => /home/besant/cloudera-end-to-end/vagrant-cludera-manager
+==> node2: Running provisioner: shell...
+    node2: Running: inline script
+    node2: Loaded plugins: fastestmirror
+    node2: Setting up Install Process
+    node2: Determining fastest mirrors
+    node2:  * base: centos.excellmedia.net
+    node2:  * extras: centos.excellmedia.net
+    node2:  * updates: centos.excellmedia.net
+    node2: Resolving Dependencies
+    node2: --> Running transaction check
+    node2: ---> Package ntp.x86_64 0:4.2.6p5-15.el6.centos will be installed
+    node2: --> Processing Dependency: ntpdate = 4.2.6p5-15.el6.centos for package: ntp-4.2.6p5-15.el6.centos.x86_64
+    node2: --> Running transaction check
+    node2: ---> Package ntpdate.x86_64 0:4.2.6p5-15.el6.centos will be installed
+    node2: --> Finished Dependency Resolution
+    node2: 
+    node2: Dependencies Resolved
+    node2: 
+    node2: ================================================================================
+    node2:  Package        Arch          Version                      Repository      Size
+    node2: ================================================================================
+    node2: Installing:
+    node2:  ntp            x86_64        4.2.6p5-15.el6.centos        updates        600 k
+    node2: Installing for dependencies:
+    node2:  ntpdate        x86_64        4.2.6p5-15.el6.centos        updates         79 k
+    node2: 
+    node2: Transaction Summary
+    node2: ================================================================================
+    node2: Install       2 Package(s)
+    node2: Total download size: 679 k
+    node2: Installed size: 1.8 M
+    node2: Downloading Packages:
+    node2: --------------------------------------------------------------------------------
+    node2: Total                                           3.7 MB/s | 679 kB     00:00     
+    node2: warning: 
+    node2: rpmts_HdrFromFdno: Header V3 RSA/SHA1 Signature, key ID c105b9de: NOKEY
+    node2: Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+    node2: Importing GPG key 0xC105B9DE:
+    node2:  Userid : CentOS-6 Key (CentOS 6 Official Signing Key) <centos-6-key@centos.org>
+    node2:  Package: centos-release-6-7.el6.centos.12.3.x86_64 (@anaconda-CentOS-201508042137.x86_64/6.7)
+    node2:  From   : /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+    node2: Running rpm_check_debug
+    node2: Running Transaction Test
+    node2: Transaction Test Succeeded
+    node2: Running Transaction
+  Installing : ntpdate-4.2.6p5-15.el6.centos.x86_64                         1/2
+    node2:  
+  Installing : ntp-4.2.6p5-15.el6.centos.x86_64                             2/2
+    node2:  
+  Verifying  : ntpdate-4.2.6p5-15.el6.centos.x86_64                         1/2
+    node2:  
+  Verifying  : ntp-4.2.6p5-15.el6.centos.x86_64                             2/2
+    node2:  
+    node2: 
+    node2: Installed:
+    node2:   ntp.x86_64 0:4.2.6p5-15.el6.centos                                            
+    node2: 
+    node2: Dependency Installed:
+    node2:   ntpdate.x86_64 0:4.2.6p5-15.el6.centos                                        
+    node2: Complete!
+    node2: Starting ntpd: 
+    node2: [  OK  ]
+==> node2: Running provisioner: shell...
+    node2: Running: inline script
+==> node2: Running provisioner: hostmanager...
+==> node3: Importing base box 'bento/centos-6.7'...
+==> node3: Matching MAC address for NAT networking...
+==> node3: Checking if box 'bento/centos-6.7' version '2.2.7' is up to date...
+==> node3: Setting the name of the VM: cloudera-3
+==> node3: Fixed port collision for 22 => 2222. Now on port 2201.
+==> node3: Vagrant has detected a configuration issue which exposes a
+==> node3: vulnerability with the installed version of VirtualBox. The
+==> node3: current guest is configured to use an E1000 NIC type for a
+==> node3: network adapter which is vulnerable in this version of VirtualBox.
+==> node3: Ensure the guest is trusted to use this configuration or update
+==> node3: the NIC type using one of the methods below:
+==> node3: 
+==> node3:   https://www.vagrantup.com/docs/virtualbox/configuration.html#default-nic-type
+==> node3:   https://www.vagrantup.com/docs/virtualbox/networking.html#virtualbox-nic-type
+==> node3: Clearing any previously set network interfaces...
+==> node3: Preparing network interfaces based on configuration...
+    node3: Adapter 1: nat
+    node3: Adapter 2: hostonly
+==> node3: Forwarding ports...
+    node3: 22 (guest) => 2201 (host) (adapter 1)
+==> node3: Running 'pre-boot' VM customizations...
+==> node3: Booting VM...
+==> node3: Waiting for machine to boot. This may take a few minutes...
+    node3: SSH address: 127.0.0.1:2201
+    node3: SSH username: vagrant
+    node3: SSH auth method: private key
+    node3: 
+    node3: Vagrant insecure key detected. Vagrant will automatically replace
+    node3: this with a newly generated keypair for better security.
+    node3: 
+    node3: Inserting generated public key within guest...
+    node3: Removing insecure key from the guest if it's present...
+    node3: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> node3: Machine booted and ready!
+==> node3: Checking for guest additions in VM...
+    node3: The guest additions on this VM do not match the installed version of
+    node3: VirtualBox! In most cases this is fine, but in rare cases it can
+    node3: prevent things such as shared folders from working properly. If you see
+    node3: shared folder errors, please make sure the guest additions within the
+    node3: virtual machine match the version of VirtualBox you have installed on
+    node3: your host and reload your VM.
+    node3: 
+    node3: Guest Additions Version: 5.0.20
+    node3: VirtualBox Version: 5.1
+==> node3: Setting hostname...
+==> node3: Configuring and enabling network interfaces...
+==> node3: Mounting shared folders...
+    node3: /vagrant => /home/besant/cloudera-end-to-end/vagrant-cludera-manager
+==> node3: Running provisioner: shell...
+    node3: Running: inline script
+    node3: Loaded plugins: fastestmirror
+    node3: Setting up Install Process
+    node3: Determining fastest mirrors
+    node3:  * base: centos.excellmedia.net
+    node3:  * extras: centos.excellmedia.net
+    node3:  * updates: centos.excellmedia.net
+    node3: Resolving Dependencies
+    node3: --> Running transaction check
+    node3: ---> Package ntp.x86_64 0:4.2.6p5-15.el6.centos will be installed
+    node3: --> Processing Dependency: ntpdate = 4.2.6p5-15.el6.centos for package: ntp-4.2.6p5-15.el6.centos.x86_64
+    node3: --> Running transaction check
+    node3: ---> Package ntpdate.x86_64 0:4.2.6p5-15.el6.centos will be installed
+    node3: --> Finished Dependency Resolution
+    node3: 
+    node3: Dependencies Resolved
+    node3: 
+    node3: ================================================================================
+    node3:  Package        Arch          Version                      Repository      Size
+    node3: ================================================================================
+    node3: Installing:
+    node3:  ntp            x86_64        4.2.6p5-15.el6.centos        updates        600 k
+    node3: Installing for dependencies:
+    node3:  ntpdate        x86_64        4.2.6p5-15.el6.centos        updates         79 k
+    node3: 
+    node3: Transaction Summary
+    node3: ================================================================================
+    node3: Install       2 Package(s)
+    node3: Total download size: 679 k
+    node3: Installed size: 1.8 M
+    node3: Downloading Packages:
+    node3: --------------------------------------------------------------------------------
+    node3: Total                                           3.3 MB/s | 679 kB     00:00     
+    node3: warning: 
+    node3: rpmts_HdrFromFdno: Header V3 RSA/SHA1 Signature, key ID c105b9de: NOKEY
+    node3: Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+    node3: Importing GPG key 0xC105B9DE:
+    node3:  Userid : CentOS-6 Key (CentOS 6 Official Signing Key) <centos-6-key@centos.org>
+    node3:  Package: centos-release-6-7.el6.centos.12.3.x86_64 (@anaconda-CentOS-201508042137.x86_64/6.7)
+    node3:  From   : /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+    node3: Running rpm_check_debug
+    node3: Running Transaction Test
+    node3: Transaction Test Succeeded
+    node3: Running Transaction
+  Installing : ntpdate-4.2.6p5-15.el6.centos.x86_64                         1/2
+    node3:  
+  Installing : ntp-4.2.6p5-15.el6.centos.x86_64                             2/2
+    node3:  
+  Verifying  : ntpdate-4.2.6p5-15.el6.centos.x86_64                         1/2
+    node3:  
+  Verifying  : ntp-4.2.6p5-15.el6.centos.x86_64                             2/2
+    node3:  
+    node3: 
+    node3: Installed:
+    node3:   ntp.x86_64 0:4.2.6p5-15.el6.centos                                            
+    node3: 
+    node3: Dependency Installed:
+    node3:   ntpdate.x86_64 0:4.2.6p5-15.el6.centos                                        
+    node3: Complete!
+    node3: Starting ntpd: 
+    node3: [  OK  ]
+==> node3: Running provisioner: shell...
+    node3: Running: inline script
+==> node3: Running provisioner: hostmanager...
+==> node4: Importing base box 'bento/centos-6.7'...
+==> node4: Matching MAC address for NAT networking...
+==> node4: Checking if box 'bento/centos-6.7' version '2.2.7' is up to date...
+==> node4: Setting the name of the VM: cloudera-4
+==> node4: Fixed port collision for 22 => 2222. Now on port 2202.
+==> node4: Vagrant has detected a configuration issue which exposes a
+==> node4: vulnerability with the installed version of VirtualBox. The
+==> node4: current guest is configured to use an E1000 NIC type for a
+==> node4: network adapter which is vulnerable in this version of VirtualBox.
+==> node4: Ensure the guest is trusted to use this configuration or update
+==> node4: the NIC type using one of the methods below:
+==> node4: 
+==> node4:   https://www.vagrantup.com/docs/virtualbox/configuration.html#default-nic-type
+==> node4:   https://www.vagrantup.com/docs/virtualbox/networking.html#virtualbox-nic-type
+==> node4: Clearing any previously set network interfaces...
+==> node4: Preparing network interfaces based on configuration...
+    node4: Adapter 1: nat
+    node4: Adapter 2: hostonly
+==> node4: Forwarding ports...
+    node4: 22 (guest) => 2202 (host) (adapter 1)
+==> node4: Running 'pre-boot' VM customizations...
+==> node4: Booting VM...
+==> node4: Waiting for machine to boot. This may take a few minutes...
+    node4: SSH address: 127.0.0.1:2202
+    node4: SSH username: vagrant
+    node4: SSH auth method: private key
+    node4: 
+    node4: Vagrant insecure key detected. Vagrant will automatically replace
+    node4: this with a newly generated keypair for better security.
+    node4: 
+    node4: Inserting generated public key within guest...
+    node4: Removing insecure key from the guest if it's present...
+    node4: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> node4: Machine booted and ready!
+==> node4: Checking for guest additions in VM...
+    node4: The guest additions on this VM do not match the installed version of
+    node4: VirtualBox! In most cases this is fine, but in rare cases it can
+    node4: prevent things such as shared folders from working properly. If you see
+    node4: shared folder errors, please make sure the guest additions within the
+    node4: virtual machine match the version of VirtualBox you have installed on
+    node4: your host and reload your VM.
+    node4: 
+    node4: Guest Additions Version: 5.0.20
+    node4: VirtualBox Version: 5.1
+==> node4: Setting hostname...
+==> node4: Configuring and enabling network interfaces...
+==> node4: Mounting shared folders...
+    node4: /vagrant => /home/besant/cloudera-end-to-end/vagrant-cludera-manager
+==> node4: Running provisioner: shell...
+    node4: Running: inline script
+    node4: Loaded plugins: fastestmirror
+    node4: Setting up Install Process
+    node4: Determining fastest mirrors
+    node4:  * base: centos.excellmedia.net
+    node4:  * extras: centos.excellmedia.net
+    node4:  * updates: centos.excellmedia.net
+    node4: http://centos.excellmedia.net/6.10/os/x86_64/repodata/1aa8754bde2f3921d67cca4bb70d9f587fb858a24cc3d1f66d3315292a89fc20-primary.sqlite.bz2: [Errno 12] Timeout on http://centos.excellmedia.net/6.10/os/x86_64/repodata/1aa8754bde2f3921d67cca4bb70d9f587fb858a24cc3d1f66d3315292a89fc20-primary.sqlite.bz2: (28, 'Operation too slow. Less than 1 bytes/sec transfered the last 30 seconds')
+    node4: Trying other mirror.
+    node4: http://centos.excellmedia.net/6.10/extras/x86_64/repodata/d7fc9d7dc71bf370470ced96de81b5952bb2da1cc690caacb0ab2d5fc851d52c-primary.sqlite.bz2: [Errno 12] Timeout on http://centos.excellmedia.net/6.10/extras/x86_64/repodata/d7fc9d7dc71bf370470ced96de81b5952bb2da1cc690caacb0ab2d5fc851d52c-primary.sqlite.bz2: (28, 'Operation too slow. Less than 1 bytes/sec transfered the last 30 seconds')
+    node4: Trying other mirror.
+    node4: http://centos.excellmedia.net/6.10/updates/x86_64/repodata/bb2afa08a200cdca9223d215fb379d2991b4bfa48aa36ff9c8951f84a7a32dff-primary.sqlite.bz2: [Errno 12] Timeout on http://centos.excellmedia.net/6.10/updates/x86_64/repodata/bb2afa08a200cdca9223d215fb379d2991b4bfa48aa36ff9c8951f84a7a32dff-primary.sqlite.bz2: (28, 'Operation too slow. Less than 1 bytes/sec transfered the last 30 seconds')
+    node4: Trying other mirror.
+    node4: Resolving Dependencies
+    node4: --> Running transaction check
+    node4: ---> Package ntp.x86_64 0:4.2.6p5-15.el6.centos will be installed
+    node4: --> Processing Dependency: ntpdate = 4.2.6p5-15.el6.centos for package: ntp-4.2.6p5-15.el6.centos.x86_64
+    node4: --> Running transaction check
+    node4: ---> Package ntpdate.x86_64 0:4.2.6p5-15.el6.centos will be installed
+    node4: --> Finished Dependency Resolution
+    node4: 
+    node4: Dependencies Resolved
+    node4: 
+    node4: ================================================================================
+    node4:  Package        Arch          Version                      Repository      Size
+    node4: ================================================================================
+    node4: Installing:
+    node4:  ntp            x86_64        4.2.6p5-15.el6.centos        updates        600 k
+    node4: Installing for dependencies:
+    node4:  ntpdate        x86_64        4.2.6p5-15.el6.centos        updates         79 k
+    node4: 
+    node4: Transaction Summary
+    node4: ================================================================================
+    node4: Install       2 Package(s)
+    node4: Total download size: 679 k
+    node4: Installed size: 1.8 M
+    node4: Downloading Packages:
+    node4: --------------------------------------------------------------------------------
+    node4: Total                                           890 kB/s | 679 kB     00:00     
+    node4: warning: 
+    node4: rpmts_HdrFromFdno: Header V3 RSA/SHA1 Signature, key ID c105b9de: NOKEY
+    node4: Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+    node4: Importing GPG key 0xC105B9DE:
+    node4:  Userid : CentOS-6 Key (CentOS 6 Official Signing Key) <centos-6-key@centos.org>
+    node4:  Package: centos-release-6-7.el6.centos.12.3.x86_64 (@anaconda-CentOS-201508042137.x86_64/6.7)
+    node4:  From   : /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+    node4: Running rpm_check_debug
+    node4: Running Transaction Test
+    node4: Transaction Test Succeeded
+    node4: Running Transaction
+  Installing : ntpdate-4.2.6p5-15.el6.centos.x86_64                         1/2
+    node4:  
+  Installing : ntp-4.2.6p5-15.el6.centos.x86_64                             2/2
+    node4:  
+  Verifying  : ntpdate-4.2.6p5-15.el6.centos.x86_64                         1/2
+    node4:  
+  Verifying  : ntp-4.2.6p5-15.el6.centos.x86_64                             2/2
+    node4:  
+    node4: 
+    node4: Installed:
+    node4:   ntp.x86_64 0:4.2.6p5-15.el6.centos                                            
+    node4: 
+    node4: Dependency Installed:
+    node4:   ntpdate.x86_64 0:4.2.6p5-15.el6.centos                                        
+    node4: Complete!
+    node4: Starting ntpd: 
+    node4: [
+    node4:   OK  ]
+==> node4: Running provisioner: shell...
+    node4: Running: inline script
+==> node4: Running provisioner: hostmanager...
+
