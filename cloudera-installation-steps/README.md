@@ -1,6 +1,7 @@
 # big-data-e2e
 
-entire steps got automated
+cloudera 5.16.x got installed into a 16GB single machine ASUS.
+Thanks to HashiCorp Vagrant ...
 
 step 1:
 ![alt tag](https://github.com/Sathiyarajan/big-data-e2e/blob/master/cloudera-installation-steps/images/1-cloudera-manager-login-page.png)
@@ -20,7 +21,11 @@ step 1:
 ![alt tag](https://github.com/Sathiyarajan/big-data-e2e/blob/master/cloudera-installation-steps/images/96-inspecting-hosts.png)
 ![alt tag](https://github.com/Sathiyarajan/big-data-e2e/blob/master/cloudera-installation-steps/images/97-core-hadoop-install.png)
 ![alt tag](https://github.com/Sathiyarajan/big-data-e2e/blob/master/cloudera-installation-steps/images/97-inspect-hosts-components.png)
-![alt tag]()
-![alt tag]()
-![alt tag]()
-![alt tag]()
+![alt tag](https://github.com/Sathiyarajan/big-data-e2e/blob/master/cloudera-installation-steps/images/setup-database-mysql-for-hue-hive.png)
+![alt tag](https://github.com/Sathiyarajan/big-data-e2e/blob/master/cloudera-installation-steps/images/setup-cloudera-with-default-changes.png)
+![alt tag](https://github.com/Sathiyarajan/big-data-e2e/blob/master/cloudera-installation-steps/images/components-installed-1.png)
+![alt tag](https://github.com/Sathiyarajan/big-data-e2e/blob/master/cloudera-installation-steps/images/components-installed-2.png)
+![alt tag](https://github.com/Sathiyarajan/big-data-e2e/blob/master/cloudera-installation-steps/images/starting-services-1.png)
+![alt tag](https://github.com/Sathiyarajan/big-data-e2e/blob/master/cloudera-installation-steps/images/start-services-3.png)
+![alt tag](https://github.com/Sathiyarajan/big-data-e2e/blob/master/cloudera-installation-steps/images/up-and-running%5C.png)
+![alt tag](https://github.com/Sathiyarajan/big-data-e2e/blob/master/cloudera-installation-steps/images/hdfs-command-check.png)

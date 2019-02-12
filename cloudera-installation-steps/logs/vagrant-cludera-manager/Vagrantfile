@@ -1,0 +1,116 @@
+$node_script = <<SCRIPT
+#!/bin/bash
+
+#Disable selinux:
+sed -i 's/^\(SELINUX\s*=\s*\).*$/\1disabled/' /etc/selinux/config
+
+#Setup NTP:
+yum -y install ntp
+chkconfig ntpd on
+service ntpd start
+sudo hwclock --systohc
+
+#Disable Firawall:
+chkconfig iptables off
+SCRIPT
+
+$mysql_script = <<SCRIPT
+#!/bin/bash
+
+yum -y install mysql-server mysql
+chkconfig mysqld on
+
+cp my.cnf /etc/my.cnf
+service mysqld start
+
+#run mysql_secure_installation
+chmod a+x mysqlsec.sh
+./mysqlsec.sh
+
+mysql -u root -e "create database scm" mysql
+mysql -u root -e "grant all on *.* to 'scm'@'%' identified by 'scm' with grant option;" mysql
+
+SCRIPT
+
+$manager_script = <<SCRIPT
+#!/bin/bash
+
+wget -O /etc/yum.repos.d/cloudera-manager.repo http://archive.cloudera.com/cm5/redhat/6/x86_64/cm/cloudera-manager.repo 
+yum -y update
+
+yum -y install oracle-j2sdk1.7 cloudera-manager-server cloudera-manager-daemons
+yum -y install mysql-connector-java
+
+/usr/share/cmf/schema/scm_prepare_database.sh mysql -h localhost scm scm scm
+
+service cloudera-scm-server start
+
+SCRIPT
+
+$hosts_script = <<SCRIPT
+cat > /etc/hosts <<EOF
+127.0.0.1       localhost
+EOF
+SCRIPT
+
+Vagrant.configure("2") do |config|
+
+	# Define base image
+	config.vm.box = "bento/centos-6.7"
+
+	# Manage /etc/hosts on host and VMs
+  	config.hostmanager.enabled = false
+  	config.hostmanager.manage_host = true
+  	config.hostmanager.include_offline = true
+  	config.hostmanager.ignore_private_ip = false
+
+  	config.vm.define :master do |master|
+    	master.vm.provider :virtualbox do |v|
+      		v.name = "cloudera-1"
+      		v.customize ["modifyvm", :id, "--memory", "5120"]
+    	end
+    	master.vm.network :private_network, ip: "10.211.55.101"
+    	master.vm.hostname = "cloudera-1"
+    	master.vm.provision :shell, :inline => $node_script
+    	master.vm.provision :shell, :inline => $hosts_script
+    	master.vm.provision :hostmanager
+    	master.vm.provision :file, :source => "my.cnf", :destination => "my.cnf" 
+    	master.vm.provision :file, :source => "mysqlsec.sh", :destination => "mysqlsec.sh" 
+    	master.vm.provision :shell, :inline => $mysql_script
+    	master.vm.provision :shell, :inline => $manager_script
+  	end
+
+  	config.vm.define :node2 do |node2|
+    	node2.vm.provider :virtualbox do |v|
+      		v.name = "cloudera-2"
+      		v.customize ["modifyvm", :id, "--memory", "1248"]
+    	end
+    	node2.vm.network :private_network, ip: "10.211.55.102"
+    	node2.vm.hostname = "cloudera-2"
+    	node2.vm.provision :shell, :inline => $node_script
+    	node2.vm.provision :shell, :inline => $hosts_script
+    	node2.vm.provision :hostmanager
+  	end
+  	config.vm.define :node3 do |node3|
+    	node3.vm.provider :virtualbox do |v|
+      		v.name = "cloudera-3"
+      		v.customize ["modifyvm", :id, "--memory", "1248"]
+    	end
+    	node3.vm.network :private_network, ip: "10.211.55.103"
+    	node3.vm.hostname = "cloudera-3"
+    	node3.vm.provision :shell, :inline => $node_script
+    	node3.vm.provision :shell, :inline => $hosts_script
+    	node3.vm.provision :hostmanager
+  	end
+  	config.vm.define :node4 do |node4|
+    	node4.vm.provider :virtualbox do |v|
+      		v.name = "cloudera-4"
+      		v.customize ["modifyvm", :id, "--memory", "1248"]
+    	end
+    	node4.vm.network :private_network, ip: "10.211.55.104"
+    	node4.vm.hostname = "cloudera-4"
+    	node4.vm.provision :shell, :inline => $node_script
+    	node4.vm.provision :shell, :inline => $hosts_script
+    	node4.vm.provision :hostmanager
+  	end
+end
