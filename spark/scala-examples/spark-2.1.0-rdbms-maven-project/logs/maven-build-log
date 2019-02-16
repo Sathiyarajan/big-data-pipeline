@@ -1,0 +1,91 @@
+ubuntu@big-vm:/opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project$ mvn clean install
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.spark2.rdbms:spark2.rdbms:jar:1.0
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-shade-plugin is missing. @ line 131, column 12
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Spark-2.1 Scala rdbms Application 1.0
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ spark2.rdbms ---
+[INFO] Deleting /opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/target
+[INFO] 
+[INFO] --- scala-maven-plugin:3.2.2:add-source (eclipse-add-source) @ spark2.rdbms ---
+[INFO] Add Source directory: /opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/src/main/scala
+[INFO] Add Test Source directory: /opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/src/test/scala
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ spark2.rdbms ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/src/main/resources
+[INFO] 
+[INFO] --- scala-maven-plugin:3.2.2:compile (scala-compile-first) @ spark2.rdbms ---
+[WARNING]  Expected all dependencies to require Scala version: 2.11.7
+[WARNING]  org.scala-lang:scala-reflect:2.11.8 requires scala version: 2.11.8
+[WARNING] Multiple versions of scala libraries detected!
+[WARNING] Zinc server is not available at port 3030 - reverting to normal incremental compile
+[INFO] Using incremental compilation
+[INFO] Compiling 1 Scala source to /opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/target/classes...
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ spark2.rdbms ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ spark2.rdbms ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- scala-maven-plugin:3.2.2:testCompile (scala-test-compile-first) @ spark2.rdbms ---
+[WARNING]  Expected all dependencies to require Scala version: 2.11.7
+[WARNING]  org.scala-lang:scala-reflect:2.11.8 requires scala version: 2.11.8
+[WARNING] Multiple versions of scala libraries detected!
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ spark2.rdbms ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ spark2.rdbms ---
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ spark2.rdbms ---
+[INFO] Building jar: /opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/target/spark2.rdbms-1.0.jar
+[INFO] 
+[INFO] --- maven-shade-plugin:3.2.1:shade (default) @ spark2.rdbms ---
+[INFO] Including com.fasterxml.jackson.core:jackson-annotations:jar:2.6.7 in the shaded jar.
+[INFO] Including mysql:mysql-connector-java:jar:6.0.4 in the shaded jar.
+[INFO] Replacing original artifact with shaded artifact.
+[INFO] Replacing /opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/target/spark2.rdbms-1.0.jar with /opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/target/spark2.rdbms-1.0-shaded.jar
+[INFO] Dependency-reduced POM written at: /opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/dependency-reduced-pom.xml
+[INFO] 
+[INFO] >>> scala-maven-plugin:3.2.2:doc-jar (attach-scaladocs) > generate-sources @ spark2.rdbms >>>
+[INFO] 
+[INFO] --- scala-maven-plugin:3.2.2:add-source (eclipse-add-source) @ spark2.rdbms ---
+[INFO] 
+[INFO] <<< scala-maven-plugin:3.2.2:doc-jar (attach-scaladocs) < generate-sources @ spark2.rdbms <<<
+[INFO] 
+[INFO] 
+[INFO] --- scala-maven-plugin:3.2.2:doc-jar (attach-scaladocs) @ spark2.rdbms ---
+[WARNING]  Expected all dependencies to require Scala version: 2.11.7
+[WARNING]  org.scala-lang:scala-reflect:2.11.8 requires scala version: 2.11.8
+[WARNING] Multiple versions of scala libraries detected!
+[WARNING]  Expected all dependencies to require Scala version: 2.11.7
+[WARNING]  org.scala-lang:scala-reflect:2.11.8 requires scala version: 2.11.8
+[WARNING] Multiple versions of scala libraries detected!
+model contains 6 documentable templates
+[INFO] Building jar: /opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/target/spark2.rdbms-1.0-javadoc.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ spark2.rdbms ---
+[INFO] Installing /opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/target/spark2.rdbms-1.0.jar to /home/ubuntu/.m2/repository/com/spark2/rdbms/spark2.rdbms/1.0/spark2.rdbms-1.0.jar
+[INFO] Installing /opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/dependency-reduced-pom.xml to /home/ubuntu/.m2/repository/com/spark2/rdbms/spark2.rdbms/1.0/spark2.rdbms-1.0.pom
+[INFO] Installing /opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/target/spark2.rdbms-1.0-javadoc.jar to /home/ubuntu/.m2/repository/com/spark2/rdbms/spark2.rdbms/1.0/spark2.rdbms-1.0-javadoc.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 33.708 s
+[INFO] Finished at: 2019-02-15T22:58:23+05:30
+[INFO] Final Memory: 43M/800M
+[INFO] ------------------------------------------------------------------------
+

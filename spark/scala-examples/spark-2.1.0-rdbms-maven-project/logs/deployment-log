@@ -1,0 +1,918 @@
+ubuntu@big-vm:/opt/spark/spark-2.2.1-bin-hadoop2.7/jars$ cp /home/ubuntu/.m2/repository/mysql/mysql-connector-java/6.0.4/mysql-connector-java-6.0.4.jar .
+cp: cannot create regular file './mysql-connector-java-6.0.4.jar': Permission denied
+ubuntu@big-vm:/opt/spark/spark-2.2.1-bin-hadoop2.7/jars$ sudo cp /home/ubuntu/.m2/repository/mysql/mysql-connector-java/6.0.4/mysql-connector-java-6.0.4.jar .
+ubuntu@big-vm:/opt/spark/spark-2.2.1-bin-hadoop2.7/jars$ /opt/spark/spark-2.2.1-bin-hadoop2.7/bin/spark-submit --master local[*] --class "com.spark2.jdbc.SparkJdbc" /opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/target/spark2.rdbms-1.0.jar
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+19/02/15 23:07:25 INFO SparkContext: Running Spark version 2.2.1
+19/02/15 23:07:26 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+19/02/15 23:07:26 INFO SparkContext: Submitted application: Spark_To_Jdbc
+19/02/15 23:07:26 INFO SecurityManager: Changing view acls to: ubuntu
+19/02/15 23:07:26 INFO SecurityManager: Changing modify acls to: ubuntu
+19/02/15 23:07:26 INFO SecurityManager: Changing view acls groups to: 
+19/02/15 23:07:26 INFO SecurityManager: Changing modify acls groups to: 
+19/02/15 23:07:26 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ubuntu); groups with view permissions: Set(); users  with modify permissions: Set(ubuntu); groups with modify permissions: Set()
+19/02/15 23:07:26 INFO Utils: Successfully started service 'sparkDriver' on port 42991.
+19/02/15 23:07:26 INFO SparkEnv: Registering MapOutputTracker
+19/02/15 23:07:27 INFO SparkEnv: Registering BlockManagerMaster
+19/02/15 23:07:27 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+19/02/15 23:07:27 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+19/02/15 23:07:27 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-c3f7707b-af35-4900-9954-abe036084478
+19/02/15 23:07:27 INFO MemoryStore: MemoryStore started with capacity 366.3 MB
+19/02/15 23:07:27 INFO SparkEnv: Registering OutputCommitCoordinator
+19/02/15 23:07:27 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+19/02/15 23:07:27 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://192.168.1.2:4040
+19/02/15 23:07:27 INFO SparkContext: Added JAR file:/opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/target/spark2.rdbms-1.0.jar at spark://192.168.1.2:42991/jars/spark2.rdbms-1.0.jar with timestamp 1550252247610
+19/02/15 23:07:27 INFO Executor: Starting executor ID driver on host localhost
+19/02/15 23:07:27 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 38603.
+19/02/15 23:07:27 INFO NettyBlockTransferService: Server created on 192.168.1.2:38603
+19/02/15 23:07:27 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+19/02/15 23:07:27 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 192.168.1.2, 38603, None)
+19/02/15 23:07:27 INFO BlockManagerMasterEndpoint: Registering block manager 192.168.1.2:38603 with 366.3 MB RAM, BlockManagerId(driver, 192.168.1.2, 38603, None)
+19/02/15 23:07:27 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 192.168.1.2, 38603, None)
+19/02/15 23:07:27 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 192.168.1.2, 38603, None)
+19/02/15 23:07:32 INFO CodeGenerator: Code generated in 376.689647 ms
+19/02/15 23:07:32 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir ('file:/opt/spark/spark-2.2.1-bin-hadoop2.7/jars/spark-warehouse').
+19/02/15 23:07:32 INFO SharedState: Warehouse path is 'file:/opt/spark/spark-2.2.1-bin-hadoop2.7/jars/spark-warehouse'.
+19/02/15 23:07:33 INFO StateStoreCoordinatorRef: Registered StateStoreCoordinator endpoint
+Fri Feb 15 23:07:34 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:34 INFO CodeGenerator: Code generated in 24.491526 ms
+19/02/15 23:07:34 INFO SparkContext: Starting job: jdbc at SparkJdbc.scala:44
+19/02/15 23:07:34 INFO DAGScheduler: Got job 0 (jdbc at SparkJdbc.scala:44) with 1 output partitions
+19/02/15 23:07:34 INFO DAGScheduler: Final stage: ResultStage 0 (jdbc at SparkJdbc.scala:44)
+19/02/15 23:07:34 INFO DAGScheduler: Parents of final stage: List()
+19/02/15 23:07:34 INFO DAGScheduler: Missing parents: List()
+19/02/15 23:07:34 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[4] at jdbc at SparkJdbc.scala:44), which has no missing parents
+19/02/15 23:07:35 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 8.6 KB, free 366.3 MB)
+19/02/15 23:07:35 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 4.7 KB, free 366.3 MB)
+19/02/15 23:07:35 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 192.168.1.2:38603 (size: 4.7 KB, free: 366.3 MB)
+19/02/15 23:07:35 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1006
+19/02/15 23:07:35 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[4] at jdbc at SparkJdbc.scala:44) (first 15 tasks are for partitions Vector(0))
+19/02/15 23:07:35 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks
+19/02/15 23:07:35 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, localhost, executor driver, partition 0, PROCESS_LOCAL, 5460 bytes)
+19/02/15 23:07:35 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+19/02/15 23:07:35 INFO Executor: Fetching spark://192.168.1.2:42991/jars/spark2.rdbms-1.0.jar with timestamp 1550252247610
+19/02/15 23:07:35 INFO TransportClientFactory: Successfully created connection to /192.168.1.2:42991 after 60 ms (0 ms spent in bootstraps)
+19/02/15 23:07:35 INFO Utils: Fetching spark://192.168.1.2:42991/jars/spark2.rdbms-1.0.jar to /tmp/spark-62c0a48c-f53b-4f25-9c6f-6e8c0ee48295/userFiles-a730895a-4bbb-4804-9de9-42a24ba965d5/fetchFileTemp3223092103179012909.tmp
+19/02/15 23:07:35 INFO Executor: Adding file:/tmp/spark-62c0a48c-f53b-4f25-9c6f-6e8c0ee48295/userFiles-a730895a-4bbb-4804-9de9-42a24ba965d5/spark2.rdbms-1.0.jar to class loader
+19/02/15 23:07:35 INFO CodeGenerator: Code generated in 33.909265 ms
+Fri Feb 15 23:07:35 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:35 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1013 bytes result sent to driver
+19/02/15 23:07:35 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 578 ms on localhost (executor driver) (1/1)
+19/02/15 23:07:35 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+19/02/15 23:07:35 INFO DAGScheduler: ResultStage 0 (jdbc at SparkJdbc.scala:44) finished in 0.604 s
+19/02/15 23:07:35 INFO DAGScheduler: Job 0 finished: jdbc at SparkJdbc.scala:44, took 0.964893 s
+Fri Feb 15 23:07:35 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:35 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:36 INFO CodeGenerator: Code generated in 38.102966 ms
+19/02/15 23:07:36 INFO CodeGenerator: Code generated in 42.16137 ms
+19/02/15 23:07:36 INFO SparkContext: Starting job: show at SparkJdbc.scala:48
+19/02/15 23:07:36 INFO DAGScheduler: Got job 1 (show at SparkJdbc.scala:48) with 1 output partitions
+19/02/15 23:07:36 INFO DAGScheduler: Final stage: ResultStage 1 (show at SparkJdbc.scala:48)
+19/02/15 23:07:36 INFO DAGScheduler: Parents of final stage: List()
+19/02/15 23:07:36 INFO DAGScheduler: Missing parents: List()
+19/02/15 23:07:36 INFO DAGScheduler: Submitting ResultStage 1 (MapPartitionsRDD[8] at show at SparkJdbc.scala:48), which has no missing parents
+19/02/15 23:07:36 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 8.7 KB, free 366.3 MB)
+19/02/15 23:07:36 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 4.5 KB, free 366.3 MB)
+19/02/15 23:07:36 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 192.168.1.2:38603 (size: 4.5 KB, free: 366.3 MB)
+19/02/15 23:07:36 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1006
+19/02/15 23:07:36 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 1 (MapPartitionsRDD[8] at show at SparkJdbc.scala:48) (first 15 tasks are for partitions Vector(0))
+19/02/15 23:07:36 INFO TaskSchedulerImpl: Adding task set 1.0 with 1 tasks
+19/02/15 23:07:36 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1, localhost, executor driver, partition 0, PROCESS_LOCAL, 4649 bytes)
+19/02/15 23:07:36 INFO Executor: Running task 0.0 in stage 1.0 (TID 1)
+Fri Feb 15 23:07:36 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:36 INFO JDBCRDD: closed connection
+19/02/15 23:07:36 INFO Executor: Finished task 0.0 in stage 1.0 (TID 1). 1263 bytes result sent to driver
+19/02/15 23:07:36 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 1) in 71 ms on localhost (executor driver) (1/1)
+19/02/15 23:07:36 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+19/02/15 23:07:36 INFO DAGScheduler: ResultStage 1 (show at SparkJdbc.scala:48) finished in 0.062 s
+19/02/15 23:07:36 INFO DAGScheduler: Job 1 finished: show at SparkJdbc.scala:48, took 0.120924 s
++-----+-----+--------+----+----------+----+----+------+
+|empno|ename|     job| mgr|  hiredate| sal|comm|deptno|
++-----+-----+--------+----+----------+----+----+------+
+| 7362|SMITH|   CLERK|7902|2019-02-15|1000|   0|    20|
+| 7363|ALLEN|SALESMAN|7698|2019-02-15|1600|   0|    30|
++-----+-----+--------+----+----------+----+----+------+
+
+Fri Feb 15 23:07:36 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:36 INFO CodeGenerator: Code generated in 12.031661 ms
+19/02/15 23:07:36 INFO CodeGenerator: Code generated in 22.741388 ms
+19/02/15 23:07:36 INFO SparkContext: Starting job: show at SparkJdbc.scala:54
+19/02/15 23:07:36 INFO DAGScheduler: Got job 2 (show at SparkJdbc.scala:54) with 1 output partitions
+19/02/15 23:07:36 INFO DAGScheduler: Final stage: ResultStage 2 (show at SparkJdbc.scala:54)
+19/02/15 23:07:36 INFO DAGScheduler: Parents of final stage: List()
+19/02/15 23:07:36 INFO DAGScheduler: Missing parents: List()
+19/02/15 23:07:36 INFO DAGScheduler: Submitting ResultStage 2 (MapPartitionsRDD[11] at show at SparkJdbc.scala:54), which has no missing parents
+19/02/15 23:07:36 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 7.8 KB, free 366.3 MB)
+19/02/15 23:07:36 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 4.4 KB, free 366.3 MB)
+19/02/15 23:07:36 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 192.168.1.2:38603 (size: 4.4 KB, free: 366.3 MB)
+19/02/15 23:07:36 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1006
+19/02/15 23:07:36 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 2 (MapPartitionsRDD[11] at show at SparkJdbc.scala:54) (first 15 tasks are for partitions Vector(0))
+19/02/15 23:07:36 INFO TaskSchedulerImpl: Adding task set 2.0 with 1 tasks
+19/02/15 23:07:36 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 2, localhost, executor driver, partition 0, PROCESS_LOCAL, 4681 bytes)
+19/02/15 23:07:36 INFO Executor: Running task 0.0 in stage 2.0 (TID 2)
+Fri Feb 15 23:07:36 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:36 INFO JDBCRDD: closed connection
+19/02/15 23:07:36 INFO Executor: Finished task 0.0 in stage 2.0 (TID 2). 1201 bytes result sent to driver
+19/02/15 23:07:36 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 2) in 25 ms on localhost (executor driver) (1/1)
+19/02/15 23:07:36 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool 
+19/02/15 23:07:36 INFO DAGScheduler: ResultStage 2 (show at SparkJdbc.scala:54) finished in 0.027 s
+19/02/15 23:07:36 INFO DAGScheduler: Job 2 finished: show at SparkJdbc.scala:54, took 0.050067 s
+19/02/15 23:07:36 INFO SparkContext: Starting job: show at SparkJdbc.scala:54
+19/02/15 23:07:36 INFO DAGScheduler: Got job 3 (show at SparkJdbc.scala:54) with 4 output partitions
+19/02/15 23:07:36 INFO DAGScheduler: Final stage: ResultStage 3 (show at SparkJdbc.scala:54)
+19/02/15 23:07:36 INFO DAGScheduler: Parents of final stage: List()
+19/02/15 23:07:36 INFO DAGScheduler: Missing parents: List()
+19/02/15 23:07:36 INFO DAGScheduler: Submitting ResultStage 3 (MapPartitionsRDD[11] at show at SparkJdbc.scala:54), which has no missing parents
+19/02/15 23:07:36 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 7.8 KB, free 366.3 MB)
+19/02/15 23:07:36 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 4.4 KB, free 366.3 MB)
+19/02/15 23:07:36 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 192.168.1.2:38603 (size: 4.4 KB, free: 366.3 MB)
+19/02/15 23:07:36 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:1006
+19/02/15 23:07:36 INFO DAGScheduler: Submitting 4 missing tasks from ResultStage 3 (MapPartitionsRDD[11] at show at SparkJdbc.scala:54) (first 15 tasks are for partitions Vector(1, 2, 3, 4))
+19/02/15 23:07:36 INFO TaskSchedulerImpl: Adding task set 3.0 with 4 tasks
+19/02/15 23:07:36 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 3, localhost, executor driver, partition 1, PROCESS_LOCAL, 4684 bytes)
+19/02/15 23:07:36 INFO TaskSetManager: Starting task 1.0 in stage 3.0 (TID 4, localhost, executor driver, partition 2, PROCESS_LOCAL, 4685 bytes)
+19/02/15 23:07:36 INFO TaskSetManager: Starting task 2.0 in stage 3.0 (TID 5, localhost, executor driver, partition 3, PROCESS_LOCAL, 4685 bytes)
+19/02/15 23:07:36 INFO TaskSetManager: Starting task 3.0 in stage 3.0 (TID 6, localhost, executor driver, partition 4, PROCESS_LOCAL, 4685 bytes)
+19/02/15 23:07:36 INFO Executor: Running task 0.0 in stage 3.0 (TID 3)
+19/02/15 23:07:36 INFO Executor: Running task 1.0 in stage 3.0 (TID 4)
+Fri Feb 15 23:07:36 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:36 INFO JDBCRDD: closed connection
+19/02/15 23:07:36 INFO Executor: Finished task 0.0 in stage 3.0 (TID 3). 1093 bytes result sent to driver
+19/02/15 23:07:36 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 3) in 33 ms on localhost (executor driver) (1/4)
+19/02/15 23:07:36 INFO Executor: Running task 2.0 in stage 3.0 (TID 5)
+19/02/15 23:07:36 INFO Executor: Running task 3.0 in stage 3.0 (TID 6)
+Fri Feb 15 23:07:36 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:36 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:36 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:36 INFO JDBCRDD: closed connection
+19/02/15 23:07:36 INFO Executor: Finished task 3.0 in stage 3.0 (TID 6). 1093 bytes result sent to driver
+19/02/15 23:07:36 INFO TaskSetManager: Finished task 3.0 in stage 3.0 (TID 6) in 59 ms on localhost (executor driver) (2/4)
+19/02/15 23:07:36 INFO JDBCRDD: closed connection
+19/02/15 23:07:36 INFO JDBCRDD: closed connection
+19/02/15 23:07:36 INFO Executor: Finished task 2.0 in stage 3.0 (TID 5). 1093 bytes result sent to driver
+19/02/15 23:07:36 INFO Executor: Finished task 1.0 in stage 3.0 (TID 4). 1136 bytes result sent to driver
+19/02/15 23:07:36 INFO TaskSetManager: Finished task 2.0 in stage 3.0 (TID 5) in 73 ms on localhost (executor driver) (3/4)
+19/02/15 23:07:36 INFO TaskSetManager: Finished task 1.0 in stage 3.0 (TID 4) in 77 ms on localhost (executor driver) (4/4)
+19/02/15 23:07:36 INFO TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool 
+19/02/15 23:07:36 INFO DAGScheduler: ResultStage 3 (show at SparkJdbc.scala:54) finished in 0.080 s
+19/02/15 23:07:36 INFO DAGScheduler: Job 3 finished: show at SparkJdbc.scala:54, took 0.097478 s
+19/02/15 23:07:36 INFO SparkContext: Starting job: show at SparkJdbc.scala:54
+19/02/15 23:07:36 INFO DAGScheduler: Got job 4 (show at SparkJdbc.scala:54) with 5 output partitions
+19/02/15 23:07:36 INFO DAGScheduler: Final stage: ResultStage 4 (show at SparkJdbc.scala:54)
+19/02/15 23:07:36 INFO DAGScheduler: Parents of final stage: List()
+19/02/15 23:07:36 INFO DAGScheduler: Missing parents: List()
+19/02/15 23:07:36 INFO DAGScheduler: Submitting ResultStage 4 (MapPartitionsRDD[11] at show at SparkJdbc.scala:54), which has no missing parents
+19/02/15 23:07:36 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 7.8 KB, free 366.2 MB)
+19/02/15 23:07:36 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 4.4 KB, free 366.2 MB)
+19/02/15 23:07:36 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 192.168.1.2:38603 (size: 4.4 KB, free: 366.3 MB)
+19/02/15 23:07:36 INFO SparkContext: Created broadcast 4 from broadcast at DAGScheduler.scala:1006
+19/02/15 23:07:36 INFO DAGScheduler: Submitting 5 missing tasks from ResultStage 4 (MapPartitionsRDD[11] at show at SparkJdbc.scala:54) (first 15 tasks are for partitions Vector(5, 6, 7, 8, 9))
+19/02/15 23:07:36 INFO TaskSchedulerImpl: Adding task set 4.0 with 5 tasks
+19/02/15 23:07:36 INFO TaskSetManager: Starting task 0.0 in stage 4.0 (TID 7, localhost, executor driver, partition 5, PROCESS_LOCAL, 4685 bytes)
+19/02/15 23:07:36 INFO TaskSetManager: Starting task 1.0 in stage 4.0 (TID 8, localhost, executor driver, partition 6, PROCESS_LOCAL, 4685 bytes)
+19/02/15 23:07:36 INFO TaskSetManager: Starting task 2.0 in stage 4.0 (TID 9, localhost, executor driver, partition 7, PROCESS_LOCAL, 4685 bytes)
+19/02/15 23:07:36 INFO TaskSetManager: Starting task 3.0 in stage 4.0 (TID 10, localhost, executor driver, partition 8, PROCESS_LOCAL, 4685 bytes)
+19/02/15 23:07:36 INFO Executor: Running task 0.0 in stage 4.0 (TID 7)
+19/02/15 23:07:36 INFO Executor: Running task 2.0 in stage 4.0 (TID 9)
+19/02/15 23:07:36 INFO Executor: Running task 1.0 in stage 4.0 (TID 8)
+19/02/15 23:07:36 INFO Executor: Running task 3.0 in stage 4.0 (TID 10)
+Fri Feb 15 23:07:36 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:36 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:36 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:36 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:36 INFO JDBCRDD: closed connection
+19/02/15 23:07:36 INFO Executor: Finished task 3.0 in stage 4.0 (TID 10). 1093 bytes result sent to driver
+19/02/15 23:07:36 INFO JDBCRDD: closed connection
+19/02/15 23:07:36 INFO JDBCRDD: closed connection
+19/02/15 23:07:36 INFO Executor: Finished task 0.0 in stage 4.0 (TID 7). 1093 bytes result sent to driver
+19/02/15 23:07:36 INFO TaskSetManager: Starting task 4.0 in stage 4.0 (TID 11, localhost, executor driver, partition 9, PROCESS_LOCAL, 4666 bytes)
+19/02/15 23:07:36 INFO JDBCRDD: closed connection
+19/02/15 23:07:36 INFO TaskSetManager: Finished task 0.0 in stage 4.0 (TID 7) in 53 ms on localhost (executor driver) (1/5)
+19/02/15 23:07:36 INFO TaskSetManager: Finished task 3.0 in stage 4.0 (TID 10) in 50 ms on localhost (executor driver) (2/5)
+19/02/15 23:07:36 INFO Executor: Running task 4.0 in stage 4.0 (TID 11)
+19/02/15 23:07:36 INFO Executor: Finished task 1.0 in stage 4.0 (TID 8). 1093 bytes result sent to driver
+19/02/15 23:07:36 INFO Executor: Finished task 2.0 in stage 4.0 (TID 9). 1093 bytes result sent to driver
+19/02/15 23:07:36 INFO TaskSetManager: Finished task 1.0 in stage 4.0 (TID 8) in 59 ms on localhost (executor driver) (3/5)
+19/02/15 23:07:36 INFO TaskSetManager: Finished task 2.0 in stage 4.0 (TID 9) in 59 ms on localhost (executor driver) (4/5)
+Fri Feb 15 23:07:36 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:36 INFO JDBCRDD: closed connection
+19/02/15 23:07:36 INFO Executor: Finished task 4.0 in stage 4.0 (TID 11). 1093 bytes result sent to driver
+19/02/15 23:07:36 INFO TaskSetManager: Finished task 4.0 in stage 4.0 (TID 11) in 26 ms on localhost (executor driver) (5/5)
+19/02/15 23:07:36 INFO TaskSchedulerImpl: Removed TaskSet 4.0, whose tasks have all completed, from pool 
+19/02/15 23:07:36 INFO DAGScheduler: ResultStage 4 (show at SparkJdbc.scala:54) finished in 0.072 s
+19/02/15 23:07:36 INFO DAGScheduler: Job 4 finished: show at SparkJdbc.scala:54, took 0.098542 s
++-----+--------------+
+|empno|      name_job|
++-----+--------------+
+| 7362|   SMITH CLERK|
+| 7363|ALLEN SALESMAN|
++-----+--------------+
+
+Fri Feb 15 23:07:36 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO SparkContext: Starting job: show at SparkJdbc.scala:58
+19/02/15 23:07:37 INFO DAGScheduler: Got job 5 (show at SparkJdbc.scala:58) with 1 output partitions
+19/02/15 23:07:37 INFO DAGScheduler: Final stage: ResultStage 5 (show at SparkJdbc.scala:58)
+19/02/15 23:07:37 INFO DAGScheduler: Parents of final stage: List()
+19/02/15 23:07:37 INFO DAGScheduler: Missing parents: List()
+19/02/15 23:07:37 INFO DAGScheduler: Submitting ResultStage 5 (MapPartitionsRDD[14] at show at SparkJdbc.scala:58), which has no missing parents
+19/02/15 23:07:37 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 8.8 KB, free 366.2 MB)
+19/02/15 23:07:37 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 4.6 KB, free 366.2 MB)
+19/02/15 23:07:37 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on 192.168.1.2:38603 (size: 4.6 KB, free: 366.3 MB)
+19/02/15 23:07:37 INFO SparkContext: Created broadcast 5 from broadcast at DAGScheduler.scala:1006
+19/02/15 23:07:37 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 5 (MapPartitionsRDD[14] at show at SparkJdbc.scala:58) (first 15 tasks are for partitions Vector(0))
+19/02/15 23:07:37 INFO TaskSchedulerImpl: Adding task set 5.0 with 1 tasks
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 0.0 in stage 5.0 (TID 12, localhost, executor driver, partition 0, PROCESS_LOCAL, 4649 bytes)
+19/02/15 23:07:37 INFO Executor: Running task 0.0 in stage 5.0 (TID 12)
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Finished task 0.0 in stage 5.0 (TID 12). 1263 bytes result sent to driver
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 0.0 in stage 5.0 (TID 12) in 37 ms on localhost (executor driver) (1/1)
+19/02/15 23:07:37 INFO TaskSchedulerImpl: Removed TaskSet 5.0, whose tasks have all completed, from pool 
+19/02/15 23:07:37 INFO DAGScheduler: ResultStage 5 (show at SparkJdbc.scala:58) finished in 0.038 s
+19/02/15 23:07:37 INFO DAGScheduler: Job 5 finished: show at SparkJdbc.scala:58, took 0.060712 s
++-----+-----+--------+----+----------+----+----+------+
+|empno|ename|     job| mgr|  hiredate| sal|comm|deptno|
++-----+-----+--------+----+----------+----+----+------+
+| 7362|SMITH|   CLERK|7902|2019-02-15|1000|   0|    20|
+| 7363|ALLEN|SALESMAN|7698|2019-02-15|1600|   0|    30|
++-----+-----+--------+----+----------+----+----+------+
+
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO SparkContext: Starting job: show at SparkJdbc.scala:69
+19/02/15 23:07:37 INFO DAGScheduler: Got job 6 (show at SparkJdbc.scala:69) with 1 output partitions
+19/02/15 23:07:37 INFO DAGScheduler: Final stage: ResultStage 6 (show at SparkJdbc.scala:69)
+19/02/15 23:07:37 INFO DAGScheduler: Parents of final stage: List()
+19/02/15 23:07:37 INFO DAGScheduler: Missing parents: List()
+19/02/15 23:07:37 INFO DAGScheduler: Submitting ResultStage 6 (MapPartitionsRDD[17] at show at SparkJdbc.scala:69), which has no missing parents
+19/02/15 23:07:37 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 13.3 KB, free 366.2 MB)
+19/02/15 23:07:37 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 6.2 KB, free 366.2 MB)
+19/02/15 23:07:37 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on 192.168.1.2:38603 (size: 6.2 KB, free: 366.3 MB)
+19/02/15 23:07:37 INFO SparkContext: Created broadcast 6 from broadcast at DAGScheduler.scala:1006
+19/02/15 23:07:37 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 6 (MapPartitionsRDD[17] at show at SparkJdbc.scala:69) (first 15 tasks are for partitions Vector(0))
+19/02/15 23:07:37 INFO TaskSchedulerImpl: Adding task set 6.0 with 1 tasks
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 0.0 in stage 6.0 (TID 13, localhost, executor driver, partition 0, PROCESS_LOCAL, 4680 bytes)
+19/02/15 23:07:37 INFO Executor: Running task 0.0 in stage 6.0 (TID 13)
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Finished task 0.0 in stage 6.0 (TID 13). 1136 bytes result sent to driver
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 0.0 in stage 6.0 (TID 13) in 20 ms on localhost (executor driver) (1/1)
+19/02/15 23:07:37 INFO TaskSchedulerImpl: Removed TaskSet 6.0, whose tasks have all completed, from pool 
+19/02/15 23:07:37 INFO DAGScheduler: ResultStage 6 (show at SparkJdbc.scala:69) finished in 0.011 s
+19/02/15 23:07:37 INFO DAGScheduler: Job 6 finished: show at SparkJdbc.scala:69, took 0.050940 s
+19/02/15 23:07:37 INFO SparkContext: Starting job: show at SparkJdbc.scala:69
+19/02/15 23:07:37 INFO DAGScheduler: Got job 7 (show at SparkJdbc.scala:69) with 4 output partitions
+19/02/15 23:07:37 INFO DAGScheduler: Final stage: ResultStage 7 (show at SparkJdbc.scala:69)
+19/02/15 23:07:37 INFO DAGScheduler: Parents of final stage: List()
+19/02/15 23:07:37 INFO DAGScheduler: Missing parents: List()
+19/02/15 23:07:37 INFO DAGScheduler: Submitting ResultStage 7 (MapPartitionsRDD[17] at show at SparkJdbc.scala:69), which has no missing parents
+19/02/15 23:07:37 INFO MemoryStore: Block broadcast_7 stored as values in memory (estimated size 13.3 KB, free 366.2 MB)
+19/02/15 23:07:37 INFO MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 6.2 KB, free 366.2 MB)
+19/02/15 23:07:37 INFO BlockManagerInfo: Added broadcast_7_piece0 in memory on 192.168.1.2:38603 (size: 6.2 KB, free: 366.3 MB)
+19/02/15 23:07:37 INFO SparkContext: Created broadcast 7 from broadcast at DAGScheduler.scala:1006
+19/02/15 23:07:37 INFO DAGScheduler: Submitting 4 missing tasks from ResultStage 7 (MapPartitionsRDD[17] at show at SparkJdbc.scala:69) (first 15 tasks are for partitions Vector(1, 2, 3, 4))
+19/02/15 23:07:37 INFO TaskSchedulerImpl: Adding task set 7.0 with 4 tasks
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 0.0 in stage 7.0 (TID 14, localhost, executor driver, partition 1, PROCESS_LOCAL, 4681 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 1.0 in stage 7.0 (TID 15, localhost, executor driver, partition 2, PROCESS_LOCAL, 4681 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 2.0 in stage 7.0 (TID 16, localhost, executor driver, partition 3, PROCESS_LOCAL, 4681 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 3.0 in stage 7.0 (TID 17, localhost, executor driver, partition 4, PROCESS_LOCAL, 4681 bytes)
+19/02/15 23:07:37 INFO Executor: Running task 0.0 in stage 7.0 (TID 14)
+19/02/15 23:07:37 INFO Executor: Running task 2.0 in stage 7.0 (TID 16)
+19/02/15 23:07:37 INFO Executor: Running task 3.0 in stage 7.0 (TID 17)
+19/02/15 23:07:37 INFO Executor: Running task 1.0 in stage 7.0 (TID 15)
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO Executor: Finished task 2.0 in stage 7.0 (TID 16). 1093 bytes result sent to driver
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 2.0 in stage 7.0 (TID 16) in 19 ms on localhost (executor driver) (1/4)
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Finished task 1.0 in stage 7.0 (TID 15). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 1.0 in stage 7.0 (TID 15) in 28 ms on localhost (executor driver) (2/4)
+19/02/15 23:07:37 INFO Executor: Finished task 3.0 in stage 7.0 (TID 17). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 3.0 in stage 7.0 (TID 17) in 28 ms on localhost (executor driver) (3/4)
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Finished task 0.0 in stage 7.0 (TID 14). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 0.0 in stage 7.0 (TID 14) in 37 ms on localhost (executor driver) (4/4)
+19/02/15 23:07:37 INFO TaskSchedulerImpl: Removed TaskSet 7.0, whose tasks have all completed, from pool 
+19/02/15 23:07:37 INFO DAGScheduler: ResultStage 7 (show at SparkJdbc.scala:69) finished in 0.040 s
+19/02/15 23:07:37 INFO DAGScheduler: Job 7 finished: show at SparkJdbc.scala:69, took 0.056841 s
+19/02/15 23:07:37 INFO SparkContext: Starting job: show at SparkJdbc.scala:69
+19/02/15 23:07:37 INFO DAGScheduler: Got job 8 (show at SparkJdbc.scala:69) with 20 output partitions
+19/02/15 23:07:37 INFO DAGScheduler: Final stage: ResultStage 8 (show at SparkJdbc.scala:69)
+19/02/15 23:07:37 INFO DAGScheduler: Parents of final stage: List()
+19/02/15 23:07:37 INFO DAGScheduler: Missing parents: List()
+19/02/15 23:07:37 INFO DAGScheduler: Submitting ResultStage 8 (MapPartitionsRDD[17] at show at SparkJdbc.scala:69), which has no missing parents
+19/02/15 23:07:37 INFO MemoryStore: Block broadcast_8 stored as values in memory (estimated size 13.3 KB, free 366.2 MB)
+19/02/15 23:07:37 INFO MemoryStore: Block broadcast_8_piece0 stored as bytes in memory (estimated size 6.2 KB, free 366.2 MB)
+19/02/15 23:07:37 INFO BlockManagerInfo: Added broadcast_8_piece0 in memory on 192.168.1.2:38603 (size: 6.2 KB, free: 366.3 MB)
+19/02/15 23:07:37 INFO SparkContext: Created broadcast 8 from broadcast at DAGScheduler.scala:1006
+19/02/15 23:07:37 INFO DAGScheduler: Submitting 20 missing tasks from ResultStage 8 (MapPartitionsRDD[17] at show at SparkJdbc.scala:69) (first 15 tasks are for partitions Vector(5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19))
+19/02/15 23:07:37 INFO TaskSchedulerImpl: Adding task set 8.0 with 20 tasks
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 0.0 in stage 8.0 (TID 18, localhost, executor driver, partition 5, PROCESS_LOCAL, 4681 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 1.0 in stage 8.0 (TID 19, localhost, executor driver, partition 6, PROCESS_LOCAL, 4681 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 2.0 in stage 8.0 (TID 20, localhost, executor driver, partition 7, PROCESS_LOCAL, 4681 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 3.0 in stage 8.0 (TID 21, localhost, executor driver, partition 8, PROCESS_LOCAL, 4681 bytes)
+19/02/15 23:07:37 INFO Executor: Running task 0.0 in stage 8.0 (TID 18)
+19/02/15 23:07:37 INFO Executor: Running task 1.0 in stage 8.0 (TID 19)
+19/02/15 23:07:37 INFO Executor: Running task 2.0 in stage 8.0 (TID 20)
+19/02/15 23:07:37 INFO Executor: Running task 3.0 in stage 8.0 (TID 21)
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Finished task 3.0 in stage 8.0 (TID 21). 1136 bytes result sent to driver
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 4.0 in stage 8.0 (TID 22, localhost, executor driver, partition 9, PROCESS_LOCAL, 4682 bytes)
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 3.0 in stage 8.0 (TID 21) in 43 ms on localhost (executor driver) (1/20)
+19/02/15 23:07:37 INFO Executor: Finished task 1.0 in stage 8.0 (TID 19). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Finished task 0.0 in stage 8.0 (TID 18). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 5.0 in stage 8.0 (TID 23, localhost, executor driver, partition 10, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO Executor: Running task 4.0 in stage 8.0 (TID 22)
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Running task 5.0 in stage 8.0 (TID 23)
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 6.0 in stage 8.0 (TID 24, localhost, executor driver, partition 11, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 1.0 in stage 8.0 (TID 19) in 61 ms on localhost (executor driver) (2/20)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 0.0 in stage 8.0 (TID 18) in 61 ms on localhost (executor driver) (3/20)
+19/02/15 23:07:37 INFO Executor: Finished task 2.0 in stage 8.0 (TID 20). 1263 bytes result sent to driver
+19/02/15 23:07:37 INFO Executor: Running task 6.0 in stage 8.0 (TID 24)
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 7.0 in stage 8.0 (TID 25, localhost, executor driver, partition 12, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 2.0 in stage 8.0 (TID 20) in 71 ms on localhost (executor driver) (4/20)
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO Executor: Running task 7.0 in stage 8.0 (TID 25)
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Finished task 4.0 in stage 8.0 (TID 22). 1093 bytes result sent to driver
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO Executor: Finished task 5.0 in stage 8.0 (TID 23). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO Executor: Finished task 6.0 in stage 8.0 (TID 24). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 8.0 in stage 8.0 (TID 26, localhost, executor driver, partition 13, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO Executor: Running task 8.0 in stage 8.0 (TID 26)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 4.0 in stage 8.0 (TID 22) in 62 ms on localhost (executor driver) (5/20)
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 9.0 in stage 8.0 (TID 27, localhost, executor driver, partition 14, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 6.0 in stage 8.0 (TID 24) in 51 ms on localhost (executor driver) (6/20)
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO Executor: Running task 9.0 in stage 8.0 (TID 27)
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 10.0 in stage 8.0 (TID 28, localhost, executor driver, partition 15, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 5.0 in stage 8.0 (TID 23) in 62 ms on localhost (executor driver) (7/20)
+19/02/15 23:07:37 INFO Executor: Running task 10.0 in stage 8.0 (TID 28)
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Finished task 7.0 in stage 8.0 (TID 25). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO Executor: Finished task 8.0 in stage 8.0 (TID 26). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 11.0 in stage 8.0 (TID 29, localhost, executor driver, partition 16, PROCESS_LOCAL, 4683 bytes)
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 7.0 in stage 8.0 (TID 25) in 63 ms on localhost (executor driver) (8/20)
+19/02/15 23:07:37 INFO Executor: Running task 11.0 in stage 8.0 (TID 29)
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 12.0 in stage 8.0 (TID 30, localhost, executor driver, partition 17, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 8.0 in stage 8.0 (TID 26) in 35 ms on localhost (executor driver) (9/20)
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO Executor: Running task 12.0 in stage 8.0 (TID 30)
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Finished task 10.0 in stage 8.0 (TID 28). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 13.0 in stage 8.0 (TID 31, localhost, executor driver, partition 18, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 10.0 in stage 8.0 (TID 28) in 39 ms on localhost (executor driver) (10/20)
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Running task 13.0 in stage 8.0 (TID 31)
+19/02/15 23:07:37 INFO Executor: Finished task 11.0 in stage 8.0 (TID 29). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 14.0 in stage 8.0 (TID 32, localhost, executor driver, partition 19, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 11.0 in stage 8.0 (TID 29) in 38 ms on localhost (executor driver) (11/20)
+19/02/15 23:07:37 INFO Executor: Running task 14.0 in stage 8.0 (TID 32)
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO Executor: Finished task 13.0 in stage 8.0 (TID 31). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 15.0 in stage 8.0 (TID 33, localhost, executor driver, partition 20, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 13.0 in stage 8.0 (TID 31) in 31 ms on localhost (executor driver) (12/20)
+19/02/15 23:07:37 INFO Executor: Finished task 9.0 in stage 8.0 (TID 27). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO Executor: Running task 15.0 in stage 8.0 (TID 33)
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Finished task 14.0 in stage 8.0 (TID 32). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 16.0 in stage 8.0 (TID 34, localhost, executor driver, partition 21, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 14.0 in stage 8.0 (TID 32) in 25 ms on localhost (executor driver) (13/20)
+19/02/15 23:07:37 INFO Executor: Running task 16.0 in stage 8.0 (TID 34)
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 17.0 in stage 8.0 (TID 35, localhost, executor driver, partition 22, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 9.0 in stage 8.0 (TID 27) in 90 ms on localhost (executor driver) (14/20)
+19/02/15 23:07:37 INFO Executor: Running task 17.0 in stage 8.0 (TID 35)
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Finished task 15.0 in stage 8.0 (TID 33). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 18.0 in stage 8.0 (TID 36, localhost, executor driver, partition 23, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 15.0 in stage 8.0 (TID 33) in 31 ms on localhost (executor driver) (15/20)
+19/02/15 23:07:37 INFO Executor: Running task 18.0 in stage 8.0 (TID 36)
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Finished task 12.0 in stage 8.0 (TID 30). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 19.0 in stage 8.0 (TID 37, localhost, executor driver, partition 24, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 12.0 in stage 8.0 (TID 30) in 95 ms on localhost (executor driver) (16/20)
+19/02/15 23:07:37 INFO Executor: Running task 19.0 in stage 8.0 (TID 37)
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO Executor: Finished task 16.0 in stage 8.0 (TID 34). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 16.0 in stage 8.0 (TID 34) in 46 ms on localhost (executor driver) (17/20)
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Finished task 17.0 in stage 8.0 (TID 35). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Finished task 19.0 in stage 8.0 (TID 37). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 17.0 in stage 8.0 (TID 35) in 64 ms on localhost (executor driver) (18/20)
+19/02/15 23:07:37 INFO Executor: Finished task 18.0 in stage 8.0 (TID 36). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 19.0 in stage 8.0 (TID 37) in 35 ms on localhost (executor driver) (19/20)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 18.0 in stage 8.0 (TID 36) in 53 ms on localhost (executor driver) (20/20)
+19/02/15 23:07:37 INFO TaskSchedulerImpl: Removed TaskSet 8.0, whose tasks have all completed, from pool 
+19/02/15 23:07:37 INFO DAGScheduler: ResultStage 8 (show at SparkJdbc.scala:69) finished in 0.269 s
+19/02/15 23:07:37 INFO DAGScheduler: Job 8 finished: show at SparkJdbc.scala:69, took 0.292201 s
+19/02/15 23:07:37 INFO SparkContext: Starting job: show at SparkJdbc.scala:69
+19/02/15 23:07:37 INFO DAGScheduler: Got job 9 (show at SparkJdbc.scala:69) with 75 output partitions
+19/02/15 23:07:37 INFO DAGScheduler: Final stage: ResultStage 9 (show at SparkJdbc.scala:69)
+19/02/15 23:07:37 INFO DAGScheduler: Parents of final stage: List()
+19/02/15 23:07:37 INFO DAGScheduler: Missing parents: List()
+19/02/15 23:07:37 INFO DAGScheduler: Submitting ResultStage 9 (MapPartitionsRDD[17] at show at SparkJdbc.scala:69), which has no missing parents
+19/02/15 23:07:37 INFO MemoryStore: Block broadcast_9 stored as values in memory (estimated size 13.3 KB, free 366.2 MB)
+19/02/15 23:07:37 INFO MemoryStore: Block broadcast_9_piece0 stored as bytes in memory (estimated size 6.2 KB, free 366.1 MB)
+19/02/15 23:07:37 INFO BlockManagerInfo: Added broadcast_9_piece0 in memory on 192.168.1.2:38603 (size: 6.2 KB, free: 366.2 MB)
+19/02/15 23:07:37 INFO SparkContext: Created broadcast 9 from broadcast at DAGScheduler.scala:1006
+19/02/15 23:07:37 INFO DAGScheduler: Submitting 75 missing tasks from ResultStage 9 (MapPartitionsRDD[17] at show at SparkJdbc.scala:69) (first 15 tasks are for partitions Vector(25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39))
+19/02/15 23:07:37 INFO TaskSchedulerImpl: Adding task set 9.0 with 75 tasks
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 0.0 in stage 9.0 (TID 38, localhost, executor driver, partition 25, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 1.0 in stage 9.0 (TID 39, localhost, executor driver, partition 26, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 2.0 in stage 9.0 (TID 40, localhost, executor driver, partition 27, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 3.0 in stage 9.0 (TID 41, localhost, executor driver, partition 28, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO Executor: Running task 0.0 in stage 9.0 (TID 38)
+19/02/15 23:07:37 INFO Executor: Running task 3.0 in stage 9.0 (TID 41)
+19/02/15 23:07:37 INFO Executor: Running task 2.0 in stage 9.0 (TID 40)
+19/02/15 23:07:37 INFO Executor: Running task 1.0 in stage 9.0 (TID 39)
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Finished task 1.0 in stage 9.0 (TID 39). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Finished task 2.0 in stage 9.0 (TID 40). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Finished task 0.0 in stage 9.0 (TID 38). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 4.0 in stage 9.0 (TID 42, localhost, executor driver, partition 29, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 5.0 in stage 9.0 (TID 43, localhost, executor driver, partition 30, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 6.0 in stage 9.0 (TID 44, localhost, executor driver, partition 31, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 1.0 in stage 9.0 (TID 39) in 51 ms on localhost (executor driver) (1/75)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 0.0 in stage 9.0 (TID 38) in 52 ms on localhost (executor driver) (2/75)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 2.0 in stage 9.0 (TID 40) in 51 ms on localhost (executor driver) (3/75)
+19/02/15 23:07:37 INFO Executor: Running task 4.0 in stage 9.0 (TID 42)
+19/02/15 23:07:37 INFO Executor: Running task 5.0 in stage 9.0 (TID 43)
+19/02/15 23:07:37 INFO Executor: Running task 6.0 in stage 9.0 (TID 44)
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Finished task 4.0 in stage 9.0 (TID 42). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 7.0 in stage 9.0 (TID 45, localhost, executor driver, partition 32, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO Executor: Finished task 3.0 in stage 9.0 (TID 41). 1093 bytes result sent to driver
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO Executor: Running task 7.0 in stage 9.0 (TID 45)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 4.0 in stage 9.0 (TID 42) in 31 ms on localhost (executor driver) (4/75)
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Finished task 6.0 in stage 9.0 (TID 44). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 8.0 in stage 9.0 (TID 46, localhost, executor driver, partition 33, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO Executor: Running task 8.0 in stage 9.0 (TID 46)
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 9.0 in stage 9.0 (TID 47, localhost, executor driver, partition 34, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 6.0 in stage 9.0 (TID 44) in 33 ms on localhost (executor driver) (5/75)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 3.0 in stage 9.0 (TID 41) in 81 ms on localhost (executor driver) (6/75)
+19/02/15 23:07:37 INFO Executor: Running task 9.0 in stage 9.0 (TID 47)
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Finished task 5.0 in stage 9.0 (TID 43). 1093 bytes result sent to driver
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 10.0 in stage 9.0 (TID 48, localhost, executor driver, partition 35, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 5.0 in stage 9.0 (TID 43) in 44 ms on localhost (executor driver) (7/75)
+19/02/15 23:07:37 INFO Executor: Running task 10.0 in stage 9.0 (TID 48)
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Finished task 10.0 in stage 9.0 (TID 48). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Finished task 8.0 in stage 9.0 (TID 46). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 11.0 in stage 9.0 (TID 49, localhost, executor driver, partition 36, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 12.0 in stage 9.0 (TID 50, localhost, executor driver, partition 37, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 10.0 in stage 9.0 (TID 48) in 20 ms on localhost (executor driver) (8/75)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 8.0 in stage 9.0 (TID 46) in 34 ms on localhost (executor driver) (9/75)
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Running task 12.0 in stage 9.0 (TID 50)
+19/02/15 23:07:37 INFO Executor: Finished task 7.0 in stage 9.0 (TID 45). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO Executor: Finished task 9.0 in stage 9.0 (TID 47). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 13.0 in stage 9.0 (TID 51, localhost, executor driver, partition 38, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 7.0 in stage 9.0 (TID 45) in 58 ms on localhost (executor driver) (10/75)
+19/02/15 23:07:37 INFO Executor: Running task 13.0 in stage 9.0 (TID 51)
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 14.0 in stage 9.0 (TID 52, localhost, executor driver, partition 39, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 9.0 in stage 9.0 (TID 47) in 54 ms on localhost (executor driver) (11/75)
+19/02/15 23:07:37 INFO Executor: Running task 14.0 in stage 9.0 (TID 52)
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Finished task 12.0 in stage 9.0 (TID 50). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 15.0 in stage 9.0 (TID 53, localhost, executor driver, partition 40, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 12.0 in stage 9.0 (TID 50) in 35 ms on localhost (executor driver) (12/75)
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO Executor: Running task 11.0 in stage 9.0 (TID 49)
+19/02/15 23:07:37 INFO Executor: Running task 15.0 in stage 9.0 (TID 53)
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Finished task 13.0 in stage 9.0 (TID 51). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO Executor: Finished task 14.0 in stage 9.0 (TID 52). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 16.0 in stage 9.0 (TID 54, localhost, executor driver, partition 41, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 13.0 in stage 9.0 (TID 51) in 51 ms on localhost (executor driver) (13/75)
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 17.0 in stage 9.0 (TID 55, localhost, executor driver, partition 42, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 14.0 in stage 9.0 (TID 52) in 44 ms on localhost (executor driver) (14/75)
+19/02/15 23:07:37 INFO Executor: Running task 17.0 in stage 9.0 (TID 55)
+19/02/15 23:07:37 INFO Executor: Running task 16.0 in stage 9.0 (TID 54)
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Finished task 11.0 in stage 9.0 (TID 49). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO Executor: Finished task 15.0 in stage 9.0 (TID 53). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 18.0 in stage 9.0 (TID 56, localhost, executor driver, partition 43, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO Executor: Running task 18.0 in stage 9.0 (TID 56)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 15.0 in stage 9.0 (TID 53) in 52 ms on localhost (executor driver) (15/75)
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 19.0 in stage 9.0 (TID 57, localhost, executor driver, partition 44, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 11.0 in stage 9.0 (TID 49) in 96 ms on localhost (executor driver) (16/75)
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO Executor: Running task 19.0 in stage 9.0 (TID 57)
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Finished task 17.0 in stage 9.0 (TID 55). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 20.0 in stage 9.0 (TID 58, localhost, executor driver, partition 45, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 17.0 in stage 9.0 (TID 55) in 39 ms on localhost (executor driver) (17/75)
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Finished task 18.0 in stage 9.0 (TID 56). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO Executor: Running task 20.0 in stage 9.0 (TID 58)
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 21.0 in stage 9.0 (TID 59, localhost, executor driver, partition 46, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 18.0 in stage 9.0 (TID 56) in 26 ms on localhost (executor driver) (18/75)
+19/02/15 23:07:37 INFO Executor: Running task 21.0 in stage 9.0 (TID 59)
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Finished task 21.0 in stage 9.0 (TID 59). 1136 bytes result sent to driver
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 22.0 in stage 9.0 (TID 60, localhost, executor driver, partition 47, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO Executor: Finished task 16.0 in stage 9.0 (TID 54). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 23.0 in stage 9.0 (TID 61, localhost, executor driver, partition 48, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 21.0 in stage 9.0 (TID 59) in 29 ms on localhost (executor driver) (19/75)
+19/02/15 23:07:37 INFO Executor: Finished task 19.0 in stage 9.0 (TID 57). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO Executor: Running task 22.0 in stage 9.0 (TID 60)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 16.0 in stage 9.0 (TID 54) in 75 ms on localhost (executor driver) (20/75)
+19/02/15 23:07:37 INFO Executor: Running task 23.0 in stage 9.0 (TID 61)
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 19.0 in stage 9.0 (TID 57) in 50 ms on localhost (executor driver) (21/75)
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 24.0 in stage 9.0 (TID 62, localhost, executor driver, partition 49, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO Executor: Running task 24.0 in stage 9.0 (TID 62)
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO Executor: Finished task 20.0 in stage 9.0 (TID 58). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 25.0 in stage 9.0 (TID 63, localhost, executor driver, partition 50, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 20.0 in stage 9.0 (TID 58) in 52 ms on localhost (executor driver) (22/75)
+19/02/15 23:07:37 INFO Executor: Running task 25.0 in stage 9.0 (TID 63)
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO Executor: Finished task 24.0 in stage 9.0 (TID 62). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 26.0 in stage 9.0 (TID 64, localhost, executor driver, partition 51, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO Executor: Running task 26.0 in stage 9.0 (TID 64)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 24.0 in stage 9.0 (TID 62) in 24 ms on localhost (executor driver) (23/75)
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Finished task 23.0 in stage 9.0 (TID 61). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 27.0 in stage 9.0 (TID 65, localhost, executor driver, partition 52, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 23.0 in stage 9.0 (TID 61) in 40 ms on localhost (executor driver) (24/75)
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO Executor: Running task 27.0 in stage 9.0 (TID 65)
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Finished task 25.0 in stage 9.0 (TID 63). 1093 bytes result sent to driver
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 28.0 in stage 9.0 (TID 66, localhost, executor driver, partition 53, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 25.0 in stage 9.0 (TID 63) in 42 ms on localhost (executor driver) (25/75)
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Finished task 26.0 in stage 9.0 (TID 64). 1093 bytes result sent to driver
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO Executor: Running task 28.0 in stage 9.0 (TID 66)
+19/02/15 23:07:37 INFO TaskSetManager: Starting task 29.0 in stage 9.0 (TID 67, localhost, executor driver, partition 54, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:37 INFO TaskSetManager: Finished task 26.0 in stage 9.0 (TID 64) in 40 ms on localhost (executor driver) (26/75)
+19/02/15 23:07:37 INFO Executor: Running task 29.0 in stage 9.0 (TID 67)
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:37 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:37 INFO JDBCRDD: closed connection
+19/02/15 23:07:37 INFO Executor: Finished task 29.0 in stage 9.0 (TID 67). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 30.0 in stage 9.0 (TID 68, localhost, executor driver, partition 55, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO Executor: Running task 30.0 in stage 9.0 (TID 68)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 29.0 in stage 9.0 (TID 67) in 28 ms on localhost (executor driver) (27/75)
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO Executor: Finished task 22.0 in stage 9.0 (TID 60). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO Executor: Finished task 28.0 in stage 9.0 (TID 66). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 31.0 in stage 9.0 (TID 69, localhost, executor driver, partition 56, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 32.0 in stage 9.0 (TID 70, localhost, executor driver, partition 57, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 22.0 in stage 9.0 (TID 60) in 110 ms on localhost (executor driver) (28/75)
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 28.0 in stage 9.0 (TID 66) in 48 ms on localhost (executor driver) (29/75)
+19/02/15 23:07:38 INFO Executor: Finished task 27.0 in stage 9.0 (TID 65). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 33.0 in stage 9.0 (TID 71, localhost, executor driver, partition 58, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 27.0 in stage 9.0 (TID 65) in 74 ms on localhost (executor driver) (30/75)
+19/02/15 23:07:38 INFO Executor: Running task 32.0 in stage 9.0 (TID 70)
+19/02/15 23:07:38 INFO Executor: Running task 33.0 in stage 9.0 (TID 71)
+19/02/15 23:07:38 INFO Executor: Running task 31.0 in stage 9.0 (TID 69)
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO Executor: Finished task 30.0 in stage 9.0 (TID 68). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 34.0 in stage 9.0 (TID 72, localhost, executor driver, partition 59, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 30.0 in stage 9.0 (TID 68) in 45 ms on localhost (executor driver) (31/75)
+19/02/15 23:07:38 INFO Executor: Running task 34.0 in stage 9.0 (TID 72)
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO Executor: Finished task 32.0 in stage 9.0 (TID 70). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO Executor: Finished task 33.0 in stage 9.0 (TID 71). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 35.0 in stage 9.0 (TID 73, localhost, executor driver, partition 60, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 33.0 in stage 9.0 (TID 71) in 56 ms on localhost (executor driver) (32/75)
+19/02/15 23:07:38 INFO Executor: Running task 35.0 in stage 9.0 (TID 73)
+19/02/15 23:07:38 INFO Executor: Finished task 34.0 in stage 9.0 (TID 72). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 36.0 in stage 9.0 (TID 74, localhost, executor driver, partition 61, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 32.0 in stage 9.0 (TID 70) in 73 ms on localhost (executor driver) (33/75)
+19/02/15 23:07:38 INFO Executor: Running task 36.0 in stage 9.0 (TID 74)
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO Executor: Finished task 35.0 in stage 9.0 (TID 73). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 37.0 in stage 9.0 (TID 75, localhost, executor driver, partition 62, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 34.0 in stage 9.0 (TID 72) in 60 ms on localhost (executor driver) (34/75)
+19/02/15 23:07:38 INFO Executor: Running task 37.0 in stage 9.0 (TID 75)
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 38.0 in stage 9.0 (TID 76, localhost, executor driver, partition 63, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO Executor: Running task 38.0 in stage 9.0 (TID 76)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 35.0 in stage 9.0 (TID 73) in 46 ms on localhost (executor driver) (35/75)
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO Executor: Finished task 31.0 in stage 9.0 (TID 69). 1136 bytes result sent to driver
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO Executor: Finished task 36.0 in stage 9.0 (TID 74). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO Executor: Finished task 37.0 in stage 9.0 (TID 75). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 39.0 in stage 9.0 (TID 77, localhost, executor driver, partition 64, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 31.0 in stage 9.0 (TID 69) in 121 ms on localhost (executor driver) (36/75)
+19/02/15 23:07:38 INFO Executor: Running task 39.0 in stage 9.0 (TID 77)
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 40.0 in stage 9.0 (TID 78, localhost, executor driver, partition 65, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 37.0 in stage 9.0 (TID 75) in 38 ms on localhost (executor driver) (37/75)
+19/02/15 23:07:38 INFO Executor: Running task 40.0 in stage 9.0 (TID 78)
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 41.0 in stage 9.0 (TID 79, localhost, executor driver, partition 66, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO Executor: Running task 41.0 in stage 9.0 (TID 79)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 36.0 in stage 9.0 (TID 74) in 57 ms on localhost (executor driver) (38/75)
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:38 INFO Executor: Finished task 38.0 in stage 9.0 (TID 76). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 42.0 in stage 9.0 (TID 80, localhost, executor driver, partition 67, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 38.0 in stage 9.0 (TID 76) in 52 ms on localhost (executor driver) (39/75)
+19/02/15 23:07:38 INFO Executor: Running task 42.0 in stage 9.0 (TID 80)
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO Executor: Finished task 41.0 in stage 9.0 (TID 79). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 43.0 in stage 9.0 (TID 81, localhost, executor driver, partition 68, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO Executor: Running task 43.0 in stage 9.0 (TID 81)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 41.0 in stage 9.0 (TID 79) in 35 ms on localhost (executor driver) (40/75)
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO Executor: Finished task 40.0 in stage 9.0 (TID 78). 1136 bytes result sent to driver
+19/02/15 23:07:38 INFO Executor: Finished task 39.0 in stage 9.0 (TID 77). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 44.0 in stage 9.0 (TID 82, localhost, executor driver, partition 69, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 40.0 in stage 9.0 (TID 78) in 59 ms on localhost (executor driver) (41/75)
+19/02/15 23:07:38 INFO Executor: Running task 44.0 in stage 9.0 (TID 82)
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO Executor: Finished task 42.0 in stage 9.0 (TID 80). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 45.0 in stage 9.0 (TID 83, localhost, executor driver, partition 70, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 42.0 in stage 9.0 (TID 80) in 34 ms on localhost (executor driver) (42/75)
+19/02/15 23:07:38 INFO Executor: Finished task 43.0 in stage 9.0 (TID 81). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 46.0 in stage 9.0 (TID 84, localhost, executor driver, partition 71, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO Executor: Running task 45.0 in stage 9.0 (TID 83)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 39.0 in stage 9.0 (TID 77) in 83 ms on localhost (executor driver) (43/75)
+19/02/15 23:07:38 INFO Executor: Running task 46.0 in stage 9.0 (TID 84)
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 47.0 in stage 9.0 (TID 85, localhost, executor driver, partition 72, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO Executor: Running task 47.0 in stage 9.0 (TID 85)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 43.0 in stage 9.0 (TID 81) in 58 ms on localhost (executor driver) (44/75)
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO Executor: Finished task 47.0 in stage 9.0 (TID 85). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 48.0 in stage 9.0 (TID 86, localhost, executor driver, partition 73, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 47.0 in stage 9.0 (TID 85) in 16 ms on localhost (executor driver) (45/75)
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO Executor: Finished task 45.0 in stage 9.0 (TID 83). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO Executor: Running task 48.0 in stage 9.0 (TID 86)
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 49.0 in stage 9.0 (TID 87, localhost, executor driver, partition 74, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 45.0 in stage 9.0 (TID 83) in 59 ms on localhost (executor driver) (46/75)
+19/02/15 23:07:38 INFO Executor: Running task 49.0 in stage 9.0 (TID 87)
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:38 INFO Executor: Finished task 46.0 in stage 9.0 (TID 84). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 50.0 in stage 9.0 (TID 88, localhost, executor driver, partition 75, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 46.0 in stage 9.0 (TID 84) in 67 ms on localhost (executor driver) (47/75)
+19/02/15 23:07:38 INFO Executor: Running task 50.0 in stage 9.0 (TID 88)
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO Executor: Finished task 48.0 in stage 9.0 (TID 86). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO Executor: Finished task 49.0 in stage 9.0 (TID 87). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO Executor: Finished task 44.0 in stage 9.0 (TID 82). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 51.0 in stage 9.0 (TID 89, localhost, executor driver, partition 76, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 52.0 in stage 9.0 (TID 90, localhost, executor driver, partition 77, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 48.0 in stage 9.0 (TID 86) in 55 ms on localhost (executor driver) (48/75)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 49.0 in stage 9.0 (TID 87) in 42 ms on localhost (executor driver) (49/75)
+19/02/15 23:07:38 INFO Executor: Running task 51.0 in stage 9.0 (TID 89)
+19/02/15 23:07:38 INFO Executor: Running task 52.0 in stage 9.0 (TID 90)
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 53.0 in stage 9.0 (TID 91, localhost, executor driver, partition 78, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 44.0 in stage 9.0 (TID 82) in 116 ms on localhost (executor driver) (50/75)
+19/02/15 23:07:38 INFO Executor: Running task 53.0 in stage 9.0 (TID 91)
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:38 INFO Executor: Finished task 50.0 in stage 9.0 (TID 88). 1136 bytes result sent to driver
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 54.0 in stage 9.0 (TID 92, localhost, executor driver, partition 79, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 50.0 in stage 9.0 (TID 88) in 57 ms on localhost (executor driver) (51/75)
+19/02/15 23:07:38 INFO Executor: Running task 54.0 in stage 9.0 (TID 92)
+19/02/15 23:07:38 INFO Executor: Finished task 51.0 in stage 9.0 (TID 89). 1093 bytes result sent to driver
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 55.0 in stage 9.0 (TID 93, localhost, executor driver, partition 80, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 51.0 in stage 9.0 (TID 89) in 41 ms on localhost (executor driver) (52/75)
+19/02/15 23:07:38 INFO Executor: Running task 55.0 in stage 9.0 (TID 93)
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO Executor: Finished task 52.0 in stage 9.0 (TID 90). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO Executor: Finished task 53.0 in stage 9.0 (TID 91). 1093 bytes result sent to driver
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 56.0 in stage 9.0 (TID 94, localhost, executor driver, partition 81, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 52.0 in stage 9.0 (TID 90) in 66 ms on localhost (executor driver) (53/75)
+19/02/15 23:07:38 INFO Executor: Running task 56.0 in stage 9.0 (TID 94)
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 57.0 in stage 9.0 (TID 95, localhost, executor driver, partition 82, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO Executor: Running task 57.0 in stage 9.0 (TID 95)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 53.0 in stage 9.0 (TID 91) in 64 ms on localhost (executor driver) (54/75)
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO Executor: Finished task 54.0 in stage 9.0 (TID 92). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO Executor: Finished task 55.0 in stage 9.0 (TID 93). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 58.0 in stage 9.0 (TID 96, localhost, executor driver, partition 83, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 59.0 in stage 9.0 (TID 97, localhost, executor driver, partition 84, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO Executor: Running task 59.0 in stage 9.0 (TID 97)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 55.0 in stage 9.0 (TID 93) in 63 ms on localhost (executor driver) (55/75)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 54.0 in stage 9.0 (TID 92) in 73 ms on localhost (executor driver) (56/75)
+19/02/15 23:07:38 INFO Executor: Running task 58.0 in stage 9.0 (TID 96)
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO Executor: Finished task 56.0 in stage 9.0 (TID 94). 1093 bytes result sent to driver
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:38 INFO Executor: Finished task 57.0 in stage 9.0 (TID 95). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 60.0 in stage 9.0 (TID 98, localhost, executor driver, partition 85, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO Executor: Running task 60.0 in stage 9.0 (TID 98)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 56.0 in stage 9.0 (TID 94) in 49 ms on localhost (executor driver) (57/75)
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 61.0 in stage 9.0 (TID 99, localhost, executor driver, partition 86, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO Executor: Running task 61.0 in stage 9.0 (TID 99)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 57.0 in stage 9.0 (TID 95) in 45 ms on localhost (executor driver) (58/75)
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO Executor: Finished task 60.0 in stage 9.0 (TID 98). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO Executor: Finished task 61.0 in stage 9.0 (TID 99). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO Executor: Finished task 59.0 in stage 9.0 (TID 97). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 62.0 in stage 9.0 (TID 100, localhost, executor driver, partition 87, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 60.0 in stage 9.0 (TID 98) in 29 ms on localhost (executor driver) (59/75)
+19/02/15 23:07:38 INFO Executor: Running task 62.0 in stage 9.0 (TID 100)
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO Executor: Finished task 58.0 in stage 9.0 (TID 96). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 63.0 in stage 9.0 (TID 101, localhost, executor driver, partition 88, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 58.0 in stage 9.0 (TID 96) in 49 ms on localhost (executor driver) (60/75)
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 64.0 in stage 9.0 (TID 102, localhost, executor driver, partition 89, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO Executor: Running task 64.0 in stage 9.0 (TID 102)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 61.0 in stage 9.0 (TID 99) in 33 ms on localhost (executor driver) (61/75)
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 65.0 in stage 9.0 (TID 103, localhost, executor driver, partition 90, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 59.0 in stage 9.0 (TID 97) in 65 ms on localhost (executor driver) (62/75)
+19/02/15 23:07:38 INFO Executor: Finished task 62.0 in stage 9.0 (TID 100). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 66.0 in stage 9.0 (TID 104, localhost, executor driver, partition 91, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 62.0 in stage 9.0 (TID 100) in 29 ms on localhost (executor driver) (63/75)
+19/02/15 23:07:38 INFO Executor: Running task 65.0 in stage 9.0 (TID 103)
+19/02/15 23:07:38 INFO Executor: Running task 66.0 in stage 9.0 (TID 104)
+19/02/15 23:07:38 INFO Executor: Running task 63.0 in stage 9.0 (TID 101)
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO Executor: Finished task 65.0 in stage 9.0 (TID 103). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO Executor: Finished task 64.0 in stage 9.0 (TID 102). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 67.0 in stage 9.0 (TID 105, localhost, executor driver, partition 92, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 64.0 in stage 9.0 (TID 102) in 47 ms on localhost (executor driver) (64/75)
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:38 INFO Executor: Running task 67.0 in stage 9.0 (TID 105)
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 68.0 in stage 9.0 (TID 106, localhost, executor driver, partition 93, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 65.0 in stage 9.0 (TID 103) in 52 ms on localhost (executor driver) (65/75)
+19/02/15 23:07:38 INFO Executor: Running task 68.0 in stage 9.0 (TID 106)
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO Executor: Finished task 63.0 in stage 9.0 (TID 101). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 69.0 in stage 9.0 (TID 107, localhost, executor driver, partition 94, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 63.0 in stage 9.0 (TID 101) in 88 ms on localhost (executor driver) (66/75)
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO Executor: Finished task 66.0 in stage 9.0 (TID 104). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 70.0 in stage 9.0 (TID 108, localhost, executor driver, partition 95, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO Executor: Running task 70.0 in stage 9.0 (TID 108)
+19/02/15 23:07:38 INFO Executor: Finished task 68.0 in stage 9.0 (TID 106). 1093 bytes result sent to driver
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 66.0 in stage 9.0 (TID 104) in 73 ms on localhost (executor driver) (67/75)
+19/02/15 23:07:38 INFO Executor: Running task 69.0 in stage 9.0 (TID 107)
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 71.0 in stage 9.0 (TID 109, localhost, executor driver, partition 96, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 68.0 in stage 9.0 (TID 106) in 55 ms on localhost (executor driver) (68/75)
+19/02/15 23:07:38 INFO Executor: Running task 71.0 in stage 9.0 (TID 109)
+19/02/15 23:07:38 INFO Executor: Finished task 67.0 in stage 9.0 (TID 105). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 72.0 in stage 9.0 (TID 110, localhost, executor driver, partition 97, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 67.0 in stage 9.0 (TID 105) in 68 ms on localhost (executor driver) (69/75)
+19/02/15 23:07:38 INFO Executor: Running task 72.0 in stage 9.0 (TID 110)
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO Executor: Finished task 70.0 in stage 9.0 (TID 108). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 73.0 in stage 9.0 (TID 111, localhost, executor driver, partition 98, PROCESS_LOCAL, 4683 bytes)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 70.0 in stage 9.0 (TID 108) in 37 ms on localhost (executor driver) (70/75)
+19/02/15 23:07:38 INFO Executor: Running task 73.0 in stage 9.0 (TID 111)
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO Executor: Finished task 69.0 in stage 9.0 (TID 107). 1093 bytes result sent to driver
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:38 INFO TaskSetManager: Starting task 74.0 in stage 9.0 (TID 112, localhost, executor driver, partition 99, PROCESS_LOCAL, 4665 bytes)
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 69.0 in stage 9.0 (TID 107) in 48 ms on localhost (executor driver) (71/75)
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:38 INFO Executor: Running task 74.0 in stage 9.0 (TID 112)
+19/02/15 23:07:38 INFO Executor: Finished task 73.0 in stage 9.0 (TID 111). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 73.0 in stage 9.0 (TID 111) in 26 ms on localhost (executor driver) (72/75)
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO Executor: Finished task 72.0 in stage 9.0 (TID 110). 1136 bytes result sent to driver
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 72.0 in stage 9.0 (TID 110) in 44 ms on localhost (executor driver) (73/75)
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+Fri Feb 15 23:07:38 IST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+19/02/15 23:07:38 INFO Executor: Finished task 71.0 in stage 9.0 (TID 109). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 71.0 in stage 9.0 (TID 109) in 52 ms on localhost (executor driver) (74/75)
+19/02/15 23:07:38 INFO JDBCRDD: closed connection
+19/02/15 23:07:38 INFO Executor: Finished task 74.0 in stage 9.0 (TID 112). 1093 bytes result sent to driver
+19/02/15 23:07:38 INFO TaskSetManager: Finished task 74.0 in stage 9.0 (TID 112) in 38 ms on localhost (executor driver) (75/75)
+19/02/15 23:07:38 INFO TaskSchedulerImpl: Removed TaskSet 9.0, whose tasks have all completed, from pool 
+19/02/15 23:07:38 INFO DAGScheduler: ResultStage 9 (show at SparkJdbc.scala:69) finished in 0.919 s
+19/02/15 23:07:38 INFO DAGScheduler: Job 9 finished: show at SparkJdbc.scala:69, took 0.982401 s
++-----+-----+--------+----+----------+----+----+------+
+|empno|ename|     job| mgr|  hiredate| sal|comm|deptno|
++-----+-----+--------+----+----------+----+----+------+
+| 7362|SMITH|   CLERK|7902|2019-02-15|1000|   0|    20|
+| 7363|ALLEN|SALESMAN|7698|2019-02-15|1600|   0|    30|
++-----+-----+--------+----+----------+----+----+------+
+
+19/02/15 23:07:38 INFO SparkContext: Invoking stop() from shutdown hook
+19/02/15 23:07:38 INFO SparkUI: Stopped Spark web UI at http://192.168.1.2:4040
+19/02/15 23:07:38 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+19/02/15 23:07:38 INFO MemoryStore: MemoryStore cleared
+19/02/15 23:07:38 INFO BlockManager: BlockManager stopped
+19/02/15 23:07:38 INFO BlockManagerMaster: BlockManagerMaster stopped
+19/02/15 23:07:38 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+19/02/15 23:07:38 INFO SparkContext: Successfully stopped SparkContext
+19/02/15 23:07:38 INFO ShutdownHookManager: Shutdown hook called
+19/02/15 23:07:38 INFO ShutdownHookManager: Deleting directory /tmp/spark-62c0a48c-f53b-4f25-9c6f-6e8c0ee48295
+
