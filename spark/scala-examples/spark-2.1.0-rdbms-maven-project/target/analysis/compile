@@ -1,0 +1,111 @@
+format version: 5
+output mode:
+1 items
+0 -> single
+output directories:
+1 items
+output dir -> /opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/target/classes
+compile options:
+3 items
+0 -> -unchecked
+1 -> -deprecation
+2 -> -feature
+javac options:
+12 items
+00 -> -source
+01 -> 1.8
+02 -> -target
+03 -> 1.8
+04 -> -Xlint:all,-serial,-path
+05 -> -g
+06 -> -target
+07 -> 1.8
+08 -> -source
+09 -> 1.8
+10 -> -encoding
+11 -> UTF-8
+compiler version:
+1 items
+0 -> 2.11.7
+compile order:
+1 items
+0 -> Mixed
+name hashing:
+1 items
+0 -> false
+products:
+5 items
+/opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/src/main/scala/com/spark2/jdbc/SparkJdbc.scala -> /opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/target/classes/com/spark2/jdbc/SparkJdbc$$typecreator2$1.class
+/opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/src/main/scala/com/spark2/jdbc/SparkJdbc.scala -> /opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/target/classes/com/spark2/jdbc/SparkJdbc$.class
+/opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/src/main/scala/com/spark2/jdbc/SparkJdbc.scala -> /opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/target/classes/com/spark2/jdbc/SparkJdbc$Emp$.class
+/opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/src/main/scala/com/spark2/jdbc/SparkJdbc.scala -> /opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/target/classes/com/spark2/jdbc/SparkJdbc$Emp.class
+/opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/src/main/scala/com/spark2/jdbc/SparkJdbc.scala -> /opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/target/classes/com/spark2/jdbc/SparkJdbc.class
+binary dependencies:
+5 items
+/opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/src/main/scala/com/spark2/jdbc/SparkJdbc.scala -> /root/.m2/repository/org/apache/spark/spark-sql_2.11/2.1.0/spark-sql_2.11-2.1.0.jar
+/opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/src/main/scala/com/spark2/jdbc/SparkJdbc.scala -> /root/.m2/repository/org/scala-lang/scala-library/2.11.7/scala-library-2.11.7.jar
+/opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/src/main/scala/com/spark2/jdbc/SparkJdbc.scala -> /root/.m2/repository/org/scala-lang/scala-reflect/2.11.8/scala-reflect-2.11.8.jar
+/opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/src/main/scala/com/spark2/jdbc/SparkJdbc.scala -> /root/.m2/repository/org/slf4j/slf4j-api/1.7.16/slf4j-api-1.7.16.jar
+/opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/src/main/scala/com/spark2/jdbc/SparkJdbc.scala -> /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar
+direct source dependencies:
+0 items
+direct external dependencies:
+0 items
+public inherited source dependencies:
+0 items
+public inherited external dependencies:
+0 items
+member reference internal dependencies:
+0 items
+member reference external dependencies:
+0 items
+inheritance internal dependencies:
+0 items
+inheritance external dependencies:
+0 items
+class names:
+5 items
+/opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/src/main/scala/com/spark2/jdbc/SparkJdbc.scala -> com.spark2.jdbc.SparkJdbc
+/opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/src/main/scala/com/spark2/jdbc/SparkJdbc.scala -> com.spark2.jdbc.SparkJdbc$
+/opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/src/main/scala/com/spark2/jdbc/SparkJdbc.scala -> com.spark2.jdbc.SparkJdbc$$typecreator2$1
+/opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/src/main/scala/com/spark2/jdbc/SparkJdbc.scala -> com.spark2.jdbc.SparkJdbc$Emp
+/opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/src/main/scala/com/spark2/jdbc/SparkJdbc.scala -> com.spark2.jdbc.SparkJdbc$Emp$
+used names:
+0 items
+product stamps:
+5 items
+/opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/target/classes/com/spark2/jdbc/SparkJdbc$$typecreator2$1.class -> lastModified(1550252035000)
+/opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/target/classes/com/spark2/jdbc/SparkJdbc$.class -> lastModified(1550252035000)
+/opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/target/classes/com/spark2/jdbc/SparkJdbc$Emp$.class -> lastModified(1550252035000)
+/opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/target/classes/com/spark2/jdbc/SparkJdbc$Emp.class -> lastModified(1550252035000)
+/opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/target/classes/com/spark2/jdbc/SparkJdbc.class -> lastModified(1550252035000)
+source stamps:
+1 items
+/opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/src/main/scala/com/spark2/jdbc/SparkJdbc.scala -> hash(c6dec2097f1cb903562e11c980b42d8d0e34d441)
+binary stamps:
+5 items
+/root/.m2/repository/org/apache/spark/spark-sql_2.11/2.1.0/spark-sql_2.11-2.1.0.jar -> lastModified(1549898761000)
+/root/.m2/repository/org/scala-lang/scala-library/2.11.7/scala-library-2.11.7.jar -> lastModified(1549898924000)
+/root/.m2/repository/org/scala-lang/scala-reflect/2.11.8/scala-reflect-2.11.8.jar -> lastModified(1549898777000)
+/root/.m2/repository/org/slf4j/slf4j-api/1.7.16/slf4j-api-1.7.16.jar -> lastModified(1549898765000)
+/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar -> lastModified(1524758374000)
+class names:
+5 items
+/root/.m2/repository/org/apache/spark/spark-sql_2.11/2.1.0/spark-sql_2.11-2.1.0.jar -> org.apache.spark.sql.SQLImplicits
+/root/.m2/repository/org/scala-lang/scala-library/2.11.7/scala-library-2.11.7.jar -> scala.Serializable
+/root/.m2/repository/org/scala-lang/scala-reflect/2.11.8/scala-reflect-2.11.8.jar -> scala.reflect.api.Mirrors
+/root/.m2/repository/org/slf4j/slf4j-api/1.7.16/slf4j-api-1.7.16.jar -> org.slf4j.Logger
+/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar -> java.io.Serializable
+internal apis:
+1 items
+/opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/src/main/scala/com/spark2/jdbc/SparkJdbc.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHCz3UeXAHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAAAdXEAfgAJAAAAAHNyABN4c2J0aS5hcGkuU291cmNlQVBJuV6n+SkjOKQCAAJbAAtkZWZpbml0aW9uc3QAF1tMeHNidGkvYXBpL0RlZmluaXRpb247WwAIcGFja2FnZXN0ABRbTHhzYnRpL2FwaS9QYWNrYWdlO3hwdXIAF1tMeHNidGkuYXBpLkRlZmluaXRpb247iMlc57TjXg4CAAB4cAAAAAFzcgATeHNidGkuYXBpLkNsYXNzTGlrZYM0HKHfsJdsAgAETAAOZGVmaW5pdGlvblR5cGV0ABpMeHNidGkvYXBpL0RlZmluaXRpb25UeXBlO1sAEHNhdmVkQW5ub3RhdGlvbnN0ABNbTGphdmEvbGFuZy9TdHJpbmc7TAAIc2VsZlR5cGV0ABBMeHNidGkvYXBpL0xhenk7TAAJc3RydWN0dXJlcQB+ABV4cgAheHNidGkuYXBpLlBhcmFtZXRlcml6ZWREZWZpbml0aW9u+RFusdVQPOICAAFbAA50eXBlUGFyYW1ldGVyc3QAGltMeHNidGkvYXBpL1R5cGVQYXJhbWV0ZXI7eHIAFHhzYnRpLmFwaS5EZWZpbml0aW9uhyob6HFC40YCAARMAAZhY2Nlc3N0ABJMeHNidGkvYXBpL0FjY2VzcztbAAthbm5vdGF0aW9uc3QAF1tMeHNidGkvYXBpL0Fubm90YXRpb247TAAJbW9kaWZpZXJzdAAVTHhzYnRpL2FwaS9Nb2RpZmllcnM7TAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwc3IAEHhzYnRpLmFwaS5QdWJsaWO6WD2ubC1gQgIAAHhyABB4c2J0aS5hcGkuQWNjZXNz3WKa+B1jMUgCAAB4cHVyABdbTHhzYnRpLmFwaS5Bbm5vdGF0aW9uO+uX6xkQ9o1IAgAAeHAAAAAAc3IAE3hzYnRpLmFwaS5Nb2RpZmllcnPHERMhaZzcJAIAAUIABWZsYWdzeHAAdAAZY29tLnNwYXJrMi5qZGJjLlNwYXJrSmRiY3VyABpbTHhzYnRpLmFwaS5UeXBlUGFyYW1ldGVyO9ltJg8onfK2AgAAeHAAAAAAfnIAGHhzYnRpLmFwaS5EZWZpbml0aW9uVHlwZQAAAAAAAAAAEgAAeHIADmphdmEubGFuZy5FbnVtAAAAAAAAAAASAAB4cHQABk1vZHVsZXVyABNbTGphdmEubGFuZy5TdHJpbmc7rdJW5+kde0cCAAB4cAAAAABzcgATeHNidGkuU2FmZUxhenkkSW1wbFACLpOXl0A/AgADWgAIYml0bWFwJDBMAAJfdHQAEkxqYXZhL2xhbmcvT2JqZWN0O0wABGV2YWx0ABFMc2NhbGEvRnVuY3Rpb24wO3hyABZ4c2J0aS5hcGkuQWJzdHJhY3RMYXp503e1AV+756ACAAB4cABwc3IAIHhzYnRpLlNhZmVMYXp5JCRhbm9uZnVuJHN0cmljdCQxAAAAAAAAAAACAAFMAAd2YWx1ZSQxcQB+AC94cHNyABN4c2J0aS5hcGkuRW1wdHlUeXBlvP2eRkk7iSQCAAB4cgAUeHNidGkuYXBpLlNpbXBsZVR5cGVyeGKIISO/QAIAAHhyAA54c2J0aS5hcGkuVHlwZT9q2SEWSarKAgAAeHBzcQB+AC4AcHNxAH4AM3NyABN4c2J0aS5hcGkuU3RydWN0dXJlqar5gJNv2AACAANMAAhkZWNsYXJlZHEAfgAVTAAJaW5oZXJpdGVkcQB+ABVMAAdwYXJlbnRzcQB+ABV4cQB+ADdzcQB+AC4AcHNxAH4AM3VxAH4AEAAAAAFzcgANeHNidGkuYXBpLkRlZlK+n+J8tDZpAgACTAAKcmV0dXJuVHlwZXQAEEx4c2J0aS9hcGkvVHlwZTtbAA92YWx1ZVBhcmFtZXRlcnN0ABpbTHhzYnRpL2FwaS9QYXJhbWV0ZXJMaXN0O3hxAH4AFnEAfgAgdXEAfgAhAAAAAHNxAH4AIwB0AARtYWludXEAfgAmAAAAAHNyABR4c2J0aS5hcGkuUHJvamVjdGlvbvPSjVTpRaQtAgACTAACaWRxAH4AHEwABnByZWZpeHQAFkx4c2J0aS9hcGkvU2ltcGxlVHlwZTt4cQB+ADZ0AARVbml0c3IAE3hzYnRpLmFwaS5TaW5nbGV0b278p1/4z1bkRgIAAUwABHBhdGh0ABBMeHNidGkvYXBpL1BhdGg7eHEAfgA2c3IADnhzYnRpLmFwaS5QYXRomz1cCM6lJ4QCAAFbAApjb21wb25lbnRzdAAaW0x4c2J0aS9hcGkvUGF0aENvbXBvbmVudDt4cHVyABpbTHhzYnRpLmFwaS5QYXRoQ29tcG9uZW50O0PaCXQtZxZ0AgAAeHAAAAACc3IADHhzYnRpLmFwaS5JZJgybIs3U8RAAgABTAACaWRxAH4AHHhyABd4c2J0aS5hcGkuUGF0aENvbXBvbmVudF+aIlsuhp+8AgAAeHB0AAVzY2FsYXNyAA54c2J0aS5hcGkuVGhpc9sJ7abMWkBcAgAAeHEAfgBVdXIAGltMeHNidGkuYXBpLlBhcmFtZXRlckxpc3Q79dM6HfKzcO4CAAB4cAAAAAFzcgAXeHNidGkuYXBpLlBhcmFtZXRlckxpc3TWxbwcZEl04wIAAloACmlzSW1wbGljaXRbAApwYXJhbWV0ZXJzdAAcW0x4c2J0aS9hcGkvTWV0aG9kUGFyYW1ldGVyO3hwAHVyABxbTHhzYnRpLmFwaS5NZXRob2RQYXJhbWV0ZXI7z7jFXaXdtW0CAAB4cAAAAAFzcgAZeHNidGkuYXBpLk1ldGhvZFBhcmFtZXRlch9FrhfTSbDqAgAEWgAKaGFzRGVmYXVsdEwACG1vZGlmaWVydAAdTHhzYnRpL2FwaS9QYXJhbWV0ZXJNb2RpZmllcjtMAARuYW1lcQB+ABxMAAN0cGVxAH4AQXhwAH5yABt4c2J0aS5hcGkuUGFyYW1ldGVyTW9kaWZpZXIAAAAAAAAAABIAAHhxAH4AKXQABVBsYWludAADYXJnc3IAF3hzYnRpLmFwaS5QYXJhbWV0ZXJpemVkFmzuaQPJu38CAAJMAAhiYXNlVHlwZXEAfgBJWwANdHlwZUFyZ3VtZW50c3QAEVtMeHNidGkvYXBpL1R5cGU7eHEAfgA2c3EAfgBIdAAFQXJyYXlxAH4ATnVyABFbTHhzYnRpLmFwaS5UeXBlO3T/pVp7+elBAgAAeHAAAAABc3EAfgBIdAAGU3RyaW5nc3EAfgBMc3EAfgBPdXEAfgBSAAAAA3NxAH4AVHQABGphdmFzcQB+AFR0AARsYW5ncQB+AFlzcQB+AC4AcHNxAH4AM3VxAH4AEAAAAABzcQB+AC4AcHNxAH4AM3VxAH4AbQAAAAJzcQB+AEh0AAZPYmplY3RxAH4AcXNxAH4ASHQAA0FueXEAfgBOdXIAFFtMeHNidGkuYXBpLlBhY2thZ2U7WxMZN3CnJ6ECAAB4cAAAAANzcgAReHNidGkuYXBpLlBhY2thZ2V+WY/2rs45WAIAAUwABG5hbWVxAH4AHHhwdAAPY29tLnNwYXJrMi5qZGJjc3EAfgCEdAADY29tc3EAfgCEdAAKY29tLnNwYXJrMnNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABaPI4iuJ1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5cQB+ABxMAA9zb3VyY2VEaXJlY3RvcnlxAH4AHHhwdABVL29wdC9iaWctZGF0YS1lMmUvc3Bhcmsvc2NhbGEtZXhhbXBsZXMvc3BhcmstMi4xLjAtcmRibXMtbWF2ZW4tcHJvamVjdC90YXJnZXQvY2xhc3Nlc3QAAS91cgACW0Ks8xf4BghU4AIAAHhwAAAAFMbewgl/HLkDVi4RyYC0LY0ONNRB
+external apis:
+0 items
+source infos:
+1 items
+/opt/big-data-e2e/spark/scala-examples/spark-2.1.0-rdbms-maven-project/src/main/scala/com/spark2/jdbc/SparkJdbc.scala -> 
+AAAAAAAAAAA=
+compilations:
+1 items
+0 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABaPI4iuJ1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAVS9vcHQvYmlnLWRhdGEtZTJlL3NwYXJrL3NjYWxhLWV4YW1wbGVzL3NwYXJrLTIuMS4wLXJkYm1zLW1hdmVuLXByb2plY3QvdGFyZ2V0L2NsYXNzZXN0AAEv
