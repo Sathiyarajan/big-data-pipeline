@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="Apache Forrest" name="Generator">
+<meta name="Forrest-version" content="0.9">
+<meta name="Forrest-skin-name" content="pelt">
+<title>Administration</title>
+<link type="text/css" href="skin/basic.css" rel="stylesheet">
+<link media="screen" type="text/css" href="skin/screen.css" rel="stylesheet">
+<link media="print" type="text/css" href="skin/print.css" rel="stylesheet">
+<link type="text/css" href="skin/profile.css" rel="stylesheet">
+<script src="skin/getBlank.js" language="javascript" type="text/javascript"></script><script src="skin/getMenu.js" language="javascript" type="text/javascript"></script><script src="skin/fontsize.js" language="javascript" type="text/javascript"></script>
+<link rel="shortcut icon" href="">
+</head>
+<body onload="init()">
+<script type="text/javascript">ndeSetTextSize();</script>
+<div id="top">
+<!--+
+    |breadtrail
+    +-->
+<div class="breadtrail">
+<a href="http://www.apache.org/">Apache</a> &gt; <a href="http://hadoop.apache.org/">Hadoop</a> &gt; <a href="http://hadoop.apache.org/pig/">Pig</a><script src="skin/breadcrumbs.js" language="JavaScript" type="text/javascript"></script>
+</div>
+<!--+
+    |header
+    +-->
+<div class="header">
+<!--+
+    |start group logo
+    +-->
+<div class="grouplogo">
+<a href="http://hadoop.apache.org/"><img class="logoImage" alt="Hadoop" src="images/hadoop-logo.jpg" title="Apache Hadoop"></a>
+</div>
+<!--+
+    |end group logo
+    +-->
+<!--+
+    |start Project Logo
+    +-->
+<div class="projectlogo">
+<a href="http://hadoop.apache.org/pig/"><img class="logoImage" alt="Pig" src="images/pig-logo.gif" title="A platform for analyzing large datasets."></a>
+</div>
+<!--+
+    |end Project Logo
+    +-->
+<!--+
+    |start Search
+    +-->
+<div class="searchbox">
+<form action="http://www.google.com/search" method="get" class="roundtopsmall">
+<input value="" name="sitesearch" type="hidden"><input onFocus="getBlank (this, 'Search the site with google');" size="25" name="q" id="query" type="text" value="Search the site with google">&nbsp; 
+                    <input name="Search" value="Search" type="submit">
+</form>
+</div>
+<!--+
+    |end search
+    +-->
+<!--+
+    |start Tabs
+    +-->
+<ul id="tabs">
+<li>
+<a class="unselected" href="http://hadoop.apache.org/pig/">Project</a>
+</li>
+<li>
+<a class="unselected" href="http://wiki.apache.org/pig/">Wiki</a>
+</li>
+<li class="current">
+<a class="selected" href="index.html">Pig 0.16.0 Documentation</a>
+</li>
+</ul>
+<!--+
+    |end Tabs
+    +-->
+</div>
+</div>
+<div id="main">
+<div id="publishedStrip">
+<!--+
+    |start Subtabs
+    +-->
+<div id="level2tabs"></div>
+<!--+
+    |end Endtabs
+    +-->
+<script type="text/javascript"><!--
+document.write("Last Published: " + document.lastModified);
+//  --></script>
+</div>
+<!--+
+    |breadtrail
+    +-->
+<div class="breadtrail">
+
+             &nbsp;
+           </div>
+<!--+
+    |start Menu, mainarea
+    +-->
+<!--+
+    |start Menu
+    +-->
+<div id="menu">
+<div onclick="SwitchMenu('menu_selected_1.1', 'skin/')" id="menu_selected_1.1Title" class="menutitle" style="background-image: url('skin/images/chapter_open.gif');">Pig</div>
+<div id="menu_selected_1.1" class="selectedmenuitemgroup" style="display: block;">
+<div class="menuitem">
+<a href="index.html">Overview</a>
+</div>
+<div class="menuitem">
+<a href="start.html">Getting Started</a>
+</div>
+<div class="menuitem">
+<a href="basic.html">Pig Latin Basics</a>
+</div>
+<div class="menuitem">
+<a href="func.html">Built In Functions</a>
+</div>
+<div class="menuitem">
+<a href="udf.html">User Defined Functions</a>
+</div>
+<div class="menuitem">
+<a href="cont.html">Control Structures</a>
+</div>
+<div class="menuitem">
+<a href="cmds.html">Shell and Utililty Commands</a>
+</div>
+<div class="menuitem">
+<a href="perf.html">Performance and Efficiency</a>
+</div>
+<div class="menuitem">
+<a href="test.html">Testing and Diagnostics</a>
+</div>
+<div class="menupage">
+<div class="menupagetitle">Administration</div>
+</div>
+<div class="menuitem">
+<a href="pig-index.html">Index</a>
+</div>
+</div>
+<div onclick="SwitchMenu('menu_1.2', 'skin/')" id="menu_1.2Title" class="menutitle">Miscellaneous</div>
+<div id="menu_1.2" class="menuitemgroup">
+<div class="menuitem">
+<a href="api/">API Docs</a>
+</div>
+<div class="menuitem">
+<a href="jdiff/changes.html">API Changes</a>
+</div>
+<div class="menuitem">
+<a href="https://cwiki.apache.org/confluence/display/PIG">Wiki</a>
+</div>
+<div class="menuitem">
+<a href="https://cwiki.apache.org/confluence/display/PIG/FAQ">FAQ</a>
+</div>
+<div class="menuitem">
+<a href="http://hadoop.apache.org/pig/releases.html">Release Notes</a>
+</div>
+</div>
+<div id="credit"></div>
+<div id="roundbottom">
+<img style="display: none" class="corner" height="15" width="15" alt="" src="skin/images/rc-b-l-15-1body-2menu-3menu.png"></div>
+<!--+
+  |alternative credits
+  +-->
+<div id="credit2"></div>
+</div>
+<!--+
+    |end Menu
+    +-->
+<!--+
+    |start content
+    +-->
+<div id="content">
+<div title="Portable Document Format" class="pdflink">
+<a class="dida" href="admin.pdf"><img alt="PDF -icon" src="skin/images/pdfdoc.gif" class="skin"><br>
+        PDF</a>
+</div>
+<h1>Administration</h1>
+<div id="front-matter">
+<div id="minitoc-area">
+<ul class="minitoc">
+<li>
+<a href="#Output+location+strict+check">Output location strict check</a>
+</li>
+<li>
+<a href="#Disabling+Pig+commands+and+operators">Disabling Pig commands and operators</a>
+<ul class="minitoc">
+<li>
+<a href="#Blacklisting">Blacklisting</a>
+</li>
+<li>
+<a href="#Whitelisting">Whitelisting</a>
+</li>
+<li>
+<a href="#Note">Note</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+  
+<!-- ========================================================== -->  
+
+<!-- SET UP OUTPUT LOCATION STRICT CHECK -->
+    
+<a name="Output+location+strict+check"></a>
+<h2 class="h3">Output location strict check</h2>
+<div class="section">
+<p>Pig scripts could contain multiple STORE statements. There are cases when one would like to avoid writing to the same output location. Pig provides admins/script writers with a property to check if multiple STORE statements make an attempt to write to the same output directory. And fail fast letting the user know of the same.</p>
+<p>Specifically this makes sense for file-based output locations (HDFS, Local FS, S3..) to avoid Pig script from failing when multiple MR jobs write to the same location. </p>
+<p>To enforce strict checking of output location, set <strong>pig.location.check.strict=true</strong>. See also <a href="start.html#properties">Pig Properties</a> on how to set this property.</p>
+</div>
+
+<!-- DISABLE PIG COMMANDS AND OPERATORS -->
+    
+<a name="Disabling+Pig+commands+and+operators"></a>
+<h2 class="h3">Disabling Pig commands and operators</h2>
+<div class="section">
+<p>This is an admin feature providing ability to blacklist or/and whitelist certain commands and operations. Pig exposes a few of these that could be not very safe in a multitenant environment. For example, "sh" invokes shell commands, "set" allows users to change non-final configs. While these are tremendously useful in general, having an ability to disable would make Pig a safer platform. The goal is to allow administrators to be able to have more control over user scripts. Default behaviour would still be the same - no filters applied on commands and operators.</p>
+<p>There are two properties you can use to control what users are able to do</p>
+<ul>
+                  
+<li>pig.blacklist</li>
+                  
+<li>pig.whitelist</li>
+               
+</ul>
+<a name="Blacklisting"></a>
+<h3 class="h4">Blacklisting</h3>
+<p>Set "pig.blacklist" to a comma-delimited set of operators and commands. For eg, <strong>pig.blacklist=rm,kill,cross</strong> would disable users from executing any of "rm", "kill" commands and "cross" operator.</p>
+<a name="Whitelisting"></a>
+<h3 class="h4">Whitelisting</h3>
+<p>This is an even safer approach to disallowing functionality in Pig. Using this you will be able to disable all commands and operators that are not a part of the whitelist. For eg, <strong>pig.whitelist=load,filter,store</strong> will disallow every command and operator other than "load", "filter" and "store".</p>
+<a name="Note"></a>
+<h3 class="h4">Note</h3>
+<p>There should not be any conflicts between blacklist and whitelist. Make sure to have them entirely distinct or Pig will complain.</p>
+</div>
+
+   
+</div>
+<!--+
+    |end content
+    +-->
+<div class="clearboth">&nbsp;</div>
+</div>
+<div id="footer">
+<!--+
+    |start bottomstrip
+    +-->
+<div class="lastmodified">
+<script type="text/javascript"><!--
+document.write("Last Published: " + document.lastModified);
+//  --></script>
+</div>
+<div class="copyright">
+        Copyright &copy;
+         2007-2016 <a href="http://www.apache.org/licenses/">The Apache Software Foundation.</a>
+</div>
+<!--+
+    |end bottomstrip
+    +-->
+</div>
+</body>
+</html>
