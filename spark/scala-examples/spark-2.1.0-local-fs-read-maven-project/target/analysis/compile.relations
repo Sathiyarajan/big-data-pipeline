@@ -1,0 +1,34 @@
+products:
+   src/main/scala/com/spark2/dataframes/DateTime.scala -> target/classes/com/spark2/dataframes/DateTime$.class
+   src/main/scala/com/spark2/dataframes/DateTime.scala -> target/classes/com/spark2/dataframes/DateTime.class
+   src/main/scala/com/spark2/dataframes/DropColumns.scala -> target/classes/com/spark2/dataframes/DropColumns$$typecreator2$1.class
+   src/main/scala/com/spark2/dataframes/DropColumns.scala -> target/classes/com/spark2/dataframes/DropColumns$.class
+   src/main/scala/com/spark2/dataframes/DropColumns.scala -> target/classes/com/spark2/dataframes/DropColumns.class
+   src/main/scala/com/spark2/dataframes/LocalFileRead.scala -> target/classes/com/spark2/dataframes/LocalFileRead$.class
+   src/main/scala/com/spark2/dataframes/LocalFileRead.scala -> target/classes/com/spark2/dataframes/LocalFileRead.class
+binary dependencies:
+   src/main/scala/com/spark2/dataframes/DateTime.scala -> /home/ubuntu/.m2/repository/org/apache/spark/spark-catalyst_2.11/2.1.0/spark-catalyst_2.11-2.1.0.jar
+   src/main/scala/com/spark2/dataframes/DateTime.scala -> /home/ubuntu/.m2/repository/org/apache/spark/spark-core_2.11/2.1.0/spark-core_2.11-2.1.0.jar
+   src/main/scala/com/spark2/dataframes/DateTime.scala -> /home/ubuntu/.m2/repository/org/apache/spark/spark-sql_2.11/2.1.0/spark-sql_2.11-2.1.0.jar
+   src/main/scala/com/spark2/dataframes/DateTime.scala -> /home/ubuntu/.m2/repository/org/scala-lang/scala-library/2.11.7/scala-library-2.11.7.jar
+   src/main/scala/com/spark2/dataframes/DateTime.scala -> /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar
+   src/main/scala/com/spark2/dataframes/DropColumns.scala -> /home/ubuntu/.m2/repository/org/apache/spark/spark-core_2.11/2.1.0/spark-core_2.11-2.1.0.jar
+   src/main/scala/com/spark2/dataframes/DropColumns.scala -> /home/ubuntu/.m2/repository/org/apache/spark/spark-sql_2.11/2.1.0/spark-sql_2.11-2.1.0.jar
+   src/main/scala/com/spark2/dataframes/DropColumns.scala -> /home/ubuntu/.m2/repository/org/scala-lang/scala-library/2.11.7/scala-library-2.11.7.jar
+   src/main/scala/com/spark2/dataframes/DropColumns.scala -> /home/ubuntu/.m2/repository/org/scala-lang/scala-reflect/2.11.8/scala-reflect-2.11.8.jar
+   src/main/scala/com/spark2/dataframes/DropColumns.scala -> /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar
+   src/main/scala/com/spark2/dataframes/LocalFileRead.scala -> /home/ubuntu/.m2/repository/org/apache/spark/spark-core_2.11/2.1.0/spark-core_2.11-2.1.0.jar
+   src/main/scala/com/spark2/dataframes/LocalFileRead.scala -> /home/ubuntu/.m2/repository/org/apache/spark/spark-sql_2.11/2.1.0/spark-sql_2.11-2.1.0.jar
+   src/main/scala/com/spark2/dataframes/LocalFileRead.scala -> /home/ubuntu/.m2/repository/org/scala-lang/scala-library/2.11.7/scala-library-2.11.7.jar
+   src/main/scala/com/spark2/dataframes/LocalFileRead.scala -> /home/ubuntu/.m2/repository/org/scala-lang/scala-reflect/2.11.8/scala-reflect-2.11.8.jar
+   src/main/scala/com/spark2/dataframes/LocalFileRead.scala -> /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar
+source dependencies:
+external dependencies:
+class names:
+   src/main/scala/com/spark2/dataframes/DateTime.scala -> com.spark2.dataframes.DateTime
+   src/main/scala/com/spark2/dataframes/DateTime.scala -> com.spark2.dataframes.DateTime$
+   src/main/scala/com/spark2/dataframes/DropColumns.scala -> com.spark2.dataframes.DropColumns
+   src/main/scala/com/spark2/dataframes/DropColumns.scala -> com.spark2.dataframes.DropColumns$
+   src/main/scala/com/spark2/dataframes/DropColumns.scala -> com.spark2.dataframes.DropColumns$$typecreator2$1
+   src/main/scala/com/spark2/dataframes/LocalFileRead.scala -> com.spark2.dataframes.LocalFileRead
+   src/main/scala/com/spark2/dataframes/LocalFileRead.scala -> com.spark2.dataframes.LocalFileRead$
