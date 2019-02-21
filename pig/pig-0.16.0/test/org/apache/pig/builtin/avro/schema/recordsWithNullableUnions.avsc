@@ -1,9 +1,0 @@
-{
-  "name" : "recordsWithNullableUnions",
-  "namespace" : "org.apache.pig.test.builtin",
-  "type" : "record",
-  "fields" : [
-    {"name" : "key", "type" : ["string","null"]},
-    {"name" : "value", "type" : ["int","null"]}
-  ]
-}
