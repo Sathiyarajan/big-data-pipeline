@@ -1,9 +1,0 @@
-{
-  "name" : "recordsWithSimpleUnion",
-  "namespace" : "org.apache.pig.test.builtin",
-  "type" : "record",
-  "fields" : [
-    {"name" : "key", "type" : "string"},
-    {"name" : "value", "type" : ["int","long","null"]}
-  ]
-}
