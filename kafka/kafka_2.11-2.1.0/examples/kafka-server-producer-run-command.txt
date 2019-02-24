@@ -1,0 +1,14 @@
+cd /opt/kafka/kafka_2.11-2.1.0
+to start the kafka server:
+bin/kafka-server-start.sh config/server.properties
+to create a topic:
+bin/kafka-topics.sh --create --topic besant-data --zookeeper localhost:2181 --partitions 1 --replication-factor 1
+
+to verfiy the available topics:
+bin/kafka-topics.sh --list --zookeeper localhost:2181
+
+to produce messages:
+bin/kafka-console-producer.sh --broker-list localhost:9092 --topic besant-data
+
+to consume messages:
+bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic besant-data --from-beginning
