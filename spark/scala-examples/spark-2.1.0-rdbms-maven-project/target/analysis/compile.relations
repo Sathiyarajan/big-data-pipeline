@@ -1,0 +1,20 @@
+products:
+   src/main/scala/com/spark2/jdbc/SparkJdbc.scala -> target/classes/com/spark2/jdbc/SparkJdbc$$typecreator2$1.class
+   src/main/scala/com/spark2/jdbc/SparkJdbc.scala -> target/classes/com/spark2/jdbc/SparkJdbc$.class
+   src/main/scala/com/spark2/jdbc/SparkJdbc.scala -> target/classes/com/spark2/jdbc/SparkJdbc$Emp$.class
+   src/main/scala/com/spark2/jdbc/SparkJdbc.scala -> target/classes/com/spark2/jdbc/SparkJdbc$Emp.class
+   src/main/scala/com/spark2/jdbc/SparkJdbc.scala -> target/classes/com/spark2/jdbc/SparkJdbc.class
+binary dependencies:
+   src/main/scala/com/spark2/jdbc/SparkJdbc.scala -> /root/.m2/repository/org/apache/spark/spark-sql_2.11/2.1.0/spark-sql_2.11-2.1.0.jar
+   src/main/scala/com/spark2/jdbc/SparkJdbc.scala -> /root/.m2/repository/org/scala-lang/scala-library/2.11.7/scala-library-2.11.7.jar
+   src/main/scala/com/spark2/jdbc/SparkJdbc.scala -> /root/.m2/repository/org/scala-lang/scala-reflect/2.11.8/scala-reflect-2.11.8.jar
+   src/main/scala/com/spark2/jdbc/SparkJdbc.scala -> /root/.m2/repository/org/slf4j/slf4j-api/1.7.16/slf4j-api-1.7.16.jar
+   src/main/scala/com/spark2/jdbc/SparkJdbc.scala -> /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar
+source dependencies:
+external dependencies:
+class names:
+   src/main/scala/com/spark2/jdbc/SparkJdbc.scala -> com.spark2.jdbc.SparkJdbc
+   src/main/scala/com/spark2/jdbc/SparkJdbc.scala -> com.spark2.jdbc.SparkJdbc$
+   src/main/scala/com/spark2/jdbc/SparkJdbc.scala -> com.spark2.jdbc.SparkJdbc$$typecreator2$1
+   src/main/scala/com/spark2/jdbc/SparkJdbc.scala -> com.spark2.jdbc.SparkJdbc$Emp
+   src/main/scala/com/spark2/jdbc/SparkJdbc.scala -> com.spark2.jdbc.SparkJdbc$Emp$

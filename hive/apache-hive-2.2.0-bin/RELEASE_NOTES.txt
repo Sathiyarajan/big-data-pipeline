@@ -1,0 +1,260 @@
+
+Release Notes - Hive - Version 2.1.1
+
+** Sub-task
+    * [HIVE-13409] - Fix JDK8 test failures related to COLUMN_STATS_ACCURATE
+    * [HIVE-13549] - Remove jdk version specific out files from Hive2
+    * [HIVE-13587] - Set Hive pom to use Hadoop 2.6.1
+    * [HIVE-13593] - HiveServer2: Performance instrumentation for HIVE-12049 (serializing thrift ResultSets in tasks)
+    * [HIVE-13723] - Executing join query on type Float using Thrift Serde will result in Float cast to Double error
+    * [HIVE-13798] - Fix the unit test failure org.apache.hadoop.hive.cli.TestCliDriver.testCliDriver_ivyDownload
+    * [HIVE-13803] - More aggressive inference of transitive predicates for inner joins
+    * [HIVE-13860] - Fix more json related JDK8 test failures
+    * [HIVE-13901] - Hivemetastore add partitions can be slow depending on filesystems
+    * [HIVE-13965] - Empty resultset run into Exception when using Thrift Binary Serde
+    * [HIVE-14028] - stats is not updated
+    * [HIVE-14039] - HiveServer2: Make the usage of server with JDBC thirft serde enabled, backward compatible for older clients
+    * [HIVE-14191] - bump a new api version for ThriftJDBCBinarySerde changes
+    * [HIVE-14276] - Update protocol version in TOpenSessionReq and TOpenSessionResp
+    * [HIVE-14277] - Disable StatsOptimizer for all ACID tables
+    * [HIVE-14291] - count(*) on a table written by hcatstorer returns incorrect result
+    * [HIVE-14421] - FS.deleteOnExit holds references to _tmp_space.db files
+    * [HIVE-14428] - HadoopMetrics2Reporter leaks memory if the metrics sink is not configured correctly
+    * [HIVE-14902] - HiveServer2: Cleanup code which checks for ThriftJDBCSerde usage
+    * [HIVE-14912] - Fix the test failures for 2.1.1 caused by HIVE-13409
+    * [HIVE-14957] - HiveSortLimitPullUpConstantsRule misses branches when parent operator is Union
+    * [HIVE-15094] - Fix test failures for 2.1.1 regarding schema evolution with DECIMAL types
+    * [HIVE-15154] - Fix rest of q test file changes in branch-2.1
+
+
+
+
+
+
+
+** Bug
+    * [HIVE-9423] - HiveServer2: Provide the user with different error messages depending on the Thrift client exception code
+    * [HIVE-10022] - Authorization checks for non existent file/directory should not be recursive
+    * [HIVE-11402] - HS2 - add an option to disallow parallel query execution within a single Session
+    * [HIVE-13191] - DummyTable map joins mix up columns between tables
+    * [HIVE-13264] - JDBC driver makes 2 Open Session Calls for every open session
+    * [HIVE-13369] - AcidUtils.getAcidState() is not paying attention toValidTxnList when choosing the "best" base file
+    * [HIVE-13392] - disable speculative execution for ACID Compactor
+    * [HIVE-13539] - HiveHFileOutputFormat searching the wrong directory for HFiles
+    * [HIVE-13590] - Kerberized HS2 with LDAP auth enabled fails in multi-domain LDAP case
+    * [HIVE-13610] - Hive exec module won't compile with IBM JDK
+    * [HIVE-13648] - ORC Schema Evolution doesn't support same type conversion for VARCHAR, CHAR, or DECIMAL when maxLength or precision/scale is different
+    * [HIVE-13704] - Don't call DistCp.execute() instead of DistCp.run()
+    * [HIVE-13725] - ACID: Streaming API should synchronize calls when multiple threads use the same endpoint
+    * [HIVE-13744] - LLAP IO - add complex types support
+    * [HIVE-13749] - Memory leak in Hive Metastore
+    * [HIVE-13809] - Hybrid Grace Hash Join memory usage estimation didn't take into account the bloom filter size
+    * [HIVE-13836] - DbNotifications giving an error = Invalid state. Transaction has already started
+    * [HIVE-13874] - Tighten up EOF checking in Fast DeserializeRead classes; display better exception information; add new Unit Tests
+    * [HIVE-13932] - Hive SMB Map Join with small set of LIMIT failed with NPE
+    * [HIVE-13934] - Configure Tez to make nocondiional task size memory available for the Processor
+    * [HIVE-13985] - ORC improvements for reducing the file system calls in task side
+    * [HIVE-13991] - Union All on view fail with no valid permission on underneath table
+    * [HIVE-13997] - Insert overwrite directory doesn't overwrite existing files
+    * [HIVE-14000] - (ORC) Changing a numeric type column of a partitioned table to lower type set values to something other than 'NULL'
+    * [HIVE-14003] - queries running against llap hang at times - preemption issues
+    * [HIVE-14004] - Minor compaction produces ArrayIndexOutOfBoundsException: 7 in SchemaEvolution.getFileType
+    * [HIVE-14012] - some ColumnVector-s are missing ensureSize
+    * [HIVE-14022] - left semi join should throw SemanticException if where clause contains columnname from right table
+    * [HIVE-14024] - setAllColumns is called incorrectly after some changes
+    * [HIVE-14027] - NULL values produced by left outer join do not behave as NULL
+    * [HIVE-14031] - cleanup metadataReader in OrcEncodedDataReader
+    * [HIVE-14034] - Vectorization may fail with compex OR conditions
+    * [HIVE-14038] - miscellaneous acid improvements
+    * [HIVE-14041] - llap scripts add hadoop and other libraries from the machine local install to the daemon classpath
+    * [HIVE-14045] - (Vectorization) Add missing case for BINARY in VectorizationContext.getNormalizedName method
+    * [HIVE-14055] - directSql - getting the number of partitions is broken
+    * [HIVE-14059] - Missing license headers for two files
+    * [HIVE-14062] - Changes from HIVE-13502 overwritten by HIVE-13566
+    * [HIVE-14071] - HIVE-14014 breaks non-file outputs
+    * [HIVE-14072] - QueryIds reused across different queries
+    * [HIVE-14073] - update config whiltelist for sql std authorization 
+    * [HIVE-14076] - Vectorization is not supported for datatype:VOID error while inserting data into specific columns
+    * [HIVE-14079] - Remove file, method and line number from pattern layout
+    * [HIVE-14083] - ALTER INDEX in Tez causes NullPointerException
+    * [HIVE-14090] - JDOExceptions thrown by the Metastore have their full stack trace returned to clients
+    * [HIVE-14092] - Kryo exception when deserializing VectorFileSinkOperator
+    * [HIVE-14098] - Logging task properties, and environment variables might contain passwords
+    * [HIVE-14111] - better concurrency handling for TezSessionState - part I
+    * [HIVE-14114] - Ensure RecordWriter in streaming API is using the same UserGroupInformation as StreamingConnection
+    * [HIVE-14122] - VectorMapOperator: Missing update to AbstractMapOperator::numRows
+    * [HIVE-14132] - Don't fail config validation for removed configs
+    * [HIVE-14136] - LLAP ZK SecretManager should resolve _HOST in principal
+    * [HIVE-14137] - Hive on Spark throws FileAlreadyExistsException for jobs with multiple empty tables
+    * [HIVE-14140] - LLAP: package codec jars
+    * [HIVE-14144] - Permanent functions are showing up in show functions, but describe says it doesn't exist
+    * [HIVE-14147] - Hive PPD might remove predicates when they are defined as a simple expr e.g. WHERE 'a'
+    * [HIVE-14152] - datanucleus.autoStartMechanismMode should set to 'Ignored' to allow rolling downgrade 
+    * [HIVE-14153] - Beeline: beeline history doesn't work on Hive2
+    * [HIVE-14163] - LLAP: use different kerberized/unkerberized zk paths for registry
+    * [HIVE-14172] - LLAP: force evict blocks by size to handle memory fragmentation
+    * [HIVE-14173] - NPE was thrown after enabling directsql in the middle of session
+    * [HIVE-14175] - Fix creating buckets without scheme information
+    * [HIVE-14176] - CBO nesting windowing function within each other when merging Project operators
+    * [HIVE-14178] - Hive::needsToCopy should reuse FileUtils::equalsFileSystem
+    * [HIVE-14184] - Adding test for limit pushdown in presence of grouping sets
+    * [HIVE-14187] - JDOPersistenceManager objects remain cached if MetaStoreClient#close is not called
+    * [HIVE-14188] - LLAPIF: wrong user field is used from the token
+    * [HIVE-14192] - False positive error due to thrift
+    * [HIVE-14195] - HiveMetaStoreClient getFunction() does not throw NoSuchObjectException
+    * [HIVE-14197] - LLAP service driver precondition failure should include the values
+    * [HIVE-14205] - Hive doesn't support union type with AVRO file format
+    * [HIVE-14207] - Strip HiveConf hidden params in webui conf
+    * [HIVE-14210] - ExecDriver should call jobclient.close() to trigger cleanup
+    * [HIVE-14214] - ORC Schema Evolution and Predicate Push Down do not work together (no rows returned)
+    * [HIVE-14215] - Displaying inconsistent CPU usage data with MR execution engine
+    * [HIVE-14218] - LLAP: ACL validation fails if the user name is different from principal user name
+    * [HIVE-14222] - PTF: Operator initialization does not clean state
+    * [HIVE-14223] - beeline should look for jdbc standalone jar in dist/jdbc dir instead of dist/lib
+    * [HIVE-14236] - CTAS with UNION ALL puts the wrong stats in Tez
+    * [HIVE-14241] - Acid clashes with ConfVars.HIVEFETCHTASKCONVERSION <> "none"
+    * [HIVE-14242] - Backport ORC-53 to Hive
+    * [HIVE-14244] - bucketmap right outer join query throws ArrayIndexOutOfBoundsException
+    * [HIVE-14245] - NoClassDefFoundError when starting LLAP daemon
+    * [HIVE-14253] - Fix MinimrCliDriver test failure
+    * [HIVE-14262] - Inherit writetype from partition WriteEntity for table WriteEntity
+    * [HIVE-14263] - Log message when HS2 query is waiting on compile lock
+    * [HIVE-14265] - Partial stats in Join operator may lead to data size estimate of 0
+    * [HIVE-14267] - HS2 open_operations metrics not decremented when an operation gets timed out
+    * [HIVE-14268] - INSERT-OVERWRITE is not generating an INSERT event during hive replication
+    * [HIVE-14282] - HCatLoader ToDate() exception with hive partition table ,partitioned by column of DATE datatype
+    * [HIVE-14292] - ACID table creation fails on mysql with MySQLIntegrityConstraintViolationException
+    * [HIVE-14293] - PerfLogger.openScopes should be transient
+    * [HIVE-14296] - Session count is not decremented when HS2 clients do not shutdown cleanly.
+    * [HIVE-14297] - OrcRecordUpdater floods logs trying to create _orc_acid_version file
+    * [HIVE-14298] - NPE could be thrown in HMS when an ExpressionTree could not be made from a filter
+    * [HIVE-14301] - insert overwrite fails for nonpartitioned tables in s3
+    * [HIVE-14308] - While using column stats estimated data size may become 0
+    * [HIVE-14310] - ORC schema evolution should not completely disable PPD
+    * [HIVE-14311] - No need to schedule Heartbeat task if the query doesn't require locks
+    * [HIVE-14322] - Postgres db issues after Datanucleus 4.x upgrade
+    * [HIVE-14324] - ORC PPD for floats is broken
+    * [HIVE-14326] - Merging outer joins without conditions can lead to wrong results
+    * [HIVE-14330] - fix LockHandle TxnHandler.acquireLock(String key) retry logic
+    * [HIVE-14332] - Reduce logging from VectorMapOperator
+    * [HIVE-14333] - ORC schema evolution from float to double changes precision and breaks filters
+    * [HIVE-14335] - TaskDisplay's return value is not getting deserialized properly
+    * [HIVE-14338] - Delete/Alter table calls failing with HiveAccessControlException
+    * [HIVE-14339] - Fix UT failure for acid_globallimit.q
+    * [HIVE-14342] - Beeline output is garbled when executed from a remote shell
+    * [HIVE-14349] - Vectorization: LIKE should anchor the regexes
+    * [HIVE-14350] - Aborted txns cause false positive "Not enough history available..." msgs
+    * [HIVE-14355] - Schema evolution for ORC in llap is broken for int to string conversion
+    * [HIVE-14357] - TestDbTxnManager2#testLocksInSubquery failing in branch-2.1
+    * [HIVE-14359] - Hive on Spark might fail in HS2 with LDAP authentication in a kerberized cluster
+    * [HIVE-14363] - bucketmap inner join query fails due to NullPointerException in some cases
+    * [HIVE-14366] - Conversion of a Non-ACID table to an ACID table produces non-unique primary keys
+    * [HIVE-14377] - LLAP IO: issue with how estimate cache removes unneeded buffers
+    * [HIVE-14381] - Handle null value in WindowingTableFunction.WindowingIterator.next()
+    * [HIVE-14393] - Tuple in list feature fails if there's only 1 tuple in the list
+    * [HIVE-14394] - Reduce excessive INFO level logging
+    * [HIVE-14395] - Add the missing data files to Avro union tests (HIVE-14205 addendum)
+    * [HIVE-14397] - Queries ran after reopening of tez session launches additional sessions
+    * [HIVE-14399] - Fix test flakiness of org.apache.hive.hcatalog.listener.TestDbNotificationListener.cleanupNotifs
+    * [HIVE-14400] - Handle concurrent insert with dynamic partition
+    * [HIVE-14402] - Vectorization: Fix Mapjoin overflow deserialization 
+    * [HIVE-14403] - LLAP node specific preemption will only preempt once on a node per AM
+    * [HIVE-14408] - thread safety issue in fast hashtable
+    * [HIVE-14414] - Fix TestHiveMetaStoreTxns UTs
+    * [HIVE-14418] - Hive config validation prevents unsetting the settings
+    * [HIVE-14424] - Address CLIRestoreTest failure
+    * [HIVE-14426] - Extensive logging on info level in WebHCat
+    * [HIVE-14433] - refactor LLAP plan cache avoidance and fix issue in merge processor
+    * [HIVE-14435] - Vectorization: missed vectorization for const varchar()
+    * [HIVE-14439] - LlapTaskScheduler should try scheduling tasks when a node is disabled
+    * [HIVE-14446] - Add switch to control BloomFilter in Hybrid grace hash join and make the FPP adjustable
+    * [HIVE-14447] - Set HIVE_TRANSACTIONAL_TABLE_SCAN to the correct job conf for FetchOperator
+    * [HIVE-14448] - Queries with predicate fail when ETL split strategy is chosen for ACID tables
+    * [HIVE-14457] - Partitions in encryption zone are still trashed though an exception is returned
+    * [HIVE-14479] - Add some join tests for acid table
+    * [HIVE-14480] - ORC ETLSplitStrategy should use thread pool when computing splits
+    * [HIVE-14483] -  java.lang.ArrayIndexOutOfBoundsException org.apache.orc.impl.TreeReaderFactory$BytesColumnVectorUtil.commonReadByteArrays
+    * [HIVE-14513] - Enhance custom query feature in LDAP atn to support resultset of ldap groups
+    * [HIVE-14519] - Multi insert query bug
+    * [HIVE-14530] - Union All query returns incorrect results
+    * [HIVE-14538] - beeline throws exceptions with parsing hive config when using !sh statement
+    * [HIVE-14563] - StatsOptimizer treats NULL in a wrong way
+    * [HIVE-14566] - LLAP IO reads timestamp wrongly
+    * [HIVE-14591] - HS2 is shut down unexpectedly during the startup time
+    * [HIVE-14600] - LLAP zookeeper registry failures do not fail the daemon
+    * [HIVE-14608] - LLAP: slow scheduling due to LlapTaskScheduler not removing nodes on kill 
+    * [HIVE-14619] - CASE folding can produce wrong expression
+    * [HIVE-14621] - LLAP: memory.mode = none has NPE
+    * [HIVE-14652] - incorrect results for not in on partition columns
+    * [HIVE-14674] -  Incorrect syntax near the keyword 'with' using MS SQL Server
+    * [HIVE-14697] - Can not access kerberized HS2 Web UI
+    * [HIVE-14702] - LLAPIF: after a long period of inactivity, signing key may be removed from local store
+    * [HIVE-14715] - Hive throws NumberFormatException with query with Null value
+    * [HIVE-14743] - ArrayIndexOutOfBoundsException - HBASE-backed views' query with JOINs
+    * [HIVE-14764] - Enabling "hive.metastore.metrics.enabled" throws OOM in HiveMetastore
+    * [HIVE-14766] - ObjectStore.initialize() needs retry mechanisms in case of connection failures
+    * [HIVE-14774] - Canceling query using Ctrl-C in beeline might lead to stale locks
+    * [HIVE-14779] - make DbTxnManager.HeartbeaterThread a daemon
+    * [HIVE-14799] - Query operation are not thread safe during its cancellation
+    * [HIVE-14814] - metastoreClient is used directly in Hive cause NPE
+    * [HIVE-14889] - Beeline leaks sensitive environment variables of HiveServer2 when you type set;
+    * [HIVE-14959] - Fix DISTINCT with windowing when CBO is enabled/disabled
+    * [HIVE-15002] - HiveSessionImpl#executeStatementInternal may leave locks in an inconsistent state
+    * [HIVE-15022] - Missing hs2-connection-timed-out in BeeLine.properties
+    * [HIVE-15061] - Metastore types are sometimes case sensitive
+    * [HIVE-15090] - Temporary DB failure can stop ExpiredTokenRemover thread
+    * [HIVE-15099] - PTFOperator.PTFInvocation didn't properly reset the input partition
+    * [HIVE-15123] - LLAP UI: The UI should work even if the cache is disabled
+    * [HIVE-15137] - metastore add partitions background thread should use current username
+    * [HIVE-15181] - buildQueryWithINClause didn't properly handle multiples of ConfVars.METASTORE_DIRECT_SQL_MAX_ELEMENTS_IN_CLAUSE
+    * [HIVE-15295] - Fix HCatalog javadoc generation with Java 8
+    * [HIVE-15306] - Change NOTICE file to account for JSON license components
+
+
+
+
+
+
+** Improvement
+    * [HIVE-10815] - Let HiveMetaStoreClient Choose MetaStore Randomly
+    * [HIVE-13631] - Support index in HBase Metastore
+    * [HIVE-13982] - Extensions to RS dedup: execute with different column order and sorting direction if possible
+    * [HIVE-14002] - Extend limit propagation to subsequent RS operators
+    * [HIVE-14018] - Make IN clause row selectivity estimation customizable
+    * [HIVE-14021] - When converting to CNF, fail if the expression exceeds a threshold
+    * [HIVE-14057] - Add an option in llapstatus to generate output to a file
+    * [HIVE-14080] - hive.metastore.schema.verification should check for schema compatiblity
+    * [HIVE-14167] - Use work directories provided by Tez instead of directly using YARN local dirs
+    * [HIVE-14213] - Add timeouts for various components in llap status check
+    * [HIVE-14228] - Better row count estimates for outer join during physical planning
+    * [HIVE-14383] - SparkClientImpl should pass principal and keytab to spark-submit instead of calling kinit explicitely
+    * [HIVE-14545] - HiveServer2 with http transport mode spends too much time just creating configs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+** Task
+    * [HIVE-14202] - Change tez version used to 0.8.4
+    * [HIVE-15248] - Add Apache header license to TestCustomPartitionVertex
+
+
+** Test
+    * [HIVE-14212] - hbase_queries result out of date on branch-2.1
+    * [HIVE-14316] - TestLlapTokenChecker.testCheckPermissions, testGetToken fail
+    * [HIVE-14713] - LDAP Authentication Provider should be covered with unit tests
+
+
+

@@ -1,4 +1,0 @@
-in = LOAD '$INFILE' USING AvroStorage('','$AVROSTORAGE_IN_2');
-out = FOREACH in GENERATE *;
-RMF $OUTFILE;
-STORE out INTO '$OUTFILE' USING AvroStorage('','$AVROSTORAGE_OUT_2');
