@@ -1,1 +1,0 @@
-/opt/hbase/hbase-1.2.10/bin/hbase-daemon.sh: line 226: 14210 Killed                  nice -n $HBASE_NICENESS "$HBASE_HOME"/bin/hbase --config "${HBASE_CONF_DIR}" $command "$@" start >> ${HBASE_LOGOUT} 2>&1
