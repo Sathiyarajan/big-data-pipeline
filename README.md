@@ -2,21 +2,35 @@
 
 entire steps got automated
 
-Prerequisites: Ubuntu 18.04 LTS version is needed.
-install java and ssh 
+Prerequisites: Ubuntu 18.04 LTS version is needed.  
+install java and ssh  
+
 sudo apt install openjdk-8-jre-headless
-ssh
-sudo apt-get install openssh-server ope
+
+for installing ssh
+
+sudo apt-get install openssh-server openssh-client
+
 ssh-keygen -t rsa
+
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+
 ssh localhost
+
 exit
 
+
 get the components from the 
+
+
 step 1: cd /opt/
+
 step 2: git clone https://github.com/Sathiyarajan/big-data-e2e.git
+
 step 3: cp -r big-data-e2e/* .
+
 step 4 : paste the following contents in /root/.bashrc.
+
 
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
@@ -53,6 +67,7 @@ export PATH=$PATH:/opt/pig/pig-0.16.0/bin
 
 export FLUME_HOME=/opt/flume/apache-flume-1.9.0-bin
 export PATH=$PATH:$FLUME_HOME/bin/
+
 
 start the services using the following commands:
 
