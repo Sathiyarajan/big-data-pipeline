@@ -69,5 +69,8 @@ export FLUME_HOME=/opt/flume/apache-flume-1.9.0-bin
 export PATH=$PATH:$FLUME_HOME/bin/
 
 
-start the services using the following commands:
+start all the services with appropriate commands.
+
+to setup in windows use ubuntu from app store and install it and setup the big data environment by following the above steps.
+
 
