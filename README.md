@@ -73,4 +73,9 @@ start all the services with appropriate commands.
 
 to setup in windows use ubuntu from app store and install it and setup the big data environment by following the above steps.
 
+### Skewed Joins
+
+https://medium.com/expedia-group-tech/skew-join-optimization-in-hive-b66a1f4cc6ba
+
+
 
