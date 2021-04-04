@@ -88,4 +88,9 @@ alias spark_submit=$SPARK_HOME/bin/spark-submit
 https://medium.com/expedia-group-tech/skew-join-optimization-in-hive-b66a1f4cc6ba
 
 
+### important links
 
+hadoop: https://data-flair.training/blogs/install-hadoop-on-single-machine/
+hive: https://data-flair.training/blogs/apache-hive-installation/
+spark: https://data-flair.training/blogs/install-spark-ubuntu/
+pig: https://data-flair.training/blogs/apache-pig-installation-ubuntu-tutorial/
