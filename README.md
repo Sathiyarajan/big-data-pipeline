@@ -70,6 +70,13 @@ export PATH=$PATH:/opt/pig/pig-0.16.0/bin
 
 export FLUME_HOME=/opt/flume/apache-flume-1.9.0-bin
 export PATH=$PATH:$FLUME_HOME/bin/
+
+alias start_hadoop=/opt/hadoop/hadoop-2.7.3/sbin/start-all.sh
+alias stop_hadoop=/opt/hadoop/hadoop-2.7.3/sbin/stop-all.sh
+alias start_hive=/opt/hive/apache-hive-1.2.1-bin/bin/hive
+alias spark_shell=$SPARK_HOME/bin/spark-shell
+alias spark_submit=$SPARK_HOME/bin/spark-submit
+
 ```
 
 ### start all the services with appropriate commands.
