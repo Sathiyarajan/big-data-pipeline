@@ -1,37 +1,40 @@
 # big-data-e2e
 
-entire steps got automated
+### entire steps got automated
 
 Prerequisites: Ubuntu 18.04 LTS version is needed.  
-install java and ssh  
+### install java and ssh  
 
+```
 sudo apt install openjdk-8-jre-headless
+```
+### for installing ssh
 
-for installing ssh
-
+```
 sudo apt-get install openssh-server openssh-client
 
-ssh-keygen -t rsa
+ssh-keygen -t rsa -P ""
 
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 
 ssh localhost
 
-exit
+```
+
+### get the components from the git repo
+
+```
+cd /opt/
+
+git clone https://github.com/Sathiyarajan/big-data-e2e.git
+
+cp -r big-data-e2e/* .
+```
 
 
-get the components from the 
+### step 4 : paste the following contents in /root/.bashrc.
 
-
-step 1: cd /opt/
-
-step 2: git clone https://github.com/Sathiyarajan/big-data-e2e.git
-
-step 3: cp -r big-data-e2e/* .
-
-step 4 : paste the following contents in /root/.bashrc.
-
-
+```
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
 export ZOOKEEPER_HOME=/opt/zookeeper/zookeeper-3.4.10
@@ -67,11 +70,11 @@ export PATH=$PATH:/opt/pig/pig-0.16.0/bin
 
 export FLUME_HOME=/opt/flume/apache-flume-1.9.0-bin
 export PATH=$PATH:$FLUME_HOME/bin/
+```
 
+### start all the services with appropriate commands.
 
-start all the services with appropriate commands.
-
-to setup in windows use ubuntu from app store and install it and setup the big data environment by following the above steps.
+### to setup in windows use ubuntu from app store and install it and setup the big data environment by following the above steps.
 
 ### Skewed Joins
 
