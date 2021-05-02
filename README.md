@@ -94,3 +94,9 @@ hadoop: https://data-flair.training/blogs/install-hadoop-on-single-machine/
 hive: https://data-flair.training/blogs/apache-hive-installation/
 spark: https://data-flair.training/blogs/install-spark-ubuntu/
 pig: https://data-flair.training/blogs/apache-pig-installation-ubuntu-tutorial/
+
+# HDFS hacks
+
+```
+hadoop fs -ls /tmp/data | sed '1d;s/  */ /g' | cut -d\  -f8
+```
