@@ -100,3 +100,15 @@ pig: https://data-flair.training/blogs/apache-pig-installation-ubuntu-tutorial/
 ```
 hadoop fs -ls /tmp/data | sed '1d;s/  */ /g' | cut -d\  -f8
 ```
+# linux hacks
+
+```
+#find string with special characters
+grep -vrnw . -e "TEST_"
+
+# find and replace with backupfile creation
+find . -name '*.SQL' |xargs perl -pi -e 's/TEST1_/TEST_/g'
+
+# delete matching multiple files in a sub directories
+find . -name \*.bak -type f -delete
+```
