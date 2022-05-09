@@ -6,6 +6,8 @@ Prerequisites: Ubuntu 18.04 LTS version is needed.
 ### install java and ssh  
 
 ```
+sudo apt install open-vm-tools-desktop git vim net-tools -y
+
 sudo apt install openjdk-8-jre-headless
 ```
 ### for installing ssh
