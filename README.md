@@ -93,8 +93,11 @@ https://medium.com/expedia-group-tech/skew-join-optimization-in-hive-b66a1f4cc6b
 ### important links
 
 hadoop: https://data-flair.training/blogs/install-hadoop-on-single-machine/
+
 hive: https://data-flair.training/blogs/apache-hive-installation/
+
 spark: https://data-flair.training/blogs/install-spark-ubuntu/
+
 pig: https://data-flair.training/blogs/apache-pig-installation-ubuntu-tutorial/
 
 # HDFS hacks
@@ -117,5 +120,8 @@ find . -name \*.bak -type f -delete
 
 # find file which is more than 50MB in size in a direcroty
 find . -type f -size +5M -exec ls -lh {} \; | awk '{print $9 "|| Size :" $5}'
+
+# find a file which created recently
+find . -type f -mmin -5
 
 ```
