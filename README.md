@@ -113,4 +113,9 @@ find . -name '*.SQL' |xargs perl -pi -e 's/TEST1_/TEST_/g'
 
 # delete matching multiple files in a sub directories
 find . -name \*.bak -type f -delete
+
+
+# find file which is more than 50MB in size in a direcroty
+find . -type f -size +5M -exec ls -lh {} \; | awk '{print $9 "|| Size :" $5}'
+
 ```
