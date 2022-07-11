@@ -124,4 +124,10 @@ find . -type f -size +5M -exec ls -lh {} \; | awk '{print $9 "|| Size :" $5}'
 # find a file which created recently
 find . -type f -mmin -5
 
+#find a top 10 files in size
+find . -type f -printf "%s\t%p\n" | sort -nr | head -10
+
+#find a top 10 directories in size
+alias ducks='du -cks * | sort -rn | head'
+du -a . | sort -n -r | head
 ```
