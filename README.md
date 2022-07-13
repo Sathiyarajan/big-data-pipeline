@@ -130,4 +130,14 @@ find . -type f -printf "%s\t%p\n" | sort -nr | head -10
 #find a top 10 directories in size
 alias ducks='du -cks * | sort -rn | head'
 du -a . | sort -n -r | head
+
+#List overall file size in HDFS:
+hadoop fs -du -s -h /hdfs/path/
+
+#List only files and directories in HDFS:
+hadoop fs -count -v -h /hdfs/path/ (human readable GB, MB)
+hadoop fs -count -v /hdfs/path (give the exact count on directory,files)
+
+#List only files in HDFS:
+hadoop fs -ls -R /hdfs/path/* | grep -v '^d' | wc -l --> list only files
 ```
